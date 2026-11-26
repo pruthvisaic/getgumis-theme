@@ -643,6 +643,15 @@
     },
     "cross_sell": {
       "heading": "Complétez votre routine"
+    },
+    "cart": {
+      "free_shipping_remaining_html": "Plus que <strong>{{ amount }}</strong> pour la livraison offerte !",
+      "free_shipping_unlocked": "Bravo, la livraison est offerte !",
+      "free_shipping_label": "Progression vers la livraison offerte",
+      "upsell_title": "Passez à {{ count }} pots et économisez {{ percent }} %",
+      "upsell_sub": "Ajoutez un pot de {{ product }}, la remise s'applique automatiquement.",
+      "upsell_button": "1 pot",
+      "upsell_aria": "Ajouter 1 pot de {{ product }}"
     }
   }
 }

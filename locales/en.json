@@ -631,6 +631,15 @@
     },
     "cross_sell": {
       "heading": "Complete your routine"
+    },
+    "cart": {
+      "free_shipping_remaining_html": "Only <strong>{{ amount }}</strong> away from free shipping!",
+      "free_shipping_unlocked": "Nice, shipping is on us!",
+      "free_shipping_label": "Progress towards free shipping",
+      "upsell_title": "Go for {{ count }} jars and save {{ percent }}%",
+      "upsell_sub": "Add a jar of {{ product }}, the discount applies automatically.",
+      "upsell_button": "1 jar",
+      "upsell_aria": "Add 1 jar of {{ product }}"
     }
   }
 }

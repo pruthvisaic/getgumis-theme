@@ -83,6 +83,7 @@
           class=" is-empty"
         {% endif %}
       >
+        {%- render 'gumis-cart-extras' -%}
         <form
           action="{{ routes.cart_url }}"
           id="CartDrawer-Form"

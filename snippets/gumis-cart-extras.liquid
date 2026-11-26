@@ -1,0 +1,75 @@
+{% doc %}
+  Cart drawer extras: free-shipping progress bar and upsell to the next jar bundle.
+  Rendered inside <cart-drawer-items> so every Dawn cart refresh re-renders it.
+  - Threshold: theme setting "Seuil de livraison offerte (€ TTC)" (hidden when empty).
+  - Upsell: only shown when the next tier has a discount % set in theme settings,
+    mirroring a real Shopify automatic discount. Nothing is invented.
+{% enddoc %}
+{%- if cart.item_count > 0 -%}
+  <div class="gumis-cart-extras">
+    {%- if settings.gumis_free_shipping_enabled and settings.gumis_free_shipping_threshold > 0 -%}
+      {%- liquid
+        assign threshold = settings.gumis_free_shipping_threshold | times: 100
+        assign remaining = threshold | minus: cart.total_price
+        assign progress = cart.total_price | times: 100 | divided_by: threshold | at_most: 100 | at_least: 0
+      -%}
+      <div class="gumis-ship">
+        <p class="gumis-ship__text">
+          {%- render 'gumis-icon', icon: 'truck' -%}
+          <span>
+            {%- if remaining > 0 -%}
+              {{ 'gumis.cart.free_shipping_remaining_html' | t: amount: remaining | money }}
+            {%- else -%}
+              {{ 'gumis.cart.free_shipping_unlocked' | t }}
+            {%- endif -%}
+          </span>
+        </p>
+        <div
+          class="gumis-ship__bar"
+          role="progressbar"
+          aria-label="{{ 'gumis.cart.free_shipping_label' | t }}"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="{{ progress }}"
+        >
+          <span class="gumis-ship__fill" style="width: {{ progress }}%;"></span>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if settings.gumis_cart_bundle_upsell and cart.item_count < 3 -%}
+      {%- liquid
+        assign next_count = cart.item_count | plus: 1
+        if next_count == 2
+          assign next_pct = settings.gumis_bundle_discount_2
+        else
+          assign next_pct = settings.gumis_bundle_discount_3
+        endif
+        assign target = cart.items.first
+      -%}
+      {%- if next_pct > 0 and target.product.has_only_default_variant -%}
+        <gumis-cart-upsell class="gumis-upsell">
+          <div class="gumis-upsell__text">
+            <p class="gumis-upsell__title">
+              {{- 'gumis.cart.upsell_title' | t: count: next_count, percent: next_pct -}}
+            </p>
+            <p class="gumis-upsell__sub">
+              {{- 'gumis.cart.upsell_sub' | t: product: target.product.title -}}
+            </p>
+          </div>
+          <button
+            type="button"
+            class="button button--primary gumis-upsell__button"
+            data-line="1"
+            data-quantity="{{ target.quantity | plus: 1 }}"
+            data-variant-id="{{ target.variant_id }}"
+            aria-label="{{ 'gumis.cart.upsell_aria' | t: product: target.product.title | escape }}"
+          >
+            {%- render 'gumis-icon', icon: 'plus' -%}
+            <span>{{ 'gumis.cart.upsell_button' | t }}</span>
+          </button>
+        </gumis-cart-upsell>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+{%- endif -%}
