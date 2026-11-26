@@ -1,25 +1,56 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
+      "type": "main-gumis-page",
       "settings": {
-        "padding_top": 36,
-        "padding_bottom": 36
+        "style": "default",
+        "eyebrow": "Contact",
+        "heading": "",
+        "intro": "<p>Une question sur une commande ou sur nos gummies ? Écrivez-nous, on répond du lundi au vendredi [À COMPLÉTER : délai de réponse].</p>",
+        "show_content": true,
+        "updated_label": "",
+        "show_cookie_button": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 0
       }
     },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
+        "heading": "Nous écrire",
+        "heading_size": "h2",
         "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "privacy": {
+      "type": "rich-text",
+      "blocks": {
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Vos données servent uniquement à répondre à votre message. En savoir plus dans notre <a href=\"/pages/politique-de-confidentialite\" title=\"Politique de confidentialité\">politique de confidentialité</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "t"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "privacy"
   ]
 }

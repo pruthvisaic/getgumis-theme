@@ -1,0 +1,72 @@
+{%- liquid
+  if section.settings.use_collection_title
+    assign heading = collection.title | escape
+  else
+    assign heading = section.settings.heading
+    if heading == blank
+      assign heading = 'gumis.collection.heading' | t
+    endif
+  endif
+-%}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<section
+  class="gumis-section gumis-collection color-{{ section.settings.color_scheme }} gradient"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  {%- render 'gumis-blobs', preset: 'corners' -%}
+  <div class="page-width gumis-relative">
+    <header class="gumis-section-header">
+      <h1 class="h0">{{ heading }}</h1>
+      {%- if section.settings.show_description and collection.description != blank -%}
+        <div class="rte">{{ collection.description }}</div>
+      {%- elsif section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </header>
+
+    {%- paginate collection.products by section.settings.per_page -%}
+      {%- if collection.products.size > 0 -%}
+        <ul class="gumis-product-grid gumis-product-grid--3" role="list">
+          {%- for product in collection.products -%}
+            <li>
+              {%- liquid
+                assign lazy = true
+                if forloop.index <= 2
+                  assign lazy = false
+                endif
+              -%}
+              {%- render 'gumis-product-card', product: product, section_id: section.id, heading_tag: 'h2', lazy: lazy -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+        {%- if paginate.pages > 1 -%}
+          {%- render 'pagination', paginate: paginate, anchor: '' -%}
+        {%- endif -%}
+      {%- else -%}
+        <ul class="gumis-product-grid gumis-product-grid--3" role="list">
+          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Sommeil', accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Éclat', accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Force', accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2' -%}</li>
+        </ul>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Collection",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "checkbox", "id": "use_collection_title", "label": "Utiliser le titre de la collection", "default": false },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Tous nos gummies »" },
+    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
+    { "type": "checkbox", "id": "show_description", "label": "Afficher la description de la collection", "default": true },
+    { "type": "range", "id": "per_page", "label": "Produits par page", "min": 3, "max": 24, "step": 3, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+  ]
+}
+{% endschema %}

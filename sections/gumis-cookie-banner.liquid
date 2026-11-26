@@ -1,0 +1,92 @@
+{%- comment -%}
+  GDPR cookie consent banner wired to Shopify's Customer Privacy API.
+  - Hidden until the API says a banner is needed (shouldShowBanner) or the visitor clicks
+    any [data-gumis-open-consent] element ("Gérer les cookies").
+  - "Tout accepter" and "Tout refuser" have equal prominence (CNIL guidance).
+  - The theme loads no marketing script itself; the Facebook & Instagram and Google & YouTube
+    apps' pixels read this consent through Shopify.
+{%- endcomment -%}
+{%- if settings.gumis_cookie_banner -%}
+  {%- liquid
+    if settings.gumis_cookie_page != blank
+      assign cookie_url = settings.gumis_cookie_page.url
+    else
+      assign cookie_url = routes.root_url | append: '/pages/politique-cookies' | replace: '//', '/'
+    endif
+  -%}
+  <gumis-consent
+    class="gumis-consent gumis-consent--{{ settings.gumis_cookie_position | default: 'bottom' }}"
+    hidden
+  >
+    <div
+      class="gumis-consent__panel color-scheme-6"
+      role="dialog"
+      aria-modal="false"
+      aria-labelledby="GumisConsentTitle"
+      aria-describedby="GumisConsentText"
+      tabindex="-1"
+    >
+      <div class="gumis-consent__head">
+        <span class="gumis-icon-bubble" style="--accent: var(--gumis-bubblegum);">
+          {%- render 'gumis-icon', icon: 'cookie' -%}
+        </span>
+        <h2 id="GumisConsentTitle" class="gumis-consent__title h4">
+          {%- if section.settings.title != blank -%}{{ section.settings.title | escape }}{%- else -%}{{ 'gumis.cookies.title' | t }}{%- endif -%}
+        </h2>
+      </div>
+      <p id="GumisConsentText" class="gumis-consent__text">
+        {%- if section.settings.text != blank -%}
+          {{ section.settings.text }}
+        {%- else -%}
+          {{ 'gumis.cookies.text' | t }}
+        {%- endif %}
+        <a href="{{ cookie_url }}">{{ 'gumis.cookies.learn_more' | t }}</a>
+      </p>
+
+      <form class="gumis-consent__prefs" data-consent-prefs hidden>
+        <fieldset>
+          <legend class="visually-hidden">{{ 'gumis.cookies.customize' | t }}</legend>
+          <label class="gumis-consent__toggle">
+            <input type="checkbox" checked disabled>
+            <span><strong>{{ 'gumis.cookies.necessary' | t }}</strong> {{ 'gumis.cookies.necessary_desc' | t }}</span>
+          </label>
+          <label class="gumis-consent__toggle">
+            <input type="checkbox" name="preferences">
+            <span><strong>{{ 'gumis.cookies.preferences' | t }}</strong> {{ 'gumis.cookies.preferences_desc' | t }}</span>
+          </label>
+          <label class="gumis-consent__toggle">
+            <input type="checkbox" name="analytics">
+            <span><strong>{{ 'gumis.cookies.analytics' | t }}</strong> {{ 'gumis.cookies.analytics_desc' | t }}</span>
+          </label>
+          <label class="gumis-consent__toggle">
+            <input type="checkbox" name="marketing">
+            <span><strong>{{ 'gumis.cookies.marketing' | t }}</strong> {{ 'gumis.cookies.marketing_desc' | t }}</span>
+          </label>
+        </fieldset>
+      </form>
+
+      <div class="gumis-consent__actions">
+        <button type="button" class="button button--primary" data-consent="reject">{{ 'gumis.cookies.reject' | t }}</button>
+        <button type="button" class="button button--primary" data-consent="accept">{{ 'gumis.cookies.accept' | t }}</button>
+        <button type="button" class="button button--secondary" data-consent="customize" aria-expanded="false">
+          {{- 'gumis.cookies.customize' | t -}}
+        </button>
+        <button type="button" class="button button--primary" data-consent="save" hidden>{{ 'gumis.cookies.save' | t }}</button>
+      </div>
+    </div>
+  </gumis-consent>
+  <script src="{{ 'gumis-consent.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Gumis Cookies",
+  "tag": "div",
+  "class": "gumis-consent-section",
+  "settings": [
+    { "type": "paragraph", "content": "Activez/désactivez la bannière dans Paramètres du thème > Gumis — cookies & RGPD." },
+    { "type": "text", "id": "title", "label": "Titre", "info": "Vide = traduction par défaut." },
+    { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut." }
+  ]
+}
+{% endschema %}

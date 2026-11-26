@@ -1,0 +1,57 @@
+{%- comment -%}
+  Model withdrawal form (formulaire type de rétractation, annexe à l'article R221-1
+  du Code de la consommation). The legal wording lives in the locale files;
+  the merchant only fills in their own details.
+{%- endcomment -%}
+<section
+  class="gumis-section gumis-withdrawal color-{{ section.settings.color_scheme }} gradient"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="gumis-page">
+      <div class="gumis-withdrawal__card gumis-page__content--card">
+        <h2 class="h2">{{ 'gumis.withdrawal.heading' | t }}</h2>
+        <p class="gumis-note">{{ 'gumis.withdrawal.instructions' | t }}</p>
+        <div class="gumis-withdrawal__body rte">
+          <p>
+            <strong>{{ 'gumis.withdrawal.to' | t }}</strong><br>
+            {{ section.settings.company | default: shop.name | escape }}<br>
+            {{ section.settings.address | escape | newline_to_br }}<br>
+            {{ section.settings.email | default: shop.email | escape }}
+          </p>
+          <p>{{ 'gumis.withdrawal.notice' | t }}</p>
+          <ul class="gumis-withdrawal__fields">
+            <li>{{ 'gumis.withdrawal.ordered_on' | t }} ____________________</li>
+            <li>{{ 'gumis.withdrawal.order_number' | t }} ____________________</li>
+            <li>{{ 'gumis.withdrawal.name' | t }} ____________________</li>
+            <li>{{ 'gumis.withdrawal.address' | t }} ____________________</li>
+            <li>{{ 'gumis.withdrawal.signature' | t }} ____________________</li>
+            <li>{{ 'gumis.withdrawal.date' | t }} ____________________</li>
+          </ul>
+          <p class="gumis-note">{{ 'gumis.withdrawal.strike' | t }}</p>
+        </div>
+        <button type="button" class="button button--secondary gumis-withdrawal__print" onclick="window.print()">
+          {{- 'gumis.withdrawal.print' | t -}}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Formulaire rétract.",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Formulaire type de rétractation (Code de la consommation, annexe à l'article R221-1). Complétez vos coordonnées." },
+    { "type": "text", "id": "company", "label": "Raison sociale", "default": "[À COMPLÉTER : raison sociale]" },
+    { "type": "textarea", "id": "address", "label": "Adresse postale", "default": "[À COMPLÉTER : adresse postale]" },
+    { "type": "text", "id": "email", "label": "E-mail", "default": "[À COMPLÉTER : e-mail]" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "presets": [ { "name": "Gumis Formulaire rétract." } ]
+}
+{% endschema %}

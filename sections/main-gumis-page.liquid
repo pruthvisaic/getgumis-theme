@@ -1,0 +1,80 @@
+{%- liquid
+  assign is_legal = false
+  if section.settings.style == 'legal'
+    assign is_legal = true
+  endif
+-%}
+<section
+  class="gumis-section gumis-page-section color-{{ section.settings.color_scheme }} gradient{% if is_legal %} gumis-page-section--legal{% endif %}"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  {%- unless is_legal -%}
+    {%- render 'gumis-blobs', preset: 'corners' -%}
+  {%- endunless -%}
+  <div class="page-width gumis-relative">
+    <div class="gumis-page">
+      <header class="gumis-page__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="gumis-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        <h1 class="gumis-page__title{% if is_legal %} h1{% else %} h0{% endif %}">
+          {%- if section.settings.heading != blank -%}
+            {{ section.settings.heading }}
+          {%- else -%}
+            {{ page.title | escape }}
+          {%- endif -%}
+        </h1>
+        {%- if section.settings.intro != blank -%}
+          <div class="gumis-page__intro rte">{{ section.settings.intro }}</div>
+        {%- endif -%}
+        {%- if is_legal and section.settings.updated_label != blank -%}
+          <p class="gumis-note">{{ 'gumis.legal.last_updated' | t: date: section.settings.updated_label }}</p>
+        {%- endif -%}
+      </header>
+
+      {%- if section.settings.show_content -%}
+        <div class="gumis-page__content rte{% if is_legal %} gumis-page__content--card{% endif %}">
+          {%- if page.content != blank -%}
+            {{ page.content }}
+          {%- elsif is_legal -%}
+            <p>
+              <span class="gumis-placeholder-text">{{ 'gumis.general.to_complete' | t }}</span>
+              {{ 'gumis.legal.placeholder' | t }}
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_cookie_button and settings.gumis_cookie_banner -%}
+        <p class="gumis-page__actions">
+          <button type="button" class="button button--primary" data-gumis-open-consent>
+            {%- render 'gumis-icon', icon: 'cookie' -%}
+            <span>{{ 'gumis.cookies.manage' | t }}</span>
+          </button>
+        </p>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Page",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Le contenu vient de la page (Boutique en ligne > Pages)." },
+    { "type": "select", "id": "style", "label": "Style", "default": "default", "options": [ { "value": "default", "label": "Page de marque" }, { "value": "legal", "label": "Page légale (sobre)" } ] },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = titre de la page." },
+    { "type": "richtext", "id": "intro", "label": "Introduction" },
+    { "type": "checkbox", "id": "show_content", "label": "Afficher le contenu de la page", "default": true },
+    { "type": "text", "id": "updated_label", "label": "Dernière mise à jour (pages légales)", "info": "Ex. : 1er janvier 2027" },
+    { "type": "checkbox", "id": "show_cookie_button", "label": "Bouton « Gérer les cookies »", "default": false },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 }
+  ],
+  "presets": [ { "name": "Gumis Page" } ]
+}
+{% endschema %}

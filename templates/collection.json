@@ -1,36 +1,65 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "main": {
+      "type": "main-gumis-collection",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "use_collection_title": false,
+        "heading": "",
+        "subheading": "Trois formules gourmandes, 60 gummies par pot.",
+        "show_description": true,
+        "per_page": 12,
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 56
       }
     },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "how": {
+      "type": "gumis-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "icon": "jar",
+            "title": "Choisissez votre formule",
+            "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "icon": "gummy",
+            "title": "Croquez vos gummies",
+            "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "icon": "gift",
+            "title": "Économisez en multi-pots",
+            "text": "<p>Les offres 2 et 3 pots s'appliquent automatiquement dans le panier.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
-        "products_per_page": 16,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "enable_filtering": true,
-        "filter_type": "horizontal",
-        "enable_sorting": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "heading": "",
+        "subheading": "",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-2",
+        "anchor": "gumis-how",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "main",
+    "how"
   ]
 }

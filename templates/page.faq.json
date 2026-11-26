@@ -1,0 +1,122 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-gumis-page",
+      "settings": {
+        "style": "default",
+        "eyebrow": "FAQ",
+        "heading": "",
+        "intro": "<p>Les réponses aux questions qu'on nous pose le plus souvent.</p>",
+        "show_content": true,
+        "updated_label": "",
+        "show_cookie_button": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 56,
+        "padding_bottom": 8
+      }
+    },
+    "faq": {
+      "type": "gumis-faq",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de gummies par jour ?",
+            "answer": "<p>Cela dépend de la formule : la dose journalière recommandée est indiquée sur chaque fiche produit et sur le pot. Ne la dépassez pas.</p>"
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "Quand les prendre ?",
+            "answer": "<p>[À COMPLÉTER selon chaque formule, par exemple pour Gumis Sommeil : peu avant le coucher.]</p>"
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Les gummies contiennent-ils du sucre ?",
+            "answer": "<p>[À COMPLÉTER : teneur en sucres par portion, édulcorants éventuels.]</p>"
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "Sont-ils vegan ? Contiennent-ils des allergènes ?",
+            "answer": "<p>[À COMPLÉTER : gélatine ou pectine, liste des allergènes.]</p>"
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "Où sont-ils fabriqués ?",
+            "answer": "<p>[À COMPLÉTER : pays et site de fabrication.]</p>"
+          }
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je prendre plusieurs formules en même temps ?",
+            "answer": "<p>Demandez conseil à votre médecin ou à votre pharmacien avant d'associer plusieurs compléments alimentaires, en particulier si vous suivez un traitement.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Les gummies conviennent-ils aux enfants et aux femmes enceintes ?",
+            "answer": "<p>[À COMPLÉTER selon chaque formule.] Tenir hors de la portée des jeunes enfants. En cas de doute, demandez l'avis d'un professionnel de santé.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "Comment conserver mon pot ?",
+            "answer": "<p>[À COMPLÉTER : conditions de conservation.]</p>"
+          }
+        },
+        "q9": {
+          "type": "question",
+          "settings": {
+            "question": "Comment fonctionnent les offres 2 et 3 pots ?",
+            "answer": "<p>Choisissez 2 ou 3 pots : la remise s'applique automatiquement dans le panier, sans code.</p>"
+          }
+        },
+        "q10": {
+          "type": "question",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>[À COMPLÉTER : délais et transporteurs.] Tous les détails sont sur la page Livraison &amp; retours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10"
+      ],
+      "settings": {
+        "heading": "Vos questions, nos réponses",
+        "subheading": "Vous ne trouvez pas votre réponse ? Écrivez-nous.",
+        "contact_label": "Nous écrire",
+        "contact_link": "",
+        "open_first": false,
+        "schema_markup": true,
+        "color_scheme": "scheme-1",
+        "anchor": "gumis-faq",
+        "padding_top": 24,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-gumis-page",
+      "settings": {
+        "style": "default",
+        "eyebrow": "Notre histoire",
+        "heading": "",
+        "intro": "<p>[À COMPLÉTER : en deux phrases, pourquoi gumis existe.]</p>",
+        "show_content": true,
+        "updated_label": "",
+        "show_cookie_button": false,
+        "color_scheme": "scheme-2",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "story": {
+      "type": "image-with-text",
+      "blocks": {
+        "h": {
+          "type": "heading",
+          "settings": {
+            "heading": "Des vitamines qu'on a envie de prendre",
+            "heading_size": "h1"
+          }
+        },
+        "t": {
+          "type": "text",
+          "settings": {
+            "text": "<p>[À COMPLÉTER : l'histoire des fondateurs, le déclic, la mission.]</p>",
+            "text_style": "body"
+          }
+        },
+        "b": {
+          "type": "button",
+          "settings": {
+            "button_label": "Découvrir les gummies",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "h",
+        "t",
+        "b"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "no-overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "left",
+        "section_color_scheme": "scheme-1",
+        "color_scheme": "scheme-6",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "values": {
+      "type": "multicolumn",
+      "blocks": {
+        "c1": {
+          "type": "column",
+          "settings": {
+            "title": "Gourmand",
+            "text": "<p>[À COMPLÉTER : votre engagement sur le goût.]</p>",
+            "link_label": ""
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "title": "Transparent",
+            "text": "<p>[À COMPLÉTER : composition, origine des ingrédients, fabrication.]</p>",
+            "link_label": ""
+          }
+        },
+        "c3": {
+          "type": "column",
+          "settings": {
+            "title": "Simple",
+            "text": "<p>[À COMPLÉTER : votre promesse de simplicité.]</p>",
+            "link_label": ""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "title": "Ce qui compte pour nous",
+        "heading_size": "h1",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "button_label": "",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "color_scheme": "scheme-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 64,
+        "padding_bottom": 72
+      }
+    }
+  },
+  "order": [
+    "main",
+    "story",
+    "values"
+  ]
+}

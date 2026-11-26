@@ -559,7 +559,22 @@
       }
     },
     "cookies": {
-      "manage": "Gérer les cookies"
+      "manage": "Gérer les cookies",
+      "title": "Un petit cookie ?",
+      "text": "Nous utilisons des cookies nécessaires au fonctionnement du site et, avec votre accord, des cookies de mesure d'audience et de publicité. Vous pouvez changer d'avis à tout moment via « Gérer les cookies » en bas de page.",
+      "learn_more": "En savoir plus",
+      "accept": "Tout accepter",
+      "reject": "Tout refuser",
+      "customize": "Personnaliser",
+      "save": "Enregistrer mes choix",
+      "necessary": "Nécessaires.",
+      "necessary_desc": "Indispensables au panier et au paiement. Toujours actifs.",
+      "preferences": "Préférences.",
+      "preferences_desc": "Mémorisent vos choix, comme la langue ou le pays.",
+      "analytics": "Mesure d'audience.",
+      "analytics_desc": "Nous aident à comprendre comment le site est utilisé.",
+      "marketing": "Publicité.",
+      "marketing_desc": "Permettent de vous montrer des publicités pertinentes sur d'autres sites."
     },
     "compliance": {
       "footer_note": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain.",
@@ -652,6 +667,27 @@
       "upsell_sub": "Ajoutez un pot de {{ product }}, la remise s'applique automatiquement.",
       "upsell_button": "1 pot",
       "upsell_aria": "Ajouter 1 pot de {{ product }}"
+    },
+    "collection": {
+      "heading": "Tous nos gummies"
+    },
+    "legal": {
+      "last_updated": "Dernière mise à jour : {{ date }}",
+      "placeholder": "Le contenu de cette page est à ajouter dans Boutique en ligne > Pages."
+    },
+    "withdrawal": {
+      "heading": "Formulaire de rétractation",
+      "instructions": "Veuillez compléter et renvoyer le présent formulaire uniquement si vous souhaitez vous rétracter du contrat.",
+      "to": "À l'attention de :",
+      "notice": "Je/Nous (*) vous notifie/notifions (*) par la présente ma/notre (*) rétractation du contrat portant sur la vente du bien (*)/pour la prestation de services (*) ci-dessous :",
+      "ordered_on": "Commandé le (*) / reçu le (*) :",
+      "order_number": "Numéro de commande :",
+      "name": "Nom du (des) consommateur(s) :",
+      "address": "Adresse du (des) consommateur(s) :",
+      "signature": "Signature du (des) consommateur(s) (uniquement en cas de notification du présent formulaire sur papier) :",
+      "date": "Date :",
+      "strike": "(*) Rayez la mention inutile.",
+      "print": "Imprimer le formulaire"
     }
   }
 }

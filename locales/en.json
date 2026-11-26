@@ -547,7 +547,22 @@
       }
     },
     "cookies": {
-      "manage": "Manage cookies"
+      "manage": "Manage cookies",
+      "title": "Fancy a cookie?",
+      "text": "We use cookies that are necessary for the site to work and, with your consent, audience measurement and advertising cookies. You can change your mind at any time via “Manage cookies” at the bottom of the page.",
+      "learn_more": "Learn more",
+      "accept": "Accept all",
+      "reject": "Reject all",
+      "customize": "Customise",
+      "save": "Save my choices",
+      "necessary": "Necessary.",
+      "necessary_desc": "Required for the cart and checkout. Always on.",
+      "preferences": "Preferences.",
+      "preferences_desc": "Remember your choices, such as language or country.",
+      "analytics": "Analytics.",
+      "analytics_desc": "Help us understand how the site is used.",
+      "marketing": "Advertising.",
+      "marketing_desc": "Let us show you relevant ads on other sites."
     },
     "compliance": {
       "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle.",
@@ -640,6 +655,27 @@
       "upsell_sub": "Add a jar of {{ product }}, the discount applies automatically.",
       "upsell_button": "1 jar",
       "upsell_aria": "Add 1 jar of {{ product }}"
+    },
+    "collection": {
+      "heading": "All our gummies"
+    },
+    "legal": {
+      "last_updated": "Last updated: {{ date }}",
+      "placeholder": "The content of this page is to be added in Online Store > Pages."
+    },
+    "withdrawal": {
+      "heading": "Withdrawal form",
+      "instructions": "Complete and return this form only if you wish to withdraw from the contract.",
+      "to": "To:",
+      "notice": "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*):",
+      "ordered_on": "Ordered on (*) / received on (*):",
+      "order_number": "Order number:",
+      "name": "Name of consumer(s):",
+      "address": "Address of consumer(s):",
+      "signature": "Signature of consumer(s) (only if this form is notified on paper):",
+      "date": "Date:",
+      "strike": "(*) Delete as appropriate.",
+      "print": "Print the form"
     }
   }
 }
