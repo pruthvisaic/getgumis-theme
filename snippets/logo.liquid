@@ -1,13 +1,13 @@
 {%- comment -%}
   gumis wordmark — Fredoka Bold, always lowercase, Berry by default.
   The dot of the "i" is an orange gummy: a dotless ı (U+0131) plus a rounded shape.
-  Accepts: size (CSS font-size), light (boolean, white text), class.
-  Usage: {% render 'logo', size: '3rem' %}
+  Accepts: font_size (CSS font-size), light (boolean, white text), class.
+  Usage: {% render 'logo', font_size: '3rem' %}
 {%- endcomment -%}
 <span
   class="gumis-logo{% if light %} gumis-logo--light{% endif %}{% if class %} {{ class }}{% endif %}"
-  {% if size %}
-    style="--logo-size: {{ size }};"
+  {% if font_size %}
+    style="--logo-size: {{ font_size }};"
   {% endif %}
 >
   <span class="visually-hidden">{{ shop.name | escape }}</span>
