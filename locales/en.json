@@ -550,7 +550,13 @@
       "manage": "Manage cookies"
     },
     "compliance": {
-      "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle."
+      "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle.",
+      "dose": "Do not exceed the recommended daily dose.",
+      "children": "Keep out of the reach of young children.",
+      "diet": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle.",
+      "dose_probe": "recommended daily dose",
+      "children_probe": "reach of young children",
+      "diet_probe": "varied, balanced diet"
     },
     "general": {
       "to_complete": "[TO BE COMPLETED]"
@@ -609,6 +615,22 @@
       "save_percent": "-{{ percent }}%",
       "you_save": "You save {{ amount }}",
       "auto_discount_note": "Discount applied automatically in your cart."
+    },
+    "pdp": {
+      "tab_ingredients": "Ingredients",
+      "tab_nutrition": "Nutrition facts",
+      "tab_how_to_use": "How to use",
+      "tab_warnings": "Warnings",
+      "nutrition_label": "Composition",
+      "nutrition_per": "Per {{ serving }}",
+      "nutrition_per_serving": "Per serving",
+      "nutrition_nrv": "% NRV*",
+      "nutrition_footnote": "* NRV: nutrient reference values.",
+      "daily_dose": "Recommended daily dose:",
+      "missing_metafield": "Metafield {{ key }} to be completed"
+    },
+    "cross_sell": {
+      "heading": "Complete your routine"
     }
   }
 }

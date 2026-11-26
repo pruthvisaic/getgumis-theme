@@ -211,3 +211,65 @@
 .gumis-page { max-width: 80rem; margin: 0 auto; }
 .gumis-page .rte h2 { font-size: 2.6rem; margin-top: 3.2rem; }
 .gumis-page .rte h3 { font-size: 2rem; }
+
+/* ---------- Product page ---------- */
+.product__title h1 { font-size: clamp(3.2rem, 7vw, 4.8rem); line-height: 1.05; }
+.gumis-pdp-tagline { margin: 0.4rem 0 1.2rem; }
+.gumis-pdp-tagline__text { margin: 0 0 1rem; font-size: 1.8rem; font-weight: 700; line-height: 1.4; color: rgb(var(--color-foreground)); }
+.gumis-pdp-tagline__pills { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 0; padding: 0; }
+.gumis-pdp-tagline__pills .gumis-pill { font-size: 1.3rem; padding: 0.5rem 1.2rem; }
+.gumis-pdp-tagline__pills .gumis-icon { --icon-size: 1.6rem; }
+.product__info-container .price { font-size: 2.2rem; font-weight: 800; }
+.product__info-container .price-item { font-weight: 800; }
+.gumis-pdp-qb { margin: 1.6rem 0 0.4rem; }
+.product__info-container .product-form__submit { min-height: 5.6rem; font-size: 1.7rem; }
+.gumis-pdp-benefits { margin: 2.4rem 0; padding: 2rem 2.2rem; border-radius: calc(var(--gumis-radius) * 0.75); background: #fff; color: var(--gumis-plum); }
+.gumis-pdp-benefits__heading { margin: 0 0 1.2rem; }
+.gumis-pdp-info { margin-top: 2.4rem; }
+.gumis-pdp-info .gumis-accordion summary { font-size: 1.7rem; }
+.gumis-mandatory { margin: 1.2rem 0 0; padding-left: 2rem; font-weight: 700; }
+.gumis-mandatory:empty { display: none; }
+.gumis-mandatory li + li { margin-top: 0.6rem; }
+.gumis-reassurance { display: grid; gap: 0.8rem; margin: 1.6rem 0; padding: 0; }
+.gumis-reassurance li { display: flex; align-items: center; gap: 1rem; font-weight: 700; font-size: 1.4rem; }
+.gumis-reassurance .gumis-icon { --icon-size: 2rem; color: var(--gumis-berry); }
+@media screen and (min-width: 750px) {
+  .gumis-reassurance { grid-template-columns: repeat(3, auto); justify-content: start; gap: 2rem; }
+}
+.product__media-wrapper .product__media-item, .product__media-list .product-media-container { border-radius: var(--gumis-radius); overflow: hidden; }
+
+/* Nutrition table */
+.gumis-nutrition__table { width: 100%; border-collapse: collapse; font-size: 1.4rem; }
+.gumis-nutrition__table th, .gumis-nutrition__table td { padding: 1rem 0.8rem; text-align: left; border-bottom: 1px solid rgba(59, 10, 42, 0.12); }
+.gumis-nutrition__table thead th { font-weight: 800; background: var(--gumis-cream); }
+.gumis-nutrition__table td { white-space: nowrap; }
+.gumis-nutrition__table tbody th { font-weight: 600; }
+.gumis-nutrition .gumis-note { margin: 1rem 0 0; }
+
+/* Sticky add to cart (mobile) */
+.gumis-sticky-atc {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  padding: 1rem 1.2rem calc(1rem + env(safe-area-inset-bottom));
+  background: #fff;
+  color: var(--gumis-plum);
+  border-radius: var(--gumis-radius) var(--gumis-radius) 0 0;
+  box-shadow: 0 -0.6rem 2.4rem rgba(59, 10, 42, 0.15);
+  transform: translateY(110%);
+  visibility: hidden;
+  transition: transform 0.25s ease, visibility 0s linear 0.25s;
+}
+.gumis-sticky-atc[data-visible='true'] { transform: translateY(0); visibility: visible; transition: transform 0.25s ease; }
+.gumis-sticky-atc__inner { display: flex; align-items: center; gap: 1.2rem; }
+.gumis-sticky-atc__thumb { width: 4.8rem; height: 4.8rem; object-fit: contain; border-radius: 1.2rem; background: var(--gumis-cream); }
+.gumis-sticky-atc__info { flex: 1; min-width: 0; }
+.gumis-sticky-atc__title { margin: 0; font-weight: 800; font-size: 1.4rem; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gumis-sticky-atc__price { margin: 0; font-weight: 800; font-size: 1.5rem; }
+.gumis-sticky-atc__compare { text-decoration: line-through; font-weight: 600; opacity: 0.75; margin-right: 0.4rem; font-size: 1.3rem; }
+.gumis-sticky-atc__button { min-height: 4.8rem; padding: 0 2rem; white-space: nowrap; }
+@media screen and (min-width: 750px) { .gumis-sticky-atc { display: none; } }
+@media (prefers-reduced-motion: reduce) { .gumis-sticky-atc { transition: none; } }
+@media screen and (max-width: 749px) { body.gumis-has-sticky-atc { padding-bottom: 8rem; } }

@@ -1,0 +1,65 @@
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'gumis.cross_sell.heading' | t
+  endif
+
+  assign source = section.settings.products
+  if source == blank and section.settings.collection != blank
+    assign source = section.settings.collection.products
+  endif
+  if source == blank
+    assign source = collections.all.products
+  endif
+
+  assign shown = 0
+  assign max = section.settings.limit
+-%}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<section
+  class="gumis-section gumis-cross-sell color-{{ section.settings.color_scheme }} gradient"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <header class="gumis-section-header">
+      <h2 class="h1">{{ heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </header>
+    <ul class="gumis-product-grid gumis-product-grid--{{ max }}" role="list">
+      {%- for item in source -%}
+        {%- if item.id != product.id and shown < max -%}
+          {%- assign shown = shown | plus: 1 -%}
+          <li>
+            {%- render 'gumis-product-card', product: item, section_id: section.id -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if shown == 0 and request.design_mode -%}
+        <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Éclat', accent: settings.gumis_berry, section_id: section.id -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Force', accent: settings.gumis_tangerine, section_id: section.id -%}</li>
+      {%- endif -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Cross-sell",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Affiche les autres produits (le produit consulté est exclu automatiquement)." },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Complétez votre routine »" },
+    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
+    { "type": "product_list", "id": "products", "label": "Produits", "limit": 4 },
+    { "type": "collection", "id": "collection", "label": "Ou collection", "info": "Utilisée si aucun produit n'est choisi. Sinon : tous les produits." },
+    { "type": "range", "id": "limit", "label": "Nombre de produits", "min": 1, "max": 3, "step": 1, "default": 2 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-2" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "presets": [ { "name": "Gumis Cross-sell" } ]
+}
+{% endschema %}

@@ -1,0 +1,48 @@
+{% doc %}
+  Sticky add-to-cart bar (mobile only). The button submits the main product form
+  through the form attribute, so quantity breaks and Dawn's cart drawer keep working.
+
+  @param {product} product - The product.
+  @param {string} product_form_id - Id of the main product form.
+  @param {string} section_id - Section id (to watch the main submit button).
+{% enddoc %}
+{%- assign variant = product.selected_or_first_available_variant -%}
+<gumis-sticky-atc
+  class="gumis-sticky-atc"
+  data-watch="ProductSubmitButton-{{ section_id }}"
+  data-visible="false"
+>
+  <div class="gumis-sticky-atc__inner">
+    {%- if product.featured_media != blank -%}
+      {{
+        product.featured_media
+        | image_url: width: 120
+        | image_tag: class: 'gumis-sticky-atc__thumb', loading: 'lazy', alt: '', width: 48, height: 48
+      }}
+    {%- endif -%}
+    <div class="gumis-sticky-atc__info">
+      <p class="gumis-sticky-atc__title">{{ product.title | escape }}</p>
+      <p class="gumis-sticky-atc__price">
+        <span data-gumis-compare-for="{{ product_form_id }}" class="gumis-sticky-atc__compare" hidden></span>
+        <span data-gumis-total-for="{{ product_form_id }}">{{ variant.price | money }}</span>
+      </p>
+    </div>
+    <button
+      type="submit"
+      form="{{ product_form_id }}"
+      name="add"
+      class="button button--primary gumis-sticky-atc__button"
+      tabindex="-1"
+      {% unless variant.available %}
+        disabled
+      {% endunless %}
+    >
+      {%- if variant.available -%}
+        {{- 'gumis.product.add_to_cart' | t -}}
+      {%- else -%}
+        {{- 'products.product.sold_out' | t -}}
+      {%- endif -%}
+    </button>
+  </div>
+</gumis-sticky-atc>
+<script src="{{ 'gumis-sticky-atc.js' | asset_url }}" defer="defer"></script>

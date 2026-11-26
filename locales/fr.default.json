@@ -562,7 +562,13 @@
       "manage": "Gérer les cookies"
     },
     "compliance": {
-      "footer_note": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain."
+      "footer_note": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain.",
+      "dose": "Ne pas dépasser la dose journalière recommandée.",
+      "children": "Tenir hors de la portée des jeunes enfants.",
+      "diet": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain.",
+      "dose_probe": "dose journalière recommandée",
+      "children_probe": "portée des jeunes enfants",
+      "diet_probe": "varié et équilibré"
     },
     "general": {
       "to_complete": "[À COMPLÉTER]"
@@ -621,6 +627,22 @@
       "save_percent": "-{{ percent }} %",
       "you_save": "Vous économisez {{ amount }}",
       "auto_discount_note": "Remise appliquée automatiquement dans le panier."
+    },
+    "pdp": {
+      "tab_ingredients": "Ingrédients",
+      "tab_nutrition": "Valeurs nutritionnelles",
+      "tab_how_to_use": "Conseils d'utilisation",
+      "tab_warnings": "Précautions",
+      "nutrition_label": "Composition",
+      "nutrition_per": "Pour {{ serving }}",
+      "nutrition_per_serving": "Par portion",
+      "nutrition_nrv": "% VNR*",
+      "nutrition_footnote": "* VNR : valeurs nutritionnelles de référence.",
+      "daily_dose": "Dose journalière recommandée :",
+      "missing_metafield": "Métachamp {{ key }} à compléter"
+    },
+    "cross_sell": {
+      "heading": "Complétez votre routine"
     }
   }
 }

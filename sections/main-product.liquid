@@ -685,6 +685,12 @@
                   </product-recommendations>
                 {%- when 'icon-with-text' -%}
                   {% render 'icon-with-text', block: block %}
+                {%- when 'gumis_tagline', 'gumis_quantity_breaks', 'gumis_benefits', 'gumis_info', 'gumis_reassurance' -%}
+                  {% render 'gumis-product-block',
+                    block: block,
+                    product: product,
+                    product_form_id: product_form_id
+                  %}
               {%- endcase -%}
             {%- endfor -%}
             <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -696,6 +702,10 @@
       </div>
 
       {% render 'product-media-modal', variant_images: variant_images %}
+
+      {%- if section.settings.gumis_sticky_atc -%}
+        {% render 'gumis-sticky-atc', product: product, product_form_id: product_form_id, section_id: section.id %}
+      {%- endif -%}
 
       {% assign popups = section.blocks | where: 'type', 'popup' %}
       {%- for block in popups -%}
@@ -2148,6 +2158,255 @@
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
         }
       ]
+    },
+    {
+      "type": "gumis_tagline",
+      "name": "Gumis tagline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Affiche le métachamp custom.tagline et, en pastilles, le format du pot et custom.serving."
+        },
+        {
+          "type": "checkbox",
+          "id": "show_jar",
+          "label": "Pastille « Pot de 60 gummies »",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_serving",
+          "label": "Pastille dose (custom.serving)",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "gumis_quantity_breaks",
+      "name": "Gumis 1/2/3 pots",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Remplace le sélecteur de quantité : retirez le bloc « Sélecteur de quantité » si vous utilisez celui-ci. Les économies viennent des réglages « Gumis — panier & offres »."
+        },
+        {
+          "type": "text",
+          "id": "legend",
+          "label": "Intitulé",
+          "info": "Vide = « Combien de pots ? »"
+        },
+        {
+          "type": "range",
+          "id": "default_quantity",
+          "label": "Quantité présélectionnée",
+          "min": 1,
+          "max": 3,
+          "step": 1,
+          "default": 1
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Disposition",
+          "default": "stack",
+          "options": [
+            {
+              "value": "stack",
+              "label": "Cartes empilées"
+            },
+            {
+              "value": "row",
+              "label": "Cartes en ligne"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gumis_benefits",
+      "name": "Gumis bénéfices",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Liste issue du métachamp custom.benefits (allégations autorisées uniquement)."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Titre"
+        }
+      ]
+    },
+    {
+      "type": "gumis_info",
+      "name": "Gumis infos produit",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Ingrédients, Valeurs nutritionnelles, Conseils d'utilisation et Précautions, depuis les métachamps. Les 3 mentions obligatoires des compléments alimentaires sont toujours affichées."
+        },
+        {
+          "type": "checkbox",
+          "id": "open_first",
+          "label": "Ouvrir « Ingrédients »",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "open_warnings",
+          "label": "Ouvrir « Précautions »",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "gumis_reassurance",
+      "name": "Gumis réassurance",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon_1",
+          "label": "Icône 1",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Livraison"
+            },
+            {
+              "value": "lock",
+              "label": "Paiement"
+            },
+            {
+              "value": "return",
+              "label": "Retours"
+            },
+            {
+              "value": "leaf",
+              "label": "Feuille"
+            },
+            {
+              "value": "gummy",
+              "label": "Gummy"
+            },
+            {
+              "value": "jar",
+              "label": "Pot"
+            },
+            {
+              "value": "chat",
+              "label": "Contact"
+            },
+            {
+              "value": "heart",
+              "label": "Cœur"
+            }
+          ],
+          "default": "truck"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_1",
+          "label": "Texte 1",
+          "default": "Livraison offerte dès [À COMPLÉTER] €"
+        },
+        {
+          "type": "select",
+          "id": "icon_2",
+          "label": "Icône 2",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Livraison"
+            },
+            {
+              "value": "lock",
+              "label": "Paiement"
+            },
+            {
+              "value": "return",
+              "label": "Retours"
+            },
+            {
+              "value": "leaf",
+              "label": "Feuille"
+            },
+            {
+              "value": "gummy",
+              "label": "Gummy"
+            },
+            {
+              "value": "jar",
+              "label": "Pot"
+            },
+            {
+              "value": "chat",
+              "label": "Contact"
+            },
+            {
+              "value": "heart",
+              "label": "Cœur"
+            }
+          ],
+          "default": "lock"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_2",
+          "label": "Texte 2",
+          "default": "Paiement sécurisé"
+        },
+        {
+          "type": "select",
+          "id": "icon_3",
+          "label": "Icône 3",
+          "options": [
+            {
+              "value": "truck",
+              "label": "Livraison"
+            },
+            {
+              "value": "lock",
+              "label": "Paiement"
+            },
+            {
+              "value": "return",
+              "label": "Retours"
+            },
+            {
+              "value": "leaf",
+              "label": "Feuille"
+            },
+            {
+              "value": "gummy",
+              "label": "Gummy"
+            },
+            {
+              "value": "jar",
+              "label": "Pot"
+            },
+            {
+              "value": "chat",
+              "label": "Contact"
+            },
+            {
+              "value": "heart",
+              "label": "Cœur"
+            }
+          ],
+          "default": "return"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_3",
+          "label": "Texte 3",
+          "default": "14 jours pour changer d'avis"
+        }
+      ]
     }
   ],
   "settings": [
@@ -2324,6 +2583,16 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Gumis"
+    },
+    {
+      "type": "checkbox",
+      "id": "gumis_sticky_atc",
+      "label": "Barre d'ajout au panier fixe sur mobile",
+      "default": true
     }
   ]
 }
