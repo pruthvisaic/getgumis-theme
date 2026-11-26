@@ -543,5 +543,26 @@
       "expanded": "Formulaire de destinataire de carte-cadeau agrandi",
       "collapsed": "Formulaire de destinataire de carte-cadeau réduit"
     }
+  },
+  "gumis": {
+    "brand": {
+      "tagline": "Vos vitamines, en version gourmande."
+    },
+    "footer": {
+      "legal_heading": "Infos légales",
+      "legal": {
+        "cgv": "CGV",
+        "mentions": "Mentions légales",
+        "privacy": "Politique de confidentialité",
+        "cookies": "Politique cookies",
+        "withdrawal": "Droit de rétractation (14 jours)"
+      }
+    },
+    "cookies": {
+      "manage": "Gérer les cookies"
+    },
+    "compliance": {
+      "footer_note": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain."
+    }
   }
 }

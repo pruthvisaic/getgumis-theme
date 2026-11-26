@@ -68,7 +68,7 @@
           >
             {%- for block in section.blocks -%}
               <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="footer-block grid__item{% if block.type == 'link_list' or block.type == 'gumis_legal' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
@@ -82,6 +82,71 @@
                 {%- case block.type -%}
                   {%- when '@app' -%}
                     {% render block %}
+                  {%- when 'gumis_brand' -%}
+                    <div class="footer-block__brand-info gumis-footer-brand">
+                      <a href="{{ routes.root_url }}" class="gumis-footer-brand__logo">
+                        {%- render 'logo', size: '4.2rem', light: block.settings.light_logo -%}
+                      </a>
+                      {%- liquid
+                        assign tagline = block.settings.tagline
+                        if tagline == blank
+                          assign tagline = settings.gumis_tagline
+                        endif
+                        if tagline == blank
+                          assign tagline = 'gumis.brand.tagline' | t
+                        endif
+                      -%}
+                      <p class="gumis-footer-brand__tagline">{{ tagline | escape }}</p>
+                      {%- if block.settings.text != blank -%}
+                        <div class="rte">{{ block.settings.text }}</div>
+                      {%- endif -%}
+                      {%- if block.settings.show_social and has_social_icons -%}
+                        {%- render 'social-icons', class: 'footer__list-social' -%}
+                      {%- endif -%}
+                    </div>
+                  {%- when 'gumis_legal' -%}
+                    {%- if block.settings.heading == blank -%}
+                      <h2 class="footer-block__heading">{{ 'gumis.footer.legal_heading' | t }}</h2>
+                    {%- endif -%}
+                    {%- liquid
+                      assign legal_ids = 'cgv,mentions,privacy,cookies,withdrawal' | split: ','
+                      assign legal_handles = 'cgv,mentions-legales,politique-de-confidentialite,politique-cookies,droit-de-retractation' | split: ','
+                    -%}
+                    <ul class="footer-block__details-content list-unstyled">
+                      {%- for id in legal_ids -%}
+                        {%- liquid
+                          assign setting_key = 'page_' | append: id
+                          assign legal_page = block.settings[setting_key]
+                          if legal_page != blank
+                            assign legal_url = legal_page.url
+                          else
+                            assign legal_url = routes.root_url | append: '/pages/' | append: legal_handles[forloop.index0] | replace: '//', '/'
+                          endif
+                          assign label_key = 'gumis.footer.legal.' | append: id
+                        -%}
+                        <li>
+                          <a href="{{ legal_url }}" class="link link--text list-menu__item list-menu__item--link">
+                            {{- label_key | t -}}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                      {%- if block.settings.menu != blank -%}
+                        {%- for link in block.settings.menu.links -%}
+                          <li>
+                            <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link">
+                              {{- link.title | escape -}}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      {%- endif -%}
+                      {%- if settings.gumis_cookie_banner -%}
+                        <li>
+                          <button type="button" class="gumis-footer-cookie-link link link--text list-menu__item" data-gumis-open-consent>
+                            {{- 'gumis.cookies.manage' | t -}}
+                          </button>
+                        </li>
+                      {%- endif -%}
+                    </ul>
                   {%- when 'text' -%}
                     <div class="footer-block__details-content rte">
                       {{ block.settings.subtext }}
@@ -297,6 +362,15 @@
         {%- endif -%}
       </div>
     </div>
+    {%- if section.settings.show_supplement_note -%}
+      <p class="gumis-footer-note page-width">
+        {%- if section.settings.supplement_note != blank -%}
+          {{- section.settings.supplement_note | escape -}}
+        {%- else -%}
+          {{- 'gumis.compliance.footer_note' | t -}}
+        {%- endif -%}
+      </p>
+    {%- endif -%}
     <div class="footer__content-bottom-wrapper page-width{% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__copyright caption">
         <small class="copyright__content"
@@ -327,6 +401,82 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "gumis_brand",
+      "name": "Gumis — logo & tagline",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "tagline",
+          "label": "Tagline",
+          "info": "Vide = tagline des paramètres du thème, sinon traduction par défaut."
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texte"
+        },
+        {
+          "type": "checkbox",
+          "id": "light_logo",
+          "label": "Logo clair (fond sombre)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_social",
+          "label": "Afficher les réseaux sociaux",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "gumis_legal",
+      "name": "Gumis — liens légaux",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Sélectionnez vos pages légales. Si une page n'est pas choisie, le lien pointe vers /pages/<identifiant conseillé> (voir README)."
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "label": "Titre (vide = « Infos légales »)"
+        },
+        {
+          "type": "page",
+          "id": "page_cgv",
+          "label": "CGV"
+        },
+        {
+          "type": "page",
+          "id": "page_mentions",
+          "label": "Mentions légales"
+        },
+        {
+          "type": "page",
+          "id": "page_privacy",
+          "label": "Politique de confidentialité"
+        },
+        {
+          "type": "page",
+          "id": "page_cookies",
+          "label": "Politique cookies"
+        },
+        {
+          "type": "page",
+          "id": "page_withdrawal",
+          "label": "Droit de rétractation (14 jours)"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Liens supplémentaires (menu)"
+        }
+      ]
     },
     {
       "type": "link_list",
@@ -424,6 +574,18 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_supplement_note",
+      "label": "Afficher la mention « compléments alimentaires »",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "supplement_note",
+      "label": "Texte de la mention",
+      "info": "Vide = mention obligatoire traduite par défaut."
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
@@ -534,7 +696,13 @@
   "default": {
     "blocks": [
       {
+        "type": "gumis_brand"
+      },
+      {
         "type": "link_list"
+      },
+      {
+        "type": "gumis_legal"
       },
       {
         "type": "text"

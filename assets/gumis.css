@@ -137,9 +137,9 @@ b, strong { font-weight: 800; }
 .gumis-logo__dot {
   position: absolute;
   left: 50%;
-  top: -0.02em;
-  width: 0.3em;
-  height: 0.27em;
+  top: 0.115em;
+  width: 0.205em;
+  height: 0.185em;
   transform: translateX(-50%) rotate(-12deg);
   background: var(--gumis-logo-dot);
   border-radius: 58% 42% 55% 45% / 52% 60% 40% 48%;
@@ -338,3 +338,36 @@ b, strong { font-weight: 800; }
 @media (prefers-reduced-motion: reduce) {
   .gumis-pcard, .button, .gumis-qb__card { transition: none; }
 }
+
+/* ---------- Header ---------- */
+.header__heading-link { padding: 0.4rem 0; }
+.header__heading-link .gumis-logo { --logo-size: 3rem; }
+@media screen and (min-width: 990px) { .header__heading-link .gumis-logo { --logo-size: 3.6rem; } }
+.header__menu-item { font-weight: 700; }
+.cart-count-bubble { background-color: var(--gumis-berry); color: #fff; }
+
+/* ---------- Footer ---------- */
+.footer { position: relative; overflow: hidden; border-top: 0; }
+.footer .footer-block__heading { font-family: var(--font-heading-family); font-weight: 600; font-size: 1.8rem; }
+.gumis-footer-brand__logo { display: inline-block; text-decoration: none; margin-bottom: 0.8rem; }
+.gumis-footer-brand__tagline { margin: 0 0 1.2rem; font-weight: 700; font-size: 1.6rem; }
+.gumis-footer-cookie-link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: rgba(var(--color-foreground), 0.75);
+  text-align: left;
+}
+.gumis-footer-cookie-link:hover { color: rgb(var(--color-foreground)); text-decoration: underline; }
+.gumis-footer-note {
+  margin: 0 auto 1.6rem;
+  padding: 1.4rem 2rem;
+  border-radius: var(--gumis-radius-sm);
+  background: rgba(var(--color-foreground), 0.08);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.footer__content-bottom { border-top-color: rgba(var(--color-foreground), 0.15); }

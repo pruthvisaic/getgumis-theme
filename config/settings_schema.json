@@ -1557,8 +1557,7 @@
         "type": "number",
         "id": "gumis_free_shipping_threshold",
         "label": "Seuil de livraison offerte (€ TTC)",
-        "info": "Doit correspondre au tarif d'expédition gratuit configuré dans Paramètres > Expédition.",
-        "default": 39
+        "info": "Laisser vide pour masquer la barre. Doit correspondre au tarif d'expédition gratuit configuré dans Paramètres > Expédition et livraison."
       },
       {
         "type": "header",

@@ -278,7 +278,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -531,6 +530,27 @@
       "max_characters": "{{ max_chars }} characters max",
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
+    }
+  },
+  "gumis": {
+    "brand": {
+      "tagline": "Your vitamins, made tasty."
+    },
+    "footer": {
+      "legal_heading": "Legal",
+      "legal": {
+        "cgv": "Terms of sale",
+        "mentions": "Legal notice",
+        "privacy": "Privacy policy",
+        "cookies": "Cookie policy",
+        "withdrawal": "14-day right of withdrawal"
+      }
+    },
+    "cookies": {
+      "manage": "Manage cookies"
+    },
+    "compliance": {
+      "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle."
     }
   }
 }

@@ -4,21 +4,59 @@
   "sections": {
     "footer": {
       "type": "footer",
-      "blocks": {},
-      "block_order": [],
+      "blocks": {
+        "brand": {
+          "type": "gumis_brand",
+          "settings": {
+            "tagline": "",
+            "text": "",
+            "light_logo": true,
+            "show_social": true
+          }
+        },
+        "shop": {
+          "type": "link_list",
+          "settings": {
+            "heading": "La boutique",
+            "menu": "footer"
+          }
+        },
+        "legal": {
+          "type": "gumis_legal",
+          "settings": {
+            "heading": "",
+            "menu": ""
+          }
+        },
+        "contact": {
+          "type": "text",
+          "settings": {
+            "heading": "Une question ?",
+            "subtext": "<p>Écris-nous via la page <a href=\"/pages/contact\" title=\"Contact\">Contact</a> ou à [À COMPLÉTER : e-mail du service client]. On répond du lundi au vendredi.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "shop",
+        "legal",
+        "contact"
+      ],
       "settings": {
-        "color_scheme": "scheme-1",
-        "newsletter_enable": true,
-        "newsletter_heading": "Subscribe to our emails",
-        "enable_follow_on_shop": true,
-        "show_social": true,
-        "enable_country_selector": true,
+        "show_supplement_note": true,
+        "supplement_note": "",
+        "color_scheme": "scheme-3",
+        "newsletter_enable": false,
+        "newsletter_heading": "",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
         "enable_language_selector": true,
         "payment_enable": true,
-        "show_policy": true,
+        "show_policy": false,
         "margin_top": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 56,
+        "padding_bottom": 32
       }
     }
   },
