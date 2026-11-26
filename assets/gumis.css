@@ -312,12 +312,12 @@ b, strong { font-weight: 700; }
 .g-hero__copy { display: flex; flex-direction: column; gap: 2.2rem; align-items: flex-start; }
 .g-hero__title {
   margin: 0;
-  font-size: clamp(4.2rem, 5.4vw, 7rem);
+  font-size: clamp(4.2rem, 5.6vw, 7.6rem);
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
 .g-hero__title em, .g-hero__title i { font-style: normal; color: var(--gumis-berry); }
-.g-hero__lede { margin: 0; font-size: 1.8rem; line-height: 1.6; color: var(--gumis-ink-2); max-width: 46rem; }
+.g-hero__lede { margin: 0; font-size: clamp(1.7rem, 1.4vw, 1.9rem); line-height: 1.6; color: var(--gumis-ink-2); max-width: 46rem; }
 .g-hero__ctas { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .g-ticks { display: flex; flex-wrap: wrap; gap: 0.8rem 2rem; list-style: none; margin: 0.4rem 0 0; padding: 0; font-size: 1.4rem; font-weight: 600; color: var(--gumis-ink-2); }
 .g-ticks li { display: flex; align-items: center; gap: 0.6rem; }
@@ -573,3 +573,21 @@ b, strong { font-weight: 700; }
 
 /* Dawn hides empty divs; plain jar labels (stack back jars) must stay visible */
 .g-jar__label:empty, .g-jar__lid:empty { display: flex; }
+
+/* ---------- Polish pass ---------- */
+.g-band .g-compare-wrap { background: #fff; }
+.g-band .g-compare thead th { background: #fff; }
+@media screen and (max-width: 749px) {
+  .g-hero__media { aspect-ratio: 1 / 0.8; margin-top: -0.8rem; }
+  .g-hero__jar { width: 42%; margin-top: 8%; }
+  .g-hero__media .g-chip--a { top: 1%; right: 0; }
+  .g-hero__media .g-chip--b { bottom: 3%; left: 0; }
+  .g-hero__copy { gap: 1.8rem; }
+  .g-trust { margin-top: -6.4rem; }
+  .g-trust__list { grid-template-columns: minmax(0, 1fr); row-gap: 0; padding: 0.4rem 1.8rem; }
+  .g-trust__list li { padding: 1.4rem 0; }
+  .g-trust__list li + li { border-top: 1px solid var(--gumis-line); }
+  .g-trust__list b { display: inline; margin-right: 0.4rem; }
+  .g-head { margin-bottom: 2.8rem; }
+  .g-statement { padding: 5.6rem 0; }
+}

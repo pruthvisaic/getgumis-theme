@@ -14,7 +14,7 @@
 -%}
 <section
   id="{{ section.settings.anchor | default: 'gumis-compare' | handleize }}"
-  class="g-section"
+  class="g-section{% if section.settings.background != 'none' %} g-band g-tile--{{ section.settings.background }}{% endif %}"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="g-container">
@@ -90,6 +90,30 @@
       "type": "richtext",
       "id": "footnote",
       "label": "Footnote"
+    },
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "White"
+        },
+        {
+          "value": "blush",
+          "label": "Blush"
+        },
+        {
+          "value": "peach",
+          "label": "Peach"
+        },
+        {
+          "value": "lilac",
+          "label": "Lilac"
+        }
+      ]
     },
     {
       "type": "text",
