@@ -141,7 +141,7 @@ b, strong { font-weight: 700; }
 }
 .gumis-logo__word { display: inline-flex; align-items: baseline; }
 .gumis-logo__prefix { color: var(--gumis-logo-prefix); }
-.gumis-logo--light { --gumis-logo: #fff; --gumis-logo-prefix: #fff; }
+.gumis-logo--light { --gumis-logo: #fff; --gumis-logo-prefix: var(--gumis-bubblegum); }
 
 /* ---------- Icons ---------- */
 .gumis-icon {
