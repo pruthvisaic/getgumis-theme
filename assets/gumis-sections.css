@@ -352,3 +352,10 @@
   .gumis-consent__actions { grid-template-columns: repeat(3, auto); justify-content: start; }
   .gumis-consent__actions [data-consent='customize'], .gumis-consent__actions [data-consent='save'] { grid-column: auto; }
 }
+
+/* Mobile: keep decorative blobs away from hero text; keep jar lids visible on dark accents */
+@media screen and (max-width: 749px) {
+  .gumis-blobs--hero .gumis-blob:first-child { --size: 9rem !important; top: auto !important; bottom: 30%; right: -3.5rem !important; }
+  .gumis-blobs--hero .gumis-blob:nth-child(3) { display: none; }
+}
+.gumis-jar__lid { box-shadow: inset 0 -0.4rem 0 rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(255, 244, 236, 0.55); }
