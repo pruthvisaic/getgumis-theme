@@ -1,0 +1,340 @@
+/* ==========================================================================
+   Gumis — global brand layer on top of Dawn
+   Tokens are defined in snippets/gumis-fonts.liquid (--gumis-*).
+   ========================================================================== */
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, .h0, .h1, .h2, .h3, .h4, .h5 {
+  font-family: var(--font-heading-family);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: rgb(var(--color-foreground));
+}
+.h4, h4, .h5, h5 { font-weight: 600; }
+body { letter-spacing: 0.01em; }
+b, strong { font-weight: 800; }
+
+.gumis-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  background: var(--gumis-bubblegum);
+  color: var(--gumis-plum);
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.color-scheme-2 .gumis-eyebrow,
+.color-scheme-4 .gumis-eyebrow { background: var(--gumis-cream); }
+
+.gumis-section-header { text-align: center; max-width: 72rem; margin: 0 auto 3.2rem; }
+.gumis-section-header > *:last-child { margin-bottom: 0; }
+.gumis-section-header p { font-size: 1.7rem; color: rgba(var(--color-foreground), 0.85); }
+.gumis-section-header--left { text-align: left; margin-left: 0; }
+
+/* ---------- Buttons (pill) ---------- */
+.button, .shopify-challenge__button, .customer button {
+  font-family: var(--font-body-family);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  min-height: 4.8rem;
+  padding: 0 2.8rem;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+.button:not([disabled]):hover { transform: translateY(-1px); }
+.button:not([disabled]):active { transform: translateY(1px); }
+.button--large { min-height: 5.6rem; font-size: 1.7rem; padding: 0 3.6rem; }
+.gumis-button-row { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+
+:focus-visible { outline-color: var(--gumis-berry); }
+.color-scheme-4 :focus-visible,
+.color-scheme-3 :focus-visible { outline-color: var(--gumis-cream); }
+
+/* ---------- Rounded blocks ---------- */
+.gumis-card {
+  position: relative;
+  border-radius: var(--gumis-radius);
+  background: #fff;
+  color: var(--gumis-plum);
+  overflow: hidden;
+}
+.gumis-rounded { border-radius: var(--gumis-radius); overflow: hidden; }
+
+/* ---------- Decorative gummy blobs (always aria-hidden) ---------- */
+.gumis-blobs { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+.gumis-blob {
+  position: absolute;
+  display: block;
+  width: var(--size, 12rem);
+  height: var(--size, 12rem);
+  background: var(--blob-color, var(--gumis-bubblegum));
+  border-radius: 62% 38% 54% 46% / 49% 58% 42% 51%;
+  opacity: var(--blob-opacity, 1);
+  transform: rotate(var(--rotate, 0deg));
+}
+.gumis-blob--b { border-radius: 42% 58% 37% 63% / 56% 41% 59% 44%; }
+.gumis-blob--c { border-radius: 50% 50% 46% 54% / 60% 60% 40% 40%; }
+.gumis-blob--shine::after {
+  content: '';
+  position: absolute;
+  top: 18%; left: 22%;
+  width: 22%; height: 14%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: rotate(-25deg);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gumis-blob--float { animation: gumis-float 7s ease-in-out infinite; }
+  .gumis-blob--float.gumis-blob--b { animation-duration: 9s; animation-delay: -2s; }
+}
+@keyframes gumis-float {
+  0%, 100% { transform: translateY(0) rotate(var(--rotate, 0deg)); }
+  50% { transform: translateY(-10px) rotate(calc(var(--rotate, 0deg) + 6deg)); }
+}
+.gumis-relative { position: relative; z-index: 1; }
+
+/* ---------- Icons ---------- */
+.gumis-icon {
+  width: var(--icon-size, 2.4rem);
+  height: var(--icon-size, 2.4rem);
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.gumis-icon-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 46% 54% 50% 50% / 55% 45% 55% 45%;
+  background: var(--accent, var(--gumis-bubblegum));
+  color: var(--accent-ink, var(--gumis-plum));
+  --icon-size: 2.8rem;
+}
+
+/* ---------- Logo ---------- */
+.gumis-logo {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: 'Fredoka', var(--font-heading-family);
+  font-weight: 700;
+  font-size: var(--logo-size, 3.2rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--gumis-logo);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.gumis-logo__i { position: relative; display: inline-block; }
+.gumis-logo__dot {
+  position: absolute;
+  left: 50%;
+  top: -0.02em;
+  width: 0.3em;
+  height: 0.27em;
+  transform: translateX(-50%) rotate(-12deg);
+  background: var(--gumis-logo-dot);
+  border-radius: 58% 42% 55% 45% / 52% 60% 40% 48%;
+}
+.gumis-logo__dot::after {
+  content: '';
+  position: absolute;
+  top: 18%; left: 22%;
+  width: 30%; height: 22%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+.gumis-logo--light { --gumis-logo: var(--gumis-cream); }
+
+/* ---------- Pills, tags, notes ---------- */
+.gumis-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 1rem;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: var(--gumis-plum);
+  color: var(--gumis-cream);
+}
+.gumis-pill--accent { background: var(--accent, var(--gumis-berry)); color: var(--accent-ink, #fff); }
+.gumis-pill--soft { background: var(--gumis-bubblegum); color: var(--gumis-plum); }
+
+.gumis-note { font-size: 1.3rem; color: rgba(var(--color-foreground), 0.8); }
+.gumis-placeholder-text {
+  background: var(--gumis-bubblegum);
+  color: var(--gumis-plum);
+  padding: 0 0.4rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+}
+
+/* ---------- Product card (home trio, collection, cross-sell) ---------- */
+.gumis-product-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 750px) {
+  .gumis-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem; }
+}
+@media screen and (min-width: 990px) {
+  .gumis-product-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.gumis-product-grid--2 { max-width: 84rem; margin: 0 auto; }
+
+.gumis-pcard {
+  --accent: var(--gumis-berry);
+  --accent-ink: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: var(--gumis-radius);
+  background: #fff;
+  color: var(--gumis-plum);
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0 rgba(59, 10, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gumis-pcard:hover { transform: translateY(-3px); box-shadow: 0 1.2rem 2.4rem rgba(59, 10, 42, 0.1); }
+.gumis-pcard__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--accent);
+  overflow: hidden;
+}
+.gumis-pcard__media::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  right: -18%;
+  bottom: -22%;
+  border-radius: 62% 38% 54% 46% / 49% 58% 42% 51%;
+  background: rgba(255, 255, 255, 0.16);
+}
+.gumis-pcard__media img,
+.gumis-pcard__media .placeholder-svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.6rem;
+}
+.gumis-pcard__media .placeholder-svg { fill: rgba(255, 255, 255, 0.5); background: transparent; }
+.gumis-pcard__badge { position: absolute; top: 1.4rem; left: 1.4rem; z-index: 1; }
+.gumis-pcard__body { display: flex; flex-direction: column; gap: 0.8rem; padding: 2rem 2rem 2.4rem; flex: 1; }
+.gumis-pcard__title { margin: 0; font-size: 2.2rem; line-height: 1.15; }
+.gumis-pcard__title a { color: inherit; text-decoration: none; }
+.gumis-pcard__title a::after { content: ''; position: absolute; inset: 0; z-index: 0; }
+.gumis-pcard { position: relative; }
+.gumis-pcard__benefit { margin: 0; color: rgba(59, 10, 42, 0.85); font-size: 1.5rem; line-height: 1.45; }
+.gumis-pcard__meta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: auto; padding-top: 0.8rem; }
+.gumis-pcard__price { font-weight: 800; font-size: 1.8rem; }
+.gumis-pcard__price .price { margin: 0; }
+.gumis-pcard__price .price-item { font-weight: 800; }
+.gumis-pcard__unit { display: block; font-size: 1.2rem; font-weight: 600; color: rgba(59, 10, 42, 0.75); }
+.gumis-pcard__form { position: relative; z-index: 1; }
+.gumis-pcard__form .button { width: 100%; background-color: var(--gumis-plum); color: var(--gumis-cream); --color-button: 59, 10, 42; }
+.gumis-pcard__actions { position: relative; z-index: 1; margin-top: 1.2rem; }
+
+/* ---------- Quantity breaks (product page + bundle section) ---------- */
+.gumis-qb { border: 0; margin: 0 0 1.6rem; padding: 0; min-width: 0; }
+.gumis-qb__legend { font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem; padding: 0; }
+.gumis-qb__options { display: grid; gap: 1rem; }
+@media screen and (min-width: 750px) {
+  .gumis-qb--row .gumis-qb__options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.gumis-qb__option { position: relative; display: block; }
+.gumis-qb__input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.gumis-qb__card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.6rem 1.8rem;
+  border: 2px solid rgba(59, 10, 42, 0.15);
+  border-radius: calc(var(--gumis-radius) * 0.75);
+  background: #fff;
+  color: var(--gumis-plum);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.gumis-qb--row .gumis-qb__card { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 2rem 1.4rem; }
+.gumis-qb__card:hover { border-color: rgba(59, 10, 42, 0.4); }
+.gumis-qb__input:checked + .gumis-qb__card {
+  border-color: var(--accent, var(--gumis-berry));
+  box-shadow: 0 0 0 2px var(--accent, var(--gumis-berry));
+  background: var(--gumis-cream);
+}
+.gumis-qb__input:focus-visible + .gumis-qb__card { outline: 2px solid var(--gumis-plum); outline-offset: 3px; }
+.gumis-qb__radio {
+  width: 2.2rem; height: 2.2rem;
+  border-radius: 50%;
+  border: 2px solid rgba(59, 10, 42, 0.4);
+  display: grid; place-items: center;
+}
+.gumis-qb__input:checked + .gumis-qb__card .gumis-qb__radio { border-color: var(--accent, var(--gumis-berry)); }
+.gumis-qb__input:checked + .gumis-qb__card .gumis-qb__radio::after {
+  content: ''; width: 1rem; height: 1rem; border-radius: 50%; background: var(--accent, var(--gumis-berry));
+}
+.gumis-qb--row .gumis-qb__radio { display: none; }
+.gumis-qb__jars { display: flex; gap: 0.3rem; justify-content: center; }
+.gumis-qb__jar { width: 1.6rem; height: 2rem; border-radius: 0.5rem 0.5rem 0.6rem 0.6rem; background: var(--accent, var(--gumis-berry)); position: relative; }
+.gumis-qb__jar::before { content: ''; position: absolute; top: -0.4rem; left: 0.15rem; right: 0.15rem; height: 0.5rem; border-radius: 0.3rem; background: var(--gumis-plum); }
+.gumis-qb__label { display: flex; flex-direction: column; gap: 0.2rem; }
+.gumis-qb__title { font-family: var(--font-heading-family); font-weight: 700; font-size: 1.9rem; line-height: 1.2; }
+.gumis-qb__sub { font-size: 1.3rem; color: rgba(59, 10, 42, 0.8); }
+.gumis-qb__price { text-align: right; display: flex; flex-direction: column; gap: 0.2rem; font-weight: 800; font-size: 1.7rem; }
+.gumis-qb--row .gumis-qb__price { text-align: center; }
+.gumis-qb__compare { font-weight: 600; font-size: 1.3rem; text-decoration: line-through; color: rgba(59, 10, 42, 0.7); }
+.gumis-qb__save { position: absolute; top: -1rem; right: 1.4rem; }
+.gumis-qb--row .gumis-qb__save { right: 50%; transform: translateX(50%); white-space: nowrap; }
+.gumis-qb__footnote { margin: 1rem 0 0; font-size: 1.3rem; color: rgba(var(--color-foreground), 0.8); }
+
+/* ---------- Lists ---------- */
+.gumis-check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+.gumis-check-list li { display: flex; align-items: flex-start; gap: 1rem; font-weight: 600; }
+.gumis-check-list .gumis-icon { --icon-size: 2.2rem; color: var(--accent, var(--gumis-berry)); margin-top: 0.1rem; }
+
+/* ---------- Accordions ---------- */
+.gumis-accordion { border-radius: calc(var(--gumis-radius) * 0.75); background: #fff; color: var(--gumis-plum); margin-bottom: 1.2rem; overflow: hidden; }
+.color-scheme-6 .gumis-accordion { background: var(--gumis-cream); }
+.gumis-accordion summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  padding: 1.8rem 2.2rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 1.3;
+}
+.gumis-accordion summary::-webkit-details-marker { display: none; }
+.gumis-accordion summary .gumis-icon { transition: transform 0.2s ease; }
+.gumis-accordion[open] summary .gumis-icon { transform: rotate(45deg); }
+.gumis-accordion__content { padding: 0 2.2rem 2.2rem; line-height: 1.6; }
+.gumis-accordion__content > *:first-child { margin-top: 0; }
+.gumis-accordion__content > *:last-child { margin-bottom: 0; }
+
+/* ---------- Utility ---------- */
+.gumis-visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) {
+  .gumis-pcard, .button, .gumis-qb__card { transition: none; }
+}

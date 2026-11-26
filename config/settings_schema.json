@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "16.2.0",
-    "theme_author": "Shopify",
+    "theme_name": "Gumis",
+    "theme_version": "1.0.0",
+    "theme_author": "Gumis",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_support_url": "https://help.shopify.com"
   },
   {
     "name": "t:settings_schema.logo.name",
@@ -102,17 +102,100 @@
     ]
   },
   {
-    "name": "t:settings_schema.typography.name",
+    "name": "Gumis — marque",
     "settings": [
       {
         "type": "header",
-        "content": "t:settings_schema.typography.settings.header__1.content"
+        "content": "Couleurs de marque"
       },
       {
-        "type": "font_picker",
-        "id": "type_header_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label"
+        "type": "paragraph",
+        "content": "Ces couleurs alimentent les formes décoratives, le logo, les cartes produit et les composants Gumis. Les palettes de sections se règlent dans « Couleurs »."
+      },
+      {
+        "type": "color",
+        "id": "gumis_berry",
+        "label": "Berry (principale)",
+        "default": "#D6246E"
+      },
+      {
+        "type": "color",
+        "id": "gumis_plum",
+        "label": "Plum (texte, sections sombres)",
+        "default": "#3B0A2A"
+      },
+      {
+        "type": "color",
+        "id": "gumis_tangerine",
+        "label": "Tangerine (accent)",
+        "default": "#FF8A3D"
+      },
+      {
+        "type": "color",
+        "id": "gumis_bubblegum",
+        "label": "Bubblegum (fonds doux)",
+        "default": "#FFD3E2"
+      },
+      {
+        "type": "color",
+        "id": "gumis_cream",
+        "label": "Cream (fond de page)",
+        "default": "#FFF4EC"
+      },
+      {
+        "type": "header",
+        "content": "Formes"
+      },
+      {
+        "type": "range",
+        "id": "gumis_radius",
+        "label": "Arrondi des blocs",
+        "min": 16,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "default": 28
+      },
+      {
+        "type": "checkbox",
+        "id": "gumis_show_blobs",
+        "label": "Afficher les formes décoratives « gummies »",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Logo texte"
+      },
+      {
+        "type": "paragraph",
+        "content": "Sans image de logo, le thème affiche le logo « gumis » (Fredoka Bold, point du i en gummy orange)."
+      },
+      {
+        "type": "color",
+        "id": "gumis_logo_color",
+        "label": "Couleur du logo",
+        "default": "#3B0A2A"
+      },
+      {
+        "type": "color",
+        "id": "gumis_logo_dot_color",
+        "label": "Couleur du point gummy",
+        "default": "#FF8A3D"
+      },
+      {
+        "type": "text",
+        "id": "gumis_tagline",
+        "label": "Signature (tagline)",
+        "info": "Laisser vide pour utiliser la traduction par défaut : « Vos vitamines, en version gourmande. »"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Les polices Fredoka (titres) et Nunito (texte) sont auto-hébergées dans le thème (licence SIL OFL). Aucune police n'est chargée depuis un CDN externe."
       },
       {
         "type": "range",
@@ -123,16 +206,6 @@
         "unit": "%",
         "label": "t:settings_schema.typography.settings.heading_scale.label",
         "default": 100
-      },
-      {
-        "type": "header",
-        "content": "t:settings_schema.typography.settings.header__2.content"
-      },
-      {
-        "type": "font_picker",
-        "id": "type_body_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label"
       },
       {
         "type": "range",
@@ -1464,6 +1537,98 @@
         "id": "customer_account_menu",
         "default": "customer-account-main-menu",
         "label": "t:settings_schema.customer_accounts.settings.customer_account_menu.label"
+      }
+    ]
+  },
+  {
+    "name": "Gumis — panier & offres",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Livraison offerte"
+      },
+      {
+        "type": "checkbox",
+        "id": "gumis_free_shipping_enabled",
+        "label": "Afficher la barre de livraison offerte",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "gumis_free_shipping_threshold",
+        "label": "Seuil de livraison offerte (€ TTC)",
+        "info": "Doit correspondre au tarif d'expédition gratuit configuré dans Paramètres > Expédition.",
+        "default": 39
+      },
+      {
+        "type": "header",
+        "content": "Offres multi-pots"
+      },
+      {
+        "type": "paragraph",
+        "content": "Les remises sont appliquées par des réductions automatiques Shopify (voir README). Indiquez ici les MÊMES pourcentages pour afficher l'économie. Laisser 0 pour ne rien afficher."
+      },
+      {
+        "type": "range",
+        "id": "gumis_bundle_discount_2",
+        "label": "Remise pour 2 pots (%)",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "%",
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "gumis_bundle_discount_3",
+        "label": "Remise pour 3 pots (%)",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "%",
+        "default": 0
+      },
+      {
+        "type": "checkbox",
+        "id": "gumis_cart_bundle_upsell",
+        "label": "Suggérer le palier suivant dans le panier",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Gumis — cookies & RGPD",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Bannière de consentement reliée à l'API Customer Privacy de Shopify. Les pixels des applis Facebook & Instagram et Google & YouTube respectent ce consentement. Désactivez la bannière Shopify native dans Paramètres > Confidentialité client si vous utilisez celle-ci."
+      },
+      {
+        "type": "checkbox",
+        "id": "gumis_cookie_banner",
+        "label": "Activer la bannière cookies du thème",
+        "default": true
+      },
+      {
+        "type": "page",
+        "id": "gumis_cookie_page",
+        "label": "Page « Politique cookies »"
+      },
+      {
+        "type": "select",
+        "id": "gumis_cookie_position",
+        "label": "Position de la bannière",
+        "options": [
+          {
+            "value": "bottom",
+            "label": "En bas"
+          },
+          {
+            "value": "center",
+            "label": "Au centre"
+          }
+        ],
+        "default": "bottom"
       }
     ]
   }
