@@ -58,40 +58,121 @@
 
 {% schema %}
 {
-  "name": "Gumis Gummies vs gélules",
+  "name": "Gumis Gummies vs capsules",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Comparer" },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
-    { "type": "text", "id": "col_gummies", "label": "Colonne 1", "info": "Vide = « Gummies gumis »" },
-    { "type": "text", "id": "col_capsules", "label": "Colonne 2", "info": "Vide = « Gélules classiques »" },
-    { "type": "richtext", "id": "footnote", "label": "Note de bas de section" },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-compare" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Compare"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "text",
+      "id": "col_gummies",
+      "label": "Column 1",
+      "info": "Empty = \"gumis gummies\""
+    },
+    {
+      "type": "text",
+      "id": "col_capsules",
+      "label": "Column 2",
+      "info": "Empty = \"Classic capsules\""
+    },
+    {
+      "type": "richtext",
+      "id": "footnote",
+      "label": "Footnote"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Anchor (id)",
+      "default": "gumis-compare"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    }
   ],
   "blocks": [
     {
       "type": "row",
-      "name": "Ligne",
+      "name": "Row",
       "limit": 8,
       "settings": [
-        { "type": "inline_richtext", "id": "criterion", "label": "Critère", "default": "Critère" },
-        { "type": "inline_richtext", "id": "gummies", "label": "Gummies", "default": "[À COMPLÉTER]" },
         {
-          "type": "select", "id": "gummies_icon", "label": "Icône gummies", "default": "check",
-          "options": [ { "value": "check", "label": "Coche" }, { "value": "none", "label": "Aucune" } ]
+          "type": "inline_richtext",
+          "id": "criterion",
+          "label": "Criterion",
+          "default": "Criterion"
         },
-        { "type": "inline_richtext", "id": "capsules", "label": "Gélules", "default": "[À COMPLÉTER]" }
+        {
+          "type": "inline_richtext",
+          "id": "gummies",
+          "label": "Gummies",
+          "default": "[TO COMPLETE]"
+        },
+        {
+          "type": "select",
+          "id": "gummies_icon",
+          "label": "Gummies icon",
+          "default": "check",
+          "options": [
+            {
+              "value": "check",
+              "label": "Check"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "type": "inline_richtext",
+          "id": "capsules",
+          "label": "Capsules",
+          "default": "[TO COMPLETE]"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Gumis Gummies vs gélules",
+      "name": "Gumis Gummies vs capsules",
       "blocks": [
-        { "type": "row", "settings": { "criterion": "Comment on les prend", "gummies": "À croquer, sans eau", "capsules": "À avaler avec un verre d'eau" } }
+        {
+          "type": "row",
+          "settings": {
+            "criterion": "How you take them",
+            "gummies": "Chewable, no water needed",
+            "capsules": "Swallowed with a glass of water"
+          }
+        }
       ]
     }
   ]

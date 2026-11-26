@@ -1,4 +1,4 @@
-/* Gumis — cart drawer upsell: "+1 pot" bumps the most recently added line by one,
+/* Gumis — cart drawer upsell: "+1 jar" bumps the most recently added line by one,
    reusing Dawn's cart-drawer-items.updateQuantity so sections re-render as usual. */
 if (!customElements.get('gumis-cart-upsell')) {
   customElements.define(

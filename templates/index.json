@@ -6,19 +6,19 @@
         "point-1": {
           "type": "point",
           "settings": {
-            "text": "3 formules"
+            "text": "3 formulas"
           }
         },
         "point-2": {
           "type": "point",
           "settings": {
-            "text": "À croquer, sans eau"
+            "text": "Chewable, no water needed"
           }
         },
         "point-3": {
           "type": "point",
           "settings": {
-            "text": "Paiement sécurisé"
+            "text": "Secure payment"
           }
         }
       },
@@ -36,8 +36,8 @@
         "cta2_label": "",
         "cta2_link": "",
         "image": "",
-        "chip_1": "Pot de 60 gummies",
-        "chip_2": "À croquer, sans eau",
+        "chip_1": "Jar of 60 gummies",
+        "chip_2": "Chewable, no water needed",
         "anchor": "gumis-hero",
         "padding_top": 48,
         "padding_bottom": 136
@@ -50,7 +50,7 @@
           "type": "product",
           "settings": {
             "accent": "#3B0A2A",
-            "placeholder_title": "Gumis Sommeil",
+            "placeholder_title": "Gumis Sleep",
             "badge": "",
             "primary": false
           }
@@ -59,7 +59,7 @@
           "type": "product",
           "settings": {
             "accent": "#D6246E",
-            "placeholder_title": "Gumis Éclat",
+            "placeholder_title": "Gumis Glow",
             "badge": "",
             "primary": true
           }
@@ -68,7 +68,7 @@
           "type": "product",
           "settings": {
             "accent": "#FF8A3D",
-            "placeholder_title": "Gumis Force",
+            "placeholder_title": "Gumis Power",
             "badge": "",
             "primary": false
           }
@@ -80,7 +80,7 @@
         "product-3"
       ],
       "settings": {
-        "eyebrow": "La gamme",
+        "eyebrow": "The range",
         "heading": "",
         "view_all_link": "",
         "anchor": "gumis-products",
@@ -94,46 +94,46 @@
         "row-1": {
           "type": "row",
           "settings": {
-            "criterion": "Comment on les prend",
-            "gummies": "À croquer, sans eau",
+            "criterion": "How you take them",
+            "gummies": "Chewable, no water needed",
             "gummies_icon": "check",
-            "capsules": "À avaler avec un verre d'eau"
+            "capsules": "Swallowed with a glass of water"
           }
         },
         "row-2": {
           "type": "row",
           "settings": {
-            "criterion": "Le goût",
-            "gummies": "Fruité : [À COMPLÉTER arôme]",
+            "criterion": "Taste",
+            "gummies": "Fruity: [TO COMPLETE flavour]",
             "gummies_icon": "check",
-            "capsules": "Neutre, voire amer"
+            "capsules": "Bland, sometimes bitter"
           }
         },
         "row-3": {
           "type": "row",
           "settings": {
-            "criterion": "Le petit plaisir du quotidien",
-            "gummies": "Un moment gourmand",
+            "criterion": "A small daily treat",
+            "gummies": "A tasty moment",
             "gummies_icon": "check",
-            "capsules": "Une corvée de plus"
+            "capsules": "One more chore"
           }
         },
         "row-4": {
           "type": "row",
           "settings": {
-            "criterion": "Facile à emporter",
-            "gummies": "[À COMPLÉTER : format du pot]",
+            "criterion": "Easy to carry",
+            "gummies": "[TO COMPLETE: jar format]",
             "gummies_icon": "check",
-            "capsules": "Plaquette ou pilulier"
+            "capsules": "Blister pack or pill box"
           }
         },
         "row-5": {
           "type": "row",
           "settings": {
-            "criterion": "Sucres",
-            "gummies": "[À COMPLÉTER] g par portion : on vous le dit franchement",
+            "criterion": "Sugars",
+            "gummies": "[TO COMPLETE] g per serving: we tell you straight",
             "gummies_icon": "none",
-            "capsules": "Généralement aucun"
+            "capsules": "Usually none"
           }
         }
       },
@@ -145,7 +145,7 @@
         "row-5"
       ],
       "settings": {
-        "eyebrow": "Comparer",
+        "eyebrow": "Compare",
         "heading": "",
         "col_gummies": "",
         "col_capsules": "",
@@ -161,22 +161,22 @@
         "step-1": {
           "type": "step",
           "settings": {
-            "title": "Choisissez votre formule",
-            "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
+            "title": "Choose your formula",
+            "text": "<p>Sleep, Glow or Power: pick the one that fits you.</p>"
           }
         },
         "step-2": {
           "type": "step",
           "settings": {
-            "title": "Croquez vos gummies",
-            "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
+            "title": "Chew your gummies",
+            "text": "<p>Every day, at the dose shown on the jar. No water, no grimace.</p>"
           }
         },
         "step-3": {
           "type": "step",
           "settings": {
-            "title": "Gardez le rythme",
-            "text": "<p>La régularité, c'est tout le secret. Un pot vous accompagne [À COMPLÉTER] jours.</p>"
+            "title": "Keep it up",
+            "text": "<p>Consistency is the whole secret. A jar lasts you [TO COMPLETE] days.</p>"
           }
         }
       },
@@ -186,7 +186,7 @@
         "step-3"
       ],
       "settings": {
-        "eyebrow": "Mode d'emploi",
+        "eyebrow": "How to take them",
         "heading": "",
         "button_label": "",
         "button_link": "",
@@ -199,7 +199,7 @@
       "type": "gumis-bundle",
       "settings": {
         "default_quantity": 2,
-        "eyebrow": "Offre multi-pots",
+        "eyebrow": "Multi-jar offer",
         "heading": "",
         "text": "",
         "accent": "",
@@ -225,50 +225,50 @@
         "question-1": {
           "type": "question",
           "settings": {
-            "question": "Combien de gummies par jour ?",
-            "answer": "<p>Cela dépend de la formule : la dose journalière recommandée est indiquée sur chaque fiche produit et sur le pot. Ne la dépassez pas.</p>"
+            "question": "How many gummies a day?",
+            "answer": "<p>It depends on the formula: the recommended daily dose is shown on each product page and on the jar. Don't go over it.</p>"
           }
         },
         "question-2": {
           "type": "question",
           "settings": {
-            "question": "Les gummies contiennent-ils du sucre ?",
-            "answer": "<p>[À COMPLÉTER : teneur en sucres par portion, édulcorants éventuels.]</p>"
+            "question": "Do the gummies contain sugar?",
+            "answer": "<p>[TO COMPLETE: sugar per serving, any sweeteners.]</p>"
           }
         },
         "question-3": {
           "type": "question",
           "settings": {
-            "question": "Sont-ils vegan ? Contiennent-ils des allergènes ?",
-            "answer": "<p>[À COMPLÉTER : gélatine ou pectine, liste des allergènes.] Toute la composition est détaillée sur chaque fiche produit.</p>"
+            "question": "Are they vegan? Do they contain allergens?",
+            "answer": "<p>[TO COMPLETE: gelatine or pectin, allergen list.] The full composition is on each product page.</p>"
           }
         },
         "question-4": {
           "type": "question",
           "settings": {
-            "question": "Puis-je prendre plusieurs formules en même temps ?",
-            "answer": "<p>Demandez conseil à votre médecin ou à votre pharmacien avant d'associer plusieurs compléments alimentaires, en particulier si vous suivez un traitement.</p>"
+            "question": "Can I take several formulas at the same time?",
+            "answer": "<p>Ask your doctor or pharmacist before combining several food supplements, especially if you are taking medication.</p>"
           }
         },
         "question-5": {
           "type": "question",
           "settings": {
-            "question": "Les gummies conviennent-ils aux enfants et aux femmes enceintes ?",
-            "answer": "<p>[À COMPLÉTER selon chaque formule.] Tenir hors de la portée des jeunes enfants. En cas de doute, demandez l'avis d'un professionnel de santé.</p>"
+            "question": "Are the gummies suitable for children or during pregnancy?",
+            "answer": "<p>[TO COMPLETE for each formula.] Keep out of reach of young children. If in doubt, ask a healthcare professional.</p>"
           }
         },
         "question-6": {
           "type": "question",
           "settings": {
-            "question": "Quels sont les délais de livraison ?",
-            "answer": "<p>[À COMPLÉTER : délais et transporteurs.] Tous les détails sont sur la page Livraison &amp; retours.</p>"
+            "question": "How long does delivery take?",
+            "answer": "<p>[TO COMPLETE: delivery times and carriers.] All the details are on the Shipping &amp; returns page.</p>"
           }
         },
         "question-7": {
           "type": "question",
           "settings": {
-            "question": "Puis-je retourner ma commande ?",
-            "answer": "<p>Vous disposez de 14 jours après réception pour exercer votre droit de rétractation. [À COMPLÉTER : conditions pour les pots ouverts, à aligner avec vos CGV.]</p>"
+            "question": "Can I return my order?",
+            "answer": "<p>You have 14 days from delivery to exercise your right of withdrawal. [TO COMPLETE: conditions for opened jars, in line with your terms of sale.]</p>"
           }
         }
       },
@@ -284,8 +284,8 @@
       "settings": {
         "eyebrow": "FAQ",
         "heading": "",
-        "subheading": "Vous ne trouvez pas votre réponse ? Écrivez-nous, on répond vite.",
-        "contact_label": "Nous écrire",
+        "subheading": "Can't find your answer? Write to us, we reply fast.",
+        "contact_label": "Contact us",
         "contact_link": "",
         "open_first": false,
         "schema_markup": true,
@@ -310,32 +310,32 @@
           "type": "item",
           "settings": {
             "icon": "truck",
-            "title": "Livraison offerte",
-            "text": "Dès [À COMPLÉTER] € d'achat"
+            "title": "Free shipping",
+            "text": "On orders over €[TO COMPLETE]"
           }
         },
         "item-2": {
           "type": "item",
           "settings": {
             "icon": "lock",
-            "title": "Paiement sécurisé",
-            "text": "CB, Apple Pay [À COMPLÉTER]"
+            "title": "Secure payment",
+            "text": "Cards, Apple Pay [TO COMPLETE]"
           }
         },
         "item-3": {
           "type": "item",
           "settings": {
             "icon": "jar",
-            "title": "60 gummies par pot",
-            "text": "À croquer, sans eau"
+            "title": "60 gummies per jar",
+            "text": "Chewable, no water needed"
           }
         },
         "item-4": {
           "type": "item",
           "settings": {
             "icon": "return",
-            "title": "14 jours",
-            "text": "Pour changer d'avis"
+            "title": "14 days",
+            "text": "To change your mind"
           }
         }
       },
@@ -354,21 +354,21 @@
           "type": "stat",
           "settings": {
             "value": "3",
-            "label": "formules"
+            "label": "formulas"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
             "value": "60",
-            "label": "gummies par pot"
+            "label": "gummies per jar"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
             "value": "14",
-            "label": "jours pour changer d'avis"
+            "label": "days to change your mind"
           }
         }
       },
@@ -387,22 +387,22 @@
         "point-1": {
           "type": "point",
           "settings": {
-            "title": "Un vrai moment gourmand",
-            "text": "Des gummies fruités au lieu de gélules sans goût."
+            "title": "A real treat",
+            "text": "Fruity gummies instead of tasteless capsules."
           }
         },
         "point-2": {
           "type": "point",
           "settings": {
-            "title": "Rien à avaler de travers",
-            "text": "Il suffit de croquer, sans verre d'eau."
+            "title": "Nothing big to swallow",
+            "text": "Just chew, no glass of water needed."
           }
         },
         "point-3": {
           "type": "point",
           "settings": {
-            "title": "Facile à garder en tête",
-            "text": "Un pot sur le bureau ou la table de nuit, et le rituel est pris."
+            "title": "Easy to remember",
+            "text": "Keep a jar on your desk or bedside table and the habit takes care of itself."
           }
         }
       },
@@ -412,7 +412,7 @@
         "point-3"
       ],
       "settings": {
-        "eyebrow": "Pourquoi des gummies",
+        "eyebrow": "Why gummies",
         "heading": "",
         "text": "",
         "media_right": false,

@@ -551,8 +551,8 @@
     "footer": {
       "legal_heading": "Infos légales",
       "legal": {
-        "cgv": "CGV",
-        "mentions": "Mentions légales",
+        "terms": "CGV",
+        "legal_notice": "Mentions légales",
         "privacy": "Politique de confidentialité",
         "cookies": "Politique cookies",
         "withdrawal": "Droit de rétractation (14 jours)"
@@ -589,8 +589,8 @@
       "to_complete": "[À COMPLÉTER]"
     },
     "hero": {
-      "heading": "Vos vitamines, version gummies.",
-      "subheading": "Des gummies fruités à croquer, au lieu de grosses gélules. Trois formules : Sommeil, Éclat et Force.",
+      "heading": "Vos vitamines, en version gourmande.",
+      "subheading": "Des gummies fruités à croquer, au lieu de grosses gélules. Trois formules : Sleep, Glow et Power.",
       "cta_primary": "Découvrir les gummies",
       "cta_secondary": "Pourquoi des gummies ?",
       "eyebrow": "Compléments alimentaires en gummies",
@@ -698,12 +698,12 @@
       "print": "Imprimer le formulaire"
     },
     "placeholders": {
-      "jar_sleep": "Sommeil",
-      "jar_glow": "Éclat",
-      "jar_strength": "Force",
-      "product_sleep": "Gumis Sommeil",
-      "product_glow": "Gumis Éclat",
-      "product_strength": "Gumis Force"
+      "jar_sleep": "Sleep",
+      "jar_glow": "Glow",
+      "product_sleep": "Gumis Sleep",
+      "product_glow": "Gumis Glow",
+      "jar_power": "Power",
+      "product_power": "Gumis Power"
     },
     "jar": {
       "tag": "Complément alimentaire",
@@ -718,8 +718,16 @@
     },
     "newsletter": {
       "heading": "Des nouvelles toutes fraîches",
-      "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/politique-de-confidentialite\">politique de confidentialité</a>.",
+      "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/privacy-policy\">politique de confidentialité</a>.",
       "button": "S'inscrire"
+    },
+    "language": {
+      "label": "Langue",
+      "current": "Langue actuelle",
+      "names": {
+        "en": "English",
+        "fr": "Français"
+      }
     }
   }
 }

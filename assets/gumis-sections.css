@@ -278,3 +278,26 @@
   .gumis-consent__actions { grid-template-columns: repeat(3, auto); justify-content: start; }
   .gumis-consent__actions [data-consent='customize'], .gumis-consent__actions [data-consent='save'] { grid-column: auto; }
 }
+
+/* ---------- Language switcher (EN / FR) ---------- */
+.g-lang__form { margin: 0; }
+.g-lang__list { display: inline-flex; align-items: center; gap: 0.2rem; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.06em; }
+.g-lang__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.6rem;
+  min-height: 3.6rem;
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: 0.8rem;
+  background: none;
+  font: inherit;
+  color: var(--gumis-ink-3);
+  cursor: pointer;
+}
+button.g-lang__item:hover { color: var(--gumis-ink); background: var(--gumis-blush); }
+.g-lang__item--current { color: var(--gumis-ink); cursor: default; }
+.g-lang__sep { color: var(--gumis-line); font-weight: 400; }
+.g-lang--header { margin-right: 0.4rem; }
+.footer__localization .g-lang { margin-bottom: 1.2rem; }

@@ -2166,12 +2166,12 @@
       "settings": [
         {
           "type": "paragraph",
-          "content": "Affiche le métachamp custom.tagline et, en pastilles, le format du pot et custom.serving."
+          "content": "Shows the custom.tagline metafield and, as pills, the jar size and custom.serving."
         },
         {
           "type": "checkbox",
           "id": "show_jar",
-          "label": "Pastille « Pot de 60 gummies »",
+          "label": "\"Jar of 60 gummies\" pill",
           "default": true
         },
         {
@@ -2184,23 +2184,23 @@
     },
     {
       "type": "gumis_quantity_breaks",
-      "name": "Gumis 1/2/3 pots",
+      "name": "Gumis 1/2/3 jars",
       "limit": 1,
       "settings": [
         {
           "type": "paragraph",
-          "content": "Remplace le sélecteur de quantité : retirez le bloc « Sélecteur de quantité » si vous utilisez celui-ci. Les économies viennent des réglages « Gumis — panier & offres »."
+          "content": "Replaces the quantity selector: remove the \"Quantity selector\" block if you use this one. Savings come from the \"Gumis: cart & offers\" settings."
         },
         {
           "type": "text",
           "id": "legend",
-          "label": "Intitulé",
-          "info": "Vide = « Combien de pots ? »"
+          "label": "Label",
+          "info": "Empty = \"How many jars?\""
         },
         {
           "type": "range",
           "id": "default_quantity",
-          "label": "Quantité présélectionnée",
+          "label": "Preselected quantity",
           "min": 1,
           "max": 3,
           "step": 1,
@@ -2214,7 +2214,7 @@
           "options": [
             {
               "value": "stack",
-              "label": "Cartes empilées"
+              "label": "Stacked cards"
             },
             {
               "value": "row",
@@ -2226,68 +2226,68 @@
     },
     {
       "type": "gumis_benefits",
-      "name": "Gumis bénéfices",
+      "name": "Gumis benefits",
       "limit": 1,
       "settings": [
         {
           "type": "paragraph",
-          "content": "Liste issue du métachamp custom.benefits (allégations autorisées uniquement)."
+          "content": "List from the custom.benefits metafield (authorised claims only)."
         },
         {
           "type": "inline_richtext",
           "id": "heading",
-          "label": "Titre"
+          "label": "Heading"
         }
       ]
     },
     {
       "type": "gumis_info",
-      "name": "Gumis infos produit",
+      "name": "Gumis product info",
       "limit": 1,
       "settings": [
         {
           "type": "paragraph",
-          "content": "Ingrédients, Valeurs nutritionnelles, Conseils d'utilisation et Précautions, depuis les métachamps. Les 3 mentions obligatoires des compléments alimentaires sont toujours affichées."
+          "content": "Ingredients, Nutrition facts, How to use and Warnings, from metafields. The 3 mandatory food-supplement statements are always shown."
         },
         {
           "type": "checkbox",
           "id": "open_first",
-          "label": "Ouvrir « Ingrédients »",
+          "label": "Open \"Ingredients\"",
           "default": false
         },
         {
           "type": "checkbox",
           "id": "open_warnings",
-          "label": "Ouvrir « Précautions »",
+          "label": "Open \"Warnings\"",
           "default": false
         }
       ]
     },
     {
       "type": "gumis_reassurance",
-      "name": "Gumis réassurance",
+      "name": "Gumis reassurance",
       "limit": 1,
       "settings": [
         {
           "type": "select",
           "id": "icon_1",
-          "label": "Icône 1",
+          "label": "Icon 1",
           "options": [
             {
               "value": "truck",
-              "label": "Livraison"
+              "label": "Shipping"
             },
             {
               "value": "lock",
-              "label": "Paiement"
+              "label": "Payment"
             },
             {
               "value": "return",
-              "label": "Retours"
+              "label": "Returns"
             },
             {
               "value": "leaf",
-              "label": "Feuille"
+              "label": "Leaf"
             },
             {
               "value": "gummy",
@@ -2295,7 +2295,7 @@
             },
             {
               "value": "jar",
-              "label": "Pot"
+              "label": "Jar"
             },
             {
               "value": "chat",
@@ -2303,7 +2303,7 @@
             },
             {
               "value": "heart",
-              "label": "Cœur"
+              "label": "Heart"
             }
           ],
           "default": "truck"
@@ -2311,29 +2311,29 @@
         {
           "type": "inline_richtext",
           "id": "text_1",
-          "label": "Texte 1",
-          "default": "Livraison offerte dès [À COMPLÉTER] €"
+          "label": "Text 1",
+          "default": "Free shipping over €[TO COMPLETE]"
         },
         {
           "type": "select",
           "id": "icon_2",
-          "label": "Icône 2",
+          "label": "Icon 2",
           "options": [
             {
               "value": "truck",
-              "label": "Livraison"
+              "label": "Shipping"
             },
             {
               "value": "lock",
-              "label": "Paiement"
+              "label": "Payment"
             },
             {
               "value": "return",
-              "label": "Retours"
+              "label": "Returns"
             },
             {
               "value": "leaf",
-              "label": "Feuille"
+              "label": "Leaf"
             },
             {
               "value": "gummy",
@@ -2341,7 +2341,7 @@
             },
             {
               "value": "jar",
-              "label": "Pot"
+              "label": "Jar"
             },
             {
               "value": "chat",
@@ -2349,7 +2349,7 @@
             },
             {
               "value": "heart",
-              "label": "Cœur"
+              "label": "Heart"
             }
           ],
           "default": "lock"
@@ -2357,29 +2357,29 @@
         {
           "type": "inline_richtext",
           "id": "text_2",
-          "label": "Texte 2",
-          "default": "Paiement sécurisé"
+          "label": "Text 2",
+          "default": "Secure payment"
         },
         {
           "type": "select",
           "id": "icon_3",
-          "label": "Icône 3",
+          "label": "Icon 3",
           "options": [
             {
               "value": "truck",
-              "label": "Livraison"
+              "label": "Shipping"
             },
             {
               "value": "lock",
-              "label": "Paiement"
+              "label": "Payment"
             },
             {
               "value": "return",
-              "label": "Retours"
+              "label": "Returns"
             },
             {
               "value": "leaf",
-              "label": "Feuille"
+              "label": "Leaf"
             },
             {
               "value": "gummy",
@@ -2387,7 +2387,7 @@
             },
             {
               "value": "jar",
-              "label": "Pot"
+              "label": "Jar"
             },
             {
               "value": "chat",
@@ -2395,7 +2395,7 @@
             },
             {
               "value": "heart",
-              "label": "Cœur"
+              "label": "Heart"
             }
           ],
           "default": "return"
@@ -2403,29 +2403,29 @@
         {
           "type": "inline_richtext",
           "id": "text_3",
-          "label": "Texte 3",
-          "default": "14 jours pour changer d'avis"
+          "label": "Text 3",
+          "default": "14 days to change your mind"
         },
         {
           "type": "select",
           "id": "icon_4",
-          "label": "Icône 4",
+          "label": "Icon 4",
           "options": [
             {
               "value": "truck",
-              "label": "Livraison"
+              "label": "Shipping"
             },
             {
               "value": "lock",
-              "label": "Paiement"
+              "label": "Payment"
             },
             {
               "value": "return",
-              "label": "Retours"
+              "label": "Returns"
             },
             {
               "value": "leaf",
-              "label": "Feuille"
+              "label": "Leaf"
             },
             {
               "value": "gummy",
@@ -2433,7 +2433,7 @@
             },
             {
               "value": "jar",
-              "label": "Pot"
+              "label": "Jar"
             },
             {
               "value": "chat",
@@ -2441,7 +2441,7 @@
             },
             {
               "value": "heart",
-              "label": "Cœur"
+              "label": "Heart"
             }
           ],
           "default": "chat"
@@ -2449,8 +2449,8 @@
         {
           "type": "inline_richtext",
           "id": "text_4",
-          "label": "Texte 4",
-          "default": "Une question ? On répond"
+          "label": "Text 4",
+          "default": "Questions? We answer"
         }
       ]
     }

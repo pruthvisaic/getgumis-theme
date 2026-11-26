@@ -6,7 +6,7 @@
         "style": "default",
         "eyebrow": "Contact",
         "heading": "",
-        "intro": "<p>Une question sur une commande ou sur nos gummies ? Écrivez-nous, on répond du lundi au vendredi [À COMPLÉTER : délai de réponse].</p>",
+        "intro": "<p>A question about an order or our gummies? Write to us, we reply Monday to Friday [TO COMPLETE: response time].</p>",
         "show_content": true,
         "updated_label": "",
         "show_cookie_button": false,
@@ -18,7 +18,7 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "Nous écrire",
+        "heading": "Contact us",
         "heading_size": "h2",
         "color_scheme": "scheme-1",
         "padding_top": 24,
@@ -31,7 +31,7 @@
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>Vos données servent uniquement à répondre à votre message. En savoir plus dans notre <a href=\"/pages/politique-de-confidentialite\" title=\"Politique de confidentialité\">politique de confidentialité</a>.</p>"
+            "text": "<p>We only use your details to reply to your message. Learn more in our <a href=\"/pages/privacy-policy\" title=\"Privacy policy\">privacy policy</a>.</p>"
           }
         }
       },

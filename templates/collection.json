@@ -5,7 +5,7 @@
       "settings": {
         "use_collection_title": false,
         "heading": "",
-        "subheading": "Trois formules gourmandes, 60 gummies par pot.",
+        "subheading": "Three tasty formulas, 60 gummies per jar.",
         "show_description": true,
         "per_page": 12,
         "padding_top": 56,
@@ -18,22 +18,22 @@
         "s1": {
           "type": "step",
           "settings": {
-            "title": "Choisissez votre formule",
-            "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
+            "title": "Choose your formula",
+            "text": "<p>Sleep, Glow or Power: pick the one that fits you.</p>"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
-            "title": "Croquez vos gummies",
-            "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
+            "title": "Chew your gummies",
+            "text": "<p>Every day, at the dose shown on the jar. No water, no grimace.</p>"
           }
         },
         "s3": {
           "type": "step",
           "settings": {
-            "title": "Économisez en multi-pots",
-            "text": "<p>Les offres 2 et 3 pots s'appliquent automatiquement dans le panier.</p>"
+            "title": "Save with multi-jar packs",
+            "text": "<p>The 2- and 3-jar offers apply automatically in your cart.</p>"
           }
         }
       },
@@ -43,7 +43,7 @@
         "s3"
       ],
       "settings": {
-        "eyebrow": "Mode d'emploi",
+        "eyebrow": "How to take them",
         "heading": "",
         "button_label": "",
         "button_link": "",

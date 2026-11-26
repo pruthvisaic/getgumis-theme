@@ -109,8 +109,8 @@
                       <h2 class="footer-block__heading">{{ 'gumis.footer.legal_heading' | t }}</h2>
                     {%- endif -%}
                     {%- liquid
-                      assign legal_ids = 'cgv,mentions,privacy,cookies,withdrawal' | split: ','
-                      assign legal_handles = 'cgv,mentions-legales,politique-de-confidentialite,politique-cookies,droit-de-retractation' | split: ','
+                      assign legal_ids = 'terms,legal_notice,privacy,cookies,withdrawal' | split: ','
+                      assign legal_handles = 'terms-of-sale,legal-notice,privacy-policy,cookie-policy,right-of-withdrawal' | split: ','
                     -%}
                     <ul class="footer-block__details-content list-unstyled">
                       {%- for id in legal_ids -%}
@@ -323,6 +323,9 @@
   >
     <div class="footer__content-bottom-wrapper page-width">
       <div class="footer__column footer__localization isolate">
+        {%- if section.settings.gumis_language_switcher -%}
+          {%- render 'gumis-language-switcher', form_id: 'GumisFooterLanguage', class: 'g-lang--footer' -%}
+        {%- endif -%}
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <localization-form>
             {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
@@ -411,12 +414,12 @@
           "type": "text",
           "id": "tagline",
           "label": "Tagline",
-          "info": "Vide = tagline des paramètres du thème, sinon traduction par défaut."
+          "info": "Empty = tagline from theme settings, otherwise the default translation."
         },
         {
           "type": "richtext",
           "id": "text",
-          "label": "Texte"
+          "label": "Text"
         },
         {
           "type": "checkbox",
@@ -427,39 +430,39 @@
         {
           "type": "checkbox",
           "id": "show_social",
-          "label": "Afficher les réseaux sociaux",
+          "label": "Show social links",
           "default": true
         }
       ]
     },
     {
       "type": "gumis_legal",
-      "name": "Gumis liens légaux",
+      "name": "Gumis legal links",
       "limit": 1,
       "settings": [
         {
           "type": "paragraph",
-          "content": "Sélectionnez vos pages légales. Si une page n'est pas choisie, le lien pointe vers /pages/<identifiant conseillé> (voir README)."
+          "content": "Select your legal pages. If a page isn't selected, the link points to /pages/<suggested handle> (see README)."
         },
         {
           "type": "inline_richtext",
           "id": "heading",
-          "label": "Titre (vide = « Infos légales »)"
+          "label": "Heading (empty = \"Legal\")"
         },
         {
           "type": "page",
-          "id": "page_cgv",
+          "id": "page_terms",
           "label": "CGV"
         },
         {
           "type": "page",
-          "id": "page_mentions",
-          "label": "Mentions légales"
+          "id": "page_legal_notice",
+          "label": "Legal notice"
         },
         {
           "type": "page",
           "id": "page_privacy",
-          "label": "Politique de confidentialité"
+          "label": "Privacy policy"
         },
         {
           "type": "page",
@@ -469,12 +472,12 @@
         {
           "type": "page",
           "id": "page_withdrawal",
-          "label": "Droit de rétractation (14 jours)"
+          "label": "Right of withdrawal (14 days)"
         },
         {
           "type": "link_list",
           "id": "menu",
-          "label": "Liens supplémentaires (menu)"
+          "label": "Extra links (menu)"
         }
       ]
     },
@@ -577,14 +580,20 @@
     {
       "type": "checkbox",
       "id": "show_supplement_note",
-      "label": "Afficher la mention « compléments alimentaires »",
+      "label": "Show the food-supplement statement",
       "default": true
     },
     {
       "type": "text",
       "id": "supplement_note",
-      "label": "Texte de la mention",
-      "info": "Vide = mention obligatoire traduite par défaut."
+      "label": "Statement text",
+      "info": "Empty = mandatory statement from the language file."
+    },
+    {
+      "type": "checkbox",
+      "id": "gumis_language_switcher",
+      "label": "Show the EN / FR language switcher",
+      "default": true
     },
     {
       "type": "color_scheme",

@@ -51,12 +51,47 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Les inscrits sont ajoutés aux clients Shopify avec le tag « newsletter ». Activez le double opt-in dans Paramètres > Notifications clients." },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
-    { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut (avec lien vers la politique de confidentialité)." },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
+    {
+      "type": "paragraph",
+      "content": "Sign-ups are added to Shopify customers with the \"newsletter\" tag. Turn on double opt-in in Settings > Customer notifications."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Empty = default translation (with a link to the privacy policy)."
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    }
   ],
-  "presets": [ { "name": "Gumis Newsletter" } ]
+  "presets": [
+    {
+      "name": "Gumis Newsletter"
+    }
+  ]
 }
 {% endschema %}

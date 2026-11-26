@@ -1,5 +1,5 @@
 {%- comment -%}
-  Reviews come ONLY from a reviews app (Judge.me, Avis Vérifiés, Okendo, Shopify Product Reviews...)
+  Reviews come ONLY from a reviews app (Judge.me, Okendo, Shopify Product Reviews...)
   added as an app block. Without an app block nothing is rendered. If the app block renders
   no reviews, the section hides itself (CSS :has + small script fallback).
   Never add fake reviews, ratings or customer counts here.
@@ -43,18 +43,62 @@
 
 {% schema %}
 {
-  "name": "Gumis Avis clients",
+  "name": "Gumis Reviews",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Ajoutez le bloc de votre application d'avis (Judge.me, Avis Vérifiés, Okendo…). Sans bloc d'appli ou sans avis, la section ne s'affiche pas. N'ajoutez jamais d'avis inventés." },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Ils ont goûté »" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-reviews" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+    {
+      "type": "paragraph",
+      "content": "Add the block from your reviews app (Judge.me, Okendo, Shopify Product Reviews…). Without an app block, or without reviews, the section stays hidden. Never add made-up reviews."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = \"They tasted it\""
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Anchor (id)",
+      "default": "gumis-reviews"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
   ],
-  "blocks": [ { "type": "@app" } ],
-  "presets": [ { "name": "Gumis Avis clients" } ]
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gumis Reviews"
+    }
+  ]
 }
 {% endschema %}

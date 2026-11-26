@@ -539,8 +539,8 @@
     "footer": {
       "legal_heading": "Legal",
       "legal": {
-        "cgv": "Terms of sale",
-        "mentions": "Legal notice",
+        "terms": "Terms of sale",
+        "legal_notice": "Legal notice",
         "privacy": "Privacy policy",
         "cookies": "Cookie policy",
         "withdrawal": "14-day right of withdrawal"
@@ -565,20 +565,20 @@
       "marketing_desc": "Let us show you relevant ads on other sites."
     },
     "compliance": {
-      "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle.",
+      "footer_note": "Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.",
       "dose": "Do not exceed the recommended daily dose.",
-      "children": "Keep out of the reach of young children.",
-      "diet": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle.",
+      "children": "Keep out of reach of young children.",
+      "diet": "Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.",
       "dose_probe": "recommended daily dose",
-      "children_probe": "reach of young children",
-      "diet_probe": "varied, balanced diet"
+      "children_probe": "out of reach of young children",
+      "diet_probe": "varied and balanced diet"
     },
     "general": {
-      "to_complete": "[TO BE COMPLETED]"
+      "to_complete": "[TO COMPLETE]"
     },
     "hero": {
-      "heading": "Your vitamins, gummy style.",
-      "subheading": "Fruity gummies to chew instead of big capsules. Three formulas: Sommeil (sleep), Éclat (hair, skin & nails) and Force (creatine).",
+      "heading": "Your vitamins, made tasty.",
+      "subheading": "Fruity gummies you chew instead of big capsules. Three formulas: Sleep, Glow and Power.",
       "cta_primary": "Shop the gummies",
       "cta_secondary": "Why gummies?",
       "eyebrow": "Food supplements in gummy form",
@@ -618,7 +618,7 @@
       "add_to_cart": "Add to cart",
       "choose": "Choose",
       "placeholder_title": "Your product",
-      "placeholder_benefit": "[TO BE COMPLETED: authorised benefit, via metafield]",
+      "placeholder_benefit": "[TO COMPLETE: authorised claim, from the metafield]",
       "jar_count": "Jar of {{ count }} gummies",
       "tax_included": "Tax included. Shipping calculated at checkout."
     },
@@ -648,7 +648,7 @@
       "nutrition_nrv": "% NRV*",
       "nutrition_footnote": "* NRV: nutrient reference values.",
       "daily_dose": "Recommended daily dose:",
-      "missing_metafield": "Metafield {{ key }} to be completed"
+      "missing_metafield": "Metafield {{ key }}: [TO COMPLETE]"
     },
     "cross_sell": {
       "heading": "Complete your routine",
@@ -669,7 +669,7 @@
     },
     "legal": {
       "last_updated": "Last updated: {{ date }}",
-      "placeholder": "The content of this page is to be added in Online Store > Pages."
+      "placeholder": "This page is waiting for its content: add it in Online Store > Pages."
     },
     "withdrawal": {
       "heading": "Withdrawal form",
@@ -686,12 +686,12 @@
       "print": "Print the form"
     },
     "placeholders": {
-      "jar_sleep": "Sommeil",
-      "jar_glow": "Éclat",
-      "jar_strength": "Force",
-      "product_sleep": "Gumis Sommeil",
-      "product_glow": "Gumis Éclat",
-      "product_strength": "Gumis Force"
+      "jar_sleep": "Sleep",
+      "jar_glow": "Glow",
+      "product_sleep": "Gumis Sleep",
+      "product_glow": "Gumis Glow",
+      "jar_power": "Power",
+      "product_power": "Gumis Power"
     },
     "jar": {
       "tag": "Food supplement",
@@ -706,8 +706,16 @@
     },
     "newsletter": {
       "heading": "Fresh news from gumis",
-      "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/politique-de-confidentialite\">privacy policy</a>.",
+      "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/privacy-policy\">privacy policy</a>.",
       "button": "Subscribe"
+    },
+    "language": {
+      "label": "Language",
+      "current": "Current language",
+      "names": {
+        "en": "English",
+        "fr": "Français"
+      }
     }
   }
 }

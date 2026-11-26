@@ -4,9 +4,9 @@
       "type": "main-gumis-page",
       "settings": {
         "style": "default",
-        "eyebrow": "Livraison & retours",
+        "eyebrow": "Shipping & returns",
         "heading": "",
-        "intro": "<p>[À COMPLÉTER : résumé en une phrase de vos conditions de livraison.]</p>",
+        "intro": "<p>[TO COMPLETE: one-sentence summary of your shipping terms.]</p>",
         "show_content": true,
         "updated_label": "",
         "show_cookie_button": false,
@@ -21,43 +21,43 @@
         "q1": {
           "type": "question",
           "settings": {
-            "question": "Où livrez-vous ?",
-            "answer": "<p>[À COMPLÉTER : pays desservis.]</p>"
+            "question": "Where do you ship?",
+            "answer": "<p>[TO COMPLETE: countries served.]</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
-            "question": "Combien coûte la livraison ?",
-            "answer": "<p>[À COMPLÉTER : tarifs.] La livraison est offerte dès [À COMPLÉTER] € d'achat.</p>"
+            "question": "How much is shipping?",
+            "answer": "<p>[TO COMPLETE: rates.] Shipping is free on orders over €[TO COMPLETE].</p>"
           }
         },
         "q3": {
           "type": "question",
           "settings": {
-            "question": "Quels sont les délais ?",
-            "answer": "<p>[À COMPLÉTER : délai de préparation et de livraison par transporteur.]</p>"
+            "question": "How long does it take?",
+            "answer": "<p>[TO COMPLETE: processing and delivery time per carrier.]</p>"
           }
         },
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Comment suivre ma commande ?",
-            "answer": "<p>Un e-mail avec le lien de suivi vous est envoyé dès l'expédition.</p>"
+            "question": "How do I track my order?",
+            "answer": "<p>You get an email with a tracking link as soon as your order ships.</p>"
           }
         },
         "q5": {
           "type": "question",
           "settings": {
-            "question": "Comment exercer mon droit de rétractation ?",
-            "answer": "<p>Vous disposez de 14 jours à compter de la réception pour vous rétracter. Utilisez le formulaire type disponible sur la page Droit de rétractation, ou écrivez-nous. [À COMPLÉTER : conditions pour les produits descellés, frais de retour.]</p>"
+            "question": "How do I exercise my right of withdrawal?",
+            "answer": "<p>You have 14 days from delivery to withdraw. Use the model form on the Right of withdrawal page, or write to us. [TO COMPLETE: conditions for unsealed products, return costs.]</p>"
           }
         },
         "q6": {
           "type": "question",
           "settings": {
-            "question": "Mon colis est arrivé abîmé, que faire ?",
-            "answer": "<p>[À COMPLÉTER : procédure.]</p>"
+            "question": "My parcel arrived damaged, what should I do?",
+            "answer": "<p>[TO COMPLETE: procedure.]</p>"
           }
         }
       },
@@ -70,9 +70,9 @@
         "q6"
       ],
       "settings": {
-        "heading": "Les questions pratiques",
+        "heading": "Practical questions",
         "subheading": "",
-        "contact_label": "Nous écrire",
+        "contact_label": "Contact us",
         "contact_link": "",
         "open_first": false,
         "schema_markup": false,

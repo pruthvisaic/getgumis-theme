@@ -84,32 +84,121 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Laissez un texte vide pour afficher la traduction par défaut (FR/EN). Mettez un mot en italique dans le titre pour le colorer en Berry." },
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre" },
-    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
-    { "type": "header", "content": "Boutons" },
-    { "type": "text", "id": "cta1_label", "label": "Bouton 1 — texte" },
-    { "type": "url", "id": "cta1_link", "label": "Bouton 1 — lien", "info": "Vide = tous les produits." },
-    { "type": "text", "id": "cta2_label", "label": "Bouton 2 — texte" },
-    { "type": "url", "id": "cta2_link", "label": "Bouton 2 — lien", "info": "Vide = section « Pourquoi des gummies ? »." },
-    { "type": "header", "content": "Visuel" },
-    { "type": "image_picker", "id": "image", "label": "Image produit", "info": "PNG détouré conseillé. Sans image, un pot dessiné est affiché." },
-    { "type": "product", "id": "product", "label": "Ou image principale d'un produit" },
-    { "type": "text", "id": "chip_1", "label": "Étiquette flottante 1", "default": "Pot de 60 gummies" },
-    { "type": "text", "id": "chip_2", "label": "Étiquette flottante 2", "default": "À croquer, sans eau" },
-    { "type": "header", "content": "Mise en page" },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-hero" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 48 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 200, "step": 4, "unit": "px", "default": 136 }
+    {
+      "type": "paragraph",
+      "content": "Leave a text empty to show the default translation (EN/FR). Put a word in italics in the heading to colour it Berry."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "cta1_label",
+      "label": "Button 1 label"
+    },
+    {
+      "type": "url",
+      "id": "cta1_link",
+      "label": "Button 1 link",
+      "info": "Empty = all products."
+    },
+    {
+      "type": "text",
+      "id": "cta2_label",
+      "label": "Button 2 label"
+    },
+    {
+      "type": "url",
+      "id": "cta2_link",
+      "label": "Button 2 link",
+      "info": "Empty = \"Why gummies?\" section."
+    },
+    {
+      "type": "header",
+      "content": "Visual"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image",
+      "info": "Transparent PNG recommended. Without an image, a drawn jar is shown."
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Or a product's main image"
+    },
+    {
+      "type": "text",
+      "id": "chip_1",
+      "label": "Floating label 1",
+      "default": "Jar of 60 gummies"
+    },
+    {
+      "type": "text",
+      "id": "chip_2",
+      "label": "Floating label 2",
+      "default": "Chewable, no water needed"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Anchor (id)",
+      "default": "gumis-hero"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 136
+    }
   ],
   "blocks": [
     {
       "type": "point",
-      "name": "Argument",
+      "name": "Selling point",
       "limit": 4,
       "settings": [
-        { "type": "inline_richtext", "id": "text", "label": "Texte", "default": "Pot de 60 gummies" }
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Jar of 60 gummies"
+        }
       ]
     }
   ],
@@ -117,8 +206,18 @@
     {
       "name": "Gumis Hero",
       "blocks": [
-        { "type": "point", "settings": { "text": "3 formules" } },
-        { "type": "point", "settings": { "text": "Paiement sécurisé" } }
+        {
+          "type": "point",
+          "settings": {
+            "text": "3 formulas"
+          }
+        },
+        {
+          "type": "point",
+          "settings": {
+            "text": "Secure payment"
+          }
+        }
       ]
     }
   ]

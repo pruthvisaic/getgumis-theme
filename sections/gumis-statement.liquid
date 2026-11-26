@@ -19,31 +19,67 @@
 
 {% schema %}
 {
-  "name": "Gumis Bandeau chiffres",
+  "name": "Gumis Stats band",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "inline_richtext", "id": "lead", "label": "Phrase", "info": "Vide = traduction par défaut." },
-    { "type": "paragraph", "content": "N'affichez que des chiffres vrais et vérifiables (pas de nombre de clients ni de statistique inventée)." }
+    {
+      "type": "inline_richtext",
+      "id": "lead",
+      "label": "Statement",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "paragraph",
+      "content": "Only show true, verifiable figures (no customer counts or made-up statistics)."
+    }
   ],
   "blocks": [
     {
       "type": "stat",
-      "name": "Chiffre",
+      "name": "Figure",
       "limit": 3,
       "settings": [
-        { "type": "text", "id": "value", "label": "Chiffre", "default": "60" },
-        { "type": "text", "id": "label", "label": "Légende", "default": "gummies par pot" }
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Figure",
+          "default": "60"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Caption",
+          "default": "gummies per jar"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Gumis Bandeau chiffres",
+      "name": "Gumis Stats band",
       "blocks": [
-        { "type": "stat", "settings": { "value": "3", "label": "formules" } },
-        { "type": "stat", "settings": { "value": "60", "label": "gummies par pot" } },
-        { "type": "stat", "settings": { "value": "14", "label": "jours pour changer d'avis" } }
+        {
+          "type": "stat",
+          "settings": {
+            "value": "3",
+            "label": "formulas"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "60",
+            "label": "gummies per jar"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "value": "14",
+            "label": "days to change your mind"
+          }
+        }
       ]
     }
   ]

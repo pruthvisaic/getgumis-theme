@@ -98,21 +98,82 @@
 
 {% schema %}
 {
-  "name": "Gumis Offre multi-pots",
+  "name": "Gumis Multi-jar offer",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "product", "id": "product", "label": "Produit" },
-    { "type": "paragraph", "content": "Les économies affichées viennent des pourcentages définis dans Paramètres du thème > Gumis — panier & offres, qui doivent correspondre à vos réductions automatiques Shopify." },
-    { "type": "range", "id": "default_quantity", "label": "Quantité présélectionnée", "min": 1, "max": 3, "step": 1, "default": 2 },
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
-    { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut." },
-    { "type": "color", "id": "accent", "label": "Couleur d'accent", "info": "Vide = métachamp custom.accent_color du produit." },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-bundle" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "paragraph",
+      "content": "The savings shown come from the percentages in Theme settings > Gumis: cart & offers, which must match your Shopify automatic discounts."
+    },
+    {
+      "type": "range",
+      "id": "default_quantity",
+      "label": "Preselected quantity",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "color",
+      "id": "accent",
+      "label": "Accent colour",
+      "info": "Empty = product's custom.accent_color metafield."
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Anchor (id)",
+      "default": "gumis-bundle"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    }
   ],
-  "presets": [ { "name": "Gumis Offre multi-pots" } ]
+  "presets": [
+    {
+      "name": "Gumis Multi-jar offer"
+    }
+  ]
 }
 {% endschema %}

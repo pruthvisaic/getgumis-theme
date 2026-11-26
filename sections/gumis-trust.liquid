@@ -13,31 +13,85 @@
 
 {% schema %}
 {
-  "name": "Gumis Réassurance",
+  "name": "Gumis Trust card",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Carte de réassurance. Placée juste sous le Hero, elle chevauche son bas." }
+    {
+      "type": "paragraph",
+      "content": "Trust card. Placed right below the hero, it overlaps its bottom edge."
+    }
   ],
   "blocks": [
     {
       "type": "item",
-      "name": "Élément",
+      "name": "Item",
       "limit": 4,
       "settings": [
         {
-          "type": "select", "id": "icon", "label": "Icône", "default": "truck",
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "truck",
           "options": [
-            { "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Paiement" }, { "value": "return", "label": "Retours" },
-            { "value": "shield", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "gummy", "label": "Gummy" },
-            { "value": "jar", "label": "Pot" }, { "value": "chat", "label": "Contact" }
+            {
+              "value": "truck",
+              "label": "Shipping"
+            },
+            {
+              "value": "lock",
+              "label": "Payment"
+            },
+            {
+              "value": "return",
+              "label": "Returns"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "gummy",
+              "label": "Gummy"
+            },
+            {
+              "value": "jar",
+              "label": "Jar"
+            },
+            {
+              "value": "chat",
+              "label": "Contact"
+            }
           ]
         },
-        { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Livraison offerte" },
-        { "type": "inline_richtext", "id": "text", "label": "Texte", "default": "Dès [À COMPLÉTER] € d'achat" }
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "label": "Heading",
+          "default": "Free shipping"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "On orders over €[TO COMPLETE]"
+        }
       ]
     }
   ],
-  "presets": [ { "name": "Gumis Réassurance", "blocks": [ { "type": "item" } ] } ]
+  "presets": [
+    {
+      "name": "Gumis Trust card",
+      "blocks": [
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

@@ -1,7 +1,7 @@
 {%- liquid
   assign ph_sleep = 'gumis.placeholders.product_sleep' | t
   assign ph_glow = 'gumis.placeholders.product_glow' | t
-  assign ph_strength = 'gumis.placeholders.product_strength' | t
+  assign ph_power = 'gumis.placeholders.product_power' | t
 -%}
 {%- liquid
   if section.settings.use_collection_title
@@ -53,7 +53,7 @@
         <ul class="g-grid" role="list">
           <li>{%- render 'gumis-product-card', placeholder_title: ph_sleep, accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
           <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2', tile: 'peach' -%}</li>
-          <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2', tile: 'lilac' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_power, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2', tile: 'lilac' -%}</li>
         </ul>
       {%- endif -%}
     {%- endpaginate -%}
@@ -66,14 +66,64 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "checkbox", "id": "use_collection_title", "label": "Utiliser le titre de la collection", "default": false },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Tous nos gummies »" },
-    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
-    { "type": "checkbox", "id": "show_description", "label": "Afficher la description de la collection", "default": true },
-    { "type": "range", "id": "per_page", "label": "Produits par page", "min": 3, "max": 24, "step": 3, "default": 12 },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+    {
+      "type": "checkbox",
+      "id": "use_collection_title",
+      "label": "Use the collection title",
+      "default": false
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = \"All our gummies\""
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show the collection description",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Products per page",
+      "min": 3,
+      "max": 24,
+      "step": 3,
+      "default": 12
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
   ]
 }
 {% endschema %}

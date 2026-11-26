@@ -60,18 +60,91 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Le contenu vient de la page (Boutique en ligne > Pages)." },
-    { "type": "select", "id": "style", "label": "Style", "default": "default", "options": [ { "value": "default", "label": "Page de marque" }, { "value": "legal", "label": "Page légale (sobre)" } ] },
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = titre de la page." },
-    { "type": "richtext", "id": "intro", "label": "Introduction" },
-    { "type": "checkbox", "id": "show_content", "label": "Afficher le contenu de la page", "default": true },
-    { "type": "text", "id": "updated_label", "label": "Dernière mise à jour (pages légales)", "info": "Ex. : 1er janvier 2027" },
-    { "type": "checkbox", "id": "show_cookie_button", "label": "Bouton « Gérer les cookies »", "default": false },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 56 }
+    {
+      "type": "paragraph",
+      "content": "The content comes from the page (Online Store > Pages)."
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Brand page"
+        },
+        {
+          "value": "legal",
+          "label": "Legal page (plain)"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = page title."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Introduction"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "label": "Show the page content",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "updated_label",
+      "label": "Last updated (legal pages)",
+      "info": "e.g. 1 January 2027"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cookie_button",
+      "label": "\"Manage cookies\" button",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    }
   ],
-  "presets": [ { "name": "Gumis Page" } ]
+  "presets": [
+    {
+      "name": "Gumis Page"
+    }
+  ]
 }
 {% endschema %}

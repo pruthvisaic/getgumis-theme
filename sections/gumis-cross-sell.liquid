@@ -1,6 +1,6 @@
 {%- liquid
   assign ph_glow = 'gumis.placeholders.product_glow' | t
-  assign ph_strength = 'gumis.placeholders.product_strength' | t
+  assign ph_power = 'gumis.placeholders.product_power' | t
 -%}
 {%- liquid
   assign heading = section.settings.heading
@@ -46,7 +46,7 @@
       {%- endfor -%}
       {%- if shown == 0 and request.design_mode -%}
         <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, tile: 'peach' -%}</li>
-        <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, tile: 'lilac' -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: ph_power, accent: settings.gumis_tangerine, section_id: section.id, tile: 'lilac' -%}</li>
       {%- endif -%}
     </ul>
   </div>
@@ -58,15 +58,67 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Affiche les autres produits (le produit consulté est exclu automatiquement)." },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Complétez votre routine »" },
-    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
-    { "type": "product_list", "id": "products", "label": "Produits", "limit": 4 },
-    { "type": "collection", "id": "collection", "label": "Ou collection", "info": "Utilisée si aucun produit n'est choisi. Sinon : tous les produits." },
-    { "type": "range", "id": "limit", "label": "Nombre de produits", "min": 1, "max": 3, "step": 1, "default": 3 },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+    {
+      "type": "paragraph",
+      "content": "Shows the other products (the product being viewed is left out automatically)."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = \"Complete your routine\""
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "Products",
+      "limit": 4
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Or collection",
+      "info": "Used when no product is selected. Otherwise: all products."
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Number of products",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
   ],
-  "presets": [ { "name": "Gumis Cross-sell" } ]
+  "presets": [
+    {
+      "name": "Gumis Cross-sell"
+    }
+  ]
 }
 {% endschema %}

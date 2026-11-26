@@ -40,18 +40,63 @@
 
 {% schema %}
 {
-  "name": "Gumis Formulaire rétract.",
+  "name": "Gumis Withdrawal form",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "paragraph", "content": "Formulaire type de rétractation (Code de la consommation, annexe à l'article R221-1). Complétez vos coordonnées." },
-    { "type": "text", "id": "company", "label": "Raison sociale", "default": "[À COMPLÉTER : raison sociale]" },
-    { "type": "textarea", "id": "address", "label": "Adresse postale", "default": "[À COMPLÉTER : adresse postale]" },
-    { "type": "text", "id": "email", "label": "E-mail", "default": "[À COMPLÉTER : e-mail]" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+    {
+      "type": "paragraph",
+      "content": "Model withdrawal form (EU Directive 2011/83/EU, Annex I(B); French Consumer Code, annex to article R221-1). Fill in your company details."
+    },
+    {
+      "type": "text",
+      "id": "company",
+      "label": "Company name",
+      "default": "[TO COMPLETE: company name]"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "Postal address",
+      "default": "[TO COMPLETE: postal address]"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "[TO COMPLETE: email]"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colour scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    }
   ],
-  "presets": [ { "name": "Gumis Formulaire rétract." } ]
+  "presets": [
+    {
+      "name": "Gumis Withdrawal form"
+    }
+  ]
 }
 {% endschema %}

@@ -1,26 +1,28 @@
-# Thème Shopify gumis
+# gumis Shopify theme (getgumis.com)
 
-Thème Online Store 2.0 pour **gumis**, marque de gummies vitaminés vendus en France puis dans l'UE.
-Basé sur **Dawn 16.2.0** (Shopify, licence MIT, voir `LICENSE.md`). Les produits sont expédiés par **Suplify** :
-le thème ne gère que la vitrine.
+Online Store 2.0 theme for **gumis** (getgumis.com), a direct-to-consumer brand of vitamin gummies sold
+in France first, then other EU countries. Built on **Dawn 16.2.0** (Shopify, MIT licence, see `LICENSE.md`).
+Products are fulfilled by **Suplify**: the theme only handles the storefront.
 
-- Liquid + modèles JSON, tout est modifiable dans l'éditeur de thème (sections, blocs, réglages).
-- Français par défaut (`locales/fr.default.json`), anglais en 2ᵉ langue (`locales/en.json`).
-- JavaScript natif uniquement (aucun jQuery), mobile-first.
-- Style « clean & minimal » issu de la maquette *Design implementation* : fond blanc, blocs pastel (blush, peach, lilac),
-  boutons Ink à coins de 10 px, pots dessinés sur socle, bandeau Plum de chiffres, accordéons à filets.
-- Polices **Manrope** (titres et texte) et **Fredoka** (logo, étiquettes de pots) auto-hébergées dans `assets/` (licence SIL OFL, voir `docs/licenses/`).
-  Aucune police chargée depuis Google Fonts ni depuis le CDN de polices Shopify.
-- Aucun handle de produit codé en dur : produits, collections et pages se choisissent dans l'éditeur.
+- **English is the default language** (`locales/en.default.json`), **French** is the second (`locales/fr.json`).
+  Every storefront string of the theme lives in those two files, under the `gumis` key.
+- Liquid + JSON templates, everything editable in the theme editor (sections, blocks, settings).
+- Clean, minimal look: white pages with blush, peach and lilac blocks, Ink buttons with 10px corners, drawn jars
+  on a pedestal, a Plum stats band, line-style accordions.
+- **Manrope** (headings and text) and **Fredoka** (logo, jar labels) are self-hosted in `assets/` (SIL OFL licence,
+  see `docs/licenses/`). No font is loaded from Google Fonts or Shopify's font CDN.
+- Vanilla JavaScript only (no jQuery), mobile-first.
+- No product handle is hard-coded: products, collections and pages are picked in the editor.
+- Store currency EUR, prices shown tax included.
 
 ---
 
-## 1. Installation
+## 1. Setup
 
-Prérequis : [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) 3.x, Node 18+, un accès collaborateur ou propriétaire à la boutique.
+Requirements: [Shopify CLI](https://shopify.dev/docs/api/shopify-cli) 3.x, Node 18+, staff or owner access to the store.
 
 ```bash
-git clone <url-du-depot> gumis-theme
+git clone <repository-url> gumis-theme
 ```
 
 ```bash
@@ -28,257 +30,287 @@ cd gumis-theme
 ```
 
 ```bash
-shopify theme dev --store <votre-boutique>.myshopify.com
+shopify theme dev --store <your-store>.myshopify.com
 ```
 
-Contrôle qualité (Theme Check) :
+Quality check (Theme Check):
 
 ```bash
 shopify theme check
 ```
 
-Publier une copie non publiée pour relecture :
+Push an unpublished copy for review:
 
 ```bash
-shopify theme push --unpublished --store <votre-boutique>.myshopify.com
+shopify theme push --unpublished --store <your-store>.myshopify.com
 ```
 
-### Paramétrage de la boutique (Admin Shopify)
+Without the CLI: zip the folders `assets config layout locales sections snippets templates` and upload the zip in
+**Online Store > Themes > Add theme > Upload zip file**.
 
-1. **Paramètres > Marchés / Devise** : EUR comme devise de la boutique.
-2. **Paramètres > Taxes et droits** : cochez « Tous les prix incluent les taxes » (prix TTC).
-3. **Paramètres > Langues** : français par défaut, ajoutez l'anglais et publiez-le.
-4. **Boutique en ligne > Navigation** : créez les menus `main-menu` (en-tête) et `footer` (bloc « La boutique » du pied de page).
-5. Créez les **métachamps** (section 2), les **réductions automatiques** (section 3), les **pages** (section 5).
-6. **Paramètres > Confidentialité client** : activez la collecte du consentement pour l'UE/EEE et
-   **désactivez la bannière Shopify** (le thème fournit la sienne, voir section 8). N'utilisez pas les deux.
-7. **Éditeur de thème > Paramètres du thème** :
-   - *Gumis — marque* : couleurs, arrondis, logo texte, tagline, nombre de gummies par pot (60).
-   - *Gumis — panier & offres* : seuil de livraison offerte, % de remise 2 et 3 pots.
-   - *Gumis — cookies & RGPD* : bannière et page « Politique cookies ».
-8. Dans l'éditeur, sélectionnez les produits dans **Trio produits**, **Offre multi-pots** (accueil) et éventuellement le **Hero**.
+### Store settings (Shopify admin)
+
+1. **Settings > Store details**: store name `gumis` (or `getgumis`), sender email on your domain, e.g. [TO COMPLETE]@getgumis.com.
+2. **Settings > Domains**: connect **getgumis.com** and set it as the primary domain.
+3. **Settings > Markets**: EUR as store currency; France first, add other EU countries when ready.
+4. **Settings > Taxes and duties**: tick "Include sales tax in product price and shipping rate" (prices tax included).
+5. **Settings > Languages**: **English** as default, add **French** and publish it. The EN / FR switcher in the header
+   and footer only appears once both languages are published.
+6. **Online Store > Navigation**: create the `main-menu` (header) and `footer` (footer "Shop" column) menus.
+7. Create the **metafields** (section 2), the **automatic discounts** (section 3) and the **pages** (section 5).
+8. **Settings > Customer privacy**: collect consent for the EU/EEA and **turn off Shopify's own banner**
+   (the theme ships its own, see section 8). Don't use both.
+9. **Theme editor > Theme settings**:
+   - *Gumis: brand*: colours, corner radius, text logo, tagline, gummies per jar (60).
+   - *Gumis: cart & offers*: free-shipping threshold, 2-jar and 3-jar discount %.
+   - *Gumis: cookies & GDPR*: banner on/off and the Cookie policy page.
+10. In the editor, pick the products in **Gumis Product trio** and **Gumis Multi-jar offer** (home page), and optionally the **Hero** image.
+
+### French translation of section content
+
+The theme's own strings (buttons, labels, mandatory statements, default headings) are already translated in
+`locales/fr.json`. Text typed into sections and blocks (FAQ answers, steps, comparison rows…) is store content:
+translate it with Shopify's **Translate & Adapt** app. `docs/fr-section-content.md` lists the French version of
+every default text shipped in the templates, ready to paste.
 
 ---
 
-## 2. Métachamps produit à créer
+## 2. Product metafields to create
 
-**Paramètres > Données personnalisées > Produits > Ajouter une définition.** Espace de noms `custom` pour tous.
+**Settings > Custom data > Products > Add definition.** Namespace `custom` for all.
 
-| Nom | Clé complète | Type | Contenu |
+| Name | Full key | Type | Content |
 |---|---|---|---|
-| Tagline | `custom.tagline` | Texte sur une ligne | Phrase courte affichée sous le titre et sur les cartes produit. Pas d'allégation santé non autorisée. |
-| Bénéfices | `custom.benefits` | Liste de textes sur une ligne | **Allégations autorisées uniquement** (registre UE des allégations de santé), mot pour mot. |
-| Ingrédients | `custom.ingredients` | Texte enrichi | Liste des ingrédients par ordre pondéral décroissant, allergènes en gras. |
-| Tableau nutritionnel | `custom.nutrition_table` | JSON | Voir format ci-dessous. |
-| Conseils d'utilisation | `custom.how_to_use` | Texte enrichi | Mode d'emploi. |
-| Précautions | `custom.warnings` | Texte enrichi | Mises en garde. Voir texte par défaut ci-dessous. |
-| Couleur d'accent | `custom.accent_color` | Couleur | Sommeil = `#3B0A2A` (Plum), Éclat = `#D6246E` (Berry), Force = `#FF8A3D` (Tangerine). |
-| Dose | `custom.serving` | Texte sur une ligne | Ex. « 2 gummies par jour » [À COMPLÉTER selon la formule finale]. |
+| Tagline | `custom.tagline` | Single line text | Short line under the title and on product cards. No unauthorised health claim. |
+| Benefits | `custom.benefits` | List of single line text | **Authorised claims only** (EU register of health claims), word for word. |
+| Ingredients | `custom.ingredients` | Rich text | Ingredients in descending order of weight, allergens in bold. |
+| Nutrition table | `custom.nutrition_table` | JSON | See format below. |
+| How to use | `custom.how_to_use` | Rich text | Directions for use. |
+| Warnings | `custom.warnings` | Rich text | Warnings. See default text below. |
+| Accent colour | `custom.accent_color` | Color | Sleep = `#3B0A2A` (Plum), Glow = `#D6246E` (Berry), Power = `#FF8A3D` (Tangerine). |
+| Serving | `custom.serving` | Single line text | e.g. "2 gummies a day" [TO COMPLETE for the final formula]. |
 
-Cochez « Accès Storefront » si vous utilisez plus tard un front headless (non requis pour ce thème).
+Metafield values are translatable too: add the French text in Translate & Adapt.
 
-### Format de `custom.nutrition_table`
+### `custom.nutrition_table` format
 
-Un tableau de lignes, ou un objet avec `serving` et `rows` :
+An array of rows, or an object with `serving` and `rows`:
 
 ```json
 {
   "serving": "2 gummies",
   "rows": [
-    { "label": "Mélatonine", "per_serving": "1 mg", "percent_nrv": "" },
-    { "label": "Vitamine B6", "per_serving": "[À COMPLÉTER] mg", "percent_nrv": "[À COMPLÉTER] %" }
+    { "label": "Melatonin", "per_serving": "1 mg", "percent_nrv": "" },
+    { "label": "Vitamin B6", "per_serving": "[TO COMPLETE] mg", "percent_nrv": "[TO COMPLETE] %" }
   ]
 }
 ```
 
-`percent_nrv` vide affiche « – » (substances sans VNR, comme la mélatonine ou la créatine).
-Ces valeurs sont **des exemples de structure** : ne publiez que les doses de la formule finale.
+An empty `percent_nrv` shows "–" (substances without an NRV, such as melatonin or creatine).
+These values only show the **structure**: publish only the doses of the final formula.
 
-### Texte par défaut de `custom.warnings`
+### Default text for `custom.warnings`
+
+```
+Do not exceed the recommended daily dose.
+Keep out of reach of young children.
+Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.
+[TO COMPLETE: warnings specific to the formula (pregnancy, breastfeeding, children, interactions, storage…)]
+```
+
+French version for the translation:
 
 ```
 Ne pas dépasser la dose journalière recommandée.
 Tenir hors de la portée des jeunes enfants.
 Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain.
-[À COMPLÉTER : mises en garde propres à la formule (grossesse, allaitement, enfants, interactions, conservation…)]
 ```
 
-**Garantie du thème :** l'onglet « Précautions » affiche toujours ces 3 mentions obligatoires (textes dans les fichiers de langue,
-`gumis.compliance.*`). Si `custom.warnings` les contient déjà, elles ne sont pas dupliquées ; s'il ne les contient pas, le thème les ajoute.
+**What the theme guarantees:** the Warnings tab always shows these 3 mandatory statements, in the visitor's language
+(`gumis.compliance.*` in the locale files). If `custom.warnings` already contains them, they are not repeated; if not,
+the theme adds them. The third statement also appears in the footer.
 
-### Allégations de travail (à valider sur la formule finale, NE PAS coder en dur)
+### Working claims (to check against the final formula, NEVER hard-coded)
 
-À saisir dans `custom.benefits` **uniquement** une fois la formule validée par votre responsable réglementaire :
+Enter them in `custom.benefits` **only** once the formula is approved by your regulatory lead:
 
-- **Gumis Sommeil** : « La mélatonine contribue à réduire le temps d'endormissement. »
-  Valable uniquement avec **1 mg de mélatonine pris peu avant le coucher**.
-- **Gumis Éclat** : « La biotine contribue au maintien de cheveux normaux et d'une peau normale. »
-  et « Le zinc contribue au maintien d'ongles normaux. » (quantités significatives requises)
-- **Gumis Force** : « La créatine augmente la performance physique lors d'exercices successifs de courte durée et de haute intensité. »
-  Valable uniquement avec un **apport journalier de 3 g de créatine**.
+- **Gumis Sleep**: "Melatonin contributes to the reduction of time taken to fall asleep."
+  (FR: « La mélatonine contribue à réduire le temps d'endormissement. ») Only valid with **1 mg of melatonin
+  taken close to bedtime**.
+- **Gumis Glow** (hair, skin & nails): "Biotin contributes to the maintenance of normal hair and normal skin." and
+  "Zinc contributes to the maintenance of normal nails." (FR: « La biotine contribue au maintien de cheveux normaux
+  et d'une peau normale. » / « Le zinc contribue au maintien d'ongles normaux. ») Significant amounts required.
+- **Gumis Power** (creatine): "Creatine increases physical performance in successive bursts of short-term,
+  high intensity exercise." (FR: « La créatine augmente la performance physique lors d'exercices successifs de
+  courte durée et de haute intensité. ») Only valid with a **daily intake of 3 g of creatine**.
 
-Le thème n'affiche **aucune** allégation santé ailleurs que depuis ces métachamps. Les textes par défaut n'emploient jamais
-« guérit », « traite », « prévient », « soigne » ni aucun vocabulaire médical.
+The theme shows **no** health claim anywhere except from these metafields. Default copy never uses "cures",
+"treats", "prevents", "heals" or any medical wording.
 
 ---
 
-## 3. Réductions automatiques 2 et 3 pots
+## 3. Automatic discounts for 2 and 3 jars
 
-Le sélecteur 1/2/3 pots règle simplement la **quantité** ajoutée au panier. La remise est appliquée par Shopify.
+The 1/2/3-jar selector only sets the **quantity** added to the cart. Shopify applies the discount.
 
-**Remises > Créer une réduction > Montant de réduction sur les produits > Automatique** :
+**Discounts > Create discount > Amount off products > Automatic discount**:
 
-| Réduction | Condition | Valeur | Combinaisons |
+| Discount | Condition | Value | Combinations |
 |---|---|---|---|
-| `Gumis 2 pots` | Quantité minimum d'articles : **2** | **[À COMPLÉTER] %** | Ne pas combiner avec les autres réductions produit |
-| `Gumis 3 pots` | Quantité minimum d'articles : **3** | **[À COMPLÉTER] %** | Ne pas combiner avec les autres réductions produit |
+| `Gumis 2 jars` | Minimum quantity of items: **2** | **[TO COMPLETE] %** | Don't combine with other product discounts |
+| `Gumis 3 jars` | Minimum quantity of items: **3** | **[TO COMPLETE] %** | Don't combine with other product discounts |
 
-- « S'applique à » : la collection des gummies (ou les 3 produits).
-- Quand les deux sont éligibles, Shopify applique la plus avantageuse (celle des 3 pots).
-- Puis, dans **Paramètres du thème > Gumis — panier & offres**, saisissez **exactement les mêmes pourcentages**
-  (« Remise pour 2 pots », « Remise pour 3 pots »). Ils servent uniquement à **afficher** l'économie
-  sur les cartes et l'incitation du panier. À **0 %**, aucune économie n'est affichée : aucun prix n'est inventé.
-- Si vous modifiez une réduction dans l'admin, mettez à jour le réglage du thème le même jour.
+- "Applies to": the gummies collection (or the 3 products).
+- When both qualify, Shopify applies the better one (the 3-jar discount).
+- Then, in **Theme settings > Gumis: cart & offers**, enter **exactly the same percentages**
+  ("Discount for 2 jars", "Discount for 3 jars"). They are only used to **display** the saving on the jar cards and in
+  the cart upsell. At **0 %** no saving is shown: no price is ever made up.
+- If you change a discount in the admin, update the theme setting the same day.
 
-Le sélecteur suppose un produit à variante unique (un pot de 60 gummies). Pour un produit à plusieurs variantes,
-les cartes produit renvoient vers la fiche produit.
+The selector assumes a single-variant product (one jar of 60 gummies). For a product with several variants,
+product cards link to the product page instead.
 
 ---
 
-## 4. Liste des `[À COMPLÉTER]`
+## 4. List of `[TO COMPLETE]` placeholders
 
-Chaque texte provisoire est visible sur le site (surligné en rose) pour ne rien oublier avant le lancement.
+Every temporary text is visible on the site (highlighted in pink) so nothing is forgotten before launch.
+The French file uses `[À COMPLÉTER]`.
 
-### Paramètres du thème
-- *Gumis — panier & offres* : seuil de livraison offerte (vide = barre masquée), % remise 2 pots, % remise 3 pots (0 par défaut).
+### Theme settings
+- *Gumis: cart & offers*: free-shipping threshold (empty = bar hidden), 2-jar discount %, 3-jar discount % (0 by default).
 
-### En-tête / pied de page (Éditeur > En-tête / Pied de page)
-- Barre d'annonce : « Livraison offerte dès **[À COMPLÉTER]** € d'achat ».
-- Pied de page, bloc « Une question ? » : **[À COMPLÉTER : e-mail du service client]**.
+### Header and footer (Editor > Header / Footer)
+- Announcement bar: "Free shipping on orders over €**[TO COMPLETE]**".
+- Footer "Help" block: **[TO COMPLETE: support email, e.g. hello@getgumis.com]**.
 
-### Accueil (`templates/index.json`)
-- Carte de réassurance : seuil de livraison offerte, moyens de paiement (« CB, Apple Pay [À COMPLÉTER] »).
-- Bandeau chiffres : uniquement des chiffres vrais (3 formules, 60 gummies par pot, 14 jours de rétractation).
-- Gummies vs gélules : arôme (« Fruité : [À COMPLÉTER arôme] »), format du pot, sucres par portion.
-- Comment ça marche, étape 3 : durée d'un pot (« vous accompagne [À COMPLÉTER] jours »).
-- FAQ : sucres/édulcorants, vegan/gélatine/pectine/allergènes, enfants et grossesse, délais de livraison, conditions pour les pots ouverts.
+### Home page (`templates/index.json`)
+- Trust card: free-shipping threshold, payment methods ("Cards, Apple Pay [TO COMPLETE]").
+- Stats band: only true figures (3 formulas, 60 gummies per jar, 14-day withdrawal).
+- Gummies vs capsules: flavour ("Fruity: [TO COMPLETE flavour]"), jar format, sugar per serving.
+- How it works, step 3: how long a jar lasts ("lasts you [TO COMPLETE] days").
+- FAQ: sugar/sweeteners, vegan/gelatine/pectin/allergens, children and pregnancy, delivery times, opened jars.
 
-### Fiche produit (`templates/product.json`)
-- Bloc réassurance : « Livraison offerte dès [À COMPLÉTER] € ».
-- Métachamps manquants : l'éditeur affiche « Métachamp custom.xxx à compléter » ; la boutique affiche [À COMPLÉTER] dans les onglets vides.
+### Product page (`templates/product.json`)
+- Reassurance row: "Free over €[TO COMPLETE]".
+- Missing metafields: the editor shows "Metafield custom.xxx: [TO COMPLETE]"; the shop shows [TO COMPLETE] in empty tabs.
 
 ### Pages
-- **Notre histoire** (`page.histoire`) : intro, histoire des fondateurs, 3 engagements.
-- **FAQ** (`page.faq`) : moment de prise par formule, sucres, allergènes, lieu de fabrication, enfants/grossesse, conservation, délais.
-- **Contact** (`page.contact`) : délai de réponse.
-- **Livraison & retours** (`page.livraison`) : résumé, pays, tarifs, seuil, délais, produits descellés, colis abîmé.
-- **Pages légales** (CGV, mentions légales, confidentialité, cookies, rétractation) : contenu de la page + « Dernière mise à jour ».
-- **Droit de rétractation** : raison sociale, adresse postale, e-mail dans le formulaire type.
+- **Our story** (`page.about`): intro, founders' story, 3 values.
+- **FAQ** (`page.faq`): when to take each formula, sugar, allergens, manufacturing site, children/pregnancy, storage, delivery times.
+- **Contact** (`page.contact`): response time.
+- **Shipping & returns** (`page.shipping`): summary, countries, rates, threshold, delivery times, unsealed products, damaged parcels.
+- **Legal pages** (terms, legal notice, privacy, cookies, withdrawal): page content + "Last updated".
+- **Right of withdrawal**: company name, postal address and email in the model form.
 
-### Hors thème (à fournir)
-- Photos produits (fond transparent conseillé : elles s'affichent sur la couleur d'accent). En attendant, le thème dessine des pots en CSS.
-- Doses, tableau nutritionnel et allégations définitifs pour chaque formule.
+### Outside the theme (to provide)
+- Product photos (transparent background recommended: they sit on the accent colour). Until then the theme draws jars in CSS.
+- Final doses, nutrition tables and claims for each formula.
 
 ---
 
-## 5. Pages à créer (Boutique en ligne > Pages)
+## 5. Pages to create (Online Store > Pages)
 
-| Page | Modèle à choisir | Identifiant (handle) conseillé |
+| Page | Template | Suggested handle |
 |---|---|---|
-| Notre histoire | `page.histoire` | `notre-histoire` |
+| Our story | `page.about` | `our-story` |
 | FAQ | `page.faq` | `faq` |
 | Contact | `page.contact` | `contact` |
-| Livraison & retours | `page.livraison` | `livraison-et-retours` |
-| CGV | `page.cgv` | `cgv` |
-| Mentions légales | `page.mentions-legales` | `mentions-legales` |
-| Politique de confidentialité | `page.confidentialite` | `politique-de-confidentialite` |
-| Politique cookies | `page.cookies` | `politique-cookies` |
-| Droit de rétractation (14 jours) | `page.retractation` | `droit-de-retractation` |
+| Shipping & returns | `page.shipping` | `shipping-and-returns` |
+| Terms of sale | `page.terms` | `terms-of-sale` |
+| Legal notice | `page.legal-notice` | `legal-notice` |
+| Privacy policy | `page.privacy` | `privacy-policy` |
+| Cookie policy | `page.cookies` | `cookie-policy` |
+| Right of withdrawal (14 days) | `page.withdrawal` | `right-of-withdrawal` |
 
-Le bloc « Gumis liens légaux » du pied de page permet de choisir chaque page légale. Si une page n'est pas choisie,
-le lien pointe vers `/pages/<handle conseillé>` ci-dessus. Le contenu juridique est rédigé par le propriétaire
-(idéalement relu par un juriste) : le thème ne fournit que la mise en page et le **formulaire type de rétractation**
-(annexe à l'article R221-1 du Code de la consommation).
+The footer "Gumis legal links" block lets you pick each legal page. If a page isn't picked, the link points to
+`/pages/<suggested handle>` above (the newsletter and contact privacy links also use `/pages/privacy-policy`).
+Legal content is written by the owner (ideally reviewed by a lawyer): the theme provides the layout and the
+**model withdrawal form** (EU Directive 2011/83/EU, Annex I(B); French Consumer Code, annex to article R221-1), in
+English and French.
 
-Note : pour les compléments alimentaires descellés, l'exception de l'article L221-28 5° du Code de la consommation peut s'appliquer ;
-à préciser dans vos CGV.
+Note: for food supplements that have been unsealed, the exception of article L221-28 5° of the French Consumer Code
+may apply; spell it out in your terms of sale.
 
 ---
 
-## 6. Connecter les produits Suplify
+## 6. Connecting Suplify products
 
-1. Installez l'application **Suplify** depuis le Shopify App Store et connectez votre compte.
-2. Importez ou associez les 3 produits (Sommeil, Éclat, Force) depuis Suplify : l'appli crée les produits et gère stock et expédition.
-3. Sur chaque produit Shopify :
-   - renseignez les **métachamps** de la section 2 ;
-   - ajoutez les photos ;
-   - vérifiez prix TTC, poids et SKU synchronisés par Suplify (ne modifiez pas les SKU, ils servent au routage des commandes) ;
-   - ajoutez le produit à la collection des gummies.
-4. Créez une collection « Tous nos gummies » (manuelle ou automatique) : le modèle `collection` affiche ce titre par défaut.
-5. Dans l'éditeur de thème : choisissez les produits dans *Trio produits*, *Offre multi-pots* et, si besoin, *Cross-sell*.
-6. Passez une commande test (passerelle de test) et vérifiez qu'elle apparaît dans Suplify.
+1. Install the **Suplify** app from the Shopify App Store and connect your account.
+2. Import or link the 3 products (Gumis Sleep, Gumis Glow, Gumis Power) from Suplify: the app creates the products
+   and handles stock and shipping.
+3. On each Shopify product:
+   - fill in the **metafields** from section 2 (and their French translations);
+   - add photos;
+   - check the tax-included price, weight and SKU synced by Suplify (don't change SKUs, they route the orders);
+   - add the product to the gummies collection.
+4. Create an "All our gummies" collection (manual or automated): the `collection` template shows this title by default.
+5. In the theme editor: pick the products in *Gumis Product trio*, *Gumis Multi-jar offer* and, if needed, *Gumis Cross-sell*.
+6. Place a test order (test payment gateway) and check that it shows up in Suplify.
 
-Le thème ne dépend d'aucun handle : changer le nom ou l'URL d'un produit ne casse rien.
+The theme doesn't depend on any handle: renaming a product or changing its URL breaks nothing.
 
 ---
 
 ## 7. Tracking (Meta, GA4)
 
-**Aucun pixel n'est codé en dur dans le thème.**
+**No pixel is hard-coded in the theme.**
 
-- **Meta Pixel + API Conversions** : application **Facebook & Instagram** (Shopify). Partage de données « Maximum » pour activer l'API Conversions.
-- **GA4 + Google Ads** : application **Google & YouTube** (Shopify). Liez la propriété GA4 dans l'appli.
-- Ces applis utilisent les *Web Pixels* de Shopify, qui respectent automatiquement le consentement enregistré par la bannière du thème.
-- Les événements e-commerce (vue produit, ajout au panier, paiement) sont émis par Shopify : rien à ajouter dans le thème.
-- Pour un script tiers supplémentaire, utilisez **Paramètres > Événements client > Pixel personnalisé** (soumis au consentement),
-  jamais `theme.liquid`.
+- **Meta Pixel + Conversions API**: Shopify's **Facebook & Instagram** app. Set data sharing to "Maximum" to enable the Conversions API.
+- **GA4 + Google Ads**: Shopify's **Google & YouTube** app. Link the GA4 property in the app.
+- These apps use Shopify *Web Pixels*, which automatically respect the consent recorded by the theme's banner.
+- E-commerce events (product view, add to cart, checkout) are sent by Shopify: nothing to add in the theme.
+- For any extra third-party script, use **Settings > Customer events > Custom pixel** (consent-aware), never `theme.liquid`.
 
 ---
 
-## 8. RGPD et cookies
+## 8. GDPR and cookies
 
-- `sections/gumis-cookie-banner.liquid` + `assets/gumis-consent.js` utilisent l'**API Customer Privacy** de Shopify
+- `sections/gumis-cookie-banner.liquid` + `assets/gumis-consent.js` use Shopify's **Customer Privacy API**
   (`shouldShowBanner`, `currentVisitorConsent`, `setTrackingConsent`).
-- Boutons « Tout refuser » et « Tout accepter » de même poids visuel (recommandations CNIL), choix par catégorie
-  (préférences, mesure d'audience, publicité), réouverture via « Gérer les cookies » (pied de page et page Politique cookies).
-- Le thème ne charge aucun script marketing ; rien n'est déclenché avant consentement.
-- Newsletter : activez le double opt-in dans **Paramètres > Notifications clients** et gardez la mention de confidentialité sous le formulaire.
+- "Reject all" and "Accept all" carry equal visual weight (CNIL guidance), with per-category choices
+  (preferences, analytics, advertising), reopenable via "Manage cookies" (footer and Cookie policy page).
+- The theme loads no marketing script; nothing fires before consent.
+- Newsletter: turn on double opt-in in **Settings > Customer notifications** and keep the privacy note under the form.
 
 ---
 
-## 9. Conformité compléments alimentaires (rappel)
+## 9. Food-supplement compliance (reminder)
 
-- Allégations santé : uniquement depuis `custom.benefits` / `custom.tagline`, et uniquement les allégations autorisées.
-- Les 3 mentions obligatoires sont toujours affichées sur la fiche produit (onglet Précautions) ; la 3ᵉ figure aussi dans le pied de page.
-- Aucun avis, note, nombre de clients, statistique, dose ou prix inventé. Les avis passent par une **application d'avis**
-  ajoutée en bloc d'appli dans la section « Gumis Avis clients » ; sans appli ou sans avis, la section ne s'affiche pas.
-- Déclaration des compléments à la DGAL (TéléIcare) avant mise sur le marché : hors thème, à la charge de la marque.
+- Health claims: only from `custom.benefits` / `custom.tagline`, and only authorised claims.
+- The 3 mandatory statements always show on the product page (Warnings tab), in English or French; the third one also sits in the footer.
+- No invented reviews, ratings, customer counts, statistics, doses or prices. Reviews come from a **reviews app**
+  added as an app block in the "Gumis Reviews" section; without an app or reviews, the section stays hidden.
+- Notify the supplements to the French authorities (DGAL, TéléIcare) before placing them on the market: outside the theme, the brand's responsibility.
 
 ---
 
-## 10. Structure du thème (ajouts gumis)
+## 10. Theme structure (gumis additions)
 
-| Fichier | Rôle |
+| File | Role |
 |---|---|
-| `snippets/gumis-fonts.liquid` | `@font-face` auto-hébergés + jetons CSS `--gumis-*` |
-| `snippets/logo.liquid` | Logo « gumis » (Fredoka Bold Berry, ı sans point + gummy orange) |
-| `snippets/gumis-jar.liquid` | Pot dessiné (couvercle, verre, étiquette à la couleur d'accent), affiché tant qu'il n'y a pas de photo |
-| `snippets/gumis-icon.liquid` | Icônes SVG au trait (pas d'emoji) |
-| `snippets/gumis-product-card.liquid` | Carte produit (accent, nom, bénéfice depuis métachamp, prix, ajout panier) |
-| `snippets/gumis-quantity-breaks.liquid` + `assets/gumis-quantity-breaks.js` | Sélecteur 1/2/3 pots |
-| `snippets/gumis-product-block.liquid` | Blocs fiche produit : tagline, quantités, bénéfices, onglets, réassurance |
-| `snippets/gumis-sticky-atc.liquid` + `assets/gumis-sticky-atc.js` | Barre d'ajout au panier fixe (mobile) |
-| `snippets/gumis-cart-extras.liquid` + `assets/gumis-cart.js` | Barre livraison offerte + incitation palier suivant |
-| `sections/gumis-*.liquid` | Hero, Réassurance, Trio, Bandeau chiffres, Image + texte, Gummies vs gélules, Étapes, Offre multi-pots, Avis, FAQ, Newsletter, Cross-sell, Cookies, Formulaire de rétractation |
-| `sections/main-gumis-page.liquid`, `main-gumis-collection.liquid` | Pages (style marque ou légal) et collection |
-| `assets/gumis.css`, `assets/gumis-sections.css` | Couche de style gumis par-dessus Dawn |
+| `snippets/gumis-fonts.liquid` | Self-hosted `@font-face` + `--gumis-*` CSS tokens |
+| `snippets/logo.liquid` | "gumis" wordmark (Fredoka Bold, Berry, dotless ı + orange gummy dot) |
+| `snippets/gumis-jar.liquid` | Drawn jar (lid, glass, label in the accent colour), shown until photos exist |
+| `snippets/gumis-icon.liquid` | Inline SVG stroke icons (no emoji) |
+| `snippets/gumis-language-switcher.liquid` | EN / FR switcher (header and footer), works without JavaScript |
+| `snippets/gumis-product-card.liquid` | Product card (pastel tile, name, price, benefit from metafield, add to cart) |
+| `snippets/gumis-quantity-breaks.liquid` + `assets/gumis-quantity-breaks.js` | 1/2/3-jar selector |
+| `snippets/gumis-product-block.liquid` | Product page blocks: tagline, quantities, benefits, tabs, reassurance |
+| `snippets/gumis-sticky-atc.liquid` + `assets/gumis-sticky-atc.js` | Sticky add-to-cart bar (mobile) |
+| `snippets/gumis-cart-extras.liquid` + `assets/gumis-cart.js` | Free-shipping bar + next-tier upsell in the cart drawer |
+| `sections/gumis-*.liquid` | Hero, Trust card, Product trio, Stats band, Image with text, Gummies vs capsules, How it works, Multi-jar offer, Reviews, FAQ, Newsletter, Cross-sell, Cookies, Withdrawal form |
+| `sections/main-gumis-page.liquid`, `main-gumis-collection.liquid` | Pages (brand or legal style) and collection |
+| `assets/gumis.css`, `assets/gumis-sections.css` | gumis style layer on top of Dawn |
 
-Fichiers Dawn modifiés : `layout/theme.liquid`, `layout/password.liquid`, `templates/gift_card.liquid` (polices),
-`sections/header.liquid` et `main-password-header.liquid` (logo), `sections/footer.liquid` (blocs marque et légal, mention),
-`sections/main-product.liquid` (blocs gumis, barre fixe), `snippets/cart-drawer.liquid` (extras panier).
-Autres langues de vitrine de Dawn retirées ; pour ajouter l'allemand, l'italien ou l'espagnol, copiez `en.json` en `de.json` etc. et traduisez les clés `gumis.*`.
+Dawn files changed: `layout/theme.liquid`, `layout/password.liquid`, `templates/gift_card.liquid` (fonts),
+`sections/header.liquid` (logo, language switcher), `main-password-header.liquid` (logo),
+`sections/footer.liquid` (brand and legal blocks, statement, language switcher),
+`sections/main-product.liquid` (gumis blocks, sticky bar), `snippets/cart-drawer.liquid` (cart extras).
+Dawn's other storefront languages were removed; to add German, Italian or Spanish, copy `en.default.json`
+to `de.json` etc. and translate the `gumis.*` keys.
 
-### Mettre à jour Dawn
+### Updating Dawn
 
 ```bash
 git fetch upstream
@@ -288,17 +320,16 @@ git fetch upstream
 git merge upstream/main
 ```
 
-Résolvez les conflits sur les fichiers Dawn listés ci-dessus.
+Resolve conflicts in the Dawn files listed above.
 
 ---
 
-## 11. Performance et accessibilité
+## 11. Performance and accessibility
 
-- Objectif Lighthouse mobile ≥ 90 (performance et accessibilité) : **à mesurer sur la boutique réelle** avec vos photos
-  (`shopify theme dev` ou thème non publié). Gardez des images produit ≤ 2000 px, en PNG/WebP compressé.
-- Deux feuilles de style gumis globales (pas de CSS par section), 2 polices Manrope préchargées, JS différé et chargé seulement par les sections qui en ont besoin,
-  `font-display: swap`, image du hero en `fetchpriority="high"`.
-- Contrastes WCAG AA vérifiés : Ink sur blanc 18:1 ; texte secondaire `#5C4152` 9:1 ; gris des mentions `#7A6372`
-  ≥ 4,8:1 sur blanc et sur les 3 pastels (assombri par rapport à la maquette, qui était à 4,2:1) ; Berry sur blanc 4,84:1 ;
-  chiffres orange et légendes rosées sur Plum ≥ 9:1.
-- Formes décoratives en `aria-hidden`, animations désactivées avec `prefers-reduced-motion`, tableaux et accordéons sémantiques.
+- Target Lighthouse mobile ≥ 90 (performance and accessibility): **measure on the real store** with your photos
+  (`shopify theme dev` or an unpublished theme). Keep product images ≤ 2000 px, compressed PNG/WebP.
+- Two global gumis stylesheets (no per-section CSS), 2 Manrope fonts preloaded, deferred JavaScript loaded only by
+  the sections that need it, `font-display: swap`, hero image with `fetchpriority="high"`.
+- WCAG AA contrast checked: Ink on white 18:1; secondary text `#5C4152` 9:1; caption grey `#7A6372` ≥ 4.8:1 on white
+  and the 3 pastels; Berry on white 4.84:1; orange figures and pink captions on Plum ≥ 9:1.
+- Decorative shapes are `aria-hidden`, animations respect `prefers-reduced-motion`, tables and accordions are semantic.

@@ -1,7 +1,7 @@
 {%- comment -%}
   GDPR cookie consent banner wired to Shopify's Customer Privacy API.
   - Hidden until the API says a banner is needed (shouldShowBanner) or the visitor clicks
-    any [data-gumis-open-consent] element ("Gérer les cookies").
+    any [data-gumis-open-consent] element ("Manage cookies").
   - "Tout accepter" and "Tout refuser" have equal prominence (CNIL guidance).
   - The theme loads no marketing script itself; the Facebook & Instagram and Google & YouTube
     apps' pixels read this consent through Shopify.
@@ -11,7 +11,7 @@
     if settings.gumis_cookie_page != blank
       assign cookie_url = settings.gumis_cookie_page.url
     else
-      assign cookie_url = routes.root_url | append: '/pages/politique-cookies' | replace: '//', '/'
+      assign cookie_url = routes.root_url | append: '/pages/cookie-policy' | replace: '//', '/'
     endif
   -%}
   <gumis-consent
@@ -84,9 +84,22 @@
   "tag": "div",
   "class": "gumis-consent-section",
   "settings": [
-    { "type": "paragraph", "content": "Activez/désactivez la bannière dans Paramètres du thème > Gumis — cookies & RGPD." },
-    { "type": "text", "id": "title", "label": "Titre", "info": "Vide = traduction par défaut." },
-    { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut." }
+    {
+      "type": "paragraph",
+      "content": "Turn the banner on or off in Theme settings > Gumis: cookies & GDPR."
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "info": "Empty = default translation."
+    }
   ]
 }
 {% endschema %}

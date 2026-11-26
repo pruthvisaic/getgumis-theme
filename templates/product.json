@@ -37,19 +37,19 @@
           "type": "gumis_reassurance",
           "settings": {
             "icon_1": "truck",
-            "text_1": "Offerte dès [À COMPLÉTER] €",
+            "text_1": "Free over €[TO COMPLETE]",
             "icon_2": "lock",
-            "text_2": "Paiement sécurisé",
+            "text_2": "Secure payment",
             "icon_3": "return",
-            "text_3": "14 jours pour changer d'avis",
+            "text_3": "14 days to change your mind",
             "icon_4": "chat",
-            "text_4": "Une question ? On répond"
+            "text_4": "Questions? We answer"
           }
         },
         "gumis_benefits": {
           "type": "gumis_benefits",
           "settings": {
-            "heading": "Ce qu'il fait pour vous"
+            "heading": "What it does for you"
           }
         },
         "description": {

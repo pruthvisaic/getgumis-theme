@@ -4,9 +4,9 @@
       "type": "main-gumis-page",
       "settings": {
         "style": "default",
-        "eyebrow": "Notre histoire",
+        "eyebrow": "Our story",
         "heading": "",
-        "intro": "<p>[À COMPLÉTER : en deux phrases, pourquoi gumis existe.]</p>",
+        "intro": "<p>[TO COMPLETE: in two sentences, why gumis exists.]</p>",
         "show_content": true,
         "updated_label": "",
         "show_cookie_button": false,
@@ -21,21 +21,21 @@
         "h": {
           "type": "heading",
           "settings": {
-            "heading": "Des vitamines qu'on a envie de prendre",
+            "heading": "Vitamins you actually want to take",
             "heading_size": "h1"
           }
         },
         "t": {
           "type": "text",
           "settings": {
-            "text": "<p>[À COMPLÉTER : l'histoire des fondateurs, le déclic, la mission.]</p>",
+            "text": "<p>[TO COMPLETE: the founders' story, the spark, the mission.]</p>",
             "text_style": "body"
           }
         },
         "b": {
           "type": "button",
           "settings": {
-            "button_label": "Découvrir les gummies",
+            "button_label": "Shop the gummies",
             "button_link": "shopify://collections/all",
             "button_style_secondary": false
           }
@@ -67,8 +67,8 @@
         "c1": {
           "type": "column",
           "settings": {
-            "title": "Gourmand",
-            "text": "<p>[À COMPLÉTER : votre engagement sur le goût.]</p>",
+            "title": "Tasty",
+            "text": "<p>[TO COMPLETE: your commitment on taste.]</p>",
             "link_label": ""
           }
         },
@@ -76,7 +76,7 @@
           "type": "column",
           "settings": {
             "title": "Transparent",
-            "text": "<p>[À COMPLÉTER : composition, origine des ingrédients, fabrication.]</p>",
+            "text": "<p>[TO COMPLETE: composition, ingredient sourcing, manufacturing.]</p>",
             "link_label": ""
           }
         },
@@ -84,7 +84,7 @@
           "type": "column",
           "settings": {
             "title": "Simple",
-            "text": "<p>[À COMPLÉTER : votre promesse de simplicité.]</p>",
+            "text": "<p>[TO COMPLETE: your promise of simplicity.]</p>",
             "link_label": ""
           }
         }
@@ -95,7 +95,7 @@
         "c3"
       ],
       "settings": {
-        "title": "Ce qui compte pour nous",
+        "title": "What matters to us",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",

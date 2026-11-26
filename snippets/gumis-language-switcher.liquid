@@ -1,0 +1,31 @@
+{% doc %}
+  Compact language switcher: "EN / FR". Each language is a submit button of
+  Shopify's localization form (works without JavaScript). Hidden when the store
+  has a single published language.
+
+  @param {string} form_id - Unique id for the form.
+  @param {string} [class] - Extra classes.
+{% enddoc %}
+{%- if localization.available_languages.size > 1 -%}
+  <div class="g-lang{% if class %} {{ class }}{% endif %}">
+    {%- form 'localization', id: form_id, class: 'g-lang__form' -%}
+      <span class="visually-hidden" id="{{ form_id }}-label">{{ 'gumis.language.label' | t }}</span>
+      <div class="g-lang__list" role="group" aria-labelledby="{{ form_id }}-label">
+        {%- for language in localization.available_languages -%}
+          {%- unless forloop.first -%}<span class="g-lang__sep" aria-hidden="true">/</span>{%- endunless -%}
+          {%- if language.iso_code == localization.language.iso_code -%}
+            <span class="g-lang__item g-lang__item--current" aria-current="true" lang="{{ language.iso_code }}">
+              <span aria-hidden="true">{{ language.iso_code | upcase }}</span>
+              <span class="visually-hidden">{{ language.endonym_name }}, {{ 'gumis.language.current' | t }}</span>
+            </span>
+          {%- else -%}
+            <button type="submit" name="locale_code" value="{{ language.iso_code }}" class="g-lang__item" lang="{{ language.iso_code }}">
+              <span aria-hidden="true">{{ language.iso_code | upcase }}</span>
+              <span class="visually-hidden">{{ language.endonym_name }}</span>
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endform -%}
+  </div>
+{%- endif -%}

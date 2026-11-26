@@ -70,7 +70,7 @@
 
   {%- when 'gumis_info' -%}
     <div class="gumis-pdp-info g-accordion" {{ block.shopify_attributes }}>
-      {%- comment -%} Ingrédients {%- endcomment -%}
+      {%- comment -%} Ingredients {%- endcomment -%}
       <details class="g-acc"{% if block.settings.open_first %} open{% endif %}>
         <summary>
           <h2 class="g-acc__title">{{ 'gumis.pdp.tab_ingredients' | t }}</h2>
@@ -148,7 +148,7 @@
       </details>
 
       {%- comment -%}
-        Précautions. The 3 mandatory food-supplement statements are ALWAYS rendered:
+        Warnings. The 3 mandatory food-supplement statements are ALWAYS rendered:
         any statement not already present in custom.warnings is appended from the locale file.
       {%- endcomment -%}
       {%- liquid

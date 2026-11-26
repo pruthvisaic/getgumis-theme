@@ -42,39 +42,120 @@
 
 {% schema %}
 {
-  "name": "Gumis Trio produits",
+  "name": "Gumis Product trio",
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
-    { "type": "url", "id": "view_all_link", "label": "Lien « Voir tous les gummies »" },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-products" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 88 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "info": "Empty = default translation."
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "\"See all gummies\" link"
+    },
+    {
+      "type": "text",
+      "id": "anchor",
+      "label": "Anchor (id)",
+      "default": "gumis-products"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 88
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 96
+    }
   ],
   "blocks": [
     {
       "type": "product",
-      "name": "Produit",
+      "name": "Product",
       "limit": 6,
       "settings": [
-        { "type": "product", "id": "product", "label": "Produit" },
-        { "type": "color", "id": "accent", "label": "Couleur d'accent", "info": "Couleur de l'étiquette du pot dessiné. Vide = métachamp custom.accent_color." },
-        { "type": "text", "id": "placeholder_title", "label": "Nom affiché sans produit" },
-        { "type": "text", "id": "badge", "label": "Badge (optionnel)", "info": "N'écrivez pas « best-seller » sans données de ventes réelles." },
-        { "type": "checkbox", "id": "primary", "label": "Bouton plein (mise en avant)", "default": false },
-        { "type": "paragraph", "content": "La phrase de bénéfice vient des métachamps du produit (custom.tagline, sinon 1er élément de custom.benefits)." }
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "color",
+          "id": "accent",
+          "label": "Accent colour",
+          "info": "Label colour of the drawn jar. Empty = custom.accent_color metafield."
+        },
+        {
+          "type": "text",
+          "id": "placeholder_title",
+          "label": "Name shown when no product is selected"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge (optional)",
+          "info": "Don't write \"best-seller\" without real sales data."
+        },
+        {
+          "type": "checkbox",
+          "id": "primary",
+          "label": "Solid button (highlight)",
+          "default": false
+        },
+        {
+          "type": "paragraph",
+          "content": "The benefit line comes from the product metafields (custom.tagline, otherwise the first item of custom.benefits)."
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Gumis Trio produits",
+      "name": "Gumis Product trio",
       "blocks": [
-        { "type": "product", "settings": { "accent": "#3B0A2A", "placeholder_title": "Gumis Sommeil" } },
-        { "type": "product", "settings": { "accent": "#D6246E", "placeholder_title": "Gumis Éclat", "primary": true } },
-        { "type": "product", "settings": { "accent": "#FF8A3D", "placeholder_title": "Gumis Force" } }
+        {
+          "type": "product",
+          "settings": {
+            "accent": "#3B0A2A",
+            "placeholder_title": "Gumis Sleep"
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "accent": "#D6246E",
+            "placeholder_title": "Gumis Glow",
+            "primary": true
+          }
+        },
+        {
+          "type": "product",
+          "settings": {
+            "accent": "#FF8A3D",
+            "placeholder_title": "Gumis Power"
+          }
+        }
       ]
     }
   ]

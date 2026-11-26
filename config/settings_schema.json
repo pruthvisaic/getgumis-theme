@@ -102,32 +102,32 @@
     ]
   },
   {
-    "name": "Gumis — marque",
+    "name": "Gumis: brand",
     "settings": [
       {
         "type": "header",
-        "content": "Couleurs de marque"
+        "content": "Brand colours"
       },
       {
         "type": "paragraph",
-        "content": "Ces couleurs alimentent les formes décoratives, le logo, les cartes produit et les composants Gumis. Les palettes de sections se règlent dans « Couleurs »."
+        "content": "These colours drive the decorative shapes, the logo, product cards and Gumis components. Section palettes are set under \"Colors\"."
       },
       {
         "type": "color",
         "id": "gumis_ink",
-        "label": "Ink (texte, boutons)",
+        "label": "Ink (text, buttons)",
         "default": "#2A0A1F"
       },
       {
         "type": "color",
         "id": "gumis_berry",
-        "label": "Berry (principale)",
+        "label": "Berry (primary)",
         "default": "#D6246E"
       },
       {
         "type": "color",
         "id": "gumis_plum",
-        "label": "Plum (texte, sections sombres)",
+        "label": "Plum (text, dark sections)",
         "default": "#3B0A2A"
       },
       {
@@ -139,41 +139,41 @@
       {
         "type": "color",
         "id": "gumis_bubblegum",
-        "label": "Bubblegum (fonds doux)",
+        "label": "Bubblegum (soft backgrounds)",
         "default": "#FFD3E2"
       },
       {
         "type": "color",
         "id": "gumis_cream",
-        "label": "Cream (fond de page)",
+        "label": "Cream (page background)",
         "default": "#FFF4EC"
       },
       {
         "type": "color",
         "id": "gumis_blush",
-        "label": "Blush (blocs pastel)",
+        "label": "Blush (pastel blocks)",
         "default": "#FBF0F3"
       },
       {
         "type": "color",
         "id": "gumis_peach",
-        "label": "Peach (blocs pastel)",
+        "label": "Peach (pastel blocks)",
         "default": "#FFF3EA"
       },
       {
         "type": "color",
         "id": "gumis_lilac",
-        "label": "Lilac (blocs pastel)",
+        "label": "Lilac (pastel blocks)",
         "default": "#F4F0F8"
       },
       {
         "type": "header",
-        "content": "Formes"
+        "content": "Shapes"
       },
       {
         "type": "range",
         "id": "gumis_radius",
-        "label": "Arrondi des grands blocs",
+        "label": "Corner radius of large blocks",
         "min": 8,
         "max": 32,
         "step": 2,
@@ -183,43 +183,43 @@
       {
         "type": "checkbox",
         "id": "gumis_show_blobs",
-        "label": "Afficher les gummies décoratifs",
+        "label": "Show decorative gummies",
         "default": true
       },
       {
         "type": "header",
-        "content": "Logo texte"
+        "content": "Text logo"
       },
       {
         "type": "paragraph",
-        "content": "Sans image de logo, le thème affiche le logo « gumis » (Fredoka Bold, point du i en gummy orange)."
+        "content": "Without a logo image, the theme shows the \"gumis\" wordmark (Fredoka Bold, the dot of the i is an orange gummy)."
       },
       {
         "type": "color",
         "id": "gumis_logo_color",
-        "label": "Couleur du logo",
+        "label": "Logo colour",
         "default": "#D6246E"
       },
       {
         "type": "color",
         "id": "gumis_logo_dot_color",
-        "label": "Couleur du point gummy",
+        "label": "Gummy dot colour",
         "default": "#FF8A3D"
       },
       {
         "type": "text",
         "id": "gumis_tagline",
-        "label": "Signature (tagline)",
-        "info": "Laisser vide pour utiliser la traduction par défaut : « Vos vitamines, en version gourmande. »"
+        "label": "Tagline",
+        "info": "Leave empty to use the default translation: \"Your vitamins, made tasty.\""
       },
       {
         "type": "header",
-        "content": "Produits"
+        "content": "Products"
       },
       {
         "type": "number",
         "id": "gumis_gummies_per_jar",
-        "label": "Nombre de gummies par pot",
+        "label": "Gummies per jar",
         "default": 60
       }
     ]
@@ -229,7 +229,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Les polices Manrope (titres et texte) et Fredoka (logo) sont auto-hébergées dans le thème (licence SIL OFL). Aucune police n'est chargée depuis un CDN externe."
+        "content": "Manrope (headings and text) and Fredoka (logo) are self-hosted in the theme (SIL OFL licence). No font is loaded from an external CDN."
       },
       {
         "type": "range",
@@ -1575,36 +1575,36 @@
     ]
   },
   {
-    "name": "Gumis — panier & offres",
+    "name": "Gumis: cart & offers",
     "settings": [
       {
         "type": "header",
-        "content": "Livraison offerte"
+        "content": "Free shipping"
       },
       {
         "type": "checkbox",
         "id": "gumis_free_shipping_enabled",
-        "label": "Afficher la barre de livraison offerte",
+        "label": "Show the free-shipping bar",
         "default": true
       },
       {
         "type": "number",
         "id": "gumis_free_shipping_threshold",
-        "label": "Seuil de livraison offerte (€ TTC)",
-        "info": "Laisser vide pour masquer la barre. Doit correspondre au tarif d'expédition gratuit configuré dans Paramètres > Expédition et livraison."
+        "label": "Free-shipping threshold (€, tax included)",
+        "info": "Leave empty to hide the bar. Must match the free shipping rate set in Settings > Shipping and delivery."
       },
       {
         "type": "header",
-        "content": "Offres multi-pots"
+        "content": "Multi-jar offers"
       },
       {
         "type": "paragraph",
-        "content": "Les remises sont appliquées par des réductions automatiques Shopify (voir README). Indiquez ici les MÊMES pourcentages pour afficher l'économie. Laisser 0 pour ne rien afficher."
+        "content": "Discounts are applied by Shopify automatic discounts (see README). Enter the SAME percentages here to display the saving. Leave 0 to show nothing."
       },
       {
         "type": "range",
         "id": "gumis_bundle_discount_2",
-        "label": "Remise pour 2 pots (%)",
+        "label": "Discount for 2 jars (%)",
         "min": 0,
         "max": 50,
         "step": 1,
@@ -1614,7 +1614,7 @@
       {
         "type": "range",
         "id": "gumis_bundle_discount_3",
-        "label": "Remise pour 3 pots (%)",
+        "label": "Discount for 3 jars (%)",
         "min": 0,
         "max": 50,
         "step": 1,
@@ -1624,41 +1624,41 @@
       {
         "type": "checkbox",
         "id": "gumis_cart_bundle_upsell",
-        "label": "Suggérer le palier suivant dans le panier",
+        "label": "Suggest the next tier in the cart",
         "default": true
       }
     ]
   },
   {
-    "name": "Gumis — cookies & RGPD",
+    "name": "Gumis: cookies & GDPR",
     "settings": [
       {
         "type": "paragraph",
-        "content": "Bannière de consentement reliée à l'API Customer Privacy de Shopify. Les pixels des applis Facebook & Instagram et Google & YouTube respectent ce consentement. Désactivez la bannière Shopify native dans Paramètres > Confidentialité client si vous utilisez celle-ci."
+        "content": "Consent banner connected to Shopify's Customer Privacy API. Pixels from the Facebook & Instagram and Google & YouTube apps respect this consent. Turn off Shopify's own banner in Settings > Customer privacy if you use this one."
       },
       {
         "type": "checkbox",
         "id": "gumis_cookie_banner",
-        "label": "Activer la bannière cookies du thème",
+        "label": "Enable the theme's cookie banner",
         "default": true
       },
       {
         "type": "page",
         "id": "gumis_cookie_page",
-        "label": "Page « Politique cookies »"
+        "label": "\"Cookie policy\" page"
       },
       {
         "type": "select",
         "id": "gumis_cookie_position",
-        "label": "Position de la bannière",
+        "label": "Banner position",
         "options": [
           {
             "value": "bottom",
-            "label": "En bas"
+            "label": "Bottom"
           },
           {
             "value": "center",
-            "label": "Au centre"
+            "label": "Centre"
           }
         ],
         "default": "bottom"

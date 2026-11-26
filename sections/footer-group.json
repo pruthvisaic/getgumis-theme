@@ -17,7 +17,7 @@
         "shop": {
           "type": "link_list",
           "settings": {
-            "heading": "Boutique",
+            "heading": "Shop",
             "menu": "footer"
           }
         },
@@ -31,8 +31,8 @@
         "contact": {
           "type": "text",
           "settings": {
-            "heading": "Aide",
-            "subtext": "<p>Écrivez-nous via la page <a href=\"/pages/contact\" title=\"Contact\">Contact</a> ou à [À COMPLÉTER : e-mail du service client]. On répond du lundi au vendredi.</p>"
+            "heading": "Help",
+            "subtext": "<p>Write to us via the <a href=\"/pages/contact\" title=\"Contact\">Contact</a> page or at [TO COMPLETE: support email, e.g. hello@getgumis.com]. We reply Monday to Friday.</p>"
           }
         }
       },
@@ -51,12 +51,13 @@
         "enable_follow_on_shop": false,
         "show_social": false,
         "enable_country_selector": false,
-        "enable_language_selector": true,
+        "enable_language_selector": false,
         "payment_enable": true,
         "show_policy": false,
         "margin_top": 0,
         "padding_top": 64,
-        "padding_bottom": 32
+        "padding_bottom": 32,
+        "gumis_language_switcher": true
       }
     }
   },

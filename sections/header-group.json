@@ -17,7 +17,7 @@
         "announcement-shipping": {
           "type": "announcement",
           "settings": {
-            "text": "Livraison offerte dès [À COMPLÉTER] € d'achat",
+            "text": "Free shipping on orders over €[TO COMPLETE]",
             "text_alignment": "center",
             "color_scheme": "scheme-2",
             "link": ""
@@ -26,7 +26,7 @@
         "announcement-bundle": {
           "type": "announcement",
           "settings": {
-            "text": "Plus de pots, plus d'économies : découvrez nos offres 2 et 3 pots",
+            "text": "More jars, more savings: discover our 2- and 3-jar offers",
             "text_alignment": "center",
             "color_scheme": "scheme-2",
             "link": "shopify://collections/all"
@@ -49,11 +49,12 @@
         "sticky_header_type": "always",
         "show_line_separator": false,
         "enable_country_selector": false,
-        "enable_language_selector": true,
+        "enable_language_selector": false,
         "mobile_logo_position": "center",
         "margin_bottom": 0,
         "padding_top": 12,
-        "padding_bottom": 12
+        "padding_bottom": 12,
+        "gumis_language_switcher": true
       }
     }
   },
