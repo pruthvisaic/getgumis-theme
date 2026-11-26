@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>getgumis Sleep label</title>
+<style>
+@font-face{font-family:'Fredoka';font-weight:600;src:url(../../assets/fredoka-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Fredoka';font-weight:700;src:url(../../assets/fredoka-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:400;src:url(../../assets/manrope-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:500;src:url(../../assets/manrope-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:600;src:url(../../assets/manrope-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:700;src:url(../../assets/manrope-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:800;src:url(../../assets/manrope-latin-800-normal.woff2) format('woff2')}
+
+/* Wrap-around label, same proportions as the supplier template (2000 x 830).
+   Sizes are in px of a 2000 px wide artboard; the PDF export scales it to the final mm size. */
+:root{
+  --ink:#1B0614;          /* near-black for small print */
+  --plum:#3B0A2A;
+  --berry:#D6246E;
+  --tangerine:#FF8A3D;
+  --night:#EDE6F6;        /* Sleep colourway: soft lilac */
+  --night-2:#DCD0EE;
+  --line:#D9CFE3;
+  --white:#FFFFFF;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#E9E5EC}
+.label{
+  position:relative;width:2000px;height:830px;margin:0;overflow:hidden;
+  background:var(--white);color:var(--ink);font-family:'Manrope',sans-serif;
+  display:grid;grid-template-columns:600px 800px 600px;
+}
+/* ---------- side panels ---------- */
+.side{padding:52px 46px 44px;display:flex;flex-direction:column;gap:18px;font-size:21px;line-height:1.38}
+.side h3{margin:0 0 4px;font-size:21px;font-weight:800;letter-spacing:.01em;color:var(--plum);text-transform:uppercase}
+.side p{margin:0}
+.block{display:flex;flex-direction:column}
+.small{font-size:18px;line-height:1.35}
+.left{border-right:2px dashed var(--line)}
+.right{border-left:2px dashed var(--line)}
+.warn{padding:16px 18px;border-radius:16px;background:#F7F3FA}
+.warn p{font-weight:600}
+.meta{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.net{font-size:26px;font-weight:800;color:var(--plum)}
+.net span{font-weight:500;font-size:19px;color:var(--ink);display:block}
+.barcode{width:190px;height:96px;border:2px dashed #B9AEC4;border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:14px;color:#7A6372;font-weight:700;line-height:1.2;padding:6px}
+/* nutrition */
+.desc{font-weight:800;font-size:21px;color:var(--plum);line-height:1.3}
+table{width:100%;border-collapse:collapse;font-size:19.5px}
+th{text-align:left;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#5C4152;padding:0 0 8px;border-bottom:3px solid var(--plum);vertical-align:bottom}
+td{padding:6.5px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:nth-child(2),th:nth-child(2){text-align:right;padding-right:22px;white-space:nowrap}
+td:nth-child(3),th:nth-child(3){text-align:right;white-space:nowrap}
+tr.hl td{font-weight:800}
+.foot{font-size:15.5px;line-height:1.35;color:#3E2A37}
+.company{margin-top:auto;font-size:17px;line-height:1.4;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.company b{color:var(--plum)}
+.tbc{background:#FFE3EE;color:#8A0F44;font-weight:800;border-radius:6px;padding:0 6px}
+
+/* ---------- front panel ---------- */
+.front{position:relative;background:var(--night);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.front::before{ /* night-sky glow */
+  content:"";position:absolute;inset:-20% -10% auto;height:120%;
+  background:radial-gradient(55% 50% at 50% 42%,#FFFFFF 0%,rgba(255,255,255,0) 70%);
+}
+.logo{position:relative;font-family:'Fredoka';font-weight:700;font-size:96px;line-height:1;letter-spacing:-.03em;display:inline-flex;align-items:baseline}
+.logo .get{color:#000}
+.logo .gumis{color:var(--plum);display:inline-flex}
+.logo .i{position:relative;display:inline-block}
+.logo .i::after{content:"";position:absolute;left:50%;top:.1em;width:.26em;height:.24em;margin-left:-.13em;background:var(--tangerine);border-radius:48% 52% 42% 58%/58% 50% 50% 42%;transform:rotate(-14deg)}
+.pill{position:relative;margin-top:22px;padding:9px 22px;border-radius:999px;background:var(--plum);color:#fff;font-weight:800;font-size:17px;letter-spacing:.16em;text-transform:uppercase}
+.name{position:relative;margin:26px 0 0;font-family:'Fredoka';font-weight:700;font-size:150px;line-height:.9;color:var(--plum);letter-spacing:-.03em}
+.sub{position:relative;margin-top:10px;font-family:'Fredoka';font-weight:600;font-size:46px;color:var(--berry);letter-spacing:-.01em}
+.keys{position:relative;margin-top:28px;font-size:19px;font-weight:700;color:#5C4152;letter-spacing:.02em}
+.keys i{font-style:normal;color:var(--berry);padding:0 8px}
+.count{position:absolute;left:0;right:0;bottom:36px;display:flex;justify-content:center;gap:14px;font-size:20px;font-weight:700;color:var(--plum)}
+.count span{padding:8px 18px;border-radius:999px;background:#fff}
+/* decorative: moon + gummies + stars (vector shapes, print-safe) */
+.moon{position:absolute;top:58px;right:74px;width:92px;height:92px;border-radius:50%;box-shadow:-22px 10px 0 0 var(--plum);transform:rotate(-12deg)}
+.star{position:absolute;width:14px;height:14px;background:var(--berry);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.gum{position:absolute;border-radius:48% 52% 42% 58%/58% 50% 50% 42%;box-shadow:inset -8px -8px 0 rgba(0,0,0,.08),inset 8px 8px 0 rgba(255,255,255,.3)}
+
+.namewrap{position:relative;display:flex;flex-direction:column;align-items:center}
+.dose{display:none}
+/* V2: plum band */
+.v2 .front{background:#fff}.v2 .front::before{display:none}
+.v2 .namewrap{width:100%;margin-top:28px;padding:26px 0 30px;background:var(--plum)}
+.v2 .name{margin:0;color:#fff}.v2 .sub{color:#FFB37A}
+.v2 .gum{display:none}.v2 .moon{box-shadow:-22px 10px 0 0 var(--berry)}
+.v2 .keys{margin-top:24px}
+/* V3: bubblegum + dose badge */
+.v3 .front{background:#FFD3E2}.v3 .front::before{background:radial-gradient(50% 45% at 50% 46%,#FFE9F0 0%,rgba(255,233,240,0) 70%)}
+.v3 .pill{background:var(--berry)}.v3 .sub{color:var(--plum)}
+.v3 .moon{display:none}
+.v3 .dose{display:flex;flex-direction:column;align-items:center;justify-content:center;position:absolute;top:52px;right:56px;width:150px;height:150px;border-radius:50%;background:var(--plum);color:#fff;font-weight:800;font-size:17px;line-height:1.15;text-align:center;transform:rotate(10deg)}
+.v3 .dose b{font-family:'Fredoka';font-size:58px;line-height:.9;color:#FFB37A}
+.v3 .keys{color:var(--plum)}
+/* V4: minimal white, left aligned */
+.v4 .front{background:#fff;align-items:flex-start;text-align:left;padding:0 0 0 92px}.v4 .front::before{display:none}
+.v4 .gum,.v4 .star{display:none}
+.v4 .logo{font-size:72px}
+.v4 .pill{background:none;color:var(--plum);border:2px solid var(--plum);padding:7px 18px;font-size:15px}
+.v4 .namewrap{align-items:flex-start}.v4 .name{font-size:176px;margin-top:30px}.v4 .sub{color:var(--plum);font-size:42px;margin-top:6px}
+.v4 .keys{font-size:18px}
+.v4 .count{justify-content:flex-start;left:92px}.v4 .count span{background:#F4F0F8}
+.v4 .moon{top:auto;bottom:250px;right:92px;width:120px;height:120px;box-shadow:-28px 12px 0 0 var(--berry)}
+.v4 .front::after{content:none}
+.v4 .logo{margin-top:40px}
+/* V5: warm cream + tangerine */
+.v5 .front{background:#FFF4EC}.v5 .front::before{background:radial-gradient(50% 45% at 50% 44%,#FFFFFF 0%,rgba(255,255,255,0) 70%)}
+.v5 .pill{background:var(--tangerine);color:var(--plum)}
+.v5 .sub{color:#C24E12}
+.v5 .moon{box-shadow:-22px 10px 0 0 var(--tangerine)}
+.v5 .star{background:var(--tangerine)}
+.v5 .count span{background:#FFE6D4}
+</style>
+</head>
+<body>
+<div class="label" id="label"><script>document.currentScript.parentElement.classList.add(new URLSearchParams(location.search).get("v")||"v1")</script>
+
+  <!-- LEFT: use, ingredients, warnings -->
+  <section class="side left">
+    <div class="block">
+      <h3>Recommended use</h3>
+      <p>Chew 2 gummies a day.</p>
+    </div>
+    <div class="block">
+      <h3>Ingredients</h3>
+      <p class="small"><i>Griffonia simplicifolia</i> seed extract (5-HTP), L-theanine, valerian root, magnesium, passionflower extract, glycine, melatonin, tapioca syrup, sucrose, pectin, coconut oil, purified water, natural flavouring, juice concentrate, tapioca starch, sodium citrate, lactic acid, carnauba wax. <span class="tbc">[TO COMPLETE: confirm order by weight + magnesium source]</span></p>
+    </div>
+    <div class="warn">
+      <h3>Warnings</h3>
+      <p class="small">Do not exceed the recommended daily dose. Keep out of reach of young children. Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.</p>
+      <p class="small" style="font-weight:500;margin-top:6px">Not recommended for pregnant or breastfeeding women. <span class="tbc">[TO COMPLETE: other warnings per regulatory review]</span></p>
+    </div>
+    <p class="small">Store in a cool, dry, dark place.</p>
+    <div class="meta">
+      <div class="net">60 gummies <span>Net weight 154 g · 30 servings</span><span class="small" style="margin-top:6px">Lot &amp; best before: see bottom of container</span></div>
+      <div class="barcode">EAN-13 barcode<br>[TO COMPLETE]</div>
+    </div>
+  </section>
+
+  <!-- FRONT -->
+  <section class="front">
+    <span class="moon" aria-hidden="true"></span><span class="dose" aria-hidden="true"><b>2</b>gummies<br>a day</span>
+    <span class="star" style="top:70px;left:96px"></span>
+    <span class="star" style="top:150px;left:180px;width:10px;height:10px;background:var(--tangerine)"></span>
+    <span class="star" style="top:200px;right:210px;width:11px;height:11px"></span>
+    <span class="star" style="bottom:170px;left:120px;width:12px;height:12px;background:var(--plum)"></span>
+    <span class="gum" style="width:120px;height:110px;left:-34px;bottom:96px;background:var(--berry);transform:rotate(-14deg)"></span>
+    <span class="gum" style="width:86px;height:78px;left:74px;bottom:42px;background:var(--tangerine);transform:rotate(18deg)"></span>
+    <span class="gum" style="width:104px;height:96px;right:-26px;bottom:120px;background:#F7B7CD;transform:rotate(22deg)"></span>
+    <span class="gum" style="width:64px;height:58px;right:86px;bottom:52px;background:#fff;transform:rotate(-20deg)"></span>
+
+    <div class="logo"><span class="get">get</span><span class="gumis">gum<span class="i">ı</span>s</span></div>
+    <div class="pill">Food supplement</div>
+    <div class="namewrap"><div class="name">Sleep</div>
+    <div class="sub">gummies</div></div>
+    <div class="keys">Melatonin<i>·</i>Glycine<i>·</i>L-theanine<i>·</i>Valerian</div>
+    <div class="count"><span>60 gummies</span><span>[TO COMPLETE flavour]</span></div>
+  </section>
+
+  <!-- RIGHT: nutrition -->
+  <section class="side right">
+    <p class="desc">Food supplement with 5-HTP, L-theanine, valerian root, magnesium, passionflower extract, glycine and melatonin.</p>
+    <div class="block">
+      <table>
+        <thead><tr><th>Per daily dose<br>(2 gummies)</th><th>Amount</th><th>% NRV*</th></tr></thead>
+        <tbody>
+          <tr><td>Natural 5-HTP</td><td>100 mg</td><td>**</td></tr>
+          <tr><td>L-theanine</td><td>200 mg</td><td>**</td></tr>
+          <tr><td>Valerian root</td><td>530 mg</td><td>**</td></tr>
+          <tr class="hl"><td>Magnesium</td><td>95 mg</td><td>25 %</td></tr>
+          <tr><td>Passionflower extract</td><td>350 mg</td><td>**</td></tr>
+          <tr><td>Glycine</td><td>1000 mg</td><td>**</td></tr>
+          <tr class="hl"><td>Melatonin</td><td>0.8 mg</td><td>**</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="foot">* NRV: nutrient reference values, Regulation (EU) No 1169/2011.<br>** No NRV established.</p>
+    <div class="company">
+      <div><b>[TO COMPLETE: company name]</b><br>[TO COMPLETE: street address]<br>[TO COMPLETE: postcode, city], France</div>
+      <div style="text-align:right;white-space:nowrap"><b>getgumis.com</b><br>Contact: [TO COMPLETE]</div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
