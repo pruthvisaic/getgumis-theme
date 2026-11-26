@@ -75,10 +75,15 @@
               class: 'gumis-hero__image'
           }}
         {%- else -%}
+          {%- liquid
+            assign jar_1 = 'gumis.placeholders.jar_sleep' | t
+            assign jar_2 = 'gumis.placeholders.jar_glow' | t
+            assign jar_3 = 'gumis.placeholders.jar_strength' | t
+          -%}
           <div class="gumis-hero__jars">
-            {%- render 'gumis-jar', accent: settings.gumis_plum, ink: '#FFFFFF', label: 'Sommeil', class: 'gumis-jar--left' -%}
-            {%- render 'gumis-jar', accent: settings.gumis_berry, ink: '#FFFFFF', label: 'Éclat', class: 'gumis-jar--center' -%}
-            {%- render 'gumis-jar', accent: settings.gumis_tangerine, ink: settings.gumis_plum, label: 'Force', class: 'gumis-jar--right' -%}
+            {%- render 'gumis-jar', accent: settings.gumis_plum, ink: '#FFFFFF', label: jar_1, class: 'gumis-jar--left' -%}
+            {%- render 'gumis-jar', accent: settings.gumis_berry, ink: '#FFFFFF', label: jar_2, class: 'gumis-jar--center' -%}
+            {%- render 'gumis-jar', accent: settings.gumis_tangerine, ink: settings.gumis_plum, label: jar_3, class: 'gumis-jar--right' -%}
           </div>
         {%- endif -%}
       </div>

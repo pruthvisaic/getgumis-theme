@@ -1,4 +1,9 @@
 {%- liquid
+  assign ph_sleep = 'gumis.placeholders.product_sleep' | t
+  assign ph_glow = 'gumis.placeholders.product_glow' | t
+  assign ph_strength = 'gumis.placeholders.product_strength' | t
+-%}
+{%- liquid
   if section.settings.use_collection_title
     assign heading = collection.title | escape
   else
@@ -44,9 +49,9 @@
         {%- endif -%}
       {%- else -%}
         <ul class="gumis-product-grid gumis-product-grid--3" role="list">
-          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Sommeil', accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
-          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Éclat', accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2' -%}</li>
-          <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Force', accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_sleep, accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2' -%}</li>
         </ul>
       {%- endif -%}
     {%- endpaginate -%}

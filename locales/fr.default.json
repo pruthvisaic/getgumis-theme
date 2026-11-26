@@ -688,6 +688,14 @@
       "date": "Date :",
       "strike": "(*) Rayez la mention inutile.",
       "print": "Imprimer le formulaire"
+    },
+    "placeholders": {
+      "jar_sleep": "Sommeil",
+      "jar_glow": "Éclat",
+      "jar_strength": "Force",
+      "product_sleep": "Gumis Sommeil",
+      "product_glow": "Gumis Éclat",
+      "product_strength": "Gumis Force"
     }
   }
 }

@@ -1,4 +1,9 @@
 {%- liquid
+  assign ph_sleep = 'gumis.placeholders.product_sleep' | t
+  assign ph_glow = 'gumis.placeholders.product_glow' | t
+  assign ph_strength = 'gumis.placeholders.product_strength' | t
+-%}
+{%- liquid
   assign heading = section.settings.heading
   if heading == blank
     assign heading = 'gumis.cross_sell.heading' | t
@@ -37,8 +42,8 @@
         {%- endif -%}
       {%- endfor -%}
       {%- if shown == 0 and request.design_mode -%}
-        <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Éclat', accent: settings.gumis_berry, section_id: section.id -%}</li>
-        <li>{%- render 'gumis-product-card', placeholder_title: 'Gumis Force', accent: settings.gumis_tangerine, section_id: section.id -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id -%}</li>
       {%- endif -%}
     </ul>
   </div>

@@ -67,7 +67,8 @@
           alt: product.featured_media.alt | default: product.title
       }}
     {%- else -%}
-      {%- render 'gumis-jar', accent: accent_color, ink: accent_ink, label: placeholder_title -%}
+      {%- assign jar_label = placeholder_title | default: product.title | split: ' ' | last -%}
+      {%- render 'gumis-jar', accent: accent_color, ink: accent_ink, label: jar_label -%}
     {%- endif -%}
   </div>
 

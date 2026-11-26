@@ -578,7 +578,7 @@
     },
     "hero": {
       "heading": "Your vitamins, gummy style.",
-      "subheading": "Fruity, easy-to-chew gummies to fit your everyday routine. Three formulas: Sleep, Glow and Strength.",
+      "subheading": "Fruity, easy-to-chew gummies to fit your everyday routine. Three formulas: Sommeil (sleep), Éclat (hair, skin & nails) and Force (creatine).",
       "cta_primary": "Shop the gummies",
       "cta_secondary": "Why gummies?"
     },
@@ -676,6 +676,14 @@
       "date": "Date:",
       "strike": "(*) Delete as appropriate.",
       "print": "Print the form"
+    },
+    "placeholders": {
+      "jar_sleep": "Sommeil",
+      "jar_glow": "Éclat",
+      "jar_strength": "Force",
+      "product_sleep": "Gumis Sommeil",
+      "product_glow": "Gumis Éclat",
+      "product_strength": "Gumis Force"
     }
   }
 }

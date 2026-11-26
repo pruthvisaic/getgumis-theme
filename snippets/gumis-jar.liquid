@@ -17,7 +17,7 @@
     <span class="gumis-jar__label">
       {%- render 'logo', size: '2.2rem' -%}
       {%- if label != blank -%}
-        <span class="gumis-jar__name">{{ label | remove: 'Gumis ' | remove: 'gumis ' | escape }}</span>
+        <span class="gumis-jar__name">{{ label | escape }}</span>
       {%- endif -%}
     </span>
   </span>
