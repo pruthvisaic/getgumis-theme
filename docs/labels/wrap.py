@@ -26,6 +26,16 @@ S=np.clip(g/ref,0.72,1.06)[...,None]
 # subtle extra edge darkening for the cylinder
 edge=(1-0.10*np.abs(dx)**3)[...,None]
 res=np.clip(s*S*edge,0,255)
+# die-cut window: label pixels that are key-green show the gummies inside the bottle
+key=(s[...,1]>200)&(s[...,0]<80)&(s[...,2]<80)
+if key.any():
+  tex=bottle[1700:1800,640:1360]                     # densely packed gummies below the label
+  th,tw=tex.shape[:2]
+  ty=(Y-y0+60)%(2*th); ty=np.where(ty>=th,2*th-1-ty,ty)
+  tx=(X-x0)%(2*tw); tx=np.where(tx>=tw,2*tw-1-tx,tx)
+  gum=tex[ty,tx]*0.92
+  soft=np.clip((s[...,1]-s[...,0])/170.0,0,1)[...,None]
+  res=res*(1-soft*key[...,None])+gum*(soft*key[...,None])
 # soften the left/right silhouette edges (1px blend)
 alpha=np.clip((r-np.abs(X-cx))/1.5,0,1)[...,None]
 out[y0:y1+1,x0:x1+1]=res*alpha+bottle[y0:y1+1,x0:x1+1]*(1-alpha)
