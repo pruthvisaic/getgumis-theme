@@ -197,8 +197,8 @@
       {
         "type": "color",
         "id": "gumis_logo_color",
-        "label": "Logo colour (\"gumis\")",
-        "default": "#D6246E"
+        "label": "Logo colour",
+        "default": "#3B0A2A"
       },
       {
         "type": "text",
@@ -211,7 +211,8 @@
         "type": "color",
         "id": "gumis_logo_prefix_color",
         "label": "Logo prefix colour",
-        "default": "#3B0A2A"
+        "default": "#3B0A2A",
+        "info": "Same as the logo colour by default; change it for a two-tone wordmark."
       },
       {
         "type": "color",

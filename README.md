@@ -290,7 +290,7 @@ The theme doesn't depend on any handle: renaming a product or changing its URL b
 | File | Role |
 |---|---|
 | `snippets/gumis-fonts.liquid` | Self-hosted `@font-face` + `--gumis-*` CSS tokens |
-| `snippets/logo.liquid` | "getgumis" wordmark (Fredoka Bold, "get" in Plum + "gumis" in Berry, dotless ı + orange gummy dot; prefix editable in Theme settings) |
+| `snippets/logo.liquid` | "getgumis" wordmark (Fredoka Bold, one colour Plum, dotless ı + orange gummy dot; prefix and colours editable in Theme settings) |
 | `snippets/gumis-jar.liquid` | Drawn jar (lid, glass, label in the accent colour), shown until photos exist |
 | `snippets/gumis-icon.liquid` | Inline SVG stroke icons (no emoji) |
 | `snippets/gumis-language-switcher.liquid` | EN / FR switcher (header and footer), works without JavaScript |
