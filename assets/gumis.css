@@ -211,7 +211,7 @@ b, strong { font-weight: 700; }
   width: 9%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
 }
-.g-jar__label .gumis-logo { --gumis-logo: var(--jar-ink); --gumis-logo-prefix: var(--jar-ink); font-size: 18cqi; }
+.g-jar__label .gumis-logo { --gumis-logo: var(--jar-ink); --gumis-logo-prefix: #000; font-size: 18cqi; }
 .g-jar__tag {
   font-size: 4.2cqi;
   font-weight: 800;
