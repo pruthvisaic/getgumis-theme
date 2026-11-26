@@ -139,7 +139,9 @@ b, strong { font-weight: 700; }
   border-radius: var(--gumis-gummy);
   transform: rotate(-14deg);
 }
-.gumis-logo--light { --gumis-logo: #fff; }
+.gumis-logo__word { display: inline-flex; align-items: baseline; }
+.gumis-logo__prefix { color: var(--gumis-logo-prefix); }
+.gumis-logo--light { --gumis-logo: #fff; --gumis-logo-prefix: rgba(255, 255, 255, 0.78); }
 
 /* ---------- Icons ---------- */
 .gumis-icon {
@@ -209,7 +211,8 @@ b, strong { font-weight: 700; }
   width: 9%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
 }
-.g-jar__label .gumis-logo { --gumis-logo: var(--jar-ink); font-size: 24cqi; }
+.g-jar__label .gumis-logo { --gumis-logo: var(--jar-ink); --gumis-logo-prefix: var(--jar-ink); font-size: 18cqi; }
+.g-jar__label .gumis-logo__prefix { opacity: 0.82; }
 .g-jar__tag {
   font-size: 4.2cqi;
   font-weight: 800;

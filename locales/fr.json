@@ -603,11 +603,11 @@
     },
     "why": {
       "heading": "La façon facile de prendre ses vitamines",
-      "subheading": "Les compléments, c'est souvent de grosses gélules qu'on oublie dans un placard. Les gumis sont petits, moelleux et agréables à prendre : le rituel tient tout seul.",
-      "col_gummies": "Gummies gumis",
+      "subheading": "Les compléments, c'est souvent de grosses gélules qu'on oublie dans un placard. Les gummies getgumis sont petits, moelleux et agréables à prendre : le rituel tient tout seul.",
+      "col_gummies": "Gummies getgumis",
       "col_capsules": "Gélules classiques",
       "eyebrow": "Pourquoi des gummies",
-      "compare_heading": "Gummies gumis vs gélules classiques",
+      "compare_heading": "Gummies getgumis vs gélules classiques",
       "criterion": "Critère"
     },
     "steps": {
@@ -710,14 +710,14 @@
       "count": "{{ count }} gummies"
     },
     "trust": {
-      "label": "Acheter chez gumis"
+      "label": "Acheter chez getgumis"
     },
     "statement": {
-      "label": "gumis en bref",
+      "label": "getgumis en bref",
       "lead_html": "Des vitamines que vous<br>aurez envie de prendre."
     },
     "newsletter": {
-      "heading": "Des nouvelles toutes fraîches",
+      "heading": "Des nouvelles de getgumis",
       "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/privacy-policy\">politique de confidentialité</a>.",
       "button": "S'inscrire"
     },

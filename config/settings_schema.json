@@ -192,13 +192,26 @@
       },
       {
         "type": "paragraph",
-        "content": "Without a logo image, the theme shows the \"gumis\" wordmark (Fredoka Bold, the dot of the i is an orange gummy)."
+        "content": "Without a logo image, the theme shows the \"getgumis\" wordmark (Fredoka Bold, the dot of the i is an orange gummy)."
       },
       {
         "type": "color",
         "id": "gumis_logo_color",
-        "label": "Logo colour",
+        "label": "Logo colour (\"gumis\")",
         "default": "#D6246E"
+      },
+      {
+        "type": "text",
+        "id": "gumis_logo_prefix",
+        "label": "Logo prefix",
+        "default": "get",
+        "info": "Shown before \"gumis\" in the wordmark (getgumis). Leave empty for \"gumis\" only."
+      },
+      {
+        "type": "color",
+        "id": "gumis_logo_prefix_color",
+        "label": "Logo prefix colour",
+        "default": "#3B0A2A"
       },
       {
         "type": "color",

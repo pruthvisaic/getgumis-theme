@@ -84,7 +84,7 @@ Product names (Gumis Sleep, Gumis Glow, Gumis Power) stay the same in both langu
 | English | French |
 |---|---|
 | Our story | Notre histoire |
-| <p>[TO COMPLETE: in two sentences, why gumis exists.]</p> | <p>[À COMPLÉTER : en deux phrases, pourquoi gumis existe.]</p> |
+| <p>[TO COMPLETE: in two sentences, why getgumis exists.]</p> | <p>[À COMPLÉTER : en deux phrases, pourquoi getgumis existe.]</p> |
 | Vitamins you actually want to take | Des vitamines qu'on a envie de prendre |
 | <p>[TO COMPLETE: the founders' story, the spark, the mission.]</p> | <p>[À COMPLÉTER : l'histoire des fondateurs, le déclic, la mission.]</p> |
 | Shop the gummies | Découvrir les gummies |

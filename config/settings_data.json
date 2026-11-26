@@ -220,7 +220,9 @@
       "gumis_ink": "#2A0A1F",
       "gumis_blush": "#FBF0F3",
       "gumis_peach": "#FFF3EA",
-      "gumis_lilac": "#F4F0F8"
+      "gumis_lilac": "#F4F0F8",
+      "gumis_logo_prefix": "get",
+      "gumis_logo_prefix_color": "#3B0A2A"
     }
   }
 }

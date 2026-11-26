@@ -591,11 +591,11 @@
     },
     "why": {
       "heading": "The easy way to take your vitamins",
-      "subheading": "Supplements usually mean big capsules forgotten in a cupboard. gumis are small, chewy and nice to take, so the habit sticks.",
-      "col_gummies": "gumis gummies",
+      "subheading": "Supplements usually mean big capsules forgotten in a cupboard. getgumis gummies are small, chewy and nice to take, so the habit sticks.",
+      "col_gummies": "getgumis gummies",
       "col_capsules": "Classic capsules",
       "eyebrow": "Why gummies",
-      "compare_heading": "gumis gummies vs classic capsules",
+      "compare_heading": "getgumis gummies vs classic capsules",
       "criterion": "Criterion"
     },
     "steps": {
@@ -698,14 +698,14 @@
       "count": "{{ count }} gummies"
     },
     "trust": {
-      "label": "Shopping with gumis"
+      "label": "Shopping with getgumis"
     },
     "statement": {
-      "label": "gumis at a glance",
+      "label": "getgumis at a glance",
       "lead_html": "Vitamins you'll actually<br>want to take."
     },
     "newsletter": {
-      "heading": "Fresh news from gumis",
+      "heading": "Fresh news from getgumis",
       "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/privacy-policy\">privacy policy</a>.",
       "button": "Subscribe"
     },
