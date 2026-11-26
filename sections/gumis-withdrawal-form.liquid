@@ -7,7 +7,7 @@
   class="gumis-section gumis-withdrawal color-{{ section.settings.color_scheme }} gradient"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="g-container">
     <div class="gumis-page">
       <div class="gumis-withdrawal__card gumis-page__content--card">
         <h2 class="h2">{{ 'gumis.withdrawal.heading' | t }}</h2>
@@ -30,7 +30,7 @@
           </ul>
           <p class="gumis-note">{{ 'gumis.withdrawal.strike' | t }}</p>
         </div>
-        <button type="button" class="button button--secondary gumis-withdrawal__print" onclick="window.print()">
+        <button type="button" class="g-btn g-btn--outline gumis-withdrawal__print" onclick="window.print()">
           {{- 'gumis.withdrawal.print' | t -}}
         </button>
       </div>

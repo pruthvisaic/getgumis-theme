@@ -19,7 +19,7 @@
     hidden
   >
     <div
-      class="gumis-consent__panel color-scheme-6"
+      class="gumis-consent__panel"
       role="dialog"
       aria-modal="false"
       aria-labelledby="GumisConsentTitle"
@@ -27,10 +27,10 @@
       tabindex="-1"
     >
       <div class="gumis-consent__head">
-        <span class="gumis-icon-bubble" style="--accent: var(--gumis-bubblegum);">
+        <span class="gumis-consent__icon" aria-hidden="true">
           {%- render 'gumis-icon', icon: 'cookie' -%}
         </span>
-        <h2 id="GumisConsentTitle" class="gumis-consent__title h4">
+        <h2 id="GumisConsentTitle" class="gumis-consent__title">
           {%- if section.settings.title != blank -%}{{ section.settings.title | escape }}{%- else -%}{{ 'gumis.cookies.title' | t }}{%- endif -%}
         </h2>
       </div>
@@ -66,12 +66,12 @@
       </form>
 
       <div class="gumis-consent__actions">
-        <button type="button" class="button button--primary" data-consent="reject">{{ 'gumis.cookies.reject' | t }}</button>
-        <button type="button" class="button button--primary" data-consent="accept">{{ 'gumis.cookies.accept' | t }}</button>
-        <button type="button" class="button button--secondary" data-consent="customize" aria-expanded="false">
+        <button type="button" class="g-btn g-btn--primary" data-consent="reject">{{ 'gumis.cookies.reject' | t }}</button>
+        <button type="button" class="g-btn g-btn--primary" data-consent="accept">{{ 'gumis.cookies.accept' | t }}</button>
+        <button type="button" class="g-btn g-btn--ghost" data-consent="customize" aria-expanded="false">
           {{- 'gumis.cookies.customize' | t -}}
         </button>
-        <button type="button" class="button button--primary" data-consent="save" hidden>{{ 'gumis.cookies.save' | t }}</button>
+        <button type="button" class="g-btn g-btn--primary" data-consent="save" hidden>{{ 'gumis.cookies.save' | t }}</button>
       </div>
     </div>
   </gumis-consent>

@@ -1,25 +1,24 @@
 {% doc %}
-  Gumis product card: accent colour, name, one-line benefit, price, add to cart.
-  The benefit line only comes from product metafields (custom.tagline, then the
-  first entry of custom.benefits) so no health claim is ever typed in the theme.
+  Gumis product card: pastel media tile, name + price, jar format, one-line benefit, add to cart.
+  The benefit line only comes from product metafields (custom.tagline, then the first
+  entry of custom.benefits), so no health claim is ever typed in the theme.
 
-  @param {product} [product] - Product to show. When blank, an editor-friendly placeholder card is shown.
+  @param {product} [product] - Product to show. When blank, a placeholder card is shown.
   @param {string} [accent] - Accent colour override (hex). Falls back to custom.accent_color, then Berry.
   @param {string} [placeholder_title] - Name shown when no product is selected.
   @param {string} [badge] - Optional badge text.
+  @param {string} [tile] - Tile background: 'blush', 'peach' or 'lilac'. Defaults to 'blush'.
   @param {string} [section_id] - Section id, used for unique form ids.
   @param {string} [heading_tag] - Heading tag for the product name. Defaults to h3.
-  @param {boolean} [show_button] - Show the add to cart button. Defaults to true.
+  @param {boolean} [primary] - Use the dark primary button instead of the outline one.
   @param {boolean} [lazy] - Lazy-load the image. Defaults to true.
 
   @example
-  {% render 'gumis-product-card', product: block.settings.product, accent: block.settings.accent, section_id: section.id %}
+  {% render 'gumis-product-card', product: block.settings.product, tile: 'peach', section_id: section.id %}
 {% enddoc %}
 {%- liquid
   assign heading_tag = heading_tag | default: 'h3'
-  if show_button == nil
-    assign show_button = true
-  endif
+  assign tile = tile | default: 'blush'
   assign loading = 'lazy'
   if lazy == false
     assign loading = 'eager'
@@ -46,112 +45,109 @@
     endif
     assign variant = product.selected_or_first_available_variant
     assign form_id = 'gumis-card-form-' | append: section_id | append: '-' | append: product.id
+    assign card_url = product.url
+    assign title = product.title
+  else
+    assign card_url = routes.all_products_collection_url
+    if placeholder_title != blank
+      assign title = placeholder_title
+    else
+      assign title = 'gumis.product.placeholder_title' | t
+    endif
+  endif
+  assign jar_label = title | split: ' ' | last
+
+  assign button_class = 'g-btn g-btn--outline g-btn--block'
+  if primary
+    assign button_class = 'g-btn g-btn--primary g-btn--block'
   endif
 -%}
-<article
-  class="gumis-pcard"
-  style="--accent: {{ accent_color }}; --accent-ink: {{ accent_ink }};"
->
-  <div class="gumis-pcard__media">
+<article class="g-card" style="--accent: {{ accent_color }};">
+  <a href="{{ card_url }}" class="g-card__media g-tile--{{ tile }}" tabindex="-1" aria-hidden="true">
     {%- if badge != blank -%}
-      <span class="gumis-pcard__badge gumis-pill">{{ badge | escape }}</span>
+      <span class="g-badge">{{ badge | escape }}</span>
     {%- endif -%}
+    {%- if product != blank and product.compare_at_price > product.price -%}
+      {%- assign off = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price -%}
+      <span class="g-badge g-badge--dark">-{{ off }} %</span>
+    {%- endif -%}
+    <span class="g-disc"></span>
     {%- if product != blank and product.featured_media != blank -%}
       {{
         product.featured_media
         | image_url: width: 800
         | image_tag:
           widths: '300, 400, 500, 600, 800',
-          sizes: '(min-width: 990px) 380px, (min-width: 750px) 45vw, 92vw',
+          sizes: '(min-width: 990px) 380px, 80vw',
           loading: loading,
-          alt: product.featured_media.alt | default: product.title
+          alt: '',
+          class: 'g-card__img'
       }}
     {%- else -%}
-      {%- assign jar_label = placeholder_title | default: product.title | split: ' ' | last -%}
-      {%- render 'gumis-jar', accent: accent_color, ink: accent_ink, label: jar_label -%}
+      <span class="g-floor"></span>
+      {%- render 'gumis-jar', accent: accent_color, ink: accent_ink, name: jar_label, class: 'g-card__jar' -%}
     {%- endif -%}
-  </div>
+  </a>
 
-  <div class="gumis-pcard__body">
-    <{{ heading_tag }} class="gumis-pcard__title">
-      {%- if product != blank -%}
-        <a href="{{ product.url }}">{{ product.title | escape }}</a>
-      {%- else -%}
-        {%- if placeholder_title != blank -%}
-          {{ placeholder_title | escape }}
-        {%- else -%}
-          {{ 'gumis.product.placeholder_title' | t }}
-        {%- endif -%}
-      {%- endif -%}
-    </{{ heading_tag }}>
-
-    {%- if benefit != blank -%}
-      <p class="gumis-pcard__benefit">{{ benefit | escape }}</p>
-    {%- elsif product == blank -%}
-      <p class="gumis-pcard__benefit">
-        <span class="gumis-placeholder-text">{{ 'gumis.product.placeholder_benefit' | t }}</span>
-      </p>
-    {%- endif -%}
-
-    <div class="gumis-pcard__meta">
-      <div class="gumis-pcard__price">
+  <div class="g-card__body">
+    <div class="g-card__top">
+      <{{ heading_tag }} class="g-card__title">
+        <a href="{{ card_url }}">{{ title | escape }}</a>
+      </{{ heading_tag }}>
+      <span class="g-card__price">
         {%- if product != blank -%}
-          {%- render 'price', product: product, use_variant: true -%}
+          {{ product.price | money }}
         {%- else -%}
           <span class="gumis-placeholder-text">{{ 'gumis.general.to_complete' | t }}</span>
         {%- endif -%}
-        <span class="gumis-pcard__unit">
-          {{- 'gumis.product.jar_count' | t: count: settings.gumis_gummies_per_jar -}}
-        </span>
-      </div>
+      </span>
     </div>
-
-    {%- if show_button -%}
-      <div class="gumis-pcard__actions">
-        {%- if product == blank -%}
-          <button type="button" class="button button--full-width" disabled>
-            {{- 'gumis.product.add_to_cart' | t -}}
-          </button>
-        {%- elsif product.has_only_default_variant == false -%}
-          <a href="{{ product.url }}" class="button button--full-width">
-            {{- 'gumis.product.choose' | t -}}
-          </a>
-        {%- else -%}
-          <product-form class="gumis-pcard__form" data-hide-errors="false" data-section-id="{{ section_id }}">
-            {%- form 'product',
-              product,
-              id: form_id,
-              class: 'form',
-              novalidate: 'novalidate',
-              data-type: 'add-to-cart-form'
-            -%}
-              <input type="hidden" name="id" value="{{ variant.id }}" class="product-variant-id">
-              <input type="hidden" name="quantity" value="1">
-              <div class="product-form__error-message-wrapper" role="alert" hidden>
-                <span class="product-form__error-message"></span>
-              </div>
-              <button
-                type="submit"
-                name="add"
-                class="button button--full-width"
-                {% unless variant.available %}
-                  disabled
-                {% endunless %}
-              >
-                <span>
-                  {%- if variant.available -%}
-                    {{- 'gumis.product.add_to_cart' | t -}}
-                  {%- else -%}
-                    {{- 'products.product.sold_out' | t -}}
-                  {%- endif -%}
-                </span>
-                <span class="visually-hidden"> – {{ product.title | escape }}</span>
-                {%- render 'loading-spinner' -%}
-              </button>
-            {%- endform -%}
-          </product-form>
-        {%- endif -%}
-      </div>
+    <p class="g-card__meta">
+      {{- 'gumis.product.jar_count' | t: count: settings.gumis_gummies_per_jar -}}
+      {%- if product != blank and product.compare_at_price > product.price %}
+        · <s>{{ product.compare_at_price | money }}</s>
+      {%- endif -%}
+    </p>
+    {%- if benefit != blank -%}
+      <p class="g-card__benefit">{{ benefit | escape }}</p>
+    {%- elsif product == blank -%}
+      <p class="g-card__benefit"><span class="gumis-placeholder-text">{{ 'gumis.product.placeholder_benefit' | t }}</span></p>
     {%- endif -%}
+
+    <div class="g-card__actions">
+      {%- if product == blank -%}
+        <button type="button" class="{{ button_class }}" disabled>{{ 'gumis.product.add_to_cart' | t }}</button>
+      {%- elsif product.has_only_default_variant == false -%}
+        <a href="{{ product.url }}" class="{{ button_class }}">{{ 'gumis.product.choose' | t }}</a>
+      {%- else -%}
+        <product-form class="g-card__form" data-hide-errors="false" data-section-id="{{ section_id }}">
+          {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ variant.id }}" class="product-variant-id">
+            <input type="hidden" name="quantity" value="1">
+            <div class="product-form__error-message-wrapper" role="alert" hidden>
+              <span class="product-form__error-message"></span>
+            </div>
+            <button
+              type="submit"
+              name="add"
+              class="{{ button_class }}"
+              {% unless variant.available %}
+                disabled
+              {% endunless %}
+            >
+              <span>
+                {%- if variant.available -%}
+                  {{- 'gumis.product.add_to_cart' | t -}}
+                {%- else -%}
+                  {{- 'products.product.sold_out' | t -}}
+                {%- endif -%}
+              </span>
+              <span class="visually-hidden"> – {{ product.title | escape }}</span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          {%- endform -%}
+        </product-form>
+      {%- endif -%}
+    </div>
   </div>
 </article>

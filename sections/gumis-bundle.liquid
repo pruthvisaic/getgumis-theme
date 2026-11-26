@@ -27,82 +27,71 @@
 <script src="{{ 'gumis-quantity-breaks.js' | asset_url }}" defer="defer"></script>
 <section
   id="{{ section.settings.anchor | default: 'gumis-bundle' | handleize }}"
-  class="gumis-section gumis-bundle color-{{ section.settings.color_scheme }} gradient"
-  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px; --accent: {{ accent }}; --accent-ink: {{ accent_ink }};"
+  class="g-section"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
-    <div class="gumis-bundle__card">
-      <div class="gumis-bundle__media">
-        {%- render 'gumis-blobs', preset: 'soft' -%}
-        {%- if product != blank and product.featured_media != blank -%}
-          {{
-            product.featured_media
-            | image_url: width: 1000
-            | image_tag:
-              widths: '400, 600, 800, 1000',
-              sizes: '(min-width: 990px) 480px, 92vw',
-              loading: 'lazy',
-              class: 'gumis-relative'
-          }}
-        {%- else -%}
-          <div class="gumis-bundle__jars gumis-relative">
-            {%- render 'gumis-jar', accent: accent, ink: accent_ink, class: 'gumis-jar--left' -%}
-            {%- render 'gumis-jar', accent: accent, ink: accent_ink, class: 'gumis-jar--center' -%}
-            {%- render 'gumis-jar', accent: accent, ink: accent_ink, class: 'gumis-jar--right' -%}
-          </div>
-        {%- endif -%}
-      </div>
+  <div class="g-container g-split">
+    <div class="g-split__media g-tile--lilac g-bundle__media">
+      {%- if product != blank and product.featured_media != blank -%}
+        {{
+          product.featured_media
+          | image_url: width: 1000
+          | image_tag: widths: '400, 600, 800, 1000', sizes: '(min-width: 1000px) 560px, 92vw', loading: 'lazy', class: 'g-split__image'
+        }}
+      {%- else -%}
+        <span class="g-floor"></span>
+        <div class="g-jar-stack">
+          {%- render 'gumis-jar', accent: accent, ink: accent_ink, minimal: true -%}
+          {%- render 'gumis-jar', accent: accent, ink: accent_ink -%}
+          {%- render 'gumis-jar', accent: accent, ink: accent_ink, minimal: true -%}
+        </div>
+      {%- endif -%}
+    </div>
 
-      <div class="gumis-bundle__content">
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="gumis-eyebrow">{{ section.settings.eyebrow | escape }}</p>
-        {%- endif -%}
-        <h2 class="h1">{{ heading }}</h2>
-        <p class="gumis-bundle__text">{{ text }}</p>
+    <div class="g-split__copy">
+      {%- if section.settings.eyebrow != blank -%}<p class="g-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+      <h2>{{ heading }}</h2>
+      <p class="g-split__text">{{ text }}</p>
 
-        {%- if product != blank -%}
-          <p class="gumis-bundle__product h4">{{ product.title | escape }}</p>
-          {%- render 'gumis-quantity-breaks',
-            product: product,
-            form_id: form_id,
-            accent: accent,
-            layout: 'row',
-            default_quantity: section.settings.default_quantity
-          -%}
-          {%- assign variant = product.selected_or_first_available_variant -%}
-          <product-form class="gumis-bundle__form" data-section-id="{{ section.id }}">
-            {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-              <input type="hidden" name="id" value="{{ variant.id }}" class="product-variant-id">
-              <div class="product-form__error-message-wrapper" role="alert" hidden>
-                <span class="product-form__error-message"></span>
-              </div>
-              <button
-                type="submit"
-                name="add"
-                class="button button--primary button--large button--full-width"
-                {% unless variant.available %}
-                  disabled
-                {% endunless %}
-              >
-                <span>
-                  {%- if variant.available -%}
-                    {{ 'gumis.product.add_to_cart' | t }} ·
-                    <span data-gumis-total-for="{{ form_id }}">{{ variant.price | money }}</span>
-                  {%- else -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- endif -%}
-                </span>
-                {%- render 'loading-spinner' -%}
-              </button>
-            {%- endform -%}
-          </product-form>
-          <p class="gumis-note gumis-bundle__tax">{{ 'gumis.product.tax_included' | t }}</p>
-        {%- else -%}
-          <p class="gumis-bundle__empty">
-            <span class="gumis-placeholder-text">{{ 'gumis.bundle.select_product' | t }}</span>
-          </p>
-        {%- endif -%}
-      </div>
+      {%- if product != blank -%}
+        <p class="g-bundle__product">{{ product.title | escape }}</p>
+        {%- render 'gumis-quantity-breaks',
+          product: product,
+          form_id: form_id,
+          accent: accent,
+          default_quantity: section.settings.default_quantity
+        -%}
+        {%- assign variant = product.selected_or_first_available_variant -%}
+        <product-form class="g-bundle__form" data-section-id="{{ section.id }}">
+          {%- form 'product', product, id: form_id, novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+            <input type="hidden" name="id" value="{{ variant.id }}" class="product-variant-id">
+            <div class="product-form__error-message-wrapper" role="alert" hidden>
+              <span class="product-form__error-message"></span>
+            </div>
+            <button
+              type="submit"
+              name="add"
+              class="g-btn g-btn--primary g-btn--block"
+              {% unless variant.available %}
+                disabled
+              {% endunless %}
+            >
+              <span>
+                {%- if variant.available -%}
+                  {{ 'gumis.product.add_to_cart' | t }} ·
+                  <span data-gumis-total-for="{{ form_id }}">{{ variant.price | money }}</span>
+                {%- else -%}
+                  {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              </span>
+              {%- render 'loading-spinner' -%}
+            </button>
+          {%- endform -%}
+        </product-form>
+        <p class="g-fine-print g-fine-print--left">{{ 'gumis.product.tax_included' | t }}</p>
+      {%- else -%}
+        <p><span class="gumis-placeholder-text">{{ 'gumis.bundle.select_product' | t }}</span></p>
+      {%- endif -%}
     </div>
   </div>
 </section>
@@ -120,10 +109,9 @@
     { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
     { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut." },
     { "type": "color", "id": "accent", "label": "Couleur d'accent", "info": "Vide = métachamp custom.accent_color du produit." },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-3" },
     { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-bundle" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
   ],
   "presets": [ { "name": "Gumis Offre multi-pots" } ]
 }

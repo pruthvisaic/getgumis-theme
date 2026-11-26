@@ -1,5 +1,5 @@
 {%- comment -%}
-  Self-hosted Fredoka (headings) and Nunito (body), SIL OFL 1.1 (see docs/licenses).
+  Self-hosted Fredoka (logo, jar labels) and Manrope (headings and text), SIL OFL 1.1 (see docs/licenses).
   Outputs @font-face rules, font variables and Gumis brand tokens.
   Must be rendered inside a {% style %} block.
 {%- endcomment -%}
@@ -7,34 +7,45 @@
   assign latin = 'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD'
   assign latin_ext = 'U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF'
   assign fredoka_weights = '600,700' | split: ','
-  assign nunito_weights = '400,600,700,800' | split: ','
+  assign manrope_weights = '400,500,600,700,800' | split: ','
 -%}
 {%- for w in fredoka_weights -%}
 @font-face { font-family: 'Fredoka'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'fredoka-latin-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin }}; }
 @font-face { font-family: 'Fredoka'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'fredoka-latin-ext-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin_ext }}; }
 {%- endfor -%}
-{%- for w in nunito_weights -%}
-@font-face { font-family: 'Nunito'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'nunito-latin-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin }}; }
-@font-face { font-family: 'Nunito'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'nunito-latin-ext-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin_ext }}; }
+{%- for w in manrope_weights -%}
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'manrope-latin-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin }}; }
+@font-face { font-family: 'Manrope'; font-style: normal; font-weight: {{ w }}; font-display: swap; src: url('{{ 'manrope-latin-ext-' | append: w | append: '-normal.woff2' | asset_url }}') format('woff2'); unicode-range: {{ latin_ext }}; }
 {%- endfor %}
 :root {
-  --font-body-family: 'Nunito', ui-rounded, 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-body-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body-style: normal;
   --font-body-weight: 400;
   --font-body-weight-bold: 700;
-  --font-heading-family: 'Fredoka', 'Nunito', ui-rounded, system-ui, sans-serif;
+  --font-heading-family: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-heading-style: normal;
-  --font-heading-weight: 700;
+  --font-heading-weight: 600;
+  --font-logo: 'Fredoka', 'Manrope', sans-serif;
   --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
   --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
 
+  --gumis-ink: {{ settings.gumis_ink | default: '#2A0A1F' }};
+  --gumis-ink-2: #5C4152;
+  --gumis-ink-3: #7A6372;
+  --gumis-line: #EEE6EA;
+  --gumis-blush: {{ settings.gumis_blush | default: '#FBF0F3' }};
+  --gumis-peach: {{ settings.gumis_peach | default: '#FFF3EA' }};
+  --gumis-lilac: {{ settings.gumis_lilac | default: '#F4F0F8' }};
   --gumis-berry: {{ settings.gumis_berry | default: '#D6246E' }};
-  --gumis-plum: {{ settings.gumis_plum | default: '#3B0A2A' }};
+  --gumis-berry-ink: #B01858;
   --gumis-tangerine: {{ settings.gumis_tangerine | default: '#FF8A3D' }};
+  --gumis-plum: {{ settings.gumis_plum | default: '#3B0A2A' }};
   --gumis-bubblegum: {{ settings.gumis_bubblegum | default: '#FFD3E2' }};
   --gumis-cream: {{ settings.gumis_cream | default: '#FFF4EC' }};
-  --gumis-logo: {{ settings.gumis_logo_color | default: '#3B0A2A' }};
+  --gumis-green: #17703A;
+  --gumis-logo: {{ settings.gumis_logo_color | default: '#D6246E' }};
   --gumis-logo-dot: {{ settings.gumis_logo_dot_color | default: '#FF8A3D' }};
-  --gumis-radius: {{ settings.gumis_radius | default: 28 }}px;
-  --gumis-radius-sm: calc(var(--gumis-radius) * 0.6);
+  --gumis-r: 10px;
+  --gumis-r-lg: {{ settings.gumis_radius | default: 20 }}px;
+  --gumis-gummy: 48% 52% 42% 58% / 58% 50% 50% 42%;
 }

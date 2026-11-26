@@ -7,7 +7,9 @@ le thème ne gère que la vitrine.
 - Liquid + modèles JSON, tout est modifiable dans l'éditeur de thème (sections, blocs, réglages).
 - Français par défaut (`locales/fr.default.json`), anglais en 2ᵉ langue (`locales/en.json`).
 - JavaScript natif uniquement (aucun jQuery), mobile-first.
-- Polices **Fredoka** (titres) et **Nunito** (texte) auto-hébergées dans `assets/` (licence SIL OFL, voir `docs/licenses/`).
+- Style « clean & minimal » issu de la maquette *Design implementation* : fond blanc, blocs pastel (blush, peach, lilac),
+  boutons Ink à coins de 10 px, pots dessinés sur socle, bandeau Plum de chiffres, accordéons à filets.
+- Polices **Manrope** (titres et texte) et **Fredoka** (logo, étiquettes de pots) auto-hébergées dans `assets/` (licence SIL OFL, voir `docs/licenses/`).
   Aucune police chargée depuis Google Fonts ni depuis le CDN de polices Shopify.
 - Aucun handle de produit codé en dur : produits, collections et pages se choisissent dans l'éditeur.
 
@@ -155,6 +157,8 @@ Chaque texte provisoire est visible sur le site (surligné en rose) pour ne rien
 - Pied de page, bloc « Une question ? » : **[À COMPLÉTER : e-mail du service client]**.
 
 ### Accueil (`templates/index.json`)
+- Carte de réassurance : seuil de livraison offerte, moyens de paiement (« CB, Apple Pay [À COMPLÉTER] »).
+- Bandeau chiffres : uniquement des chiffres vrais (3 formules, 60 gummies par pot, 14 jours de rétractation).
 - Gummies vs gélules : arôme (« Fruité : [À COMPLÉTER arôme] »), format du pot, sucres par portion.
 - Comment ça marche, étape 3 : durée d'un pot (« vous accompagne [À COMPLÉTER] jours »).
 - FAQ : sucres/édulcorants, vegan/gélatine/pectine/allergènes, enfants et grossesse, délais de livraison, conditions pour les pots ouverts.
@@ -257,14 +261,15 @@ Le thème ne dépend d'aucun handle : changer le nom ou l'URL d'un produit ne ca
 | Fichier | Rôle |
 |---|---|
 | `snippets/gumis-fonts.liquid` | `@font-face` auto-hébergés + jetons CSS `--gumis-*` |
-| `snippets/logo.liquid` | Logo « gumis » (Fredoka Bold, ı sans point + gummy orange) |
+| `snippets/logo.liquid` | Logo « gumis » (Fredoka Bold Berry, ı sans point + gummy orange) |
+| `snippets/gumis-jar.liquid` | Pot dessiné (couvercle, verre, étiquette à la couleur d'accent), affiché tant qu'il n'y a pas de photo |
 | `snippets/gumis-icon.liquid` | Icônes SVG au trait (pas d'emoji) |
 | `snippets/gumis-product-card.liquid` | Carte produit (accent, nom, bénéfice depuis métachamp, prix, ajout panier) |
 | `snippets/gumis-quantity-breaks.liquid` + `assets/gumis-quantity-breaks.js` | Sélecteur 1/2/3 pots |
 | `snippets/gumis-product-block.liquid` | Blocs fiche produit : tagline, quantités, bénéfices, onglets, réassurance |
 | `snippets/gumis-sticky-atc.liquid` + `assets/gumis-sticky-atc.js` | Barre d'ajout au panier fixe (mobile) |
 | `snippets/gumis-cart-extras.liquid` + `assets/gumis-cart.js` | Barre livraison offerte + incitation palier suivant |
-| `sections/gumis-*.liquid` | Hero, Trio, Gummies vs gélules, Étapes, Offre multi-pots, Avis, FAQ, Cross-sell, Cookies, Formulaire de rétractation |
+| `sections/gumis-*.liquid` | Hero, Réassurance, Trio, Bandeau chiffres, Image + texte, Gummies vs gélules, Étapes, Offre multi-pots, Avis, FAQ, Newsletter, Cross-sell, Cookies, Formulaire de rétractation |
 | `sections/main-gumis-page.liquid`, `main-gumis-collection.liquid` | Pages (style marque ou légal) et collection |
 | `assets/gumis.css`, `assets/gumis-sections.css` | Couche de style gumis par-dessus Dawn |
 
@@ -291,8 +296,9 @@ Résolvez les conflits sur les fichiers Dawn listés ci-dessus.
 
 - Objectif Lighthouse mobile ≥ 90 (performance et accessibilité) : **à mesurer sur la boutique réelle** avec vos photos
   (`shopify theme dev` ou thème non publié). Gardez des images produit ≤ 2000 px, en PNG/WebP compressé.
-- Deux feuilles de style gumis globales (pas de CSS par section), JS différé et chargé seulement par les sections qui en ont besoin,
-  2 polices préchargées, `font-display: swap`, image du hero en `fetchpriority="high"`.
-- Contrastes WCAG AA vérifiés pour les palettes : blanc sur Berry 4,84:1 ; Plum sur Cream 15,4:1 ; Plum sur Tangerine 7,1:1 ;
-  Plum sur Bubblegum 12,4:1. **Berry sur Cream (4,47:1) est réservé aux grands titres**, jamais au texte courant.
+- Deux feuilles de style gumis globales (pas de CSS par section), 2 polices Manrope préchargées, JS différé et chargé seulement par les sections qui en ont besoin,
+  `font-display: swap`, image du hero en `fetchpriority="high"`.
+- Contrastes WCAG AA vérifiés : Ink sur blanc 18:1 ; texte secondaire `#5C4152` 9:1 ; gris des mentions `#7A6372`
+  ≥ 4,8:1 sur blanc et sur les 3 pastels (assombri par rapport à la maquette, qui était à 4,2:1) ; Berry sur blanc 4,84:1 ;
+  chiffres orange et légendes rosées sur Plum ≥ 9:1.
 - Formes décoratives en `aria-hidden`, animations désactivées avec `prefers-reduced-motion`, tableaux et accordéons sémantiques.

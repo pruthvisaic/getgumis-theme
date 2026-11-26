@@ -1,0 +1,62 @@
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'gumis.newsletter.heading' | t
+  endif
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'gumis.newsletter.text_html' | t
+  endif
+-%}
+<section class="g-section" style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;">
+  <div class="g-container">
+    <div class="g-newsletter">
+      <div>
+        <h2>{{ heading }}</h2>
+        <div class="g-newsletter__text">{{ text }}</div>
+      </div>
+      {%- form 'customer', id: 'GumisNewsletter', class: 'g-newsletter__form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label for="GumisNewsletter-email" class="visually-hidden">{{ 'newsletter.label' | t }}</label>
+        <input
+          id="GumisNewsletter-email"
+          type="email"
+          name="contact[email]"
+          value="{{ form.email }}"
+          autocomplete="email"
+          autocorrect="off"
+          autocapitalize="off"
+          placeholder="{{ 'newsletter.label' | t }}"
+          required
+          {% if form.errors %}
+            aria-invalid="true" aria-describedby="GumisNewsletter-msg"
+          {% endif %}
+        >
+        <button type="submit" class="g-btn g-btn--primary">{{ 'gumis.newsletter.button' | t }}</button>
+        <p class="g-newsletter__msg" id="GumisNewsletter-msg" role="status">
+          {%- if form.posted_successfully? -%}
+            {{ 'newsletter.success' | t }}
+          {%- elsif form.errors -%}
+            {{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}
+          {%- endif -%}
+        </p>
+      {%- endform -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Newsletter",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Les inscrits sont ajoutés aux clients Shopify avec le tag « newsletter ». Activez le double opt-in dans Paramètres > Notifications clients." },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
+    { "type": "inline_richtext", "id": "text", "label": "Texte", "info": "Vide = traduction par défaut (avec lien vers la politique de confidentialité)." },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
+  ],
+  "presets": [ { "name": "Gumis Newsletter" } ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+<section class="g-trust" aria-label="{{ 'gumis.trust.label' | t }}">
+  <div class="g-container">
+    <ul class="g-trust__list" role="list">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <span class="g-trust__icon">{%- render 'gumis-icon', icon: block.settings.icon -%}</span>
+          <div><b>{{ block.settings.title }}</b>{{ block.settings.text }}</div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Réassurance",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Carte de réassurance. Placée juste sous le Hero, elle chevauche son bas." }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Élément",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "Icône", "default": "truck",
+          "options": [
+            { "value": "truck", "label": "Livraison" }, { "value": "lock", "label": "Paiement" }, { "value": "return", "label": "Retours" },
+            { "value": "shield", "label": "Bouclier" }, { "value": "leaf", "label": "Feuille" }, { "value": "gummy", "label": "Gummy" },
+            { "value": "jar", "label": "Pot" }, { "value": "chat", "label": "Contact" }
+          ]
+        },
+        { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Livraison offerte" },
+        { "type": "inline_richtext", "id": "text", "label": "Texte", "default": "Dès [À COMPLÉTER] € d'achat" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Gumis Réassurance", "blocks": [ { "type": "item" } ] } ]
+}
+{% endschema %}

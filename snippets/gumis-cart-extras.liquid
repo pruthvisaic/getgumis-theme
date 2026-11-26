@@ -18,7 +18,8 @@
           {%- render 'gumis-icon', icon: 'truck' -%}
           <span>
             {%- if remaining > 0 -%}
-              {{ 'gumis.cart.free_shipping_remaining_html' | t: amount: remaining | money }}
+              {%- assign remaining_money = remaining | money -%}
+              {{ 'gumis.cart.free_shipping_remaining_html' | t: amount: remaining_money }}
             {%- else -%}
               {{ 'gumis.cart.free_shipping_unlocked' | t }}
             {%- endif -%}
@@ -59,7 +60,7 @@
           </div>
           <button
             type="button"
-            class="button button--primary gumis-upsell__button"
+            class="g-btn g-btn--primary gumis-upsell__button"
             data-line="1"
             data-quantity="{{ target.quantity | plus: 1 }}"
             data-variant-id="{{ target.variant_id }}"

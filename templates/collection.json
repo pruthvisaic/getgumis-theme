@@ -8,9 +8,8 @@
         "subheading": "Trois formules gourmandes, 60 gummies par pot.",
         "show_description": true,
         "per_page": 12,
-        "color_scheme": "scheme-1",
         "padding_top": 56,
-        "padding_bottom": 56
+        "padding_bottom": 96
       }
     },
     "how": {
@@ -19,7 +18,6 @@
         "s1": {
           "type": "step",
           "settings": {
-            "icon": "jar",
             "title": "Choisissez votre formule",
             "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
           }
@@ -27,7 +25,6 @@
         "s2": {
           "type": "step",
           "settings": {
-            "icon": "gummy",
             "title": "Croquez vos gummies",
             "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
           }
@@ -35,7 +32,6 @@
         "s3": {
           "type": "step",
           "settings": {
-            "icon": "gift",
             "title": "Économisez en multi-pots",
             "text": "<p>Les offres 2 et 3 pots s'appliquent automatiquement dans le panier.</p>"
           }
@@ -47,14 +43,13 @@
         "s3"
       ],
       "settings": {
+        "eyebrow": "Mode d'emploi",
         "heading": "",
-        "subheading": "",
         "button_label": "",
         "button_link": "",
-        "color_scheme": "scheme-2",
         "anchor": "gumis-how",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     }
   },

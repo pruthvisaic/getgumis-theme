@@ -1,0 +1,51 @@
+{%- liquid
+  assign lead = section.settings.lead
+  if lead == blank
+    assign lead = 'gumis.statement.lead_html' | t
+  endif
+-%}
+<section class="g-statement" aria-label="{{ 'gumis.statement.label' | t }}">
+  <div class="g-container g-statement__grid">
+    <p class="g-statement__lead">{{ lead }}</p>
+    {%- if section.blocks.size > 0 -%}
+      <dl class="g-stats">
+        {%- for block in section.blocks -%}
+          <div {{ block.shopify_attributes }}><dt>{{ block.settings.value | escape }}</dt><dd>{{ block.settings.label | escape }}</dd></div>
+        {%- endfor -%}
+      </dl>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Bandeau chiffres",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "lead", "label": "Phrase", "info": "Vide = traduction par défaut." },
+    { "type": "paragraph", "content": "N'affichez que des chiffres vrais et vérifiables (pas de nombre de clients ni de statistique inventée)." }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Chiffre",
+      "limit": 3,
+      "settings": [
+        { "type": "text", "id": "value", "label": "Chiffre", "default": "60" },
+        { "type": "text", "id": "label", "label": "Légende", "default": "gummies par pot" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gumis Bandeau chiffres",
+      "blocks": [
+        { "type": "stat", "settings": { "value": "3", "label": "formules" } },
+        { "type": "stat", "settings": { "value": "60", "label": "gummies par pot" } },
+        { "type": "stat", "settings": { "value": "14", "label": "jours pour changer d'avis" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

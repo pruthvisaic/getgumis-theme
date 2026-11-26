@@ -6,21 +6,18 @@
         "point-1": {
           "type": "point",
           "settings": {
-            "icon": "jar",
-            "text": "Pot de 60 gummies"
+            "text": "3 formules"
           }
         },
         "point-2": {
           "type": "point",
           "settings": {
-            "icon": "gummy",
             "text": "À croquer, sans eau"
           }
         },
         "point-3": {
           "type": "point",
           "settings": {
-            "icon": "lock",
             "text": "Paiement sécurisé"
           }
         }
@@ -38,11 +35,12 @@
         "cta1_link": "",
         "cta2_label": "",
         "cta2_link": "",
-        "show_blobs": true,
-        "color_scheme": "scheme-2",
+        "image": "",
+        "chip_1": "Pot de 60 gummies",
+        "chip_2": "À croquer, sans eau",
         "anchor": "gumis-hero",
-        "padding_top": 40,
-        "padding_bottom": 64
+        "padding_top": 48,
+        "padding_bottom": 136
       }
     },
     "trio": {
@@ -53,7 +51,8 @@
           "settings": {
             "accent": "#3B0A2A",
             "placeholder_title": "Gumis Sommeil",
-            "badge": ""
+            "badge": "",
+            "primary": false
           }
         },
         "product-2": {
@@ -61,7 +60,8 @@
           "settings": {
             "accent": "#D6246E",
             "placeholder_title": "Gumis Éclat",
-            "badge": ""
+            "badge": "",
+            "primary": true
           }
         },
         "product-3": {
@@ -69,7 +69,8 @@
           "settings": {
             "accent": "#FF8A3D",
             "placeholder_title": "Gumis Force",
-            "badge": ""
+            "badge": "",
+            "primary": false
           }
         }
       },
@@ -81,12 +82,10 @@
       "settings": {
         "eyebrow": "La gamme",
         "heading": "",
-        "subheading": "",
-        "show_view_all": false,
-        "color_scheme": "scheme-1",
+        "view_all_link": "",
         "anchor": "gumis-products",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 88,
+        "padding_bottom": 96
       }
     },
     "why": {
@@ -98,8 +97,7 @@
             "criterion": "Comment on les prend",
             "gummies": "À croquer, sans eau",
             "gummies_icon": "check",
-            "capsules": "À avaler avec un verre d'eau",
-            "capsules_icon": "none"
+            "capsules": "À avaler avec un verre d'eau"
           }
         },
         "row-2": {
@@ -108,8 +106,7 @@
             "criterion": "Le goût",
             "gummies": "Fruité : [À COMPLÉTER arôme]",
             "gummies_icon": "check",
-            "capsules": "Neutre, voire amer",
-            "capsules_icon": "none"
+            "capsules": "Neutre, voire amer"
           }
         },
         "row-3": {
@@ -118,8 +115,7 @@
             "criterion": "Le petit plaisir du quotidien",
             "gummies": "Un moment gourmand",
             "gummies_icon": "check",
-            "capsules": "Une corvée de plus",
-            "capsules_icon": "cross"
+            "capsules": "Une corvée de plus"
           }
         },
         "row-4": {
@@ -128,8 +124,7 @@
             "criterion": "Facile à emporter",
             "gummies": "[À COMPLÉTER : format du pot]",
             "gummies_icon": "check",
-            "capsules": "Plaquette ou pilulier",
-            "capsules_icon": "none"
+            "capsules": "Plaquette ou pilulier"
           }
         },
         "row-5": {
@@ -138,8 +133,7 @@
             "criterion": "Sucres",
             "gummies": "[À COMPLÉTER] g par portion : on vous le dit franchement",
             "gummies_icon": "none",
-            "capsules": "Généralement aucun",
-            "capsules_icon": "none"
+            "capsules": "Généralement aucun"
           }
         }
       },
@@ -151,15 +145,14 @@
         "row-5"
       ],
       "settings": {
+        "eyebrow": "Comparer",
         "heading": "",
-        "subheading": "",
         "col_gummies": "",
         "col_capsules": "",
         "footnote": "",
-        "color_scheme": "scheme-2",
-        "anchor": "gumis-why",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "anchor": "gumis-compare",
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     },
     "how": {
@@ -168,7 +161,6 @@
         "step-1": {
           "type": "step",
           "settings": {
-            "icon": "jar",
             "title": "Choisissez votre formule",
             "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
           }
@@ -176,7 +168,6 @@
         "step-2": {
           "type": "step",
           "settings": {
-            "icon": "gummy",
             "title": "Croquez vos gummies",
             "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
           }
@@ -184,7 +175,6 @@
         "step-3": {
           "type": "step",
           "settings": {
-            "icon": "calendar",
             "title": "Gardez le rythme",
             "text": "<p>La régularité, c'est tout le secret. Un pot vous accompagne [À COMPLÉTER] jours.</p>"
           }
@@ -196,14 +186,13 @@
         "step-3"
       ],
       "settings": {
+        "eyebrow": "Mode d'emploi",
         "heading": "",
-        "subheading": "",
-        "button_label": "Je choisis mes gummies",
+        "button_label": "",
         "button_link": "",
-        "color_scheme": "scheme-1",
         "anchor": "gumis-how",
-        "padding_top": 24,
-        "padding_bottom": 72
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     },
     "bundle": {
@@ -214,10 +203,9 @@
         "heading": "",
         "text": "",
         "accent": "",
-        "color_scheme": "scheme-3",
         "anchor": "gumis-bundle",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     },
     "reviews": {
@@ -226,10 +214,9 @@
       "block_order": [],
       "settings": {
         "heading": "",
-        "color_scheme": "scheme-1",
         "anchor": "gumis-reviews",
-        "padding_top": 64,
-        "padding_bottom": 64
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     },
     "faq": {
@@ -295,55 +282,152 @@
         "question-7"
       ],
       "settings": {
+        "eyebrow": "FAQ",
         "heading": "",
-        "subheading": "Tout ce que vous voulez savoir avant de croquer.",
-        "contact_label": "Poser une question",
+        "subheading": "Vous ne trouvez pas votre réponse ? Écrivez-nous, on répond vite.",
+        "contact_label": "Nous écrire",
         "contact_link": "",
-        "open_first": true,
+        "open_first": false,
         "schema_markup": true,
-        "color_scheme": "scheme-6",
         "anchor": "gumis-faq",
-        "padding_top": 72,
-        "padding_bottom": 72
+        "padding_top": 0,
+        "padding_bottom": 96
       }
     },
     "newsletter": {
-      "type": "newsletter",
+      "type": "gumis-newsletter",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "padding_top": 0,
+        "padding_bottom": 96
+      }
+    },
+    "trust": {
+      "type": "gumis-trust",
       "blocks": {
-        "heading-1": {
-          "type": "heading",
+        "item-1": {
+          "type": "item",
           "settings": {
-            "heading": "Des nouvelles toutes fraîches",
-            "heading_size": "h1"
+            "icon": "truck",
+            "title": "Livraison offerte",
+            "text": "Dès [À COMPLÉTER] € d'achat"
           }
         },
-        "paragraph-2": {
-          "type": "paragraph",
+        "item-2": {
+          "type": "item",
           "settings": {
-            "text": "<p>Nouveautés, offres et conseils (jamais de spam). Désinscription en un clic. Voir notre <a href=\"/pages/politique-de-confidentialite\" title=\"Politique de confidentialité\">politique de confidentialité</a>.</p>"
+            "icon": "lock",
+            "title": "Paiement sécurisé",
+            "text": "CB, Apple Pay [À COMPLÉTER]"
           }
         },
-        "email_form-3": {
-          "type": "email_form",
-          "settings": {}
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "jar",
+            "title": "60 gummies par pot",
+            "text": "À croquer, sans eau"
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "settings": {
+            "icon": "return",
+            "title": "14 jours",
+            "text": "Pour changer d'avis"
+          }
         }
       },
       "block_order": [
-        "heading-1",
-        "paragraph-2",
-        "email_form-3"
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4"
+      ],
+      "settings": {}
+    },
+    "stats": {
+      "type": "gumis-statement",
+      "blocks": {
+        "stat-1": {
+          "type": "stat",
+          "settings": {
+            "value": "3",
+            "label": "formules"
+          }
+        },
+        "stat-2": {
+          "type": "stat",
+          "settings": {
+            "value": "60",
+            "label": "gummies par pot"
+          }
+        },
+        "stat-3": {
+          "type": "stat",
+          "settings": {
+            "value": "14",
+            "label": "jours pour changer d'avis"
+          }
+        }
+      },
+      "block_order": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
       ],
       "settings": {
-        "color_scheme": "scheme-4",
-        "full_width": false,
-        "padding_top": 40,
-        "padding_bottom": 72
+        "lead": ""
+      }
+    },
+    "split": {
+      "type": "gumis-split",
+      "blocks": {
+        "point-1": {
+          "type": "point",
+          "settings": {
+            "title": "Un vrai moment gourmand",
+            "text": "Des gummies fruités au lieu de gélules sans goût."
+          }
+        },
+        "point-2": {
+          "type": "point",
+          "settings": {
+            "title": "Rien à avaler de travers",
+            "text": "Il suffit de croquer, sans verre d'eau."
+          }
+        },
+        "point-3": {
+          "type": "point",
+          "settings": {
+            "title": "Facile à garder en tête",
+            "text": "Un pot sur le bureau ou la table de nuit, et le rituel est pris."
+          }
+        }
+      },
+      "block_order": [
+        "point-1",
+        "point-2",
+        "point-3"
+      ],
+      "settings": {
+        "eyebrow": "Pourquoi des gummies",
+        "heading": "",
+        "text": "",
+        "media_right": false,
+        "anchor": "gumis-why",
+        "padding_top": 96,
+        "padding_bottom": 96
       }
     }
   },
   "order": [
     "hero",
+    "trust",
     "trio",
+    "stats",
+    "split",
     "why",
     "how",
     "bundle",

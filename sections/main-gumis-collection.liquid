@@ -15,13 +15,13 @@
 -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <section
-  class="gumis-section gumis-collection color-{{ section.settings.color_scheme }} gradient"
+  class="g-section g-collection"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  {%- render 'gumis-blobs', preset: 'corners' -%}
-  <div class="page-width gumis-relative">
-    <header class="gumis-section-header">
-      <h1 class="h0">{{ heading }}</h1>
+  <div class="g-container">
+    <header class="g-collection__header">
+      <p class="g-eyebrow">{{ 'gumis.collection.eyebrow' | t }}</p>
+      <h1>{{ heading }}</h1>
       {%- if section.settings.show_description and collection.description != blank -%}
         <div class="rte">{{ collection.description }}</div>
       {%- elsif section.settings.subheading != blank -%}
@@ -31,7 +31,7 @@
 
     {%- paginate collection.products by section.settings.per_page -%}
       {%- if collection.products.size > 0 -%}
-        <ul class="gumis-product-grid gumis-product-grid--3" role="list">
+        <ul class="g-grid" role="list">
           {%- for product in collection.products -%}
             <li>
               {%- liquid
@@ -40,7 +40,9 @@
                   assign lazy = false
                 endif
               -%}
-              {%- render 'gumis-product-card', product: product, section_id: section.id, heading_tag: 'h2', lazy: lazy -%}
+              {%- assign tile_i = forloop.index0 | modulo: 3 -%}
+              {%- assign tile = 'blush,peach,lilac' | split: ',' -%}
+              {%- render 'gumis-product-card', product: product, section_id: section.id, heading_tag: 'h2', lazy: lazy, tile: tile[tile_i] -%}
             </li>
           {%- endfor -%}
         </ul>
@@ -48,10 +50,10 @@
           {%- render 'pagination', paginate: paginate, anchor: '' -%}
         {%- endif -%}
       {%- else -%}
-        <ul class="gumis-product-grid gumis-product-grid--3" role="list">
+        <ul class="g-grid" role="list">
           <li>{%- render 'gumis-product-card', placeholder_title: ph_sleep, accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
-          <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2' -%}</li>
-          <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2', tile: 'peach' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2', tile: 'lilac' -%}</li>
         </ul>
       {%- endif -%}
     {%- endpaginate -%}

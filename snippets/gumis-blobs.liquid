@@ -1,23 +1,25 @@
 {% doc %}
-  Decorative gummy blobs (CSS shapes). Purely visual: aria-hidden.
-  Respects the theme setting "Afficher les formes décoratives".
+  Decorative gummies scattered around a product visual. aria-hidden.
+  Respects the theme setting "Afficher les gummies décoratifs".
 
-  @param {string} [preset] - Layout preset: 'hero', 'soft', 'corners'. Defaults to 'soft'.
+  @param {string} [preset] - 'hero', 'spill', 'pdp'. Defaults to 'hero'.
 {% enddoc %}
 {%- if settings.gumis_show_blobs -%}
-  {%- assign preset = preset | default: 'soft' -%}
-  <div class="gumis-blobs gumis-blobs--{{ preset }}" aria-hidden="true">
-    {%- case preset -%}
-      {%- when 'hero' -%}
-        <span class="gumis-blob gumis-blob--shine gumis-blob--float" style="--size: 16rem; --blob-color: var(--gumis-tangerine); top: 8%; right: -4rem; --rotate: 18deg;"></span>
-        <span class="gumis-blob gumis-blob--b gumis-blob--shine gumis-blob--float" style="--size: 9rem; --blob-color: var(--gumis-berry); bottom: 10%; left: -2.5rem; --rotate: -12deg;"></span>
-        <span class="gumis-blob gumis-blob--c" style="--size: 5rem; --blob-color: var(--gumis-plum); top: 14%; left: 42%; --blob-opacity: 0.12;"></span>
-      {%- when 'corners' -%}
-        <span class="gumis-blob gumis-blob--shine" style="--size: 14rem; --blob-color: var(--gumis-tangerine); top: -5rem; right: -4rem; --blob-opacity: 0.9;"></span>
-        <span class="gumis-blob gumis-blob--b" style="--size: 10rem; --blob-color: var(--gumis-bubblegum); bottom: -4rem; left: -3rem;"></span>
-      {%- else -%}
-        <span class="gumis-blob" style="--size: 12rem; --blob-color: var(--gumis-bubblegum); top: -4rem; left: -4rem; --blob-opacity: 0.7;"></span>
-        <span class="gumis-blob gumis-blob--b gumis-blob--shine" style="--size: 7rem; --blob-color: var(--gumis-tangerine); bottom: 2rem; right: -2rem; --blob-opacity: 0.85;"></span>
-    {%- endcase -%}
-  </div>
+  {%- assign preset = preset | default: 'hero' -%}
+  {%- case preset -%}
+    {%- when 'spill' -%}
+      <span class="g-gummy" style="bottom: 14%; left: 10%; width: 17%; background: var(--gumis-berry); --rot: -12deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 10%; left: 26%; width: 15%; background: var(--gumis-tangerine); --rot: 18deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 20%; left: 34%; width: 11%; background: #F7B7CD; --rot: -26deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 8%; right: 14%; width: 13%; background: var(--gumis-tangerine); --rot: -8deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 16%; right: 6%; width: 10%; background: #fff; --rot: 30deg;" aria-hidden="true"></span>
+    {%- when 'pdp' -%}
+      <span class="g-gummy" style="top: 20%; left: 16%; width: 9%; background: var(--gumis-tangerine); --rot: -18deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 20%; right: 18%; width: 11%; background: var(--gumis-berry); --rot: 14deg;" aria-hidden="true"></span>
+    {%- else -%}
+      <span class="g-gummy" style="top: 20%; left: 12%; width: 10%; background: var(--gumis-tangerine); --rot: -18deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 22%; right: 10%; width: 12%; background: var(--gumis-berry); --rot: 14deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="bottom: 17%; right: 23%; width: 7%; background: #F7B7CD; --rot: -24deg;" aria-hidden="true"></span>
+      <span class="g-gummy" style="top: 52%; left: 8%; width: 5.5%; background: #fff; --rot: 20deg;" aria-hidden="true"></span>
+  {%- endcase -%}
 {%- endif -%}

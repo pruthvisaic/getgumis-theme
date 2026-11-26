@@ -590,20 +590,25 @@
     },
     "hero": {
       "heading": "Vos vitamines, version gummies.",
-      "subheading": "Des gummies fruités, faciles à croquer, pour accompagner votre quotidien. Trois formules : Sommeil, Éclat et Force.",
+      "subheading": "Des gummies fruités à croquer, au lieu de grosses gélules. Trois formules : Sommeil, Éclat et Force.",
       "cta_primary": "Découvrir les gummies",
-      "cta_secondary": "Pourquoi des gummies ?"
+      "cta_secondary": "Pourquoi des gummies ?",
+      "eyebrow": "Compléments alimentaires en gummies",
+      "heading_html": "Vos vitamines,<br>version <em>gummies.</em>"
     },
     "trio": {
-      "heading": "Trois formules, zéro corvée",
+      "heading": "Choisissez votre formule",
       "subheading": "Choisissez votre gummy : chaque pot contient {{ count }} gummies.",
       "view_all": "Voir tous les gummies"
     },
     "why": {
-      "heading": "Pourquoi des gummies ?",
-      "subheading": "Parce que prendre ses vitamines ne devrait pas ressembler à une mission.",
+      "heading": "La façon facile de prendre ses vitamines",
+      "subheading": "Les compléments, c'est souvent de grosses gélules qu'on oublie dans un placard. Les gumis sont petits, moelleux et agréables à prendre : le rituel tient tout seul.",
       "col_gummies": "Gummies gumis",
-      "col_capsules": "Gélules classiques"
+      "col_capsules": "Gélules classiques",
+      "eyebrow": "Pourquoi des gummies",
+      "compare_heading": "Gummies gumis vs gélules classiques",
+      "criterion": "Critère"
     },
     "steps": {
       "heading": "Comment ça marche ?",
@@ -615,7 +620,8 @@
       "select_product": "Choisissez un produit dans l'éditeur de thème pour afficher l'offre."
     },
     "reviews": {
-      "heading": "Ils ont goûté"
+      "heading": "Ils ont goûté",
+      "eyebrow": "Avis"
     },
     "faq": {
       "heading": "Vos questions, nos réponses"
@@ -657,7 +663,8 @@
       "missing_metafield": "Métachamp {{ key }} à compléter"
     },
     "cross_sell": {
-      "heading": "Complétez votre routine"
+      "heading": "Complétez votre routine",
+      "eyebrow": "À découvrir aussi"
     },
     "cart": {
       "free_shipping_remaining_html": "Plus que <strong>{{ amount }}</strong> pour la livraison offerte !",
@@ -669,7 +676,8 @@
       "upsell_aria": "Ajouter 1 pot de {{ product }}"
     },
     "collection": {
-      "heading": "Tous nos gummies"
+      "heading": "Tous nos gummies",
+      "eyebrow": "Boutique"
     },
     "legal": {
       "last_updated": "Dernière mise à jour : {{ date }}",
@@ -696,6 +704,22 @@
       "product_sleep": "Gumis Sommeil",
       "product_glow": "Gumis Éclat",
       "product_strength": "Gumis Force"
+    },
+    "jar": {
+      "tag": "Complément alimentaire",
+      "count": "{{ count }} gummies"
+    },
+    "trust": {
+      "label": "Acheter chez gumis"
+    },
+    "statement": {
+      "label": "gumis en bref",
+      "lead_html": "Des vitamines que vous<br>aurez envie de prendre."
+    },
+    "newsletter": {
+      "heading": "Des nouvelles toutes fraîches",
+      "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/politique-de-confidentialite\">politique de confidentialité</a>.",
+      "button": "S'inscrire"
     }
   }
 }

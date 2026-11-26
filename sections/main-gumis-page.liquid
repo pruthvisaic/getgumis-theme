@@ -8,16 +8,13 @@
   class="gumis-section gumis-page-section color-{{ section.settings.color_scheme }} gradient{% if is_legal %} gumis-page-section--legal{% endif %}"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  {%- unless is_legal -%}
-    {%- render 'gumis-blobs', preset: 'corners' -%}
-  {%- endunless -%}
-  <div class="page-width gumis-relative">
+  <div class="g-container">
     <div class="gumis-page">
       <header class="gumis-page__header">
         {%- if section.settings.eyebrow != blank -%}
           <p class="gumis-eyebrow">{{ section.settings.eyebrow | escape }}</p>
         {%- endif -%}
-        <h1 class="gumis-page__title{% if is_legal %} h1{% else %} h0{% endif %}">
+        <h1 class="gumis-page__title">
           {%- if section.settings.heading != blank -%}
             {{ section.settings.heading }}
           {%- else -%}
@@ -47,7 +44,7 @@
 
       {%- if section.settings.show_cookie_button and settings.gumis_cookie_banner -%}
         <p class="gumis-page__actions">
-          <button type="button" class="button button--primary" data-gumis-open-consent>
+          <button type="button" class="g-btn g-btn--primary" data-gumis-open-consent>
             {%- render 'gumis-icon', icon: 'cookie' -%}
             <span>{{ 'gumis.cookies.manage' | t }}</span>
           </button>

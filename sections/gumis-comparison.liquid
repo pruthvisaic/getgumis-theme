@@ -1,11 +1,7 @@
 {%- liquid
   assign heading = section.settings.heading
   if heading == blank
-    assign heading = 'gumis.why.heading' | t
-  endif
-  assign subheading = section.settings.subheading
-  if subheading == blank
-    assign subheading = 'gumis.why.subheading' | t
+    assign heading = 'gumis.why.compare_heading' | t
   endif
   assign col_a = section.settings.col_gummies
   if col_a == blank
@@ -17,58 +13,45 @@
   endif
 -%}
 <section
-  id="{{ section.settings.anchor | default: 'gumis-why' | handleize }}"
-  class="gumis-section gumis-why color-{{ section.settings.color_scheme }} gradient"
+  id="{{ section.settings.anchor | default: 'gumis-compare' | handleize }}"
+  class="g-section"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  {%- render 'gumis-blobs', preset: 'corners' -%}
-  <div class="page-width gumis-relative">
-    <header class="gumis-section-header">
-      <h2 class="h1">{{ heading }}</h2>
-      <p>{{ subheading }}</p>
-    </header>
-
+  <div class="g-container">
+    <div class="g-head">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}<p class="g-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+        <h2>{{ heading }}</h2>
+      </div>
+    </div>
     {%- if section.blocks.size > 0 -%}
-      <div class="gumis-why__table-wrap">
-        <table class="gumis-why__table">
+      <div class="g-compare-wrap">
+        <table class="g-compare">
           <caption class="visually-hidden">{{ heading | strip_html }}</caption>
           <thead>
             <tr>
-              <td></td>
-              <th scope="col" class="gumis-why__col gumis-why__col--us">
-                {%- render 'gumis-icon', icon: 'gummy' -%}
-                <span>{{ col_a | escape }}</span>
-              </th>
-              <th scope="col" class="gumis-why__col">
-                <span>{{ col_b | escape }}</span>
-              </th>
+              <th scope="col"><span class="visually-hidden">{{ 'gumis.why.criterion' | t }}</span></th>
+              <th scope="col" class="g-us">{{ col_a | escape }}</th>
+              <th scope="col">{{ col_b | escape }}</th>
             </tr>
           </thead>
           <tbody>
             {%- for block in section.blocks -%}
               <tr {{ block.shopify_attributes }}>
                 <th scope="row">{{ block.settings.criterion }}</th>
-                <td class="gumis-why__cell gumis-why__cell--us">
-                  {%- if block.settings.gummies_icon != 'none' -%}
-                    {%- render 'gumis-icon', icon: block.settings.gummies_icon -%}
-                  {%- endif -%}
-                  <span>{{ block.settings.gummies }}</span>
+                <td class="g-us">
+                  {%- if block.settings.gummies_icon == 'check' -%}{%- render 'gumis-icon', icon: 'check' -%}{%- endif -%}
+                  {{ block.settings.gummies }}
                 </td>
-                <td class="gumis-why__cell">
-                  {%- if block.settings.capsules_icon != 'none' -%}
-                    {%- render 'gumis-icon', icon: block.settings.capsules_icon -%}
-                  {%- endif -%}
-                  <span>{{ block.settings.capsules }}</span>
-                </td>
+                <td>{{ block.settings.capsules }}</td>
               </tr>
             {%- endfor -%}
           </tbody>
         </table>
       </div>
     {%- endif -%}
-
     {%- if section.settings.footnote != blank -%}
-      <div class="gumis-why__footnote gumis-note rte">{{ section.settings.footnote }}</div>
+      <div class="g-fine-print rte">{{ section.settings.footnote }}</div>
     {%- endif -%}
   </div>
 </section>
@@ -79,15 +62,14 @@
   "tag": "div",
   "class": "section",
   "settings": [
-    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Pourquoi des gummies ? »" },
-    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre", "info": "Vide = traduction par défaut." },
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre", "default": "Comparer" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
     { "type": "text", "id": "col_gummies", "label": "Colonne 1", "info": "Vide = « Gummies gumis »" },
     { "type": "text", "id": "col_capsules", "label": "Colonne 2", "info": "Vide = « Gélules classiques »" },
     { "type": "richtext", "id": "footnote", "label": "Note de bas de section" },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-2" },
-    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-why" },
-    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
-    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-compare" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 96 }
   ],
   "blocks": [
     {
@@ -99,13 +81,9 @@
         { "type": "inline_richtext", "id": "gummies", "label": "Gummies", "default": "[À COMPLÉTER]" },
         {
           "type": "select", "id": "gummies_icon", "label": "Icône gummies", "default": "check",
-          "options": [ { "value": "check", "label": "Coche" }, { "value": "cross", "label": "Croix" }, { "value": "none", "label": "Aucune" } ]
+          "options": [ { "value": "check", "label": "Coche" }, { "value": "none", "label": "Aucune" } ]
         },
-        { "type": "inline_richtext", "id": "capsules", "label": "Gélules", "default": "[À COMPLÉTER]" },
-        {
-          "type": "select", "id": "capsules_icon", "label": "Icône gélules", "default": "none",
-          "options": [ { "value": "check", "label": "Coche" }, { "value": "cross", "label": "Croix" }, { "value": "none", "label": "Aucune" } ]
-        }
+        { "type": "inline_richtext", "id": "capsules", "label": "Gélules", "default": "[À COMPLÉTER]" }
       ]
     }
   ],
@@ -113,8 +91,7 @@
     {
       "name": "Gumis Gummies vs gélules",
       "blocks": [
-        { "type": "row", "settings": { "criterion": "Comment on les prend", "gummies": "À croquer, sans eau", "capsules": "À avaler avec un verre d'eau" } },
-        { "type": "row", "settings": { "criterion": "Le goût", "gummies": "Fruité : [À COMPLÉTER arôme]", "capsules": "Neutre, voire amer" } }
+        { "type": "row", "settings": { "criterion": "Comment on les prend", "gummies": "À croquer, sans eau", "capsules": "À avaler avec un verre d'eau" } }
       ]
     }
   ]

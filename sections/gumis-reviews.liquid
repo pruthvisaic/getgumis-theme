@@ -13,14 +13,12 @@
   -%}
   <section
     id="{{ section.settings.anchor | default: 'gumis-reviews' | handleize }}"
-    class="gumis-section gumis-reviews color-{{ section.settings.color_scheme }} gradient"
+    class="g-section gumis-reviews"
     style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
     data-gumis-reviews
   >
-    <div class="page-width">
-      <header class="gumis-section-header">
-        <h2 class="h1">{{ heading }}</h2>
-      </header>
+    <div class="g-container">
+      <div class="g-head"><div><p class="g-eyebrow">{{ 'gumis.reviews.eyebrow' | t }}</p><h2>{{ heading }}</h2></div></div>
       <div class="gumis-reviews__apps">
         {%- for block in section.blocks -%}
           <div class="gumis-reviews__app" {{ block.shopify_attributes }}>

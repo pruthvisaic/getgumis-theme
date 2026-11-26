@@ -578,20 +578,25 @@
     },
     "hero": {
       "heading": "Your vitamins, gummy style.",
-      "subheading": "Fruity, easy-to-chew gummies to fit your everyday routine. Three formulas: Sommeil (sleep), Éclat (hair, skin & nails) and Force (creatine).",
+      "subheading": "Fruity gummies to chew instead of big capsules. Three formulas: Sommeil (sleep), Éclat (hair, skin & nails) and Force (creatine).",
       "cta_primary": "Shop the gummies",
-      "cta_secondary": "Why gummies?"
+      "cta_secondary": "Why gummies?",
+      "eyebrow": "Food supplements in gummy form",
+      "heading_html": "Your vitamins,<br>made <em>tasty.</em>"
     },
     "trio": {
-      "heading": "Three formulas, zero chore",
+      "heading": "Choose your formula",
       "subheading": "Pick your gummy: every jar holds {{ count }} gummies.",
       "view_all": "See all gummies"
     },
     "why": {
-      "heading": "Why gummies?",
-      "subheading": "Because taking your vitamins shouldn't feel like a mission.",
+      "heading": "The easy way to take your vitamins",
+      "subheading": "Supplements usually mean big capsules forgotten in a cupboard. gumis are small, chewy and nice to take, so the habit sticks.",
       "col_gummies": "gumis gummies",
-      "col_capsules": "Classic capsules"
+      "col_capsules": "Classic capsules",
+      "eyebrow": "Why gummies",
+      "compare_heading": "gumis gummies vs classic capsules",
+      "criterion": "Criterion"
     },
     "steps": {
       "heading": "How does it work?",
@@ -603,7 +608,8 @@
       "select_product": "Select a product in the theme editor to display the offer."
     },
     "reviews": {
-      "heading": "They tasted it"
+      "heading": "They tasted it",
+      "eyebrow": "Reviews"
     },
     "faq": {
       "heading": "Your questions, answered"
@@ -645,7 +651,8 @@
       "missing_metafield": "Metafield {{ key }} to be completed"
     },
     "cross_sell": {
-      "heading": "Complete your routine"
+      "heading": "Complete your routine",
+      "eyebrow": "You may also like"
     },
     "cart": {
       "free_shipping_remaining_html": "Only <strong>{{ amount }}</strong> away from free shipping!",
@@ -657,7 +664,8 @@
       "upsell_aria": "Add 1 jar of {{ product }}"
     },
     "collection": {
-      "heading": "All our gummies"
+      "heading": "All our gummies",
+      "eyebrow": "Shop"
     },
     "legal": {
       "last_updated": "Last updated: {{ date }}",
@@ -684,6 +692,22 @@
       "product_sleep": "Gumis Sommeil",
       "product_glow": "Gumis Éclat",
       "product_strength": "Gumis Force"
+    },
+    "jar": {
+      "tag": "Food supplement",
+      "count": "{{ count }} gummies"
+    },
+    "trust": {
+      "label": "Shopping with gumis"
+    },
+    "statement": {
+      "label": "gumis at a glance",
+      "lead_html": "Vitamins you'll actually<br>want to take."
+    },
+    "newsletter": {
+      "heading": "Fresh news from gumis",
+      "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/politique-de-confidentialite\">privacy policy</a>.",
+      "button": "Subscribe"
     }
   }
 }

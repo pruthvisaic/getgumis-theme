@@ -114,6 +114,12 @@
       },
       {
         "type": "color",
+        "id": "gumis_ink",
+        "label": "Ink (texte, boutons)",
+        "default": "#2A0A1F"
+      },
+      {
+        "type": "color",
         "id": "gumis_berry",
         "label": "Berry (principale)",
         "default": "#D6246E"
@@ -143,23 +149,41 @@
         "default": "#FFF4EC"
       },
       {
+        "type": "color",
+        "id": "gumis_blush",
+        "label": "Blush (blocs pastel)",
+        "default": "#FBF0F3"
+      },
+      {
+        "type": "color",
+        "id": "gumis_peach",
+        "label": "Peach (blocs pastel)",
+        "default": "#FFF3EA"
+      },
+      {
+        "type": "color",
+        "id": "gumis_lilac",
+        "label": "Lilac (blocs pastel)",
+        "default": "#F4F0F8"
+      },
+      {
         "type": "header",
         "content": "Formes"
       },
       {
         "type": "range",
         "id": "gumis_radius",
-        "label": "Arrondi des blocs",
-        "min": 16,
-        "max": 40,
+        "label": "Arrondi des grands blocs",
+        "min": 8,
+        "max": 32,
         "step": 2,
         "unit": "px",
-        "default": 28
+        "default": 20
       },
       {
         "type": "checkbox",
         "id": "gumis_show_blobs",
-        "label": "Afficher les formes décoratives « gummies »",
+        "label": "Afficher les gummies décoratifs",
         "default": true
       },
       {
@@ -174,7 +198,7 @@
         "type": "color",
         "id": "gumis_logo_color",
         "label": "Couleur du logo",
-        "default": "#3B0A2A"
+        "default": "#D6246E"
       },
       {
         "type": "color",
@@ -205,7 +229,7 @@
     "settings": [
       {
         "type": "paragraph",
-        "content": "Les polices Fredoka (titres) et Nunito (texte) sont auto-hébergées dans le thème (licence SIL OFL). Aucune police n'est chargée depuis un CDN externe."
+        "content": "Les polices Manrope (titres et texte) et Fredoka (logo) sont auto-hébergées dans le thème (licence SIL OFL). Aucune police n'est chargée depuis un CDN externe."
       },
       {
         "type": "range",

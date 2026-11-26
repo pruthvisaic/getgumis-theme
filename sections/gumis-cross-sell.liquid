@@ -21,28 +21,32 @@
 -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <section
-  class="gumis-section gumis-cross-sell color-{{ section.settings.color_scheme }} gradient"
+  class="g-section gumis-cross-sell"
   style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
-    <header class="gumis-section-header">
-      <h2 class="h1">{{ heading }}</h2>
-      {%- if section.settings.subheading != blank -%}
-        <p>{{ section.settings.subheading }}</p>
-      {%- endif -%}
-    </header>
-    <ul class="gumis-product-grid gumis-product-grid--{{ max }}" role="list">
+  <div class="g-container">
+    <div class="g-head">
+      <div>
+        <p class="g-eyebrow">{{ 'gumis.cross_sell.eyebrow' | t }}</p>
+        <h2>{{ heading }}</h2>
+      </div>
+      <a href="{{ routes.all_products_collection_url }}" class="g-text-link">{{ 'gumis.trio.view_all' | t }}</a>
+    </div>
+    <ul class="g-grid g-grid--swipe" role="list">
       {%- for item in source -%}
         {%- if item.id != product.id and shown < max -%}
           {%- assign shown = shown | plus: 1 -%}
           <li>
-            {%- render 'gumis-product-card', product: item, section_id: section.id -%}
+            {%- assign tiles = 'blush,peach,lilac' | split: ',' -%}
+            {%- assign ti = shown | minus: 1 | modulo: 3 -%}
+            {%- assign tile = tiles[ti] -%}
+            {%- render 'gumis-product-card', product: item, section_id: section.id, tile: tile -%}
           </li>
         {%- endif -%}
       {%- endfor -%}
       {%- if shown == 0 and request.design_mode -%}
-        <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id -%}</li>
-        <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, tile: 'peach' -%}</li>
+        <li>{%- render 'gumis-product-card', placeholder_title: ph_strength, accent: settings.gumis_tangerine, section_id: section.id, tile: 'lilac' -%}</li>
       {%- endif -%}
     </ul>
   </div>
@@ -59,8 +63,7 @@
     { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
     { "type": "product_list", "id": "products", "label": "Produits", "limit": 4 },
     { "type": "collection", "id": "collection", "label": "Ou collection", "info": "Utilisée si aucun produit n'est choisi. Sinon : tous les produits." },
-    { "type": "range", "id": "limit", "label": "Nombre de produits", "min": 1, "max": 3, "step": 1, "default": 2 },
-    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-2" },
+    { "type": "range", "id": "limit", "label": "Nombre de produits", "min": 1, "max": 3, "step": 1, "default": 3 },
     { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
     { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
   ],

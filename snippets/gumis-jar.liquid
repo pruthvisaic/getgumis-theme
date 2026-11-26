@@ -1,24 +1,45 @@
 {% doc %}
-  Decorative CSS jar illustration, shown while no product image is set.
-  Always aria-hidden.
+  Drawn product jar (lid, glossy body, coloured label), used until real photos exist.
+  Always decorative (aria-hidden).
 
-  @param {string} [accent] - Label colour.
-  @param {string} [ink] - Text colour on the label.
-  @param {string} [label] - Small text printed on the jar label.
+  @param {string} [accent] - Label colour. Defaults to Berry.
+  @param {string} [ink] - Text colour on the label. Defaults to white.
+  @param {string} [name] - Product name printed on the label.
+  @param {boolean} [show_tag] - Print the "Complément alimentaire" tag. Defaults to true.
+  @param {boolean} [show_count] - Print the gummy count.
+  @param {boolean} [minimal] - Plain label, no text (back jars in a stack).
+  @param {boolean} [pedestal] - Stand the jar on a white pedestal.
   @param {string} [class] - Extra classes.
 {% enddoc %}
+{%- liquid
+  assign dot = settings.gumis_tangerine
+  if accent
+    assign accent_brightness = accent | color_brightness
+    if accent_brightness > 140
+      assign dot = '#FFFFFF'
+    endif
+  endif
+-%}
 <div
-  class="gumis-jar{% if class %} {{ class }}{% endif %}"
-  style="{% if accent %}--jar-accent: {{ accent }};{% endif %}{% if ink %}--jar-ink: {{ ink }};{% endif %}"
+  class="g-jar{% if pedestal %} g-jar--pedestal{% endif %}{% if class %} {{ class }}{% endif %}"
+  style="{% if accent %}--jar-accent: {{ accent }};{% endif %}{% if ink %}--jar-ink: {{ ink }};{% endif %}--jar-dot: {{ dot }};"
   aria-hidden="true"
 >
-  <span class="gumis-jar__lid"></span>
-  <span class="gumis-jar__body">
-    <span class="gumis-jar__label">
-      {%- render 'logo', size: '2.2rem' -%}
-      {%- if label != blank -%}
-        <span class="gumis-jar__name">{{ label | escape }}</span>
-      {%- endif -%}
-    </span>
-  </span>
+  <div class="g-jar__lid"></div>
+  <div class="g-jar__body">
+    <div class="g-jar__label">
+      {%- unless minimal -%}
+        {%- render 'logo' -%}
+        {%- unless show_tag == false -%}
+          <span class="g-jar__tag">{{ 'gumis.jar.tag' | t }}</span>
+        {%- endunless -%}
+        {%- if name != blank -%}
+          <span class="g-jar__name">{{ name | escape }}</span>
+        {%- endif -%}
+        {%- if show_count -%}
+          <span class="g-jar__count">{{ 'gumis.jar.count' | t: count: settings.gumis_gummies_per_jar }}</span>
+        {%- endif -%}
+      {%- endunless -%}
+    </div>
+  </div>
 </div>
