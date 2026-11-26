@@ -330,6 +330,8 @@ b, strong { font-weight: 700; }
   .g-hero__copy { align-items: stretch; }
   .g-hero__ctas .g-btn { flex: 1 1 0; padding: 1.2rem 1.6rem; }
   .g-chip { font-size: 1.2rem; padding: 0.8rem 1.2rem; }
+  .g-chip--a { top: 4%; right: 2%; }
+  .g-chip--b { bottom: 4%; left: 2%; }
 }
 
 /* ---------- Trust card ---------- */
