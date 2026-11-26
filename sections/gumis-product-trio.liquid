@@ -1,0 +1,91 @@
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'gumis.trio.heading' | t
+  endif
+  assign subheading = section.settings.subheading
+  if subheading == blank
+    assign subheading = 'gumis.trio.subheading' | t: count: settings.gumis_gummies_per_jar
+  endif
+-%}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+<section
+  id="{{ section.settings.anchor | default: 'gumis-products' | handleize }}"
+  class="gumis-section gumis-trio color-{{ section.settings.color_scheme }} gradient"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <header class="gumis-section-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="gumis-eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="h1">{{ heading }}</h2>
+      <p>{{ subheading }}</p>
+    </header>
+
+    <ul class="gumis-product-grid gumis-product-grid--{{ section.blocks.size | at_most: 3 }}" role="list">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          {%- render 'gumis-product-card',
+            product: block.settings.product,
+            accent: block.settings.accent,
+            placeholder_title: block.settings.placeholder_title,
+            badge: block.settings.badge,
+            section_id: section.id
+          -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+
+    {%- if section.settings.show_view_all -%}
+      <div class="gumis-trio__footer">
+        <a href="{{ section.settings.view_all_link | default: routes.all_products_collection_url }}" class="button button--secondary">
+          {{- 'gumis.trio.view_all' | t -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Trio produits",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Sur-titre" },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = traduction par défaut." },
+    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre", "info": "Vide = traduction par défaut." },
+    { "type": "checkbox", "id": "show_view_all", "label": "Bouton « Voir tous les gummies »", "default": false },
+    { "type": "url", "id": "view_all_link", "label": "Lien du bouton" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-products" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produit",
+      "limit": 6,
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produit" },
+        { "type": "color", "id": "accent", "label": "Couleur d'accent", "info": "Vide = métachamp custom.accent_color du produit." },
+        { "type": "text", "id": "placeholder_title", "label": "Nom affiché sans produit", "info": "Utilisé uniquement tant qu'aucun produit n'est sélectionné." },
+        { "type": "text", "id": "badge", "label": "Badge (optionnel)" },
+        { "type": "paragraph", "content": "La phrase de bénéfice vient des métachamps du produit (custom.tagline, sinon 1er élément de custom.benefits). Aucune allégation n'est saisie ici." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gumis Trio produits",
+      "blocks": [
+        { "type": "product", "settings": { "accent": "#3B0A2A", "placeholder_title": "Gumis Sommeil" } },
+        { "type": "product", "settings": { "accent": "#D6246E", "placeholder_title": "Gumis Éclat" } },
+        { "type": "product", "settings": { "accent": "#FF8A3D", "placeholder_title": "Gumis Force" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

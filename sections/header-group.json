@@ -26,7 +26,7 @@
         "announcement-bundle": {
           "type": "announcement",
           "settings": {
-            "text": "Plus de pots, plus d'économies : découvre nos offres 2 et 3 pots",
+            "text": "Plus de pots, plus d'économies : découvrez nos offres 2 et 3 pots",
             "text_alignment": "center",
             "color_scheme": "scheme-3",
             "link": "shopify://collections/all"

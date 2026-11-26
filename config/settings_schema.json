@@ -187,6 +187,16 @@
         "id": "gumis_tagline",
         "label": "Signature (tagline)",
         "info": "Laisser vide pour utiliser la traduction par défaut : « Vos vitamines, en version gourmande. »"
+      },
+      {
+        "type": "header",
+        "content": "Produits"
+      },
+      {
+        "type": "number",
+        "id": "gumis_gummies_per_jar",
+        "label": "Nombre de gummies par pot",
+        "default": 60
       }
     ]
   },

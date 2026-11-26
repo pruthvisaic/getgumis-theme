@@ -563,6 +563,64 @@
     },
     "compliance": {
       "footer_note": "Les compléments alimentaires ne doivent pas être utilisés comme substituts d'un régime alimentaire varié et équilibré et d'un mode de vie sain."
+    },
+    "general": {
+      "to_complete": "[À COMPLÉTER]"
+    },
+    "hero": {
+      "heading": "Vos vitamines, version gummies.",
+      "subheading": "Des gummies fruités, faciles à croquer, pour accompagner votre quotidien. Trois formules : Sommeil, Éclat et Force.",
+      "cta_primary": "Découvrir les gummies",
+      "cta_secondary": "Pourquoi des gummies ?"
+    },
+    "trio": {
+      "heading": "Trois formules, zéro corvée",
+      "subheading": "Choisissez votre gummy : chaque pot contient {{ count }} gummies.",
+      "view_all": "Voir tous les gummies"
+    },
+    "why": {
+      "heading": "Pourquoi des gummies ?",
+      "subheading": "Parce que prendre ses vitamines ne devrait pas ressembler à une mission.",
+      "col_gummies": "Gummies gumis",
+      "col_capsules": "Gélules classiques"
+    },
+    "steps": {
+      "heading": "Comment ça marche ?",
+      "step": "Étape {{ number }}"
+    },
+    "bundle": {
+      "heading": "Plus de pots, plus d'économies",
+      "text": "Prenez de l'avance : choisissez 1, 2 ou 3 pots. La remise s'applique automatiquement dans le panier.",
+      "select_product": "Choisissez un produit dans l'éditeur de thème pour afficher l'offre."
+    },
+    "reviews": {
+      "heading": "Ils ont goûté"
+    },
+    "faq": {
+      "heading": "Vos questions, nos réponses"
+    },
+    "product": {
+      "add_to_cart": "Ajouter au panier",
+      "choose": "Choisir",
+      "placeholder_title": "Votre produit",
+      "placeholder_benefit": "[À COMPLÉTER : bénéfice autorisé, via le métachamp]",
+      "jar_count": "Pot de {{ count }} gummies",
+      "tax_included": "Prix TTC. Livraison calculée au paiement."
+    },
+    "qb": {
+      "legend": "Combien de pots ?",
+      "jars": {
+        "one": "{{ count }} pot",
+        "other": "{{ count }} pots"
+      },
+      "gummies": {
+        "one": "{{ count }} gummy",
+        "other": "{{ count }} gummies"
+      },
+      "per_jar": "soit {{ price }} le pot",
+      "save_percent": "-{{ percent }} %",
+      "you_save": "Vous économisez {{ amount }}",
+      "auto_discount_note": "Remise appliquée automatiquement dans le panier."
     }
   }
 }

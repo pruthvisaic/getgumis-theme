@@ -66,8 +66,8 @@
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
       }
     {% endstyle %}
-    <link rel="preload" as="font" href="{{ 'nunito-latin-400-normal.woff2' | asset_url }}" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="{{ 'fredoka-latin-700-normal.woff2' | asset_url }}" type="font/woff2" crossorigin>
+    {{ 'nunito-latin-400-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
+    {{ 'fredoka-latin-700-normal.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: 'anonymous' }}
 
     {{ 'template-giftcard.css' | asset_url | stylesheet_tag }}
   </head>

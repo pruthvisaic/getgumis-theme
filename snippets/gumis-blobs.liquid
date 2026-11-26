@@ -1,0 +1,23 @@
+{% doc %}
+  Decorative gummy blobs (CSS shapes). Purely visual: aria-hidden.
+  Respects the theme setting "Afficher les formes décoratives".
+
+  @param {string} [preset] - Layout preset: 'hero', 'soft', 'corners'. Defaults to 'soft'.
+{% enddoc %}
+{%- if settings.gumis_show_blobs -%}
+  {%- assign preset = preset | default: 'soft' -%}
+  <div class="gumis-blobs gumis-blobs--{{ preset }}" aria-hidden="true">
+    {%- case preset -%}
+      {%- when 'hero' -%}
+        <span class="gumis-blob gumis-blob--shine gumis-blob--float" style="--size: 16rem; --blob-color: var(--gumis-tangerine); top: 8%; right: -4rem; --rotate: 18deg;"></span>
+        <span class="gumis-blob gumis-blob--b gumis-blob--shine gumis-blob--float" style="--size: 9rem; --blob-color: var(--gumis-berry); bottom: 10%; left: -2.5rem; --rotate: -12deg;"></span>
+        <span class="gumis-blob gumis-blob--c" style="--size: 5rem; --blob-color: var(--gumis-plum); top: 14%; left: 42%; --blob-opacity: 0.12;"></span>
+      {%- when 'corners' -%}
+        <span class="gumis-blob gumis-blob--shine" style="--size: 14rem; --blob-color: var(--gumis-tangerine); top: -5rem; right: -4rem; --blob-opacity: 0.9;"></span>
+        <span class="gumis-blob gumis-blob--b" style="--size: 10rem; --blob-color: var(--gumis-bubblegum); bottom: -4rem; left: -3rem;"></span>
+      {%- else -%}
+        <span class="gumis-blob" style="--size: 12rem; --blob-color: var(--gumis-bubblegum); top: -4rem; left: -4rem; --blob-opacity: 0.7;"></span>
+        <span class="gumis-blob gumis-blob--b gumis-blob--shine" style="--size: 7rem; --blob-color: var(--gumis-tangerine); bottom: 2rem; right: -2rem; --blob-opacity: 0.85;"></span>
+    {%- endcase -%}
+  </div>
+{%- endif -%}

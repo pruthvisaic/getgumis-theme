@@ -1,0 +1,62 @@
+{%- comment -%}
+  Reviews come ONLY from a reviews app (Judge.me, Avis Vérifiés, Okendo, Shopify Product Reviews...)
+  added as an app block. Without an app block nothing is rendered. If the app block renders
+  no reviews, the section hides itself (CSS :has + small script fallback).
+  Never add fake reviews, ratings or customer counts here.
+{%- endcomment -%}
+{%- if section.blocks.size > 0 -%}
+  {%- liquid
+    assign heading = section.settings.heading
+    if heading == blank
+      assign heading = 'gumis.reviews.heading' | t
+    endif
+  -%}
+  <section
+    id="{{ section.settings.anchor | default: 'gumis-reviews' | handleize }}"
+    class="gumis-section gumis-reviews color-{{ section.settings.color_scheme }} gradient"
+    style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+    data-gumis-reviews
+  >
+    <div class="page-width">
+      <header class="gumis-section-header">
+        <h2 class="h1">{{ heading }}</h2>
+      </header>
+      <div class="gumis-reviews__apps">
+        {%- for block in section.blocks -%}
+          <div class="gumis-reviews__app" {{ block.shopify_attributes }}>
+            {%- render block -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+  <script>
+    (() => {
+      const section = document.currentScript.previousElementSibling;
+      if (!section || window.Shopify?.designMode) return;
+      const check = () => {
+        const apps = section.querySelector('.gumis-reviews__apps');
+        if (apps && apps.innerText.trim() === '' && !apps.querySelector('img, iframe, [data-reviews]')) section.hidden = true;
+      };
+      window.addEventListener('load', () => setTimeout(check, 2500), { once: true });
+    })();
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Gumis Avis clients",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Ajoutez le bloc de votre application d'avis (Judge.me, Avis Vérifiés, Okendo…). Sans bloc d'appli ou sans avis, la section ne s'affiche pas. N'ajoutez jamais d'avis inventés." },
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Ils ont goûté »" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-reviews" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64 }
+  ],
+  "blocks": [ { "type": "@app" } ],
+  "presets": [ { "name": "Gumis Avis clients" } ]
+}
+{% endschema %}

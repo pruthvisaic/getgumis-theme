@@ -1,0 +1,107 @@
+{% doc %}
+  1 / 2 / 3 jar selector shown as large cards.
+  Each card is a radio named "quantity" attached to the product form (form attribute),
+  so it works without JavaScript. Savings are computed from the theme settings
+  "Remise pour 2/3 pots (%)", which must mirror the Shopify automatic discounts
+  (see README). With 0 %, no saving is displayed: prices are never invented.
+
+  @param {product} product - The product.
+  @param {string} form_id - Id of the product form the radios belong to.
+  @param {string} [accent] - Accent colour.
+  @param {string} [layout] - 'stack' (default) or 'row'.
+  @param {number} [default_quantity] - Pre-selected quantity (1-3). Defaults to 1.
+  @param {string} [legend] - Fieldset legend override.
+{% enddoc %}
+{%- liquid
+  assign layout = layout | default: 'stack'
+  assign default_quantity = default_quantity | default: 1 | plus: 0
+  assign variant = product.selected_or_first_available_variant
+  assign per_jar = settings.gumis_gummies_per_jar | default: 60
+  assign any_discount = false
+  if settings.gumis_bundle_discount_2 > 0 or settings.gumis_bundle_discount_3 > 0
+    assign any_discount = true
+  endif
+-%}
+<gumis-quantity-breaks
+  class="gumis-qb gumis-qb--{{ layout }}"
+  data-form-id="{{ form_id }}"
+  {% if accent %}
+    style="--accent: {{ accent }};"
+  {% endif %}
+>
+  <fieldset class="gumis-qb__fieldset" style="border:0;margin:0;padding:0;min-width:0;">
+    <legend class="gumis-qb__legend">
+      {%- if legend != blank -%}{{ legend | escape }}{%- else -%}{{ 'gumis.qb.legend' | t }}{%- endif -%}
+    </legend>
+    <div class="gumis-qb__options">
+      {%- for qty in (1..3) -%}
+        {%- liquid
+          assign pct = 0
+          if qty == 2
+            assign pct = settings.gumis_bundle_discount_2
+          elsif qty == 3
+            assign pct = settings.gumis_bundle_discount_3
+          endif
+          assign keep = 100 | minus: pct
+          assign full_price = variant.price | times: qty
+          assign tier_price = full_price | times: keep | divided_by: 100.0 | round
+          assign saving = full_price | minus: tier_price
+          assign unit_price = tier_price | divided_by: qty
+          assign input_id = form_id | append: '-qty-' | append: qty
+          assign gummy_count = per_jar | times: qty
+        -%}
+        <div class="gumis-qb__option">
+          <input
+            class="gumis-qb__input"
+            type="radio"
+            name="quantity"
+            id="{{ input_id }}"
+            value="{{ qty }}"
+            form="{{ form_id }}"
+            data-total="{{ tier_price | money | escape }}"
+            data-compare="{% if saving > 0 %}{{ full_price | money | escape }}{% endif %}"
+            {% if qty == default_quantity %}
+              checked
+            {% endif %}
+          >
+          <label class="gumis-qb__card" for="{{ input_id }}">
+            {%- if saving > 0 -%}
+              <span class="gumis-qb__save gumis-pill gumis-pill--accent">
+                {{- 'gumis.qb.save_percent' | t: percent: pct -}}
+              </span>
+            {%- endif -%}
+            <span class="gumis-qb__radio" aria-hidden="true"></span>
+            {%- if layout == 'row' -%}
+              <span class="gumis-qb__jars" aria-hidden="true">
+                {%- for j in (1..qty) -%}<span class="gumis-qb__jar"></span>{%- endfor -%}
+              </span>
+            {%- endif -%}
+            <span class="gumis-qb__label">
+              <span class="gumis-qb__title">{{ 'gumis.qb.jars' | t: count: qty }}</span>
+              <span class="gumis-qb__sub">
+                {{- 'gumis.qb.gummies' | t: count: gummy_count -}}
+                {%- if qty > 1 %} · {{ 'gumis.qb.per_jar' | t: price: unit_price | money }}{% endif -%}
+              </span>
+            </span>
+            <span class="gumis-qb__price">
+              {%- if saving > 0 -%}
+                <span class="gumis-qb__compare">
+                  <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                  {{- full_price | money -}}
+                </span>
+                <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+              {%- endif -%}
+              <span>{{ tier_price | money }}</span>
+              {%- if saving > 0 -%}
+                <span class="gumis-qb__sub">{{ 'gumis.qb.you_save' | t: amount: saving | money }}</span>
+              {%- endif -%}
+            </span>
+          </label>
+        </div>
+      {%- endfor -%}
+    </div>
+  </fieldset>
+  {%- if any_discount -%}
+    <p class="gumis-qb__footnote">{{ 'gumis.qb.auto_discount_note' | t }}</p>
+  {%- endif -%}
+</gumis-quantity-breaks>

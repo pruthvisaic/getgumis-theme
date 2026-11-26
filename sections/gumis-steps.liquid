@@ -1,0 +1,92 @@
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'gumis.steps.heading' | t
+  endif
+  assign accents = 'var(--gumis-bubblegum),var(--gumis-tangerine),var(--gumis-berry),var(--gumis-plum)' | split: ','
+  assign inks = 'var(--gumis-plum),var(--gumis-plum),#fff,#fff' | split: ','
+-%}
+<section
+  id="{{ section.settings.anchor | default: 'gumis-how' | handleize }}"
+  class="gumis-section gumis-steps color-{{ section.settings.color_scheme }} gradient"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <header class="gumis-section-header">
+      <h2 class="h1">{{ heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </header>
+    <ol class="gumis-steps__list list-unstyled" role="list">
+      {%- for block in section.blocks -%}
+        {%- assign i = forloop.index0 | modulo: 4 -%}
+        <li class="gumis-steps__item" {{ block.shopify_attributes }}>
+          <span class="gumis-icon-bubble" style="--accent: {{ accents[i] }}; --accent-ink: {{ inks[i] }};">
+            {%- render 'gumis-icon', icon: block.settings.icon -%}
+          </span>
+          <span class="gumis-steps__number" aria-hidden="true">{{ forloop.index }}</span>
+          <h3 class="gumis-steps__title h3">
+            <span class="visually-hidden">{{ 'gumis.steps.step' | t: number: forloop.index }} :</span>
+            {{ block.settings.title }}
+          </h3>
+          <div class="gumis-steps__text">{{ block.settings.text }}</div>
+        </li>
+      {%- endfor -%}
+    </ol>
+    {%- if section.settings.button_label != blank -%}
+      <div class="gumis-steps__footer">
+        <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="button button--primary">
+          {{- section.settings.button_label | escape -}}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gumis Comment ça marche",
+  "tag": "div",
+  "class": "section",
+  "settings": [
+    { "type": "inline_richtext", "id": "heading", "label": "Titre", "info": "Vide = « Comment ça marche ? »" },
+    { "type": "inline_richtext", "id": "subheading", "label": "Sous-titre" },
+    { "type": "text", "id": "button_label", "label": "Bouton — texte" },
+    { "type": "url", "id": "button_link", "label": "Bouton — lien" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Palette", "default": "scheme-1" },
+    { "type": "text", "id": "anchor", "label": "Ancre (id)", "default": "gumis-how" },
+    { "type": "range", "id": "padding_top", "label": "Marge haute", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 },
+    { "type": "range", "id": "padding_bottom", "label": "Marge basse", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 72 }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Étape",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "select", "id": "icon", "label": "Icône", "default": "jar",
+          "options": [
+            { "value": "jar", "label": "Pot" }, { "value": "gummy", "label": "Gummy" }, { "value": "calendar", "label": "Calendrier" },
+            { "value": "moon", "label": "Lune" }, { "value": "sparkle", "label": "Éclat" }, { "value": "bolt", "label": "Éclair" },
+            { "value": "smile", "label": "Sourire" }, { "value": "truck", "label": "Livraison" }, { "value": "heart", "label": "Cœur" }
+          ]
+        },
+        { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Étape" },
+        { "type": "richtext", "id": "text", "label": "Texte", "default": "<p>[À COMPLÉTER]</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gumis Comment ça marche",
+      "blocks": [
+        { "type": "step", "settings": { "icon": "jar", "title": "Choisissez votre formule", "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>" } },
+        { "type": "step", "settings": { "icon": "gummy", "title": "Croquez vos gummies", "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>" } },
+        { "type": "step", "settings": { "icon": "calendar", "title": "Gardez le rythme", "text": "<p>La régularité, c'est tout le secret. Un pot vous accompagne [À COMPLÉTER] jours.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

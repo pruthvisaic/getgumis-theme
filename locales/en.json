@@ -551,6 +551,64 @@
     },
     "compliance": {
       "footer_note": "Food supplements must not be used as a substitute for a varied, balanced diet and a healthy lifestyle."
+    },
+    "general": {
+      "to_complete": "[TO BE COMPLETED]"
+    },
+    "hero": {
+      "heading": "Your vitamins, gummy style.",
+      "subheading": "Fruity, easy-to-chew gummies to fit your everyday routine. Three formulas: Sleep, Glow and Strength.",
+      "cta_primary": "Shop the gummies",
+      "cta_secondary": "Why gummies?"
+    },
+    "trio": {
+      "heading": "Three formulas, zero chore",
+      "subheading": "Pick your gummy: every jar holds {{ count }} gummies.",
+      "view_all": "See all gummies"
+    },
+    "why": {
+      "heading": "Why gummies?",
+      "subheading": "Because taking your vitamins shouldn't feel like a mission.",
+      "col_gummies": "gumis gummies",
+      "col_capsules": "Classic capsules"
+    },
+    "steps": {
+      "heading": "How does it work?",
+      "step": "Step {{ number }}"
+    },
+    "bundle": {
+      "heading": "More jars, more savings",
+      "text": "Stock up: choose 1, 2 or 3 jars. The discount is applied automatically in your cart.",
+      "select_product": "Select a product in the theme editor to display the offer."
+    },
+    "reviews": {
+      "heading": "They tasted it"
+    },
+    "faq": {
+      "heading": "Your questions, answered"
+    },
+    "product": {
+      "add_to_cart": "Add to cart",
+      "choose": "Choose",
+      "placeholder_title": "Your product",
+      "placeholder_benefit": "[TO BE COMPLETED: authorised benefit, via metafield]",
+      "jar_count": "Jar of {{ count }} gummies",
+      "tax_included": "Tax included. Shipping calculated at checkout."
+    },
+    "qb": {
+      "legend": "How many jars?",
+      "jars": {
+        "one": "{{ count }} jar",
+        "other": "{{ count }} jars"
+      },
+      "gummies": {
+        "one": "{{ count }} gummy",
+        "other": "{{ count }} gummies"
+      },
+      "per_jar": "{{ price }} per jar",
+      "save_percent": "-{{ percent }}%",
+      "you_save": "You save {{ amount }}",
+      "auto_discount_note": "Discount applied automatically in your cart."
     }
   }
 }

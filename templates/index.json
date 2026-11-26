@@ -1,75 +1,354 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "gumis-hero",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "point-1": {
+          "type": "point",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "icon": "jar",
+            "text": "Pot de 60 gummies"
           }
         },
-        "button": {
-          "type": "buttons",
+        "point-2": {
+          "type": "point",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "icon": "gummy",
+            "text": "À croquer, sans eau"
+          }
+        },
+        "point-3": {
+          "type": "point",
+          "settings": {
+            "icon": "lock",
+            "text": "Paiement sécurisé"
           }
         }
       },
       "block_order": [
-        "heading",
-        "button"
+        "point-1",
+        "point-2",
+        "point-3"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "eyebrow": "",
+        "heading": "",
+        "subheading": "",
+        "cta1_label": "",
+        "cta1_link": "",
+        "cta2_label": "",
+        "cta2_link": "",
+        "show_blobs": true,
+        "color_scheme": "scheme-2",
+        "anchor": "gumis-hero",
+        "padding_top": 40,
+        "padding_bottom": 64
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "trio": {
+      "type": "gumis-product-trio",
+      "blocks": {
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "accent": "#3B0A2A",
+            "placeholder_title": "Gumis Sommeil",
+            "badge": ""
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "accent": "#D6246E",
+            "placeholder_title": "Gumis Éclat",
+            "badge": ""
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "accent": "#FF8A3D",
+            "placeholder_title": "Gumis Force",
+            "badge": ""
+          }
+        }
+      },
+      "block_order": [
+        "product-1",
+        "product-2",
+        "product-3"
+      ],
       "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
+        "eyebrow": "La gamme",
+        "heading": "",
+        "subheading": "",
+        "show_view_all": false,
         "color_scheme": "scheme-1",
+        "anchor": "gumis-products",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "why": {
+      "type": "gumis-comparison",
+      "blocks": {
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "criterion": "Comment on les prend",
+            "gummies": "À croquer, sans eau",
+            "gummies_icon": "check",
+            "capsules": "À avaler avec un verre d'eau",
+            "capsules_icon": "none"
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "criterion": "Le goût",
+            "gummies": "Fruité : [À COMPLÉTER arôme]",
+            "gummies_icon": "check",
+            "capsules": "Neutre, voire amer",
+            "capsules_icon": "none"
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "criterion": "Le petit plaisir du quotidien",
+            "gummies": "Un moment gourmand",
+            "gummies_icon": "check",
+            "capsules": "Une corvée de plus",
+            "capsules_icon": "cross"
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "criterion": "Facile à emporter",
+            "gummies": "[À COMPLÉTER : format du pot]",
+            "gummies_icon": "check",
+            "capsules": "Plaquette ou pilulier",
+            "capsules_icon": "none"
+          }
+        },
+        "row-5": {
+          "type": "row",
+          "settings": {
+            "criterion": "Sucres",
+            "gummies": "[À COMPLÉTER] g par portion : on vous le dit franchement",
+            "gummies_icon": "none",
+            "capsules": "Généralement aucun",
+            "capsules_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "row-1",
+        "row-2",
+        "row-3",
+        "row-4",
+        "row-5"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "col_gummies": "",
+        "col_capsules": "",
+        "footnote": "",
+        "color_scheme": "scheme-2",
+        "anchor": "gumis-why",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "how": {
+      "type": "gumis-steps",
+      "blocks": {
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "icon": "jar",
+            "title": "Choisissez votre formule",
+            "text": "<p>Sommeil, Éclat ou Force : prenez celle qui vous ressemble.</p>"
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "icon": "gummy",
+            "title": "Croquez vos gummies",
+            "text": "<p>Chaque jour, à la dose indiquée sur le pot. Pas d'eau, pas de grimace.</p>"
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "icon": "calendar",
+            "title": "Gardez le rythme",
+            "text": "<p>La régularité, c'est tout le secret. Un pot vous accompagne [À COMPLÉTER] jours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "step-1",
+        "step-2",
+        "step-3"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "button_label": "Je choisis mes gummies",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "anchor": "gumis-how",
+        "padding_top": 24,
+        "padding_bottom": 72
+      }
+    },
+    "bundle": {
+      "type": "gumis-bundle",
+      "settings": {
+        "default_quantity": 2,
+        "eyebrow": "Offre multi-pots",
+        "heading": "",
+        "text": "",
+        "accent": "",
+        "color_scheme": "scheme-3",
+        "anchor": "gumis-bundle",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "reviews": {
+      "type": "gumis-reviews",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "heading": "",
+        "color_scheme": "scheme-1",
+        "anchor": "gumis-reviews",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "faq": {
+      "type": "gumis-faq",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "question": "Combien de gummies par jour ?",
+            "answer": "<p>Cela dépend de la formule : la dose journalière recommandée est indiquée sur chaque fiche produit et sur le pot. Ne la dépassez pas.</p>"
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "question": "Les gummies contiennent-ils du sucre ?",
+            "answer": "<p>[À COMPLÉTER : teneur en sucres par portion, édulcorants éventuels.]</p>"
+          }
+        },
+        "question-3": {
+          "type": "question",
+          "settings": {
+            "question": "Sont-ils vegan ? Contiennent-ils des allergènes ?",
+            "answer": "<p>[À COMPLÉTER : gélatine ou pectine, liste des allergènes.] Toute la composition est détaillée sur chaque fiche produit.</p>"
+          }
+        },
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je prendre plusieurs formules en même temps ?",
+            "answer": "<p>Demandez conseil à votre médecin ou à votre pharmacien avant d'associer plusieurs compléments alimentaires, en particulier si vous suivez un traitement.</p>"
+          }
+        },
+        "question-5": {
+          "type": "question",
+          "settings": {
+            "question": "Les gummies conviennent-ils aux enfants et aux femmes enceintes ?",
+            "answer": "<p>[À COMPLÉTER selon chaque formule.] Tenir hors de la portée des jeunes enfants. En cas de doute, demandez l'avis d'un professionnel de santé.</p>"
+          }
+        },
+        "question-6": {
+          "type": "question",
+          "settings": {
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>[À COMPLÉTER : délais et transporteurs.] Tous les détails sont sur la page Livraison &amp; retours.</p>"
+          }
+        },
+        "question-7": {
+          "type": "question",
+          "settings": {
+            "question": "Puis-je retourner ma commande ?",
+            "answer": "<p>Vous disposez de 14 jours après réception pour exercer votre droit de rétractation. [À COMPLÉTER : conditions pour les pots ouverts, à aligner avec vos CGV.]</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "question-6",
+        "question-7"
+      ],
+      "settings": {
+        "heading": "",
+        "subheading": "Tout ce que vous voulez savoir avant de croquer.",
+        "contact_label": "Poser une question",
+        "contact_link": "",
+        "open_first": true,
+        "schema_markup": true,
+        "color_scheme": "scheme-6",
+        "anchor": "gumis-faq",
+        "padding_top": 72,
+        "padding_bottom": 72
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Des nouvelles toutes fraîches",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph-2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Nouveautés, offres et conseils (jamais de spam). Désinscription en un clic. Voir notre <a href=\"/pages/politique-de-confidentialite\" title=\"Politique de confidentialité\">politique de confidentialité</a>.</p>"
+          }
+        },
+        "email_form-3": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading-1",
+        "paragraph-2",
+        "email_form-3"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
         "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
+        "padding_top": 40,
+        "padding_bottom": 72
       }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "trio",
+    "why",
+    "how",
+    "bundle",
+    "reviews",
+    "faq",
+    "newsletter"
   ]
 }

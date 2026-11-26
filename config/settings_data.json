@@ -215,7 +215,8 @@
       "gumis_bundle_discount_3": 0,
       "gumis_cart_bundle_upsell": true,
       "gumis_cookie_banner": true,
-      "gumis_cookie_position": "bottom"
+      "gumis_cookie_position": "bottom",
+      "gumis_gummies_per_jar": 60
     }
   }
 }

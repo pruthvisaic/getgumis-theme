@@ -1,0 +1,24 @@
+{% doc %}
+  Decorative CSS jar illustration, shown while no product image is set.
+  Always aria-hidden.
+
+  @param {string} [accent] - Label colour.
+  @param {string} [ink] - Text colour on the label.
+  @param {string} [label] - Small text printed on the jar label.
+  @param {string} [class] - Extra classes.
+{% enddoc %}
+<div
+  class="gumis-jar{% if class %} {{ class }}{% endif %}"
+  style="{% if accent %}--jar-accent: {{ accent }};{% endif %}{% if ink %}--jar-ink: {{ ink }};{% endif %}"
+  aria-hidden="true"
+>
+  <span class="gumis-jar__lid"></span>
+  <span class="gumis-jar__body">
+    <span class="gumis-jar__label">
+      {%- render 'logo', size: '2.2rem' -%}
+      {%- if label != blank -%}
+        <span class="gumis-jar__name">{{ label | remove: 'Gumis ' | remove: 'gumis ' | escape }}</span>
+      {%- endif -%}
+    </span>
+  </span>
+</div>
