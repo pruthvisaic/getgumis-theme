@@ -43,6 +43,16 @@
         "padding_bottom": 136
       }
     },
+    "band": {
+      "type": "gumis-marquee",
+      "settings": {
+        "text": "",
+        "speed": 40,
+        "background": "#FFF4EC",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "trio": {
       "type": "gumis-product-trio",
       "blocks": {
@@ -427,6 +437,7 @@
     "hero",
     "trust",
     "trio",
+    "band",
     "stats",
     "split",
     "why",

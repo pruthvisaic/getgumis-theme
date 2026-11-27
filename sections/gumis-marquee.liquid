@@ -1,0 +1,82 @@
+{%- liquid
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'gumis.marquee.default' | t
+  endif
+  assign items = text | split: '·'
+  assign bear = '<svg class="g-marquee__bear" viewBox="0 0 22 26" aria-hidden="true" focusable="false"><g fill="currentColor"><circle cx="6" cy="4" r="3"/><circle cx="16" cy="4" r="3"/><circle cx="11" cy="8" r="6"/><ellipse cx="11" cy="17.5" rx="7" ry="7.5"/><circle cx="4" cy="14" r="2.6"/><circle cx="18" cy="14" r="2.6"/><circle cx="6.5" cy="23" r="3"/><circle cx="15.5" cy="23" r="3"/></g></svg>'
+-%}
+<div
+  class="g-marquee"
+  style="--pt: {{ section.settings.padding_top }}px; --pb: {{ section.settings.padding_bottom }}px; --speed: {{ section.settings.speed }}s;{% if section.settings.background != blank and section.settings.background != 'rgba(0,0,0,0)' %} --band-bg: {{ section.settings.background }};{% endif %}"
+>
+  <div class="g-marquee__band">
+    {%- for pass in (1..2) -%}
+      <div class="g-marquee__track"{% if pass == 2 %} aria-hidden="true"{% endif %}>
+        {%- for item in items -%}
+          {%- assign label = item | strip -%}
+          {%- if label != blank -%}
+            <span class="g-marquee__item">{{ label | escape }}</span>
+            {{ bear }}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gumis Moving band",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Words",
+      "info": "Separate with ·  Empty = default translation (EN/FR). The words cycle through the Sleep, Glow and Power colours."
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Seconds per loop",
+      "min": 10,
+      "max": 90,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#FFF4EC"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gumis Moving band"
+    }
+  ]
+}
+{% endschema %}

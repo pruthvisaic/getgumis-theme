@@ -728,6 +728,9 @@
         "en": "English",
         "fr": "Français"
       }
+    },
+    "marquee": {
+      "default": "Sleep · Glow · Power · Fini les grosses gélules · Sans eau · Juste à croquer"
     }
   }
 }

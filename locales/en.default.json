@@ -716,6 +716,9 @@
         "en": "English",
         "fr": "Français"
       }
+    },
+    "marquee": {
+      "default": "Sleep · Glow · Power · No big capsules · No water needed · Just chew"
     }
   }
 }

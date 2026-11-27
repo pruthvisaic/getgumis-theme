@@ -664,3 +664,57 @@ img.g-bottle { aspect-ratio: auto; height: auto; }
 /* Giant wordmark at the bottom of the footer */
 .gumis-footer-bigword { overflow: hidden; padding: clamp(3.2rem, 5vw, 6.4rem) 0 clamp(1.6rem, 3vw, 4rem); text-align: center; line-height: 1; user-select: none; }
 .gumis-footer-bigword .gumis-logo { --logo-size: clamp(8rem, 21vw, 40rem); display: inline-flex; line-height: 1; letter-spacing: -0.045em; }
+
+/* Bottles react on hover / tap (assets/gumis-fun.js adds .is-react) */
+.g-face .f-open, .g-face .f-yawn, .g-face .f-heart, .g-face .f-sweat { opacity: 0; transition: opacity 0.2s ease; }
+.g-face .f-closed, .g-face .f-snore { transition: opacity 0.2s ease; }
+.g-face .f-pupil { transition: transform 0.25s ease-out; }
+.g-bottle { cursor: pointer; }
+.g-bottle.is-react { animation: g-bounce 0.6s cubic-bezier(0.3, 1.6, 0.5, 1); }
+@keyframes g-bounce { 0% { scale: 1; } 40% { scale: 1.04 0.97; } 70% { scale: 0.98 1.03; } 100% { scale: 1; } }
+/* Sleep wakes up: eyes open, yawns */
+.g-bottle.is-react .g-face--sleep .f-open, .g-bottle.is-react .g-face--sleep .f-yawn { opacity: 1; }
+.g-bottle.is-react .g-face--sleep .f-closed, .g-bottle.is-react .g-face--sleep .f-snore { opacity: 0; }
+.g-bottle.is-react .g-face--sleep .f-z { visibility: hidden; }
+.g-bottle.is-react .g-face--sleep .f-yawn { animation: g-yawn 1.2s ease-in-out; }
+@keyframes g-yawn { 0% { transform: scale(0.4); } 50% { transform: scale(1.2, 1.35); } 100% { transform: scale(1); } }
+/* Glow giggles: wiggle, big blush, a heart pops */
+.g-bottle.is-react:has(.g-face--glow) { animation: g-giggle 0.7s ease-in-out 2; }
+@keyframes g-giggle { 0%, 100% { rotate: 0deg; } 25% { rotate: -3deg; } 75% { rotate: 3deg; } }
+.g-bottle.is-react .g-face--glow .f-blush { transform: scale(1.3) !important; opacity: 1; }
+.g-bottle.is-react .g-face--glow .f-grin { transform: scale(1.35, 1.7) !important; }
+.g-bottle.is-react .g-face--glow .f-heart { opacity: 1; animation: g-heart 1.4s ease-out forwards; }
+@keyframes g-heart { 0% { transform: translateY(20px) scale(0.3); } 40% { transform: translateY(-10px) scale(1.15); } 100% { transform: translateY(-60px) scale(0.9); opacity: 0; } }
+/* Power flexes: angry brows, big grin, a drop of sweat */
+.g-bottle.is-react:has(.g-face--power) { animation: g-flex 0.5s ease-in-out 2; }
+@keyframes g-flex { 0%, 100% { scale: 1; } 50% { scale: 1.06 0.96; } }
+.g-bottle.is-react .g-face--power .f-brow { transform: translateY(12px) !important; }
+.g-bottle.is-react .g-face--power .f-grin2 { transform: scale(1.3, 1.5) !important; }
+.g-bottle.is-react .g-face--power .f-sweat { opacity: 1; animation: g-sweat 1.2s ease-in forwards; }
+@keyframes g-sweat { 0% { transform: translateY(-10px); } 100% { transform: translateY(40px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .g-bottle.is-react, .g-bottle.is-react .g-face g { animation: none !important; }
+}
+
+/* Gummy pop on add to cart */
+.g-pop { position: fixed; z-index: 2147483000; left: 0; top: 0; width: 22px; height: 26px; pointer-events: none; will-change: transform, opacity; }
+
+/* Moving colour band */
+.g-marquee { overflow: hidden; padding: var(--pt, 0) 0 var(--pb, 0); }
+.g-marquee__band { display: flex; overflow: hidden; padding: 1.8rem 0; background: var(--band-bg, var(--gumis-cream, #FFF4EC)); border-block: 1px solid var(--gumis-line); }
+.g-marquee__track { display: flex; flex: none; align-items: center; gap: 3.2rem; padding-right: 3.2rem; animation: g-marquee var(--speed, 40s) linear infinite; }
+.g-marquee:hover .g-marquee__track { animation-play-state: paused; }
+.g-marquee__item { flex: none; font-family: var(--font-logo); font-weight: 700; font-size: clamp(2.4rem, 3.4vw, 4.4rem); line-height: 1; letter-spacing: -0.02em; white-space: nowrap; }
+.g-marquee__item:nth-of-type(3n + 1) { color: #3A5BD9; }
+.g-marquee__item:nth-of-type(3n + 2) { color: var(--gumis-berry, #D6246E); }
+.g-marquee__item:nth-of-type(3n) { color: #E8641A; }
+.g-marquee__bear { flex: none; width: 2.6rem; height: 3rem; }
+.g-marquee__bear:nth-of-type(3n + 1) { color: #D6246E; }
+.g-marquee__bear:nth-of-type(3n + 2) { color: #E8641A; }
+.g-marquee__bear:nth-of-type(3n) { color: #3A5BD9; }
+@keyframes g-marquee { to { transform: translateX(-100%); } }
+@media (prefers-reduced-motion: reduce) {
+  .g-marquee__track { animation: none; flex-wrap: wrap; justify-content: center; }
+  .g-marquee__track[aria-hidden] { display: none; }
+  .g-marquee__band { justify-content: center; }
+}
