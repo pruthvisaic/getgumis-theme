@@ -49,7 +49,7 @@
         "product-1": {
           "type": "product",
           "settings": {
-            "accent": "#3B0A2A",
+            "accent": "#3A5BD9",
             "placeholder_title": "Gumis Sleep",
             "badge": "",
             "primary": false
@@ -67,7 +67,7 @@
         "product-3": {
           "type": "product",
           "settings": {
-            "accent": "#FF8A3D",
+            "accent": "#E8641A",
             "placeholder_title": "Gumis Power",
             "badge": "",
             "primary": false

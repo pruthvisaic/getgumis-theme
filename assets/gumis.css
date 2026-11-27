@@ -605,3 +605,13 @@ b, strong { font-weight: 700; }
   .g-hero__bottles { width: 92%; }
 }
 .g-hero__media:has(.g-hero__bottles) .g-chip--b { bottom: 2%; }
+
+/* Each product takes its bottle colour (custom.accent_color / block accent) */
+.g-card .g-card__media { background: color-mix(in srgb, var(--accent) 13%, #fff); }
+.g-card .g-disc { background: color-mix(in srgb, var(--accent) 7%, #fff); }
+.g-card__benefit { color: color-mix(in srgb, var(--accent) 72%, #000); font-weight: 600; }
+.g-card__title a::before { content: ""; display: inline-block; width: 0.9rem; height: 0.9rem; margin-right: 0.8rem; border-radius: 50%; background: var(--accent); vertical-align: 0.1em; }
+.g-bundle__media { background: color-mix(in srgb, var(--accent) 13%, #fff); }
+.gumis-accent-media .product__media-item .product-media-container,
+.gumis-accent-media .product__media-item .media { background-color: color-mix(in srgb, var(--accent) 13%, #fff); }
+.gumis-accent-media .product__media-item .product-media-container { border-radius: var(--gumis-radius, 2rem); overflow: hidden; }
