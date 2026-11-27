@@ -87,7 +87,7 @@ every default text shipped in the templates, ready to paste.
 | Nutrition table | `custom.nutrition_table` | JSON | See format below. |
 | How to use | `custom.how_to_use` | Rich text | Directions for use. |
 | Warnings | `custom.warnings` | Rich text | Warnings. See default text below. |
-| Accent colour | `custom.accent_color` | Color | Sleep = `#3B0A2A` (Plum), Glow = `#D6246E` (Berry), Power = `#FF8A3D` (Tangerine). |
+| Accent colour | `custom.accent_color` | Color | Match the bottle: Sleep = `#3A5BD9` (blue), Glow = `#D6246E` (Berry), Power = `#E8641A` (orange). Tints the card, product image background and multi-jar block. |
 | Serving | `custom.serving` | Single line text | e.g. "2 gummies a day" [TO COMPLETE for the final formula]. |
 
 Metafield values are translatable too: add the French text in Translate & Adapt.
