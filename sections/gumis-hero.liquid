@@ -26,7 +26,6 @@
   if hero_image == blank and section.settings.product != blank
     assign hero_image = section.settings.product.featured_media
   endif
-  assign jar_name = 'gumis.placeholders.product_sleep' | t
 -%}
 <section
   id="{{ section.settings.anchor | default: 'gumis-hero' | handleize }}"
@@ -65,8 +64,7 @@
             class: 'g-hero__image'
         }}
       {%- else -%}
-        {%- render 'gumis-blobs', preset: 'hero' -%}
-        {%- render 'gumis-jar', accent: settings.gumis_berry, name: jar_name, show_count: true, pedestal: true, class: 'g-hero__jar' -%}
+        {%- render 'gumis-bottle', name: 'trio', eager: true, sizes: '(min-width: 1000px) 560px, 92vw', alt: shop.name, class: 'g-hero__bottles' -%}
       {%- endif -%}
       {%- if section.settings.chip_1 != blank -%}
         <span class="g-chip g-chip--a" aria-hidden="true"><i style="background: var(--gumis-tangerine);"></i>{{ section.settings.chip_1 | escape }}</span>
@@ -137,7 +135,7 @@
       "type": "image_picker",
       "id": "image",
       "label": "Product image",
-      "info": "Transparent PNG recommended. Without an image, a drawn jar is shown."
+      "info": "Transparent PNG recommended. Without an image, the built-in getgumis bottle photo is shown."
     },
     {
       "type": "product",

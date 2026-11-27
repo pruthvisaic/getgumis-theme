@@ -7,7 +7,6 @@
   if text == blank
     assign text = 'gumis.why.subheading' | t
   endif
-  assign jar_name = 'gumis.placeholders.product_glow' | t
 -%}
 <section
   id="{{ section.settings.anchor | default: 'gumis-why' | handleize }}"
@@ -24,7 +23,7 @@
           | image_tag: widths: '400, 600, 800, 1000, 1200', sizes: '(min-width: 1000px) 560px, 92vw', loading: 'lazy', class: 'g-split__image'
         }}
       {%- else -%}
-        {%- render 'gumis-jar', accent: settings.gumis_berry, name: jar_name, class: 'g-split__jar' -%}
+        {%- render 'gumis-bottle', name: 'glow', sizes: '(min-width: 1000px) 300px, 50vw', class: 'g-split__bottle' -%}
         {%- render 'gumis-blobs', preset: 'spill' -%}
       {%- endif -%}
     </div>
@@ -73,7 +72,7 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image",
-      "info": "Without an image, a drawn jar is shown."
+      "info": "Without an image, the built-in Glow bottle photo is shown."
     },
     {
       "type": "checkbox",

@@ -1,0 +1,42 @@
+{% doc %}
+  Built-in getgumis bottle photo (transparent WebP), shown until the merchant sets a product image.
+  Accessible name comes from `alt`; decorative by default.
+
+  @param {string} name - 'sleep', 'glow', 'power' or 'trio'.
+  @param {string} [class] - Extra CSS class.
+  @param {string} [sizes] - sizes attribute. Defaults to '(min-width: 990px) 380px, 70vw'.
+  @param {string} [alt] - Alt text. Empty = decorative.
+  @param {boolean} [eager] - Load eagerly with high priority (hero only).
+
+  @example
+  {% render 'gumis-bottle', name: 'glow', class: 'g-card__img' %}
+{% enddoc %}
+{%- liquid
+  assign sizes = sizes | default: '(min-width: 990px) 380px, 70vw'
+  if name == 'trio'
+    assign small = 'getgumis-trio-600.webp'
+    assign large = 'getgumis-trio-1200.webp'
+    assign w1 = 600
+    assign w2 = 1200
+    assign ratio = 1704.0 | divided_by: 1906
+  else
+    assign base = 'getgumis-' | append: name | append: '-bottle-'
+    assign small = base | append: '400.webp'
+    assign large = base | append: '800.webp'
+    assign w1 = 400
+    assign w2 = 800
+    assign ratio = 1704.0 | divided_by: 829
+  endif
+  assign h2 = w2 | times: ratio | round
+-%}
+<img
+  src="{{ large | asset_url }}"
+  srcset="{{ small | asset_url }} {{ w1 }}w, {{ large | asset_url }} {{ w2 }}w"
+  sizes="{{ sizes }}"
+  width="{{ w2 }}"
+  height="{{ h2 }}"
+  alt="{{ alt | escape }}"
+  class="g-bottle {{ class }}"
+  {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+  decoding="async"
+>

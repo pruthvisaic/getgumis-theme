@@ -7,7 +7,7 @@ Products are fulfilled by **Suplify**: the theme only handles the storefront.
 - **English is the default language** (`locales/en.default.json`), **French** is the second (`locales/fr.json`).
   Every storefront string of the theme lives in those two files, under the `gumis` key.
 - Liquid + JSON templates, everything editable in the theme editor (sections, blocks, settings).
-- Clean, minimal look: white pages with blush, peach and lilac blocks, Ink buttons with 10px corners, drawn jars
+- Clean, minimal look: white pages with blush, peach and lilac blocks, Ink buttons with 10px corners, the real getgumis bottle photos built in
   on a pedestal, a Plum stats band, line-style accordions.
 - **Manrope** (headings and text) and **Fredoka** (logo, jar labels) are self-hosted in `assets/` (SIL OFL licence,
   see `docs/licenses/`). No font is loaded from Google Fonts or Shopify's font CDN.
@@ -291,7 +291,7 @@ The theme doesn't depend on any handle: renaming a product or changing its URL b
 |---|---|
 | `snippets/gumis-fonts.liquid` | Self-hosted `@font-face` + `--gumis-*` CSS tokens |
 | `snippets/logo.liquid` | "getgumis" wordmark (Fredoka Bold, "get" in Berry + "gumis" in Plum, dotless ı + orange gummy dot; prefix and colours editable in Theme settings) |
-| `snippets/gumis-jar.liquid` | Drawn jar (lid, glass, label in the accent colour), shown until photos exist |
+| `snippets/gumis-bottle.liquid` | Built-in getgumis bottle photos (`assets/getgumis-*-bottle-*.webp`, trio), shown until you add product images |
 | `snippets/gumis-icon.liquid` | Inline SVG stroke icons (no emoji) |
 | `snippets/gumis-language-switcher.liquid` | EN / FR switcher (header and footer), works without JavaScript |
 | `snippets/gumis-product-card.liquid` | Product card (pastel tile, name, price, benefit from metafield, add to cart) |

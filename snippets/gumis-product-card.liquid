@@ -11,6 +11,7 @@
   @param {string} [section_id] - Section id, used for unique form ids.
   @param {string} [heading_tag] - Heading tag for the product name. Defaults to h3.
   @param {boolean} [primary] - Use the dark primary button instead of the outline one.
+  @param {string} [bottle] - Built-in bottle photo when there is no product image: 'sleep', 'glow' or 'power'. Defaults to 'sleep'.
   @param {boolean} [lazy] - Lazy-load the image. Defaults to true.
 
   @example
@@ -19,6 +20,7 @@
 {%- liquid
   assign heading_tag = heading_tag | default: 'h3'
   assign tile = tile | default: 'blush'
+  assign bottle = bottle | default: 'sleep'
   assign loading = 'lazy'
   if lazy == false
     assign loading = 'eager'
@@ -30,12 +32,6 @@
   endif
   if accent_color == blank or accent_color == 'rgba(0,0,0,0)'
     assign accent_color = settings.gumis_berry | default: '#D6246E'
-  endif
-  assign accent_brightness = accent_color | color_brightness
-  if accent_brightness > 140
-    assign accent_ink = settings.gumis_plum | default: '#3B0A2A'
-  else
-    assign accent_ink = '#FFFFFF'
   endif
 
   if product != blank
@@ -55,7 +51,6 @@
       assign title = 'gumis.product.placeholder_title' | t
     endif
   endif
-  assign jar_label = title | split: ' ' | last
 
   assign button_class = 'g-btn g-btn--outline g-btn--block'
   if primary
@@ -85,7 +80,7 @@
       }}
     {%- else -%}
       <span class="g-floor"></span>
-      {%- render 'gumis-jar', accent: accent_color, ink: accent_ink, name: jar_label, class: 'g-card__jar' -%}
+      {%- render 'gumis-bottle', name: bottle, class: 'g-card__img g-card__bottle' -%}
     {%- endif -%}
   </a>
 

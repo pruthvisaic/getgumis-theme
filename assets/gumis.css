@@ -591,3 +591,17 @@ b, strong { font-weight: 700; }
   .g-head { margin-bottom: 2.8rem; }
   .g-statement { padding: 5.6rem 0; }
 }
+
+/* Built-in getgumis bottle photos (fallback until product images are set) */
+.g-bottle { position: relative; z-index: 1; display: block; height: auto; filter: drop-shadow(0 18px 22px rgba(59, 10, 42, 0.16)); }
+.g-hero__bottles { width: 86%; max-height: 88%; object-fit: contain; margin-top: 4%; }
+.g-card__bottle { width: auto; height: 80%; margin-top: 4%; }
+.g-split__bottle { width: 34%; margin-bottom: 4%; transform: rotate(-5deg); }
+.g-bottle-stack { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: center; width: 80%; margin-bottom: 1%; }
+.g-bottle-stack .g-bottle { width: 30%; }
+.g-bottle-stack .g-bottle:nth-child(2) { width: 38%; z-index: 2; margin: 0 -6%; }
+.g-card:hover .g-card__bottle { transform: translateY(-6px); }
+@media screen and (max-width: 749px) {
+  .g-hero__bottles { width: 92%; }
+}
+.g-hero__media:has(.g-hero__bottles) .g-chip--b { bottom: 2%; }

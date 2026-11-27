@@ -4,6 +4,7 @@
     assign heading = 'gumis.trio.heading' | t
   endif
   assign tiles = 'blush,peach,lilac' | split: ','
+  assign bottles = 'sleep,glow,power' | split: ','
 -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <section
@@ -24,6 +25,7 @@
     <ul class="g-grid g-grid--swipe" role="list">
       {%- for block in section.blocks -%}
         {%- assign i = forloop.index0 | modulo: 3 -%}
+        {%- assign bottle = block.settings.bottle | default: bottles[i] -%}
         <li {{ block.shopify_attributes }}>
           {%- render 'gumis-product-card',
             product: block.settings.product,
@@ -31,6 +33,7 @@
             placeholder_title: block.settings.placeholder_title,
             badge: block.settings.badge,
             tile: tiles[i],
+            bottle: bottle,
             primary: block.settings.primary,
             section_id: section.id
           -%}
@@ -101,10 +104,22 @@
           "label": "Product"
         },
         {
+          "type": "select",
+          "id": "bottle",
+          "label": "Bottle photo without product image",
+          "options": [
+            { "value": "", "label": "Automatic" },
+            { "value": "sleep", "label": "Sleep" },
+            { "value": "glow", "label": "Glow" },
+            { "value": "power", "label": "Power" }
+          ],
+          "default": ""
+        },
+        {
           "type": "color",
           "id": "accent",
           "label": "Accent colour",
-          "info": "Label colour of the drawn jar. Empty = custom.accent_color metafield."
+          "info": "Button accent colour. Empty = custom.accent_color metafield."
         },
         {
           "type": "text",
