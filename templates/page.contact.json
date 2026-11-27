@@ -9,7 +9,6 @@
         "intro": "<p>A question about an order or our gummies? Write to us, we reply Monday to Friday [TO COMPLETE: response time].</p>",
         "show_content": true,
         "updated_label": "",
-        "show_cookie_button": false,
         "color_scheme": "scheme-1",
         "padding_top": 56,
         "padding_bottom": 0

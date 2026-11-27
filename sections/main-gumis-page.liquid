@@ -41,15 +41,6 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-
-      {%- if section.settings.show_cookie_button and settings.gumis_cookie_banner -%}
-        <p class="gumis-page__actions">
-          <button type="button" class="g-btn g-btn--primary" data-gumis-open-consent>
-            {%- render 'gumis-icon', icon: 'cookie' -%}
-            <span>{{ 'gumis.cookies.manage' | t }}</span>
-          </button>
-        </p>
-      {%- endif -%}
     </div>
   </div>
 </section>
@@ -107,12 +98,6 @@
       "id": "updated_label",
       "label": "Last updated (legal pages)",
       "info": "e.g. 1 January 2027"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_cookie_button",
-      "label": "\"Manage cookies\" button",
-      "default": false
     },
     {
       "type": "color_scheme",

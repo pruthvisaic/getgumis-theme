@@ -192,7 +192,7 @@
       },
       {
         "type": "paragraph",
-        "content": "Without a logo image, the theme shows the \"getgumis\" wordmark (Fredoka Bold, the dot of the i is an orange gummy)."
+        "content": "Without a logo image, the theme shows the \"gumis\" wordmark (Fredoka Bold, the dot of the i is an orange gummy)."
       },
       {
         "type": "color",
@@ -204,15 +204,14 @@
         "type": "text",
         "id": "gumis_logo_prefix",
         "label": "Logo prefix",
-        "default": "get",
-        "info": "Shown before \"gumis\" in the wordmark (getgumis). Leave empty for \"gumis\" only."
+        "info": "Optional word shown before \"gumis\" in the wordmark. Empty = \"gumis\" only."
       },
       {
         "type": "color",
         "id": "gumis_logo_prefix_color",
         "label": "Logo prefix colour",
         "default": "#D6246E",
-        "info": "Colour of \"get\" in the wordmark."
+        "info": "Colour of the optional prefix in the wordmark."
       },
       {
         "type": "color",
@@ -240,7 +239,7 @@
         "type": "checkbox",
         "id": "gumis_animated_bottles",
         "label": "Animated bottle faces",
-        "info": "Shows the built-in getgumis bottles with moving faces (Sleep snoozes, Glow smiles, Power frowns) on the homepage, product cards and multi-jar block, instead of the product photos.",
+        "info": "Shows the built-in gumis bottle with a moving face on the homepage, product cards and multi-jar block, instead of the product photos.",
         "default": true
       }
     ]
@@ -1647,42 +1646,6 @@
         "id": "gumis_cart_bundle_upsell",
         "label": "Suggest the next tier in the cart",
         "default": true
-      }
-    ]
-  },
-  {
-    "name": "Gumis: cookies & GDPR",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Consent banner connected to Shopify's Customer Privacy API. Pixels from the Facebook & Instagram and Google & YouTube apps respect this consent. Turn off Shopify's own banner in Settings > Customer privacy if you use this one."
-      },
-      {
-        "type": "checkbox",
-        "id": "gumis_cookie_banner",
-        "label": "Enable the theme's cookie banner",
-        "default": true
-      },
-      {
-        "type": "page",
-        "id": "gumis_cookie_page",
-        "label": "\"Cookie policy\" page"
-      },
-      {
-        "type": "select",
-        "id": "gumis_cookie_position",
-        "label": "Banner position",
-        "options": [
-          {
-            "value": "bottom",
-            "label": "Bottom"
-          },
-          {
-            "value": "center",
-            "label": "Centre"
-          }
-        ],
-        "default": "bottom"
       }
     ]
   }

@@ -109,8 +109,8 @@
                       <h2 class="footer-block__heading">{{ 'gumis.footer.legal_heading' | t }}</h2>
                     {%- endif -%}
                     {%- liquid
-                      assign legal_ids = 'terms,legal_notice,privacy,cookies,withdrawal' | split: ','
-                      assign legal_handles = 'terms-of-sale,legal-notice,privacy-policy,cookie-policy,right-of-withdrawal' | split: ','
+                      assign legal_ids = 'terms,privacy,refund,shipping' | split: ','
+                      assign legal_handles = 'terms-of-service,privacy-policy,refund-policy,shipping-policy' | split: ','
                     -%}
                     <ul class="footer-block__details-content list-unstyled">
                       {%- for id in legal_ids -%}
@@ -138,13 +138,6 @@
                             </a>
                           </li>
                         {%- endfor -%}
-                      {%- endif -%}
-                      {%- if settings.gumis_cookie_banner -%}
-                        <li>
-                          <button type="button" class="gumis-footer-cookie-link link link--text list-menu__item" data-gumis-open-consent>
-                            {{- 'gumis.cookies.manage' | t -}}
-                          </button>
-                        </li>
                       {%- endif -%}
                     </ul>
                   {%- when 'text' -%}
@@ -457,12 +450,7 @@
         {
           "type": "page",
           "id": "page_terms",
-          "label": "CGV"
-        },
-        {
-          "type": "page",
-          "id": "page_legal_notice",
-          "label": "Legal notice"
+          "label": "Terms of service"
         },
         {
           "type": "page",
@@ -471,13 +459,13 @@
         },
         {
           "type": "page",
-          "id": "page_cookies",
-          "label": "Politique cookies"
+          "id": "page_refund",
+          "label": "Refund & returns"
         },
         {
           "type": "page",
-          "id": "page_withdrawal",
-          "label": "Right of withdrawal (14 days)"
+          "id": "page_shipping",
+          "label": "Shipping policy"
         },
         {
           "type": "link_list",

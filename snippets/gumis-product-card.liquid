@@ -11,7 +11,7 @@
   @param {string} [section_id] - Section id, used for unique form ids.
   @param {string} [heading_tag] - Heading tag for the product name. Defaults to h3.
   @param {boolean} [primary] - Use the dark primary button instead of the outline one.
-  @param {string} [bottle] - Built-in bottle photo when there is no product image: 'sleep', 'glow' or 'power'. Defaults to 'sleep'.
+  @param {string} [bottle] - Built-in bottle photo when there is no product image. Defaults to 'magnesium'.
   @param {boolean} [lazy] - Lazy-load the image. Defaults to true.
 
   @example
@@ -20,7 +20,7 @@
 {%- liquid
   assign heading_tag = heading_tag | default: 'h3'
   assign tile = tile | default: 'blush'
-  assign bottle = bottle | default: 'sleep'
+  assign bottle = bottle | default: 'magnesium'
   assign loading = 'lazy'
   if lazy == false
     assign loading = 'eager'

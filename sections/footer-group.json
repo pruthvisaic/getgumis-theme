@@ -32,7 +32,7 @@
           "type": "text",
           "settings": {
             "heading": "Help",
-            "subtext": "<p>Write to us via the <a href=\"/pages/contact\" title=\"Contact\">Contact</a> page or at [TO COMPLETE: support email, e.g. hello@getgumis.com]. We reply Monday to Friday.</p>"
+            "subtext": "<p>Write to us via the <a href=\"/pages/contact\" title=\"Contact\">Contact</a> page or at [TO COMPLETE: support email, e.g. hello@gumis.in]. We reply Monday to Saturday. Grievance officer: [TO COMPLETE: name, email].</p>"
           }
         }
       },
@@ -57,7 +57,7 @@
         "margin_top": 0,
         "padding_top": 64,
         "padding_bottom": 32,
-        "gumis_language_switcher": true,
+        "gumis_language_switcher": false,
         "gumis_big_logo": true
       }
     }

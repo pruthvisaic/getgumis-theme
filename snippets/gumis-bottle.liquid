@@ -1,43 +1,36 @@
 {% doc %}
-  Built-in getgumis bottle photo with an animated face (eyes, cheeks, mouth drawn in SVG over
-  the photo, see snippets/gumis-bottle-face.liquid). Shown until the merchant sets a product image.
-  Sleep snoozes, Glow smiles and winks, Power frowns and glances around. No motion when the
+  Built-in gumis bottle photo with an animated face (eyes, cheeks, mouth and leaves drawn in SVG
+  over the photo, see snippets/gumis-bottle-face.liquid). Shown until the merchant sets a product image.
+  Magnesium breathes calmly; on hover or tap it opens its eyes and smiles. No motion when the
   visitor asks for reduced motion.
 
-  @param {string} name - 'sleep', 'glow', 'power' or 'trio' (the three bottles together).
+  @param {string} [name] - Bottle name. Defaults to 'magnesium'.
   @param {string} [class] - Extra CSS class.
   @param {string} [sizes] - sizes attribute. Defaults to '(min-width: 990px) 380px, 70vw'.
   @param {string} [alt] - Alt text. Empty = decorative.
   @param {boolean} [eager] - Load eagerly with high priority (hero only).
 
   @example
-  {% render 'gumis-bottle', name: 'glow', class: 'g-card__bottle' %}
+  {% render 'gumis-bottle', name: 'magnesium', class: 'g-card__bottle' %}
 {% enddoc %}
-{%- if name == 'trio' -%}
-  <span class="g-trio {{ class }}"{% if alt != blank %} role="img" aria-label="{{ alt | escape }}"{% endif %}>
-    <span class="g-trio__item g-trio__item--l">{%- render 'gumis-bottle', name: 'sleep', eager: eager, sizes: '(min-width: 1000px) 220px, 34vw' -%}</span>
-    <span class="g-trio__item g-trio__item--c">{%- render 'gumis-bottle', name: 'glow', eager: eager, sizes: '(min-width: 1000px) 250px, 40vw' -%}</span>
-    <span class="g-trio__item g-trio__item--r">{%- render 'gumis-bottle', name: 'power', eager: eager, sizes: '(min-width: 1000px) 220px, 34vw' -%}</span>
-  </span>
-{%- else -%}
-  {%- liquid
-    assign sizes = sizes | default: '(min-width: 990px) 380px, 70vw'
-    assign base = 'getgumis-' | append: name | append: '-bottle-'
-    assign small = base | append: '400.webp'
-    assign large = base | append: '829.webp'
-  -%}
-  <span class="g-bottle {{ class }}">
-    <img
-      src="{{ large | asset_url }}"
-      srcset="{{ small | asset_url }} 400w, {{ large | asset_url }} 829w"
-      sizes="{{ sizes }}"
-      width="829"
-      height="1704"
-      alt="{{ alt | escape }}"
-      class="g-bottle__img"
-      {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
-      decoding="async"
-    >
-    {%- render 'gumis-bottle-face', name: name -%}
-  </span>
-{%- endif -%}
+{%- liquid
+  assign name = name | default: 'magnesium'
+  assign sizes = sizes | default: '(min-width: 990px) 380px, 70vw'
+  assign base = 'gumis-' | append: name | append: '-bottle-'
+  assign small = base | append: '400.webp'
+  assign large = base | append: '829.webp'
+-%}
+<span class="g-bottle {{ class }}">
+  <img
+    src="{{ large | asset_url }}"
+    srcset="{{ small | asset_url }} 400w, {{ large | asset_url }} 829w"
+    sizes="{{ sizes }}"
+    width="829"
+    height="1704"
+    alt="{{ alt | escape }}"
+    class="g-bottle__img"
+    {% if eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+    decoding="async"
+  >
+  {%- render 'gumis-bottle-face', name: name -%}
+</span>

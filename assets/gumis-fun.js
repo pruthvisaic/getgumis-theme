@@ -1,7 +1,7 @@
 /*
- * getgumis playful touches (vanilla JS, no dependencies):
- * 1. Bottles react on hover / tap: Sleep wakes up, Glow giggles, Power flexes (CSS: .is-react).
- * 2. On desktop, open eyes (Power, and Sleep when awake) follow the mouse.
+ * gumis playful touches (vanilla JS, no dependencies):
+ * 1. Bottles react on hover / tap: the bottle wakes up and smiles (CSS: .is-react).
+ * 2. On desktop, open eyes follow the mouse.
  * 3. Gummy pop: on add to cart, a few gummies in the product colour jump from the button to the cart icon.
  * Everything is skipped for visitors who ask for reduced motion.
  */
@@ -76,7 +76,7 @@
       var host = document.querySelector('.gumis-accent-media, [data-gumis-accent]');
       if (host) c = getComputedStyle(host).getPropertyValue('--accent').trim();
     }
-    return c || '#D6246E';
+    return c || '#12898A';
   }
   function cartTarget() {
     var el = document.querySelector('#cart-icon-bubble, [data-gumis-cart-icon], .header__icon--cart');

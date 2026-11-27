@@ -37,7 +37,7 @@
           "type": "gumis_reassurance",
           "settings": {
             "icon_1": "truck",
-            "text_1": "Free over €[TO COMPLETE]",
+            "text_1": "Free over ₹[TO COMPLETE]",
             "icon_2": "lock",
             "text_2": "Secure payment",
             "icon_3": "return",
