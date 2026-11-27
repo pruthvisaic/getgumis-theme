@@ -235,6 +235,13 @@
         "id": "gumis_gummies_per_jar",
         "label": "Gummies per jar",
         "default": 60
+      },
+      {
+        "type": "checkbox",
+        "id": "gumis_animated_bottles",
+        "label": "Animated bottle faces",
+        "info": "Shows the built-in getgumis bottles with moving faces (Sleep snoozes, Glow smiles, Power frowns) on the homepage, product cards and multi-jar block, instead of the product photos.",
+        "default": true
       }
     ]
   },

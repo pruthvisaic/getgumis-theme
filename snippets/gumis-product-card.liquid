@@ -67,7 +67,7 @@
       <span class="g-badge g-badge--dark">-{{ off }} %</span>
     {%- endif -%}
     <span class="g-disc"></span>
-    {%- if product != blank and product.featured_media != blank -%}
+    {%- if settings.gumis_animated_bottles == false and product != blank and product.featured_media != blank -%}
       {{
         product.featured_media
         | image_url: width: 800
@@ -80,7 +80,7 @@
       }}
     {%- else -%}
       <span class="g-floor"></span>
-      {%- render 'gumis-bottle', name: bottle, class: 'g-card__img g-card__bottle' -%}
+      {%- render 'gumis-bottle', name: bottle, class: 'g-card__bottle' -%}
     {%- endif -%}
   </a>
 

@@ -217,6 +217,7 @@
       "gumis_cookie_banner": true,
       "gumis_cookie_position": "bottom",
       "gumis_gummies_per_jar": 60,
+      "gumis_animated_bottles": true,
       "gumis_ink": "#2A0A1F",
       "gumis_blush": "#FBF0F3",
       "gumis_peach": "#FFF3EA",

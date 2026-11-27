@@ -396,6 +396,11 @@
       </div>
     </div>
   </div>
+  {%- if section.settings.gumis_big_logo -%}
+    <div class="gumis-footer-bigword" aria-hidden="true">
+      {%- render 'logo', class: 'gumis-logo--giant' -%}
+    </div>
+  {%- endif -%}
 </footer>
 
 {% schema %}
@@ -593,6 +598,12 @@
       "type": "checkbox",
       "id": "gumis_language_switcher",
       "label": "Show the EN / FR language switcher",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "gumis_big_logo",
+      "label": "Show a giant logo at the very bottom",
       "default": true
     },
     {

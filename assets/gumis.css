@@ -592,19 +592,64 @@ b, strong { font-weight: 700; }
   .g-statement { padding: 5.6rem 0; }
 }
 
-/* Built-in getgumis bottle photos (fallback until product images are set) */
-.g-bottle { position: relative; z-index: 1; display: block; height: auto; filter: drop-shadow(0 18px 22px rgba(59, 10, 42, 0.16)); }
-.g-hero__bottles { width: 86%; max-height: 88%; object-fit: contain; margin-top: 4%; }
-.g-card__bottle { width: auto; height: 80%; margin-top: 4%; }
+/* Built-in getgumis bottle photos with animated faces (fallback until product images are set) */
+.g-bottle { position: relative; z-index: 1; display: block; aspect-ratio: 829 / 1704; filter: drop-shadow(0 18px 22px rgba(59, 10, 42, 0.14)); }
+.g-bottle__img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.g-face { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.g-trio { position: relative; z-index: 1; display: block; aspect-ratio: 1906 / 1704; }
+.g-trio__item { position: absolute; bottom: 0; width: 37.4%; }
+.g-trio__item--l { left: 0; }
+.g-trio__item--r { right: 0; }
+.g-trio__item--c { left: 28.25%; top: 0; bottom: auto; width: 43.5%; z-index: 2; }
+.g-trio__item .g-bottle { width: 100%; }
+.g-hero__bottles { width: 86%; max-height: 88%; margin-top: 4%; }
+.g-card__bottle { width: auto; height: 80%; margin-top: 4%; transition: transform 0.3s ease; }
 .g-split__bottle { width: 34%; margin-bottom: 4%; transform: rotate(-5deg); }
 .g-bottle-stack { position: relative; z-index: 1; display: flex; align-items: flex-end; justify-content: center; width: 80%; margin-bottom: 1%; }
-.g-bottle-stack .g-bottle { width: 30%; }
+.g-bottle-stack .g-bottle { width: 30%; height: auto; }
 .g-bottle-stack .g-bottle:nth-child(2) { width: 38%; z-index: 2; margin: 0 -6%; }
+img.g-bottle { aspect-ratio: auto; height: auto; }
 .g-card:hover .g-card__bottle { transform: translateY(-6px); }
 @media screen and (max-width: 749px) {
   .g-hero__bottles { width: 92%; }
 }
 .g-hero__media:has(.g-hero__bottles) .g-chip--b { bottom: 2%; }
+
+/* Face animations: every bottle has its own personality */
+.g-face g { transform-box: fill-box; transform-origin: center; }
+/* Sleep: slow breathing, snoring mouth, floating z's */
+.g-face .f-breathe { animation: g-breathe 4s ease-in-out infinite; }
+.g-face .f-snore { animation: g-snore 4s ease-in-out infinite; }
+.g-face .f-z { opacity: 0; animation: g-z 4.5s ease-out infinite; }
+.g-face .f-z2 { animation-delay: 1.5s; }
+.g-face .f-z3 { animation-delay: 3s; }
+@keyframes g-breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+@keyframes g-snore { 0%, 100% { transform: scale(1, 1); } 50% { transform: scale(1.25, 2.2); } }
+@keyframes g-z { 0% { opacity: 0; transform: translate(10px, 10px) scale(0.5); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate(-40px, -170px) scale(1.1); } }
+/* Glow: big smile, wink, twinkling sparkles */
+.g-face .f-squint { animation: g-squint 5s ease-in-out infinite; }
+.g-face .f-wink { animation: g-wink 5s ease-in-out infinite; }
+.g-face .f-grin { animation: g-grin 5s ease-in-out infinite; }
+.g-face .f-twinkle { animation: g-twinkle 2.6s ease-in-out infinite; }
+.g-face .f-t2 { animation-delay: 0.9s; }
+.g-face .f-t3 { animation-delay: 1.7s; }
+@keyframes g-squint { 0%, 30%, 60%, 100% { transform: translateY(0) scale(1); } 40%, 52% { transform: translateY(-4px) scale(1.06, 1.15); } }
+@keyframes g-wink { 0%, 30%, 60%, 100% { transform: translateY(0) scale(1); } 40%, 52% { transform: translateY(10px) scale(1.04, 0.2); } }
+@keyframes g-grin { 0%, 30%, 60%, 100% { transform: scale(1); } 40%, 52% { transform: scale(1.3, 1.6); } }
+@keyframes g-twinkle { 0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); } 50% { opacity: 0.35; transform: scale(0.55) rotate(45deg); } }
+/* Power: determined brows, glances left and right, blinks */
+.g-face .f-look { animation: g-look 6s ease-in-out infinite, g-blink 6s ease-in-out infinite; }
+.g-face .f-brow-l { animation: g-brow 3s ease-in-out infinite; }
+.g-face .f-brow-r { animation: g-brow 3s ease-in-out infinite 0.15s; }
+.g-face .f-grin2 { animation: g-grin2 3s ease-in-out infinite; }
+@keyframes g-look { 0%, 20%, 100% { translate: 0 0; } 30%, 45% { translate: -14px 0; } 55%, 70% { translate: 14px 0; } 80% { translate: 0 0; } }
+@keyframes g-blink { 0%, 88%, 100% { transform: scaleY(1); } 92% { transform: scaleY(0.1); } }
+@keyframes g-brow { 0%, 60%, 100% { transform: translateY(0); } 70%, 85% { transform: translateY(-14px); } }
+@keyframes g-grin2 { 0%, 60%, 100% { transform: scale(1); } 70%, 85% { transform: scale(1.12, 1.25); } }
+@media (prefers-reduced-motion: reduce) {
+  .g-face g, .g-face .f-z { animation: none !important; }
+  .g-face .f-z1 { opacity: 1; }
+}
 
 /* Each product takes its bottle colour (custom.accent_color / block accent) */
 .g-card .g-card__media { background: color-mix(in srgb, var(--accent) 13%, #fff); }
@@ -615,3 +660,7 @@ b, strong { font-weight: 700; }
 .gumis-accent-media .product__media-item .product-media-container,
 .gumis-accent-media .product__media-item .media { background-color: color-mix(in srgb, var(--accent) 13%, #fff); }
 .gumis-accent-media .product__media-item .product-media-container { border-radius: var(--gumis-radius, 2rem); overflow: hidden; }
+
+/* Giant wordmark at the bottom of the footer */
+.gumis-footer-bigword { overflow: hidden; padding: clamp(3.2rem, 5vw, 6.4rem) 0 clamp(1.6rem, 3vw, 4rem); text-align: center; line-height: 1; user-select: none; }
+.gumis-footer-bigword .gumis-logo { --logo-size: clamp(8rem, 21vw, 40rem); display: inline-flex; line-height: 1; letter-spacing: -0.045em; }

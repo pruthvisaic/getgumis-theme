@@ -56,7 +56,7 @@ Without the CLI: zip the folders `assets config layout locales sections snippets
 4. **Settings > Taxes and duties**: tick "Include sales tax in product price and shipping rate" (prices tax included).
 5. **Settings > Languages**: **English** as default, add **French** and publish it. The EN / FR switcher in the header
    and footer only appears once both languages are published.
-6. **Online Store > Navigation**: create the `main-menu` (header) and `footer` (footer "Shop" column) menus.
+6. **Online Store > Navigation**: create the `main-menu` (header) with these links: **Shop** (all products), **Sleep**, **Glow**, **Power** (each product page), **Why gummies** (`/#gumis-why`) and **FAQ**. Then the `footer` menu (footer "Shop" column).
 7. Create the **metafields** (section 2), the **automatic discounts** (section 3) and the **pages** (section 5).
 8. **Settings > Customer privacy**: collect consent for the EU/EEA and **turn off Shopify's own banner**
    (the theme ships its own, see section 8). Don't use both.
