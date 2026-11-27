@@ -662,3 +662,7 @@ img.g-bottle { aspect-ratio: auto; height: auto; }
   .g-marquee__track[aria-hidden] { display: none; }
   .g-marquee__band { justify-content: center; }
 }
+
+/* Giant wordmark at the bottom of the footer */
+.gumis-footer-bigword { overflow: hidden; padding: clamp(3.2rem, 5vw, 6.4rem) 0 clamp(1.6rem, 3vw, 4rem); text-align: center; line-height: 1; user-select: none; }
+.gumis-footer-bigword .gumis-logo { --logo-size: clamp(9rem, 30vw, 52rem); display: inline-flex; line-height: 1; letter-spacing: -0.045em; }
