@@ -577,15 +577,15 @@
       "to_complete": "[TO COMPLETE]"
     },
     "hero": {
-      "heading": "Your vitamins, made tasty.",
-      "subheading": "Fruity gummies you chew instead of big capsules. Three formulas: Sleep, Glow and Power.",
-      "cta_primary": "Shop the gummies",
+      "heading": "Pills are boring. Chew this.",
+      "subheading": "Fruity gummies instead of big capsules. Sleep, Glow or Power: pick your vibe.",
+      "cta_primary": "Gimme gummies",
       "cta_secondary": "Why gummies?",
-      "eyebrow": "Food supplements in gummy form",
-      "heading_html": "Your vitamins,<br>made <em>tasty.</em>"
+      "eyebrow": "Supplements, but make it fun",
+      "heading_html": "Pills are boring.<br><em>Chew this.</em>"
     },
     "trio": {
-      "heading": "Choose your formula",
+      "heading": "Pick your vibe",
       "subheading": "Pick your gummy: every jar holds {{ count }} gummies.",
       "view_all": "See all gummies"
     },
@@ -593,18 +593,18 @@
       "heading": "The easy way to take your vitamins",
       "subheading": "Supplements usually mean big capsules forgotten in a cupboard. getgumis gummies are small, chewy and nice to take, so the habit sticks.",
       "col_gummies": "getgumis gummies",
-      "col_capsules": "Classic capsules",
+      "col_capsules": "Boring capsules",
       "eyebrow": "Why gummies",
-      "compare_heading": "getgumis gummies vs classic capsules",
+      "compare_heading": "Gummies vs boring capsules",
       "criterion": "Criterion"
     },
     "steps": {
-      "heading": "How does it work?",
+      "heading": "Pick. Chew. Repeat.",
       "step": "Step {{ number }}"
     },
     "bundle": {
-      "heading": "More jars, more savings",
-      "text": "Stock up: choose 1, 2 or 3 jars. The discount is applied automatically in your cart.",
+      "heading": "More jars, more joy",
+      "text": "Stock up on 2 or 3 jars and save. The discount kicks in automatically in your cart.",
       "select_product": "Select a product in the theme editor to display the offer."
     },
     "reviews": {
@@ -612,7 +612,7 @@
       "eyebrow": "Reviews"
     },
     "faq": {
-      "heading": "Your questions, answered"
+      "heading": "Questions? We've got answers (and gummies)."
     },
     "product": {
       "add_to_cart": "Add to cart",
@@ -702,10 +702,10 @@
     },
     "statement": {
       "label": "getgumis at a glance",
-      "lead_html": "Vitamins you'll actually<br>want to take."
+      "lead_html": "Vitamins you'll actually<br>remember to take."
     },
     "newsletter": {
-      "heading": "Fresh news from getgumis",
+      "heading": "Join the gummy gang",
       "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/privacy-policy\">privacy policy</a>.",
       "button": "Subscribe"
     },
@@ -718,7 +718,7 @@
       }
     },
     "marquee": {
-      "default": "Sleep · Glow · Power · No big capsules · No water needed · Just chew"
+      "default": "Pills are boring · Chew this · Sleep · Glow · Power · Zero water needed"
     }
   }
 }

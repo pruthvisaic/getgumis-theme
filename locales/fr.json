@@ -589,15 +589,15 @@
       "to_complete": "[À COMPLÉTER]"
     },
     "hero": {
-      "heading": "Vos vitamines, en version gourmande.",
-      "subheading": "Des gummies fruités à croquer, au lieu de grosses gélules. Trois formules : Sleep, Glow et Power.",
-      "cta_primary": "Découvrir les gummies",
+      "heading": "Les gélules, c’est fini. Croquez ça.",
+      "subheading": "Des gummies fruités au lieu de grosses gélules. Sleep, Glow ou Power : choisissez votre mood.",
+      "cta_primary": "Je veux des gummies",
       "cta_secondary": "Pourquoi des gummies ?",
-      "eyebrow": "Compléments alimentaires en gummies",
-      "heading_html": "Vos vitamines,<br>version <em>gummies.</em>"
+      "eyebrow": "Les compléments, version fun",
+      "heading_html": "Les gélules, c’est fini.<br><em>Croquez ça.</em>"
     },
     "trio": {
-      "heading": "Choisissez votre formule",
+      "heading": "Choisissez votre mood",
       "subheading": "Choisissez votre gummy : chaque pot contient {{ count }} gummies.",
       "view_all": "Voir tous les gummies"
     },
@@ -605,18 +605,18 @@
       "heading": "La façon facile de prendre ses vitamines",
       "subheading": "Les compléments, c'est souvent de grosses gélules qu'on oublie dans un placard. Les gummies getgumis sont petits, moelleux et agréables à prendre : le rituel tient tout seul.",
       "col_gummies": "Gummies getgumis",
-      "col_capsules": "Gélules classiques",
+      "col_capsules": "Gélules ennuyeuses",
       "eyebrow": "Pourquoi des gummies",
-      "compare_heading": "Gummies getgumis vs gélules classiques",
+      "compare_heading": "Gummies vs gélules ennuyeuses",
       "criterion": "Critère"
     },
     "steps": {
-      "heading": "Comment ça marche ?",
+      "heading": "Choisir. Croquer. Recommencer.",
       "step": "Étape {{ number }}"
     },
     "bundle": {
-      "heading": "Plus de pots, plus d'économies",
-      "text": "Prenez de l'avance : choisissez 1, 2 ou 3 pots. La remise s'applique automatiquement dans le panier.",
+      "heading": "Plus de pots, plus de joie",
+      "text": "Faites le plein avec 2 ou 3 pots et économisez. La remise s’applique automatiquement au panier.",
       "select_product": "Choisissez un produit dans l'éditeur de thème pour afficher l'offre."
     },
     "reviews": {
@@ -624,7 +624,7 @@
       "eyebrow": "Avis"
     },
     "faq": {
-      "heading": "Vos questions, nos réponses"
+      "heading": "Des questions ? On a les réponses (et les gummies)."
     },
     "product": {
       "add_to_cart": "Ajouter au panier",
@@ -714,10 +714,10 @@
     },
     "statement": {
       "label": "getgumis en bref",
-      "lead_html": "Des vitamines que vous<br>aurez envie de prendre."
+      "lead_html": "Des vitamines qu’on n’oublie<br>plus de prendre."
     },
     "newsletter": {
-      "heading": "Des nouvelles de getgumis",
+      "heading": "Rejoignez le gummy gang",
       "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/privacy-policy\">politique de confidentialité</a>.",
       "button": "S'inscrire"
     },
@@ -730,7 +730,7 @@
       }
     },
     "marquee": {
-      "default": "Sleep · Glow · Power · Fini les grosses gélules · Sans eau · Juste à croquer"
+      "default": "Fini les gélules · Croquez ça · Sleep · Glow · Power · Zéro verre d’eau"
     }
   }
 }

@@ -1,0 +1,242 @@
+/*
+ * getgumis "Candy pop" skin: bold colour blocks, chunky rounded type, sticker badges,
+ * thick outlines with hard offset shadows, bouncy motion. Loaded after gumis.css and
+ * gumis-sections.css; it only restyles existing sections, no markup depends on it.
+ */
+:root {
+  --candy-ink: #2A0A1F;
+  --candy-pink: #FF3D8B;
+  --candy-berry: #D6246E;
+  --candy-orange: #FF8A3D;
+  --candy-blue: #3A5BD9;
+  --candy-lemon: #FFE14D;
+  --candy-mint: #8EE3C8;
+  --candy-cream: #FFF4EC;
+  --candy-line: 3px solid var(--candy-ink);
+  --candy-shadow: 6px 6px 0 var(--candy-ink);
+  --candy-shadow-sm: 4px 4px 0 var(--candy-ink);
+}
+
+/* ---------- type ---------- */
+.g-hero__title,
+.g-section h2,
+.g-head h2,
+.g-statement__lead,
+.g-card__title,
+.g-step h3,
+.g-numbered h3,
+.g-newsletter h2,
+.g-faq h2 {
+  font-family: var(--font-logo), 'Fredoka', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.g-section h2, .g-head h2 { font-size: clamp(3.6rem, 5vw, 6.4rem); line-height: 1; }
+.g-eyebrow {
+  display: inline-block;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: max-content;
+  padding: 0.6rem 1.4rem;
+  border: var(--candy-line);
+  border-radius: 99rem;
+  background: var(--candy-lemon);
+  color: var(--candy-ink);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transform: rotate(-2deg);
+  box-shadow: var(--candy-shadow-sm);
+}
+
+/* ---------- buttons: chunky, outlined, press effect ---------- */
+.g-btn {
+  border: var(--candy-line) !important;
+  border-radius: 99rem;
+  box-shadow: var(--candy-shadow-sm);
+  font-weight: 800;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+}
+.g-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--candy-ink); }
+.g-btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--candy-ink); }
+.g-btn--primary { background: var(--candy-ink); color: #fff; }
+.g-btn--primary:hover { background: var(--candy-berry); color: #fff; }
+.g-btn--ghost, .g-btn--outline { background: #fff; color: var(--candy-ink); }
+.g-btn--ghost:hover, .g-btn--outline:hover { background: var(--candy-lemon); color: var(--candy-ink); }
+
+/* ---------- hero: hot pink block, giant title, stickers ---------- */
+.g-hero { background: var(--candy-pink) !important; overflow: hidden; }
+.g-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 2px, transparent 2.5px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+.g-hero .g-halo { display: none; }
+.g-hero__title {
+  font-size: clamp(5.2rem, 8.4vw, 11.2rem);
+  line-height: 0.92;
+  color: #fff;
+  text-shadow: 4px 4px 0 var(--candy-ink);
+  -webkit-text-stroke: 2px var(--candy-ink);
+  paint-order: stroke fill;
+}
+.g-hero__title em, .g-hero__title i { color: var(--candy-lemon); display: inline-block; transform: rotate(-3deg); }
+.g-hero__lede { color: #fff; font-weight: 600; font-size: clamp(1.8rem, 1.6vw, 2.2rem); }
+.g-hero .g-ticks li { color: #fff; font-weight: 700; }
+.g-hero .g-ticks .gumis-icon { color: var(--candy-lemon); }
+.g-hero__media .g-bottle { animation: candy-float 4s ease-in-out infinite; }
+.g-hero .g-chip {
+  z-index: 3;
+  padding: 1rem 1.8rem;
+  border: var(--candy-line);
+  border-radius: 99rem;
+  background: var(--candy-lemon);
+  color: var(--candy-ink);
+  font-family: var(--font-logo), 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  box-shadow: var(--candy-shadow-sm);
+}
+.g-hero .g-chip i { display: none; }
+.g-hero .g-chip--a { transform: rotate(6deg); background: var(--candy-mint); animation: candy-wobble 3s ease-in-out infinite; }
+.g-hero .g-chip--b { transform: rotate(-5deg); animation: candy-wobble 3s ease-in-out infinite 1.5s; }
+@keyframes candy-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+@keyframes candy-wobble { 0%, 100% { rotate: 0deg; } 50% { rotate: 3deg; } }
+
+/* ---------- trust strip: sticker cards ---------- */
+.g-trust__list {
+  border: var(--candy-line);
+  border-radius: 2.4rem;
+  box-shadow: var(--candy-shadow);
+  background: #fff;
+}
+.g-trust__icon { background: var(--candy-lemon) !important; border: 2px solid var(--candy-ink); }
+
+/* ---------- product cards: outlined, offset shadow, playful tilt ---------- */
+.g-card {
+  border: var(--candy-line);
+  border-radius: 2.8rem;
+  background: #fff;
+  box-shadow: var(--candy-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.g-card:hover { transform: translate(-3px, -3px) rotate(-1deg); box-shadow: 10px 10px 0 var(--candy-ink); background: #fff; }
+.g-grid > li:nth-child(3n + 1) .g-card .g-card__media { background: #C9D6FF; }
+.g-grid > li:nth-child(3n + 2) .g-card .g-card__media { background: #FFC2DA; }
+.g-grid > li:nth-child(3n) .g-card .g-card__media { background: #FFD3B0; }
+.g-card__media { border-bottom: var(--candy-line); border-radius: 2.4rem 2.4rem 0 0; }
+.g-card .g-disc { background: rgba(255, 255, 255, 0.55); }
+.g-card__title { font-size: 2.4rem; }
+.g-card__title a::before { width: 1.2rem; height: 1.2rem; border: 2px solid var(--candy-ink); }
+.g-card .g-badge {
+  top: 1.4rem;
+  left: 1.4rem;
+  padding: 0.7rem 1.4rem;
+  border: var(--candy-line);
+  border-radius: 99rem;
+  background: var(--candy-lemon);
+  color: var(--candy-ink);
+  font-family: var(--font-logo), 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0;
+  text-transform: none;
+  transform: rotate(-6deg);
+  box-shadow: var(--candy-shadow-sm);
+}
+
+/* ---------- moving band: thick, tilted, loud ---------- */
+.g-marquee { padding: 2.4rem 0; }
+.g-marquee__band {
+  background: var(--candy-ink) !important;
+  border: 0;
+  transform: rotate(-2deg);
+  margin: 0 -2rem;
+  padding: 2.2rem 0;
+}
+.g-marquee__item { font-size: clamp(3rem, 4.4vw, 5.6rem); }
+.g-marquee__item:nth-of-type(3n + 1) { color: var(--candy-lemon); }
+.g-marquee__item:nth-of-type(3n + 2) { color: var(--candy-pink); }
+.g-marquee__item:nth-of-type(3n) { color: var(--candy-mint); }
+
+/* ---------- stats: lemon block, giant numbers ---------- */
+.g-statement { background: var(--candy-lemon) !important; color: var(--candy-ink); border-block: var(--candy-line); }
+.g-statement__lead { color: var(--candy-ink) !important; font-size: clamp(3.2rem, 4vw, 5.2rem); }
+.g-statement *, .g-statement .g-stats * { color: var(--candy-ink); border-color: var(--candy-ink) !important; }
+.g-statement .g-stats strong, .g-statement .g-stats b, .g-statement .g-stats dt, .g-statement .g-stats [class*="value"] {
+  font-family: var(--font-logo), 'Fredoka', sans-serif;
+  font-size: clamp(5rem, 7vw, 8.8rem);
+  color: var(--candy-berry) !important;
+  -webkit-text-stroke: 2px var(--candy-ink);
+  paint-order: stroke fill;
+}
+
+/* ---------- "why gummies": blue block ---------- */
+#gumis-why { background: var(--candy-blue); color: #fff; }
+#gumis-why h2, #gumis-why h3, #gumis-why p, #gumis-why .g-split__text { color: #fff; }
+#gumis-why .g-split__media {
+  border: var(--candy-line);
+  border-radius: 3.2rem;
+  background: var(--candy-lemon) !important;
+  box-shadow: 8px 8px 0 var(--candy-ink);
+  transform: rotate(-2deg);
+}
+#gumis-why .g-halo { display: none; }
+#gumis-why .g-numbered li { border-color: rgba(255, 255, 255, 0.35); }
+#gumis-why .g-numbered li::before { color: var(--candy-lemon); }
+
+/* ---------- comparison: cream with outlined table ---------- */
+#gumis-compare .g-compare-wrap, #gumis-compare table {
+  border: var(--candy-line) !important;
+  border-radius: 2.4rem;
+  box-shadow: var(--candy-shadow);
+  overflow: hidden;
+}
+#gumis-compare td.g-us { background: #FFE6F0; }
+
+/* ---------- steps: three colour stickers ---------- */
+.g-step { border: var(--candy-line); box-shadow: var(--candy-shadow); }
+.g-steps > :nth-child(1) .g-step, .g-step:nth-of-type(1) { background: #C9D6FF !important; }
+.g-steps > :nth-child(2) .g-step, .g-step:nth-of-type(2) { background: #FFC2DA !important; transform: rotate(1deg); }
+.g-steps > :nth-child(3) .g-step, .g-step:nth-of-type(3) { background: #FFD3B0 !important; transform: rotate(-1deg); }
+.g-step__num { font-family: var(--font-logo), 'Fredoka', sans-serif; color: var(--candy-ink) !important; -webkit-text-stroke: 0; }
+
+/* ---------- multi-jar block ---------- */
+.g-bundle__media {
+  border: var(--candy-line);
+  border-radius: 3.2rem;
+  background: var(--candy-mint) !important;
+  box-shadow: 8px 8px 0 var(--candy-ink);
+}
+.g-variant__card { border: var(--candy-line) !important; border-radius: 2rem !important; }
+.g-variant__input:checked + .g-variant__card,
+.g-variant__card:has(input:checked) { background: var(--candy-lemon) !important; box-shadow: var(--candy-shadow-sm); }
+
+/* ---------- FAQ + newsletter ---------- */
+.g-faq .g-accordion, .g-faq details { border-color: var(--candy-ink) !important; }
+.g-newsletter {
+  border: var(--candy-line) !important;
+  border-radius: 3.2rem !important;
+  background: var(--candy-orange) !important;
+  box-shadow: 8px 8px 0 var(--candy-ink);
+}
+.g-newsletter, .g-newsletter h2, .g-newsletter p, .g-newsletter a { color: var(--candy-ink) !important; }
+.g-newsletter input { border: var(--candy-line) !important; border-radius: 99rem !important; background: #fff; }
+
+/* ---------- footer: pink block with the giant logo ---------- */
+.footer { background: var(--candy-pink) !important; color: var(--candy-ink); border-top: var(--candy-line); }
+.footer a, .footer h2, .footer p, .footer .footer-block__heading { color: var(--candy-ink) !important; }
+.gumis-footer-bigword .gumis-logo { --gumis-logo: #fff; --gumis-logo-prefix: var(--candy-lemon); text-shadow: 6px 6px 0 var(--candy-ink); }
+
+/* ---------- motion safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .g-hero__media .g-bottle, .g-hero .g-chip--a, .g-hero .g-chip--b { animation: none !important; }
+  .g-card:hover, .g-btn:hover { transform: none; }
+}
+@media screen and (max-width: 749px) {
+  .g-hero__title { -webkit-text-stroke: 1.5px var(--candy-ink); text-shadow: 3px 3px 0 var(--candy-ink); }
+  .g-marquee__band { transform: rotate(-3deg); }
+  #gumis-why .g-split__media, .g-step { transform: none !important; }
+}
