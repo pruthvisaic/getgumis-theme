@@ -5,7 +5,7 @@
       "settings": {
         "use_collection_title": false,
         "heading": "",
-        "subheading": "Tasty magnesium gummies, delivered across India.",
+        "subheading": "Three tasty formulas, 60 gummies per jar.",
         "show_description": true,
         "per_page": 12,
         "padding_top": 56,
@@ -18,8 +18,8 @@
         "s1": {
           "type": "step",
           "settings": {
-            "title": "Order your jar",
-            "text": "<p>Pay online or cash on delivery. We ship across India.</p>"
+            "title": "Choose your formula",
+            "text": "<p>Sleep, Glow or Power: pick the one that fits you.</p>"
           }
         },
         "s2": {

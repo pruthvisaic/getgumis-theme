@@ -26,29 +26,52 @@ def star(x, y, s, c):
             f'C -4 6, -6 4, -30 0 C -6 -4, -4 -6, 0 -30 Z" fill="{c}"/>')
 
 
-def leaf(x, y, sc, c, rot=0):
-    return (f'<g transform="translate({x} {y}) rotate({rot}) scale({sc})"><path d="M0 -30 C 22 -22, 22 22, 0 30 C -22 22, -22 -22, 0 -30 Z" fill="{c}"/>'
-            f'<path d="M0 -24 L0 24" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"/></g>')
-
-
 def faces():
     out = {}
-    t, mint, cheek = '#12898A', '#5BC8B8', '#BFEDE6'
-    awake = lambda cx: (f'<g class="f-pupil"><circle cx="{cx}" cy="425" r="28" fill="{t}"/>'
-                        f'<circle cx="{cx + 9}" cy="415" r="8" fill="#fff"/></g>')
-    out['magnesium'] = ''.join([
+    b = '#3A5BD9'
+    lash = lambda pts: ''.join(f'<line x1="{a}" y1="{bb}" x2="{c}" y2="{d}"/>' for a, bb, c, d in pts)
+    awake = lambda cx: (f'<g class="f-pupil"><circle cx="{cx}" cy="425" r="30" fill="{b}"/>'
+                        f'<circle cx="{cx + 10}" cy="414" r="9" fill="#fff"/></g>')
+    out['sleep'] = ''.join([
         place(280, 425, awake(280), 'f-open'),
         place(520, 425, awake(520), 'f-open'),
-        place(280, 425, f'<path d="M215 410 q65 45 130 0" stroke="{t}" stroke-width="22" fill="none" stroke-linecap="round"/>', 'f-breathe f-closed'),
-        place(520, 425, f'<path d="M455 410 q65 45 130 0" stroke="{t}" stroke-width="22" fill="none" stroke-linecap="round"/>', 'f-breathe f-closed'),
-        place(190, 485, f'<ellipse cx="190" cy="485" rx="60" ry="34" fill="{cheek}"/>', 'f-blush'),
-        place(610, 485, f'<ellipse cx="610" cy="485" rx="60" ry="34" fill="{cheek}"/>', 'f-blush'),
-        place(400, 505, f'<path d="M350 492 q50 42 100 0" stroke="{t}" stroke-width="12" fill="none" stroke-linecap="round"/>', 'f-calm'),
-        place(150, 330, leaf(150, 330, .8, mint, -20), 'f-sway f-t1'),
-        place(660, 600, leaf(660, 600, .65, t, 30), 'f-sway f-t2'),
-        place(120, 620, leaf(120, 620, .5, mint, 10), 'f-sway f-t3'),
+        place(280, 430, f'<path d="M190 400 q90 90 180 0" stroke="{b}" stroke-width="22" fill="none" stroke-linecap="round"/>'
+              f'<g stroke="{b}" stroke-width="10" stroke-linecap="round">{lash([(205,432,190,460),(245,452,238,482)])}</g>', 'f-breathe f-closed'),
+        place(520, 430, f'<path d="M430 400 q90 90 180 0" stroke="{b}" stroke-width="22" fill="none" stroke-linecap="round"/>'
+              f'<g stroke="{b}" stroke-width="10" stroke-linecap="round">{lash([(595,432,610,460),(555,452,562,482)])}</g>', 'f-breathe f-closed'),
+        place(190, 510, '<ellipse cx="190" cy="510" rx="60" ry="34" fill="#C9D9F5"/>', 'f-blush'),
+        place(610, 510, '<ellipse cx="610" cy="510" rx="60" ry="34" fill="#C9D9F5"/>', 'f-blush'),
+        place(400, 515, f'<path d="M370 510 q30 22 60 0" stroke="{b}" stroke-width="12" fill="none" stroke-linecap="round"/>', 'f-snore'),
+        place(400, 522, f'<ellipse cx="400" cy="522" rx="22" ry="26" fill="{b}"/>', 'f-yawn'),
+        place(165, 330, f'<text x="165" y="345" font-family="Fredoka, sans-serif" font-weight="700" font-size="58" fill="{b}" text-anchor="middle">z</text>', 'f-z f-z1'),
+        place(165, 330, f'<text x="165" y="345" font-family="Fredoka, sans-serif" font-weight="700" font-size="72" fill="{b}" text-anchor="middle">z</text>', 'f-z f-z2'),
+        place(165, 330, f'<text x="165" y="345" font-family="Fredoka, sans-serif" font-weight="700" font-size="88" fill="{b}" text-anchor="middle">Z</text>', 'f-z f-z3'),
+    ])
+    g = '#D6246E'
+    out['glow'] = ''.join([
+        place(280, 400, f'<path d="M190 430 q90 -90 180 0" stroke="{g}" stroke-width="22" fill="none" stroke-linecap="round"/>', 'f-squint'),
+        place(520, 400, f'<path d="M430 430 q90 -90 180 0" stroke="{g}" stroke-width="22" fill="none" stroke-linecap="round"/>', 'f-wink'),
+        place(190, 500, '<ellipse cx="190" cy="500" rx="60" ry="34" fill="#FFD3E2"/>', 'f-blush'),
+        place(610, 500, '<ellipse cx="610" cy="500" rx="60" ry="34" fill="#FFD3E2"/>', 'f-blush'),
+        place(400, 512, f'<path d="M350 500 q50 50 100 0" stroke="{g}" stroke-width="12" fill="none" stroke-linecap="round"/>', 'f-grin'),
+        place(150, 330, star(150, 330, 0.9, g), 'f-twinkle f-t1'),
+        place(660, 600, star(660, 600, 0.7, '#FF8A3D'), 'f-twinkle f-t2'),
+        place(120, 620, star(120, 620, 0.5, g), 'f-twinkle f-t3'),
+        place(400, 300, f'<path d="M400 330 C 360 300, 360 260, 400 275 C 440 260, 440 300, 400 330 Z" fill="{g}"/>', 'f-heart'),
+    ])
+    o = '#E8641A'
+    out['power'] = ''.join([
+        place(280, 410, f'<g class="f-pupil"><circle cx="280" cy="410" r="34" fill="{o}"/><circle cx="292" cy="398" r="10" fill="#fff"/></g>', 'f-look'),
+        place(520, 410, f'<g class="f-pupil"><circle cx="520" cy="410" r="34" fill="{o}"/><circle cx="532" cy="398" r="10" fill="#fff"/></g>', 'f-look'),
+        place(275, 345, f'<path d="M200 330 L350 360" stroke="{o}" stroke-width="20" stroke-linecap="round"/>', 'f-brow f-brow-l'),
+        place(525, 345, f'<path d="M600 330 L450 360" stroke="{o}" stroke-width="20" stroke-linecap="round"/>', 'f-brow f-brow-r'),
+        place(190, 505, '<ellipse cx="190" cy="505" rx="60" ry="34" fill="#FFE0C7"/>', 'f-blush'),
+        place(610, 505, '<ellipse cx="610" cy="505" rx="60" ry="34" fill="#FFE0C7"/>', 'f-blush'),
+        place(150, 330, f'<path d="M150 300 q-22 34 0 46 q22 -12 0 -46 Z" fill="#7EC8F0"/>', 'f-sweat'),
+        place(400, 512, f'<path d="M340 500 q60 46 120 0 Z" fill="{o}"/><path d="M360 506 h80" stroke="#fff" stroke-width="8" stroke-linecap="round"/>', 'f-grin2'),
     ])
     return out
+
 
 f = faces()
 liquid = ['{%- comment -%} Generated by docs/labels/faces/build_faces.py: do not edit by hand. {%- endcomment -%}',

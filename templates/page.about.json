@@ -6,9 +6,10 @@
         "style": "default",
         "eyebrow": "Our story",
         "heading": "",
-        "intro": "<p>[TO COMPLETE: in two sentences, why gumis exists.]</p>",
+        "intro": "<p>[TO COMPLETE: in two sentences, why getgumis exists.]</p>",
         "show_content": true,
         "updated_label": "",
+        "show_cookie_button": false,
         "color_scheme": "scheme-2",
         "padding_top": 64,
         "padding_bottom": 64

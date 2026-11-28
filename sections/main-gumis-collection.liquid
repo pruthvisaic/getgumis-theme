@@ -1,5 +1,7 @@
 {%- liquid
-  assign ph_magnesium = 'gumis.placeholders.product_magnesium' | t
+  assign ph_sleep = 'gumis.placeholders.product_sleep' | t
+  assign ph_glow = 'gumis.placeholders.product_glow' | t
+  assign ph_power = 'gumis.placeholders.product_power' | t
 -%}
 {%- liquid
   if section.settings.use_collection_title
@@ -49,7 +51,9 @@
         {%- endif -%}
       {%- else -%}
         <ul class="g-grid" role="list">
-          <li>{%- render 'gumis-product-card', placeholder_title: ph_magnesium, accent: '#12898A', section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_sleep, accent: settings.gumis_plum, section_id: section.id, heading_tag: 'h2' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_glow, accent: settings.gumis_berry, section_id: section.id, heading_tag: 'h2', tile: 'peach' -%}</li>
+          <li>{%- render 'gumis-product-card', placeholder_title: ph_power, accent: settings.gumis_tangerine, section_id: section.id, heading_tag: 'h2', tile: 'lilac' -%}</li>
         </ul>
       {%- endif -%}
     {%- endpaginate -%}

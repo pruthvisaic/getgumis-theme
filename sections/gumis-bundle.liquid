@@ -47,7 +47,7 @@
             }}
           {%- endfor -%}
         {%- else -%}
-          {%- assign bottle = section.settings.bottle | default: 'magnesium' -%}
+          {%- assign bottle = section.settings.bottle | default: 'sleep' -%}
           {%- render 'gumis-bottle', name: bottle, sizes: '(min-width: 1000px) 200px, 30vw' -%}
           {%- render 'gumis-bottle', name: bottle, sizes: '(min-width: 1000px) 240px, 36vw' -%}
           {%- render 'gumis-bottle', name: bottle, sizes: '(min-width: 1000px) 200px, 30vw' -%}
@@ -119,9 +119,10 @@
       "id": "bottle",
       "label": "Bottle photo without product image",
       "options": [
-            { "value": "", "label": "Magnesium (default)" },
-                { "value": "magnesium", "label": "Magnesium" }
-          ],
+        { "value": "", "label": "Sleep (default)" },
+                { "value": "glow", "label": "Glow" },
+        { "value": "power", "label": "Power" }
+      ],
       "default": ""
     },
     {

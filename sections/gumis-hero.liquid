@@ -64,7 +64,7 @@
             class: 'g-hero__image'
         }}
       {%- else -%}
-        {%- render 'gumis-bottle', name: 'magnesium', eager: true, sizes: '(min-width: 1000px) 300px, 45vw', alt: shop.name, class: 'g-hero__bottle' -%}
+        {%- render 'gumis-bottle', name: 'trio', eager: true, sizes: '(min-width: 1000px) 560px, 92vw', alt: shop.name, class: 'g-hero__bottles' -%}
       {%- endif -%}
       {%- if section.settings.chip_1 != blank -%}
         <span class="g-chip g-chip--a" aria-hidden="true"><i style="background: var(--gumis-tangerine);"></i>{{ section.settings.chip_1 | escape }}</span>
@@ -135,7 +135,7 @@
       "type": "image_picker",
       "id": "image",
       "label": "Product image",
-      "info": "Transparent PNG recommended. Without an image, the built-in gumis bottle photo is shown."
+      "info": "Transparent PNG recommended. Without an image, the built-in getgumis bottle photo is shown."
     },
     {
       "type": "product",

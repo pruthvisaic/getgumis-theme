@@ -6,13 +6,13 @@
         "point-1": {
           "type": "point",
           "settings": {
-            "text": "Chewable, no water needed"
+            "text": "3 formulas"
           }
         },
         "point-2": {
           "type": "point",
           "settings": {
-            "text": "Cash on delivery"
+            "text": "Chewable, no water needed"
           }
         },
         "point-3": {
@@ -59,18 +59,38 @@
         "product-1": {
           "type": "product",
           "settings": {
-            "accent": "#12898A",
-            "placeholder_title": "gumis Magnesium",
+            "accent": "#3A5BD9",
+            "placeholder_title": "Gumis Sleep",
+            "badge": "",
+            "primary": false
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "accent": "#D6246E",
+            "placeholder_title": "Gumis Glow",
             "badge": "",
             "primary": true
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "accent": "#E8641A",
+            "placeholder_title": "Gumis Power",
+            "badge": "",
+            "primary": false
           }
         }
       },
       "block_order": [
-        "product-1"
+        "product-1",
+        "product-2",
+        "product-3"
       ],
       "settings": {
-        "eyebrow": "Our gummy",
+        "eyebrow": "The range",
         "heading": "",
         "view_all_link": "",
         "anchor": "gumis-products",
@@ -114,7 +134,7 @@
             "criterion": "Easy to carry",
             "gummies": "[TO COMPLETE: jar format]",
             "gummies_icon": "check",
-            "capsules": "Strip or pill box"
+            "capsules": "Blister pack or pill box"
           }
         },
         "row-5": {
@@ -152,8 +172,8 @@
         "step-1": {
           "type": "step",
           "settings": {
-            "title": "Order your jar",
-            "text": "<p>Pay online or cash on delivery. We ship across India.</p>"
+            "title": "Choose your formula",
+            "text": "<p>Sleep, Glow or Power: pick the one that fits you.</p>"
           }
         },
         "step-2": {
@@ -213,64 +233,64 @@
     "faq": {
       "type": "gumis-faq",
       "blocks": {
-        "q1": {
+        "question-1": {
           "type": "question",
           "settings": {
             "question": "How many gummies a day?",
-            "answer": "<p>[TO COMPLETE: daily dose from the label]. The recommended daily usage is on the product page and on the jar. Don't go over it.</p>"
+            "answer": "<p>It depends on the formula: the recommended daily dose is shown on each product page and on the jar. Don't go over it.</p>"
           }
         },
-        "q2": {
-          "type": "question",
-          "settings": {
-            "question": "When should I take magnesium gummies?",
-            "answer": "<p>[TO COMPLETE: e.g. in the evening, as per the label or your doctor's advice.]</p>"
-          }
-        },
-        "q3": {
+        "question-2": {
           "type": "question",
           "settings": {
             "question": "Do the gummies contain sugar?",
             "answer": "<p>[TO COMPLETE: sugar per serving, any sweeteners.]</p>"
           }
         },
-        "q4": {
+        "question-3": {
           "type": "question",
           "settings": {
-            "question": "Are they vegetarian? Do they contain allergens?",
-            "answer": "<p>[TO COMPLETE: pectin or gelatine (veg / non-veg), allergen list.] The full composition is on the product page.</p>"
+            "question": "Are they vegan? Do they contain allergens?",
+            "answer": "<p>[TO COMPLETE: gelatine or pectin, allergen list.] The full composition is on each product page.</p>"
           }
         },
-        "q5": {
+        "question-4": {
+          "type": "question",
+          "settings": {
+            "question": "Can I take several formulas at the same time?",
+            "answer": "<p>Ask your doctor or pharmacist before combining several food supplements, especially if you are taking medication.</p>"
+          }
+        },
+        "question-5": {
           "type": "question",
           "settings": {
             "question": "Are the gummies suitable for children or during pregnancy?",
-            "answer": "<p>Keep out of reach of children. Pregnant or lactating women and people on medication should consult a doctor before use.</p>"
+            "answer": "<p>[TO COMPLETE for each formula.] Keep out of reach of young children. If in doubt, ask a healthcare professional.</p>"
           }
         },
-        "q6": {
+        "question-6": {
           "type": "question",
           "settings": {
             "question": "How long does delivery take?",
-            "answer": "<p>[TO COMPLETE: delivery times across India and courier partner.] All the details are on the Shipping policy page.</p>"
+            "answer": "<p>[TO COMPLETE: delivery times and carriers.] All the details are on the Shipping &amp; returns page.</p>"
           }
         },
-        "q7": {
+        "question-7": {
           "type": "question",
           "settings": {
-            "question": "Is cash on delivery available?",
-            "answer": "<p>Yes, cash on delivery is available on eligible pin codes. [TO COMPLETE: any COD fee.]</p>"
+            "question": "Can I return my order?",
+            "answer": "<p>You have 14 days from delivery to exercise your right of withdrawal. [TO COMPLETE: conditions for opened jars, in line with your terms of sale.]</p>"
           }
         }
       },
       "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7"
+        "question-1",
+        "question-2",
+        "question-3",
+        "question-4",
+        "question-5",
+        "question-6",
+        "question-7"
       ],
       "settings": {
         "eyebrow": "FAQ",
@@ -302,7 +322,7 @@
           "settings": {
             "icon": "truck",
             "title": "Free shipping",
-            "text": "On orders over ₹[TO COMPLETE]"
+            "text": "On orders over €[TO COMPLETE]"
           }
         },
         "item-2": {
@@ -310,14 +330,14 @@
           "settings": {
             "icon": "lock",
             "title": "Secure payment",
-            "text": "UPI, cards, cash on delivery"
+            "text": "Cards, Apple Pay [TO COMPLETE]"
           }
         },
         "item-3": {
           "type": "item",
           "settings": {
             "icon": "jar",
-            "title": "[TO COMPLETE] gummies per jar",
+            "title": "60 gummies per jar",
             "text": "Chewable, no water needed"
           }
         },
@@ -325,8 +345,8 @@
           "type": "item",
           "settings": {
             "icon": "return",
-            "title": "Easy returns",
-            "text": "On damaged or wrong orders"
+            "title": "14 days",
+            "text": "To change your mind"
           }
         }
       },
@@ -344,22 +364,22 @@
         "stat-1": {
           "type": "stat",
           "settings": {
-            "value": "0",
-            "label": "big tablets to swallow"
+            "value": "3",
+            "label": "formulas"
           }
         },
         "stat-2": {
           "type": "stat",
           "settings": {
-            "value": "100%",
-            "label": "chewable"
+            "value": "60",
+            "label": "gummies per jar"
           }
         },
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "COD",
-            "label": "cash on delivery"
+            "value": "14",
+            "label": "days to change your mind"
           }
         }
       },
@@ -379,7 +399,7 @@
           "type": "point",
           "settings": {
             "title": "A real treat",
-            "text": "Fruity gummies instead of tasteless tablets."
+            "text": "Fruity gummies instead of tasteless capsules."
           }
         },
         "point-2": {

@@ -9,6 +9,7 @@
         "intro": "<p>Answers to the questions we get asked most.</p>",
         "show_content": true,
         "updated_label": "",
+        "show_cookie_button": false,
         "color_scheme": "scheme-1",
         "padding_top": 56,
         "padding_bottom": 8
@@ -21,14 +22,14 @@
           "type": "question",
           "settings": {
             "question": "How many gummies a day?",
-            "answer": "<p>[TO COMPLETE: daily dose from the label]. The recommended daily usage is on the product page and on the jar. Don't go over it.</p>"
+            "answer": "<p>It depends on the formula: the recommended daily dose is shown on each product page and on the jar. Don't go over it.</p>"
           }
         },
         "q2": {
           "type": "question",
           "settings": {
             "question": "When should I take them?",
-            "answer": "<p>[TO COMPLETE: e.g. in the evening, as per the label or your doctor's advice.]</p>"
+            "answer": "<p>[TO COMPLETE for each formula, e.g. Gumis Sleep: shortly before bedtime.]</p>"
           }
         },
         "q3": {
@@ -41,8 +42,8 @@
         "q4": {
           "type": "question",
           "settings": {
-            "question": "Are they vegetarian? Do they contain allergens?",
-            "answer": "<p>[TO COMPLETE: pectin or gelatine (veg / non-veg), allergen list.]</p>"
+            "question": "Are they vegan? Do they contain allergens?",
+            "answer": "<p>[TO COMPLETE: gelatine or pectin, allergen list.]</p>"
           }
         },
         "q5": {
@@ -55,15 +56,15 @@
         "q6": {
           "type": "question",
           "settings": {
-            "question": "Can I take it with other supplements or medication?",
-            "answer": "<p>Ask your doctor or pharmacist before combining supplements, especially if you are taking medication.</p>"
+            "question": "Can I take several formulas at the same time?",
+            "answer": "<p>Ask your doctor or pharmacist before combining several food supplements, especially if you are taking medication.</p>"
           }
         },
         "q7": {
           "type": "question",
           "settings": {
             "question": "Are the gummies suitable for children or during pregnancy?",
-            "answer": "<p>Keep out of reach of children. Pregnant or lactating women and people on medication should consult a doctor before use.</p>"
+            "answer": "<p>[TO COMPLETE for each formula.] Keep out of reach of young children. If in doubt, ask a healthcare professional.</p>"
           }
         },
         "q8": {
@@ -84,7 +85,7 @@
           "type": "question",
           "settings": {
             "question": "How long does delivery take?",
-            "answer": "<p>[TO COMPLETE: delivery times and carriers.] All the details are on the Shipping policy page.</p>"
+            "answer": "<p>[TO COMPLETE: delivery times and carriers.] All the details are on the Shipping &amp; returns page.</p>"
           }
         }
       },

@@ -1,12 +1,15 @@
 {%- comment -%}
-  gumis wordmark — Fredoka Bold, always lowercase.
-  optional prefix (theme setting "Logo prefix", empty by default) + "gumis" (Plum by default),
+  getgumis wordmark — Fredoka Bold, always lowercase.
+  "get" (theme setting "Logo prefix", Berry by default) + "gumis" (Plum by default),
   where the dot of the "i" is an orange gummy: a dotless ı (U+0131) plus a rounded shape.
   Accepts: font_size (CSS font-size), light (boolean, white text), class.
   Usage: {% render 'logo', font_size: '3rem' %}
 {%- endcomment -%}
 {%- liquid
-  assign prefix = settings.gumis_logo_prefix | default: '' | strip
+  assign prefix = settings.gumis_logo_prefix
+  if prefix == nil
+    assign prefix = 'get'
+  endif
 -%}
 <span
   class="gumis-logo{% if light %} gumis-logo--light{% endif %}{% if class %} {{ class }}{% endif %}"

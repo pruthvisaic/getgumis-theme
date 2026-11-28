@@ -534,49 +534,68 @@
   },
   "gumis": {
     "brand": {
-      "tagline": "Your magnesium, made tasty."
+      "tagline": "Your vitamins, made tasty."
     },
     "footer": {
       "legal_heading": "Legal",
       "legal": {
-        "terms": "Terms of service",
+        "terms": "Terms of sale",
+        "legal_notice": "Legal notice",
         "privacy": "Privacy policy",
-        "refund": "Refund & returns",
-        "shipping": "Shipping policy"
+        "cookies": "Cookie policy",
+        "withdrawal": "14-day right of withdrawal"
       }
     },
+    "cookies": {
+      "manage": "Manage cookies",
+      "title": "Fancy a cookie?",
+      "text": "We use cookies that are necessary for the site to work and, with your consent, audience measurement and advertising cookies. You can change your mind at any time via “Manage cookies” at the bottom of the page.",
+      "learn_more": "Learn more",
+      "accept": "Accept all",
+      "reject": "Reject all",
+      "customize": "Customise",
+      "save": "Save my choices",
+      "necessary": "Necessary.",
+      "necessary_desc": "Required for the cart and checkout. Always on.",
+      "preferences": "Preferences.",
+      "preferences_desc": "Remember your choices, such as language or country.",
+      "analytics": "Analytics.",
+      "analytics_desc": "Help us understand how the site is used.",
+      "marketing": "Advertising.",
+      "marketing_desc": "Let us show you relevant ads on other sites."
+    },
     "compliance": {
-      "footer_note": "Health supplement. Not for medicinal use.",
-      "dose": "Not to exceed the recommended daily usage.",
-      "children": "Keep out of reach of children.",
-      "diet": "Not for medicinal use. Not to be used as a substitute for a varied diet.",
-      "dose_probe": "recommended daily usage",
-      "children_probe": "out of reach of children",
-      "diet_probe": "not for medicinal use"
+      "footer_note": "Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.",
+      "dose": "Do not exceed the recommended daily dose.",
+      "children": "Keep out of reach of young children.",
+      "diet": "Food supplements should not be used as a substitute for a varied and balanced diet and a healthy lifestyle.",
+      "dose_probe": "recommended daily dose",
+      "children_probe": "out of reach of young children",
+      "diet_probe": "varied and balanced diet"
     },
     "general": {
       "to_complete": "[TO COMPLETE]"
     },
     "hero": {
-      "heading": "Your magnesium, made tasty.",
-      "subheading": "Fruity magnesium gummies you chew instead of big tablets. Simple, tasty, every day.",
-      "cta_primary": "Shop now",
+      "heading": "Your vitamins, made tasty.",
+      "subheading": "Fruity gummies you chew instead of big capsules. Three formulas: Sleep, Glow and Power.",
+      "cta_primary": "Shop the gummies",
       "cta_secondary": "Why gummies?",
-      "eyebrow": "Magnesium gummies",
-      "heading_html": "Your magnesium,<br>made <em>tasty.</em>"
+      "eyebrow": "Food supplements in gummy form",
+      "heading_html": "Your vitamins,<br>made <em>tasty.</em>"
     },
     "trio": {
-      "heading": "Meet your magnesium",
+      "heading": "Choose your formula",
       "subheading": "Pick your gummy: every jar holds {{ count }} gummies.",
       "view_all": "See all gummies"
     },
     "why": {
-      "heading": "The easy way to take your magnesium",
-      "subheading": "Supplements usually mean big tablets forgotten in a drawer. gumis gummies are small, chewy and nice to take, so the habit sticks.",
-      "col_gummies": "gumis gummies",
-      "col_capsules": "Classic tablets",
+      "heading": "The easy way to take your vitamins",
+      "subheading": "Supplements usually mean big capsules forgotten in a cupboard. getgumis gummies are small, chewy and nice to take, so the habit sticks.",
+      "col_gummies": "getgumis gummies",
+      "col_capsules": "Classic capsules",
       "eyebrow": "Why gummies",
-      "compare_heading": "gumis gummies vs classic tablets",
+      "compare_heading": "getgumis gummies vs classic capsules",
       "criterion": "Criterion"
     },
     "steps": {
@@ -599,7 +618,7 @@
       "add_to_cart": "Add to cart",
       "choose": "Choose",
       "placeholder_title": "Your product",
-      "placeholder_benefit": "[TO COMPLETE: benefit line from the product metafield]",
+      "placeholder_benefit": "[TO COMPLETE: authorised claim, from the metafield]",
       "jar_count": "Jar of {{ count }} gummies",
       "tax_included": "Tax included. Shipping calculated at checkout."
     },
@@ -652,23 +671,41 @@
       "last_updated": "Last updated: {{ date }}",
       "placeholder": "This page is waiting for its content: add it in Online Store > Pages."
     },
+    "withdrawal": {
+      "heading": "Withdrawal form",
+      "instructions": "Complete and return this form only if you wish to withdraw from the contract.",
+      "to": "To:",
+      "notice": "I/We (*) hereby give notice that I/We (*) withdraw from my/our (*) contract of sale of the following goods (*)/for the provision of the following service (*):",
+      "ordered_on": "Ordered on (*) / received on (*):",
+      "order_number": "Order number:",
+      "name": "Name of consumer(s):",
+      "address": "Address of consumer(s):",
+      "signature": "Signature of consumer(s) (only if this form is notified on paper):",
+      "date": "Date:",
+      "strike": "(*) Delete as appropriate.",
+      "print": "Print the form"
+    },
     "placeholders": {
-      "jar_magnesium": "Magnesium",
-      "product_magnesium": "gumis Magnesium"
+      "jar_sleep": "Sleep",
+      "jar_glow": "Glow",
+      "product_sleep": "Gumis Sleep",
+      "product_glow": "Gumis Glow",
+      "jar_power": "Power",
+      "product_power": "Gumis Power"
     },
     "jar": {
-      "tag": "Health supplement",
+      "tag": "Food supplement",
       "count": "{{ count }} gummies"
     },
     "trust": {
-      "label": "Shopping with gumis"
+      "label": "Shopping with getgumis"
     },
     "statement": {
-      "label": "gumis at a glance",
-      "lead_html": "Magnesium you'll actually<br>want to take."
+      "label": "getgumis at a glance",
+      "lead_html": "Vitamins you'll actually<br>want to take."
     },
     "newsletter": {
-      "heading": "Fresh news from gumis",
+      "heading": "Fresh news from getgumis",
       "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/privacy-policy\">privacy policy</a>.",
       "button": "Subscribe"
     },
@@ -681,7 +718,7 @@
       }
     },
     "marquee": {
-      "default": "Magnesium · Made tasty · No big tablets · No water needed · Just chew"
+      "default": "Sleep · Glow · Power · No big capsules · No water needed · Just chew"
     }
   }
 }

@@ -4,7 +4,7 @@
     assign heading = 'gumis.trio.heading' | t
   endif
   assign tiles = 'blush,peach,lilac' | split: ','
-  assign bottles = 'magnesium,magnesium,magnesium' | split: ','
+  assign bottles = 'sleep,glow,power' | split: ','
 -%}
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <section
@@ -109,7 +109,9 @@
           "label": "Bottle photo without product image",
           "options": [
             { "value": "", "label": "Automatic" },
-            { "value": "magnesium", "label": "Magnesium" }
+            { "value": "sleep", "label": "Sleep" },
+            { "value": "glow", "label": "Glow" },
+            { "value": "power", "label": "Power" }
           ],
           "default": ""
         },
@@ -117,7 +119,7 @@
           "type": "color",
           "id": "accent",
           "label": "Accent colour",
-          "info": "Card colour (tile tint and benefit text). Match the bottle: Magnesium #12898A. Empty = custom.accent_color metafield."
+          "info": "Card colour (tile tint and benefit text). Match the bottle: Sleep #3A5BD9, Glow #D6246E, Power #E8641A. Empty = custom.accent_color metafield."
         },
         {
           "type": "text",
