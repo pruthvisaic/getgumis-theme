@@ -577,15 +577,15 @@
       "to_complete": "[TO COMPLETE]"
     },
     "hero": {
-      "heading": "Pills are boring. Chew this.",
-      "subheading": "Fruity gummies instead of big capsules. Sleep, Glow or Power: pick your vibe.",
+      "heading": "Your vitamins, made tasty.",
+      "subheading": "Fruity gummies you chew instead of big capsules. Three formulas: Sleep, Glow and Power.",
       "cta_primary": "Shop the gummies",
       "cta_secondary": "Why gummies?",
       "eyebrow": "Food supplements in gummy form",
-      "heading_html": "Pills are boring.<br>Chew <em>this.</em>"
+      "heading_html": "Your vitamins,<br>made <em>tasty.</em>"
     },
     "trio": {
-      "heading": "Pick your vibe",
+      "heading": "Choose your formula",
       "subheading": "Pick your gummy: every jar holds {{ count }} gummies.",
       "view_all": "See all gummies"
     },
@@ -599,7 +599,7 @@
       "criterion": "Criterion"
     },
     "steps": {
-      "heading": "Pick. Chew. Repeat.",
+      "heading": "How does it work?",
       "step": "Step {{ number }}"
     },
     "bundle": {
@@ -702,10 +702,10 @@
     },
     "statement": {
       "label": "getgumis at a glance",
-      "lead_html": "Vitamins you'll actually<br>remember to take."
+      "lead_html": "Vitamins you'll actually<br>want to take."
     },
     "newsletter": {
-      "heading": "Join the gummy gang",
+      "heading": "Fresh news from getgumis",
       "text_html": "New products and offers, never spam. Unsubscribe in one click. See our <a href=\"/pages/privacy-policy\">privacy policy</a>.",
       "button": "Subscribe"
     },

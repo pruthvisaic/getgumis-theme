@@ -36,8 +36,8 @@
         "cta2_label": "",
         "cta2_link": "",
         "image": "",
-        "chip_1": "Zero gulp. Just chew.",
-        "chip_2": "Tastes like a treat",
+        "chip_1": "",
+        "chip_2": "",
         "anchor": "gumis-hero",
         "padding_top": 48,
         "padding_bottom": 136
@@ -61,7 +61,7 @@
           "settings": {
             "accent": "#3A5BD9",
             "placeholder_title": "Gumis Sleep",
-            "badge": "Professional napper",
+            "badge": "",
             "primary": false
           }
         },
@@ -70,7 +70,7 @@
           "settings": {
             "accent": "#D6246E",
             "placeholder_title": "Gumis Glow",
-            "badge": "Main character",
+            "badge": "",
             "primary": true
           }
         },
@@ -79,7 +79,7 @@
           "settings": {
             "accent": "#E8641A",
             "placeholder_title": "Gumis Power",
-            "badge": "Leg day hero",
+            "badge": "",
             "primary": false
           }
         }
@@ -365,7 +365,7 @@
           "type": "stat",
           "settings": {
             "value": "3",
-            "label": "vibes to pick from"
+            "label": "formulas"
           }
         },
         "stat-2": {
@@ -378,8 +378,8 @@
         "stat-3": {
           "type": "stat",
           "settings": {
-            "value": "0",
-            "label": "glasses of water needed"
+            "value": "14",
+            "label": "days to change your mind"
           }
         }
       },

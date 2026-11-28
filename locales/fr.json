@@ -589,15 +589,15 @@
       "to_complete": "[À COMPLÉTER]"
     },
     "hero": {
-      "heading": "Les gélules, c’est fini. Croquez ça.",
-      "subheading": "Des gummies fruités au lieu de grosses gélules. Sleep, Glow ou Power : choisissez votre mood.",
+      "heading": "Vos vitamines, en version gourmande.",
+      "subheading": "Des gummies fruités à croquer, au lieu de grosses gélules. Trois formules : Sleep, Glow et Power.",
       "cta_primary": "Découvrir les gummies",
       "cta_secondary": "Pourquoi des gummies ?",
       "eyebrow": "Compléments alimentaires en gummies",
-      "heading_html": "Les gélules, c’est fini.<br>Croquez <em>ça.</em>"
+      "heading_html": "Vos vitamines,<br>version <em>gummies.</em>"
     },
     "trio": {
-      "heading": "Choisissez votre mood",
+      "heading": "Choisissez votre formule",
       "subheading": "Choisissez votre gummy : chaque pot contient {{ count }} gummies.",
       "view_all": "Voir tous les gummies"
     },
@@ -611,7 +611,7 @@
       "criterion": "Critère"
     },
     "steps": {
-      "heading": "Choisir. Croquer. Recommencer.",
+      "heading": "Comment ça marche ?",
       "step": "Étape {{ number }}"
     },
     "bundle": {
@@ -714,10 +714,10 @@
     },
     "statement": {
       "label": "getgumis en bref",
-      "lead_html": "Des vitamines qu’on n’oublie<br>plus de prendre."
+      "lead_html": "Des vitamines que vous<br>aurez envie de prendre."
     },
     "newsletter": {
-      "heading": "Rejoignez le gummy gang",
+      "heading": "Des nouvelles de getgumis",
       "text_html": "Nouveautés et offres, jamais de spam. Désinscription en un clic. Voir notre <a href=\"/pages/privacy-policy\">politique de confidentialité</a>.",
       "button": "S'inscrire"
     },
