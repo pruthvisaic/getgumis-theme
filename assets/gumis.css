@@ -718,3 +718,11 @@ img.g-bottle { aspect-ratio: auto; height: auto; }
   .g-marquee__track[aria-hidden] { display: none; }
   .g-marquee__band { justify-content: center; }
 }
+
+/* Light fun touches: tilted character stickers, floating hero bottles, soft hero stickers */
+.g-card .g-badge { transform: rotate(-5deg); box-shadow: 0 6px 14px rgba(59, 10, 42, 0.12); }
+.g-hero__media .g-bottle { animation: g-float 4.5s ease-in-out infinite; }
+.g-hero .g-chip--a { rotate: 4deg; }
+.g-hero .g-chip--b { rotate: -4deg; }
+@keyframes g-float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@media (prefers-reduced-motion: reduce) { .g-hero__media .g-bottle { animation: none; } }
